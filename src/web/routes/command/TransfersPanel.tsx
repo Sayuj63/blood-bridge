@@ -116,7 +116,7 @@ function SuggestionRow({
           <p className="mt-1 line-clamp-2 text-xs text-ink-faint">{s.reason}</p>
         </div>
       </div>
-      <div className="mt-2 flex items-center gap-1.5 pl-12">
+      <div className="mt-2 flex flex-wrap items-center gap-1.5 pl-12">
         {editing ? (
           <div className="flex items-center rounded-(--radius-control) border border-line" role="group" aria-label="Quantity">
             <Button size="icon" variant="ghost" className="size-8" aria-label="One fewer" onClick={() => setQty((q) => Math.max(1, q - 1))}>

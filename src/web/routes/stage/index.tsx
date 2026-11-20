@@ -16,8 +16,11 @@ import { useRealtime } from "../../lib/realtime";
 import { JoinQr } from "./JoinQr";
 
 const VIEWS = [
-  { src: "/hospital?embed=1", title: "Hospital view" },
-  { src: "/bank?embed=1", title: "Blood bank view" },
+  // Scripted 60-second demo (PRD §7.1): Sion's municipal hospital requests O-negative platelets;
+  // in the real e-RaktKosh snapshot, S. L. Raheja (Mahim) is the only bank holding 2+ such units.
+  // Both are real sites from data/mumbai; the views fall back to their own defaults if an ID is unknown.
+  { src: "/hospital?embed=1&site=hsp-sion-ltmgh", title: "Hospital view" },
+  { src: "/bank?embed=1&site=bb-raheja-mahim", title: "Blood bank view" },
 ] as const;
 
 /** Scenario epicentres, matched by name against /api/meta areas (never hardcoded IDs). */

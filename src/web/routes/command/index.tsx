@@ -65,7 +65,7 @@ export default function CommandPage() {
               fitPadding={50}
               pitch={35}
               label="City map: blood banks and hospitals coloured by how soon they run out, with transfer routes"
-              className="absolute inset-0"
+              className="h-full w-full"
             />
             <MapLegend />
             {sites.error ? (
