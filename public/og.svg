@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#06111C"/>
+  <g stroke="#38D6C8" stroke-width="3" fill="none" opacity="0.9">
+    <path d="M640 470 Q820 160 1010 420"/>
+    <path d="M700 300 Q880 120 1080 250" opacity="0.6"/>
+    <path d="M760 520 Q900 380 1090 480" opacity="0.4"/>
+  </g>
+  <g fill="#38D6C8"><circle cx="640" cy="470" r="9"/><circle cx="1010" cy="420" r="9"/><circle cx="700" cy="300" r="7"/><circle cx="1080" cy="250" r="7"/></g>
+  <path fill="#FF4058" transform="translate(80 120) scale(3.4)" d="M16 1.5C16 1.5 5 13.2 5 20.2a11 11 0 0 0 22 0C27 13.2 16 1.5 16 1.5Z"/>
+  <path fill="none" stroke="#06111C" stroke-width="9" stroke-linecap="round" transform="translate(80 120) scale(3.4)" d="M9.6 22.5Q16 12.5 22.4 22.5" style="stroke-width:2.6"/>
+  <text x="80" y="420" fill="#E7EEF5" font-family="Archivo, Arial, sans-serif" font-size="96" font-weight="800">Blood Bridge</text>
+  <text x="80" y="490" fill="#9DB0C3" font-family="Archivo, Arial, sans-serif" font-size="34">Every compatible unit in the city, on one screen.</text>
+</svg>
