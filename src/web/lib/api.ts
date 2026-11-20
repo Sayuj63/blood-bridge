@@ -18,6 +18,8 @@ import type {
   DismissTransferInput,
   DonorAlertDTO,
   DonorDTO,
+  DonorSignupDTO,
+  MessagingContactDTO,
   DonorDrivePreviewDTO,
   DonorDriveResultDTO,
   DonorPreferencesInput,
@@ -199,7 +201,7 @@ export const api = {
 
   donors: {
     personas: (signal?: AbortSignal) => get<DonorDTO[]>("/api/donors/personas", signal),
-    signup: (input: DonorSignupBody) => post<DonorDTO>("/api/donors", input),
+    signup: (input: DonorSignupBody) => post<DonorSignupDTO>("/api/donors", input),
     get: (donorId: string, signal?: AbortSignal) => get<DonorDTO>(`/api/donors/${enc(donorId)}`, signal),
     update: (donorId: string, input: DonorPreferencesInput) => patch<DonorDTO>(`/api/donors/${enc(donorId)}`, input),
     optOut: (donorId: string, optOut: boolean) => post<DonorDTO>(`/api/donors/${enc(donorId)}/opt-out`, { optOut }),
@@ -217,6 +219,11 @@ export const api = {
     preview: (input: { bankSiteId: string; bloodGroup: BloodGroup }) =>
       post<DonorDrivePreviewDTO>("/api/drives/preview", input),
     send: (input: DonorDriveBody) => post<DonorDriveResultDTO>("/api/drives", input),
+  },
+
+  messaging: {
+    /** The official Blood Bridge WhatsApp number for click-to-chat (nulls when not configured). */
+    contact: (signal?: AbortSignal) => get<MessagingContactDTO>("/api/messaging/contact", signal),
   },
 
   audit: {

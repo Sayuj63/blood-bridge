@@ -27,6 +27,7 @@ import {
   matchPlace,
   parseBloodGroup,
   parseLanguageChoice,
+  parseJoinCode,
   parseNeed,
   type Keyword,
   type NeedDraft,
@@ -111,7 +112,7 @@ class Turn {
     private readonly address: string,
     private readonly text: string,
     private conv: ConversationRow,
-    private readonly donor: DonorRow | null,
+    private donor: DonorRow | null,
     private readonly opts: InboundOptions,
   ) {
     this.group = isWhatsAppGroup(address);
@@ -175,6 +176,10 @@ class Turn {
 
     // In group chats we only ever answer blood requests, and never start a multi-step chat.
     if (this.group) return this.groupNeed();
+
+    // Click-to-chat from the web signup: link this WhatsApp number to that profile.
+    const code = parseJoinCode(this.text);
+    if (code) return this.joinWithCode(code);
 
     if (this.conv.step.startsWith("join_")) {
       const handled = await this.joinStep(kw);
@@ -242,6 +247,47 @@ class Turn {
     this.setStep("join_group");
     this.say("joinGroup");
     return "join_start";
+  }
+
+  /**
+   * "JOIN <code>" sent from the wa.me button after a web signup. The consent was the ticked
+   * WhatsApp box on the web form; messaging us from WhatsApp confirms the number. Codes are
+   * single-use and never shown by public reads, so nobody can link a number to someone else's profile.
+   */
+  private async joinWithCode(code: string): Promise<string> {
+    const { deps } = this;
+    const [donor] = await deps.db.select().from(schema.donors).where(eq(schema.donors.whatsappJoinCode, code));
+    if (!donor || this.channel !== "whatsapp") {
+      this.say("joinCodeUnknown");
+      return "join_code_unknown";
+    }
+    this.language = donor.language;
+    this.conv = { ...this.conv, language: donor.language };
+    // Opted out (or consent withdrawn) since signing up: ask for an explicit YES again.
+    if (donor.optedOutAt !== null || donor.contactOptInAt === null) {
+      await deps.db.update(schema.donors).set({ whatsappJoinCode: null }).where(eq(schema.donors.id, donor.id));
+      return this.askConsentAgain(donor);
+    }
+    const [linked] = await deps.db
+      .update(schema.donors)
+      .set({ contactChannel: "whatsapp", contactAddress: this.address, contactOptInAt: deps.now, whatsappJoinCode: null })
+      .where(and(eq(schema.donors.id, donor.id), eq(schema.donors.whatsappJoinCode, code)))
+      .returning();
+    if (!linked) {
+      this.say("joinCodeUnknown");
+      return "join_code_unknown";
+    }
+    this.donor = linked;
+    this.setStep("idle");
+    const changed = donor.contactAddress !== null && donor.contactAddress !== this.address;
+    this.audit("messaging.opted_in", `Donor linked ${this.who} via click-to-chat (web opt-in confirmed from WhatsApp)${changed ? "; number differs from the one typed at signup" : ""}`, {
+      entityType: "donor",
+      entityId: donor.id,
+      payload: { channel: "whatsapp", source: "click_to_chat", numberChanged: changed },
+    });
+    await deps.hub.publish({ topics: ["donors"], donorIds: [donor.id] });
+    this.say("joinLinked", { group: donor.bloodGroup, area: areaById(donor.areaId)?.name ?? donor.areaId });
+    return "join_linked";
   }
 
   private askConsentAgain(donor: DonorRow): string {

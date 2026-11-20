@@ -82,6 +82,16 @@ export const COPY = {
     hi: "आप पहले से {group} डोनर के रूप में रजिस्टर हैं। बंद करने के लिए STOP, मेनू के लिए HELP।",
     mr: "तुम्ही आधीच {group} रक्तदाता म्हणून नोंदवले आहात. बंद करण्यासाठी STOP, मेनूसाठी HELP.",
   },
+  joinLinked: {
+    en: "*Blood Bridge*: this WhatsApp number is now linked to your *{group}* donor profile near {area}. Thank you!\nWe'll message here only when a nearby bank needs you (at most 2 a week). Reply YES to go, NO to skip, STOP to unsubscribe.",
+    hi: "*Blood Bridge*: यह WhatsApp नंबर अब {area} के पास आपकी *{group}* डोनर प्रोफ़ाइल से जुड़ गया है। धन्यवाद!\nपास के बैंक को ज़रूरत होने पर ही हम यहाँ मैसेज करेंगे (हफ़्ते में अधिकतम 2)। जाने के लिए YES, छोड़ने के लिए NO, बंद करने के लिए STOP।",
+    mr: "*Blood Bridge*: हा WhatsApp नंबर आता {area} जवळील तुमच्या *{group}* रक्तदाता प्रोफाइलशी जोडला आहे. धन्यवाद!\nजवळच्या बँकेला गरज असेल तेव्हाच आम्ही इथे मेसेज करू (आठवड्यात जास्तीत जास्त 2). जाण्यासाठी YES, वगळण्यासाठी NO, बंद करण्यासाठी STOP.",
+  },
+  joinCodeUnknown: {
+    en: "That sign-up code didn't match (it may already have been used). Send JOIN to register as a donor here, or HELP for the menu.",
+    hi: "यह साइन-अप कोड मेल नहीं खाया (शायद पहले ही इस्तेमाल हो चुका है)। यहाँ डोनर बनने के लिए JOIN भेजें, या मेनू के लिए HELP।",
+    mr: "हा साइन-अप कोड जुळला नाही (कदाचित आधीच वापरला गेला आहे). इथे रक्तदाता होण्यासाठी JOIN पाठवा, किंवा मेनूसाठी HELP.",
+  },
   webWelcome: {
     en: "Blood Bridge: you're registered as a donor (blood group {group}) and asked for alerts on this number. We'll only message when a nearby bank needs you. Reply STOP to unsubscribe.",
     hi: "Blood Bridge: आप {group} डोनर के रूप में रजिस्टर हैं और इस नंबर पर अलर्ट चुने हैं। बंद करने के लिए STOP भेजें।",

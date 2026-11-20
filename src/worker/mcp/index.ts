@@ -13,6 +13,7 @@ import { Hono, type Context } from "hono";
 import { cors } from "hono/cors";
 import { HTTPException } from "hono/http-exception";
 import { createDb } from "../db/client";
+import { kickWhatsAppCloud } from "../services/messaging-cloud";
 import { remoteHub } from "../deps";
 import { sha256Hex } from "../lib/ids";
 import type { McpContext } from "./context";
@@ -59,8 +60,17 @@ mcpApp.post("/mcp", async (c) => {
     const bearer = c.req.header("Authorization")?.match(/^Bearer\s+(.+)$/i)?.[1]?.trim();
     const presented = bearer ?? c.req.query("token") ?? undefined;
     const expected = c.env.MCP_TOKEN || undefined;
+    let whatsappQueued = false;
     const ctx: McpContext = {
-      deps: { db: createDb(c.env.DB), env: c.env, hub: remoteHub(c.env), now: Date.now() },
+      deps: {
+        db: createDb(c.env.DB),
+        env: c.env,
+        hub: remoteHub(c.env),
+        now: Date.now(),
+        onQueued: (channel) => {
+          if (channel === "whatsapp") whatsappQueued = true;
+        },
+      },
       actor: `ai:${clientName(c)}`,
       authorized: await tokenMatches(presented, expected),
       writesEnabled: Boolean(expected),
@@ -70,6 +80,8 @@ mcpApp.post("/mcp", async (c) => {
     await server.connect(transport);
     const res = await transport.handleRequest(c);
     c.header("Cache-Control", "no-store");
+    // A tool call that queued WhatsApp (e.g. a donor drive) delivers via the Cloud API right away.
+    if (whatsappQueued) kickWhatsAppCloud(c.env, (p) => c.executionCtx.waitUntil(p));
     return res ?? c.body(null, 202);
   } catch (err) {
     // The transport signals protocol errors (bad JSON, wrong Accept, etc.) as HTTPExceptions carrying a JSON-RPC body.

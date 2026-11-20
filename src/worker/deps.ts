@@ -1,3 +1,4 @@
+import type { MessageChannel } from "../shared/domain";
 import type { Db } from "./db/client";
 import type { AuditInput, PublishInput } from "./hub";
 
@@ -14,6 +15,11 @@ export interface Deps {
   env: Env;
   hub: Hub;
   now: number;
+  /**
+   * Called after a row lands in the outbox. Request handlers use it to drain WhatsApp
+   * through the Cloud API in ctx.waitUntil once the response is on its way.
+   */
+  onQueued?: (channel: MessageChannel) => void;
 }
 
 export const HUB_NAME = "mumbai";

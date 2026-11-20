@@ -9,7 +9,9 @@
  */
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
+import { mkdir, writeFile } from "node:fs/promises";
 import { create, createConsoleOutputSink, setCliOutputSink, type Client } from "@open-wa/wa-automate";
+import QRCode from "qrcode";
 import type { Logger } from "../log.ts";
 import { BaseAdapter, SendError, type AdapterHooks, type OutboundMessage, type SendResult } from "./types.ts";
 
@@ -41,6 +43,8 @@ export class WhatsAppOpenWaAdapter extends BaseAdapter {
   readonly name = "open-wa";
   readonly channel = "whatsapp" as const;
   private client: Client | null = null;
+  /** Recipients the bot messaged recently (E.164 → when), whose replies are always for the bot. */
+  private readonly contacted = new Map<string, number>();
   private stopping = false;
 
   constructor(
@@ -124,6 +128,8 @@ export class WhatsAppOpenWaAdapter extends BaseAdapter {
       this.log.warn("whatsapp: sender has no phone number (LID); ignoring");
       return;
     }
+    // Privacy filter: personal chats on the linked number never leave this laptop.
+    if (!isForBot(m.body, from, this.contacted)) return;
     this.hooks?.onInbound({
       channel: "whatsapp",
       from,
@@ -140,6 +146,8 @@ export class WhatsAppOpenWaAdapter extends BaseAdapter {
     try {
       const id = await client.sendText(chatId, message.body);
       if (!id || typeof id === "boolean") throw new SendError("WhatsApp did not accept the message", true);
+      // Replies from people the bot has messaged (e.g. YES to a donor alert) are allowed through.
+      this.contacted.set(message.to, Date.now());
       return { providerMessageId: String(id) };
     } catch (err) {
       if (err instanceof SendError) throw err;
@@ -179,6 +187,10 @@ export class WhatsAppOpenWaAdapter extends BaseAdapter {
         this.setState("needs_qr", "scan the QR code in the gateway terminal");
         process.stdout.write("\nWhatsApp: open WhatsApp on the SPARE phone → Linked devices → Link a device, and scan:\n");
         consoleSink.qr(payload);
+        void writeQrImage(payload).then(
+          (file) => file && process.stdout.write(`(QR also saved as an image: ${file})\n`),
+          (err: unknown) => this.log.warn("whatsapp: could not save QR image", { error: String(err) }),
+        );
       },
     });
   }
@@ -191,4 +203,43 @@ function toE164(candidates: (string | undefined)[]): string | null {
     if (m) return `+${m[1]}`;
   }
   return null;
+}
+
+/** Where the latest login QR is written, so it can be opened and scanned from a screen. */
+const QR_IMAGE_PATH = resolve(process.cwd(), ".session", "whatsapp-qr.png");
+
+/**
+ * Save the login QR as a PNG. open-wa may hand us an image data URL or the raw QR text
+ * (possibly wrapped in an object), so accept either.
+ */
+async function writeQrImage(payload: unknown): Promise<string | null> {
+  const text =
+    typeof payload === "string"
+      ? payload
+      : Object.values((payload ?? {}) as Record<string, unknown>).find((v): v is string => typeof v === "string" && v.length > 20);
+  if (!text) return null;
+  await mkdir(resolve(process.cwd(), ".session"), { recursive: true });
+  const dataUrl = /^data:image\/png;base64,(.+)$/.exec(text);
+  if (dataUrl) await writeFile(QR_IMAGE_PATH, Buffer.from(dataUrl[1], "base64"));
+  else await QRCode.toFile(QR_IMAGE_PATH, text, { width: 480, margin: 2 });
+  return QR_IMAGE_PATH;
+}
+
+/** How long a person the bot messaged can reply (e.g. YES to an alert) without using a keyword. */
+const CONTACT_WINDOW_MS = 48 * 3_600_000;
+
+/** Bot keywords (en/hi/mr) and blood-need vocabulary. Anything else is a personal chat and is ignored. */
+const BOT_TEXT =
+  /^\s*(join|help|stop|start|unsubscribe|blood|bb)\b|\b(blood|platelets?|plasma|prbc|ffp|donor|khoon|rakt|रक्त|खून|प्लेटलेट)\b|\b(a|b|ab|o)\s*(\+|-|−|pos(itive)?|neg(ative)?)/i;
+
+/**
+ * Privacy filter for a linked personal number: forward only messages clearly meant for the bot —
+ * a keyword, a blood request, or a reply from someone the bot messaged in the last 48h.
+ * Set WHATSAPP_INBOUND=all to forward every 1:1 chat (dedicated bot numbers only).
+ */
+function isForBot(text: string, from: string, contacted: Map<string, number>): boolean {
+  if (process.env.WHATSAPP_INBOUND === "all") return true;
+  const last = contacted.get(from);
+  if (last !== undefined && Date.now() - last < CONTACT_WINDOW_MS) return true;
+  return BOT_TEXT.test(text);
 }

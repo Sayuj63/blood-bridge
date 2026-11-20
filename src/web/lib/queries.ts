@@ -22,3 +22,7 @@ export const useTransferBoard = (siteId?: string) =>
     queryFn: ({ signal }) => api.transfers.board(siteId, signal),
     staleTime: 15_000,
   });
+
+/** The official Blood Bridge WhatsApp sender (Cloud API) for click-to-chat; nulls when not configured. */
+export const useWhatsAppContact = () =>
+  useQuery({ queryKey: ["messaging", "contact"], queryFn: ({ signal }) => api.messaging.contact(signal), staleTime: 10 * 60_000 });

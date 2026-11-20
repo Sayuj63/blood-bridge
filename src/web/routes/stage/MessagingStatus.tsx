@@ -5,14 +5,14 @@ import { cn } from "../../lib/cn";
 const NAME = { whatsapp: "WhatsApp", sms: "SMS" } as const;
 
 function label(c: MessagingChannelStatusDTO): string {
-  const test = c.adapter === "console" ? " (test console)" : "";
+  const test = c.adapter === "console" ? " (test console)" : c.adapter === "cloud-api" ? " (official Cloud API)" : "";
   if (c.online) return `${NAME[c.channel]} online${test}`;
   if (c.state === "needs_qr") return `${NAME[c.channel]}: scan QR`;
   if (c.state === "starting") return `${NAME[c.channel]} starting`;
   return `${NAME[c.channel]} offline`;
 }
 
-/** "WhatsApp online" pill, driven by gateway heartbeats. Hidden until a gateway has ever connected. */
+/** "WhatsApp online" pill, driven by gateway heartbeats (always online with the Cloud API). Hidden until a sender exists. */
 export function MessagingStatus() {
   const { data } = useQuery({
     queryKey: ["messaging", "status"],

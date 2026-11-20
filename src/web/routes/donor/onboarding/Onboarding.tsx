@@ -1,6 +1,6 @@
 import { ArrowLeft, FlaskConical, ShieldCheck } from "lucide-react";
 import { useRef, useState, type FormEvent } from "react";
-import type { DonorDTO } from "../../../../shared/api";
+import type { DonorSignupDTO } from "../../../../shared/api";
 import type { BloodGroup, Language } from "../../../../shared/domain";
 import { Badge } from "../../../components/ui/Badge";
 import { Button } from "../../../components/ui/Button";
@@ -85,7 +85,7 @@ export function Onboarding({
   onCancel,
 }: {
   mode: OnboardingMode;
-  onDone: (donor: DonorDTO) => void;
+  onDone: (donor: DonorSignupDTO) => void;
   onCancel?: () => void;
 }) {
   const meta = useMeta();

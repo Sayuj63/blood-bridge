@@ -529,6 +529,17 @@ export interface GatewayInboundDTO {
   queued: number;
 }
 
+/** Public: the official business WhatsApp number for click-to-chat, or nulls when not configured. */
+export interface MessagingContactDTO {
+  whatsappNumber: string | null;
+  waLink: string | null;
+}
+
+/** Signup response: the profile, plus a one-time click-to-chat code when WhatsApp alerts were chosen. */
+export interface DonorSignupDTO extends DonorDTO {
+  whatsappJoin?: { code: string; text: string; waLink: string | null };
+}
+
 export interface MessagingChannelStatusDTO {
   channel: MessageChannel;
   online: boolean;
@@ -540,6 +551,8 @@ export interface MessagingChannelStatusDTO {
 /** Public: drives the "WhatsApp online" indicator. No addresses, no bodies. */
 export interface MessagingStatusDTO {
   gatewayLastSeenAt: number | null;
+  /** Who delivers WhatsApp: the in-Worker Cloud API, or the laptop open-wa gateway. */
+  whatsappProvider: "cloud" | "gateway";
   channels: MessagingChannelStatusDTO[];
   queue: { pending: number; claimed: number; sent24h: number; failed24h: number };
   checkedAt: number;

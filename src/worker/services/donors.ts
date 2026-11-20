@@ -6,6 +6,7 @@ import type {
   DonorDriveResultDTO,
   DonorDTO,
   DonorPreferencesInput,
+  DonorSignupDTO,
   DonorSignupInput,
   IncomingDonorDTO,
 } from "../../shared/api";
@@ -15,9 +16,10 @@ import { approximate } from "../../shared/geo";
 import { schema } from "../db/client";
 import type { Deps } from "../deps";
 import { AppError, badRequest, conflict, notFound } from "../lib/http";
-import { confirmationCode, newId } from "../lib/ids";
+import { confirmationCode, joinCode, newId } from "../lib/ids";
 import { areaById } from "../seed";
 import { normalizePhone } from "../messaging/phone";
+import { contactInfo, whatsappProvider } from "../messaging/whatsapp-cloud";
 import { enqueueAlertMessages, sendOptInWelcome } from "./messaging";
 import { getSite } from "./sites";
 
@@ -83,11 +85,17 @@ function contactFields(input: DonorSignupInput, now: number) {
   return { contactChannel: input.contactChannel, contactAddress: address, contactOptInAt: now };
 }
 
-/** `welcome: false` when the caller (the chat bot) confirms the opt-in itself. */
-export async function signup(deps: Deps, input: DonorSignupInput, opts: { welcome?: boolean } = {}): Promise<DonorDTO> {
+/**
+ * `welcome: false` when the caller (the chat bot) confirms the opt-in itself.
+ * A web signup that ticks WhatsApp gets a single-use click-to-chat code: the donor sends
+ * "JOIN <code>" to the business number, which opens WhatsApp's 24 h window and links the number.
+ */
+export async function signup(deps: Deps, input: DonorSignupInput, opts: { welcome?: boolean } = {}): Promise<DonorSignupDTO> {
   const area = areaById(input.areaId);
   if (!area) throw badRequest("Unknown area");
   const contact = contactFields(input, deps.now);
+  const fromWeb = opts.welcome !== false;
+  const code = fromWeb && contact.contactChannel === "whatsapp" ? joinCode() : null;
   const id = newId("DNR");
   await deps.db.insert(schema.donors).values({
     id,
@@ -106,15 +114,22 @@ export async function signup(deps: Deps, input: DonorSignupInput, opts: { welcom
     persona: true,
     createdAt: deps.now,
     ...contact,
+    whatsappJoinCode: code,
   });
   await deps.hub.audit([
     { actor: `donor:${id}`, action: "donor.signed_up", entityType: "donor", entityId: id, summary: `New ${input.bloodGroup} donor registered in ${area.name}` },
   ]);
   await deps.hub.publish({ topics: ["donors"] });
-  if (opts.welcome !== false && contact.contactChannel !== "none") {
+  // With the Cloud API, a cold WhatsApp welcome would only go out as a bare template; the donor
+  // is asked to message us first instead (click-to-chat), and the bot confirms the opt-in there.
+  const cloudWhatsApp = contact.contactChannel === "whatsapp" && whatsappProvider(deps.env) === "cloud";
+  if (fromWeb && contact.contactChannel !== "none" && !cloudWhatsApp) {
     await sendOptInWelcome(deps, { id, bloodGroup: input.bloodGroup, language: input.language, ...contact, optedOutAt: null });
   }
-  return getDonor(deps, id);
+  const donor = await getDonor(deps, id);
+  if (!code) return donor;
+  const text = `JOIN ${code}`;
+  return { ...donor, whatsappJoin: { code, text, waLink: contactInfo(deps.env, text).waLink } };
 }
 
 export async function updatePreferences(deps: Deps, donorId: string, input: DonorPreferencesInput): Promise<DonorDTO> {

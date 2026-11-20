@@ -1,7 +1,8 @@
 /**
  * One interface for every delivery channel. The relay neither knows nor cares whether a
- * message leaves through open-wa, an Android phone, the console — or, in production, the
- * official WhatsApp Business Cloud API: implement ChannelAdapter and register it in main.ts.
+ * message leaves through open-wa, an Android phone or the console: implement ChannelAdapter
+ * and register it in main.ts. (The official WhatsApp Business Cloud API runs inside the Worker
+ * instead; when it is configured the Worker stops handing WhatsApp rows to gateways.)
  */
 export type Channel = "whatsapp" | "sms";
 export type ChannelState = "starting" | "needs_qr" | "online" | "offline";

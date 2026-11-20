@@ -21,6 +21,7 @@ import {
   searchSchema,
   startSurgeSchema,
   unitActionSchema,
+  type MessagingContactDTO,
   type MetaDTO,
 } from "../shared/api";
 import { BLOOD_GROUPS, POLICY } from "../shared/domain";
@@ -35,6 +36,8 @@ import * as donors from "./services/donors";
 import * as fc from "./services/forecast";
 import * as messaging from "./services/messaging";
 import { handleInbound } from "./services/messaging-bot";
+import { kickWhatsAppCloud, processWebhook } from "./services/messaging-cloud";
+import { CLOUD_GATEWAY_ID, contactInfo, parseWebhook, readWaEnv, verifyChallenge, verifySignature } from "./messaging/whatsapp-cloud";
 import * as req from "./services/requests";
 import * as sites from "./services/sites";
 import * as stock from "./services/stock";
@@ -47,12 +50,32 @@ const actor = (c: Context<AppEnv>) => c.get("actor");
 export const app = new Hono<AppEnv>().basePath("/api");
 
 app.use("*", async (c, next) => {
-  c.set("deps", { db: createDb(c.env.DB), env: c.env, hub: remoteHub(c.env), now: Date.now() });
+  let whatsappQueued = false;
+  c.set("deps", {
+    db: createDb(c.env.DB),
+    env: c.env,
+    hub: remoteHub(c.env),
+    now: Date.now(),
+    onQueued: (channel) => {
+      if (channel === "whatsapp") whatsappQueued = true;
+    },
+  });
   // Demo identity: views declare who they act as. Real deployments would use verified accounts.
   c.set("actor", (c.req.header("X-Actor") ?? "anonymous").slice(0, 64));
   await next();
   c.header("Cache-Control", "no-store");
+  // Anything this request queued for WhatsApp goes out via the Cloud API right after the response.
+  if (whatsappQueued) kickWhatsAppCloud(c.env, (p) => waitUntil(c, p));
 });
+
+/** ctx.waitUntil when there is an execution context (always in workerd; not in some test harnesses). */
+function waitUntil(c: Context<AppEnv>, p: Promise<unknown>) {
+  try {
+    c.executionCtx.waitUntil(p);
+  } catch {
+    void p;
+  }
+}
 
 app.onError((err, c) => {
   if (err instanceof AppError) {
@@ -200,7 +223,11 @@ app.use("/gateway/*", async (c, next) => {
 });
 
 app.post("/gateway/heartbeat", async (c) => c.json(await messaging.heartbeat(deps(c), await body(c, gatewayHeartbeatSchema))));
-app.post("/gateway/outbox/claim", async (c) => c.json(await messaging.claim(deps(c), await body(c, gatewayClaimSchema))));
+app.post("/gateway/outbox/claim", async (c) => {
+  const input = await body(c, gatewayClaimSchema);
+  if (input.gatewayId === CLOUD_GATEWAY_ID) throw new AppError(400, "bad_request", `gatewayId "${CLOUD_GATEWAY_ID}" is reserved for the in-Worker Cloud API sender`);
+  return c.json(await messaging.claim(deps(c), input));
+});
 app.post("/gateway/outbox/:id/ack", async (c) => c.json(await messaging.ack(deps(c), c.req.param("id"), await body(c, gatewayAckSchema))));
 app.post("/gateway/inbound", async (c) =>
   c.json(await handleInbound(deps(c), await body(c, gatewayInboundSchema), { publicUrl: new URL(c.req.url).origin })),
@@ -208,6 +235,50 @@ app.post("/gateway/inbound", async (c) =>
 
 /** Public, read-only: gateway liveness and queue depth for the "WhatsApp online" indicator. */
 app.get("/messaging/status", async (c) => c.json(await messaging.messagingStatus(deps(c))));
+
+/** Public: the official Blood Bridge WhatsApp number for click-to-chat (nulls when not configured). */
+app.get("/messaging/contact", (c) => c.json<MessagingContactDTO>(contactInfo(c.env, "JOIN")));
+
+/* ── WhatsApp Business Cloud API webhook (Meta → Worker) ── */
+
+/** Meta's subscription check: echo hub.challenge when hub.verify_token matches WA_VERIFY_TOKEN. */
+app.get("/whatsapp/webhook", (c) => {
+  const challenge = verifyChallenge(new URL(c.req.url).searchParams, readWaEnv(c.env).WA_VERIFY_TOKEN);
+  if (challenge === null) return c.text("Forbidden", 403);
+  return c.text(challenge, 200);
+});
+
+const isLocalHost = (url: string) => /^(localhost|127\.0\.0\.1|\[::1\])$/.test(new URL(url).hostname);
+
+/**
+ * Inbound messages and delivery receipts. Signature first (HMAC-SHA256 of the raw body with
+ * WA_APP_SECRET); then 200 at once and do the work in waitUntil, so Meta never times out and retries.
+ */
+app.post("/whatsapp/webhook", async (c) => {
+  const raw = await c.req.arrayBuffer();
+  const secret = readWaEnv(c.env).WA_APP_SECRET;
+  if (secret) {
+    if (!(await verifySignature(raw, c.req.header("X-Hub-Signature-256"), secret))) {
+      throw new AppError(401, "bad_signature", "Invalid X-Hub-Signature-256");
+    }
+  } else if (!isLocalHost(c.req.url)) {
+    // Unsigned webhooks could forge YES/STOP for any number: only allowed on localhost (dev).
+    throw new AppError(503, "whatsapp_not_configured", "WA_APP_SECRET is not set");
+  } else {
+    console.warn("whatsapp webhook: WA_APP_SECRET unset, accepting unsigned payload on localhost");
+  }
+  let payload: unknown = null;
+  try {
+    payload = JSON.parse(new TextDecoder().decode(raw));
+  } catch {
+    return c.text("EVENT_RECEIVED", 200);
+  }
+  const parsed = parseWebhook(payload);
+  if (parsed.messages.length > 0 || parsed.statuses.length > 0) {
+    waitUntil(c, processWebhook(c.env, parsed, { publicUrl: new URL(c.req.url).origin }).catch((err) => console.error("whatsapp webhook failed", err)));
+  }
+  return c.text("EVENT_RECEIVED", 200);
+});
 
 /* ── Audit ledger & demo controls ── */
 

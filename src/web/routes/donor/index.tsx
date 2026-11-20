@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
-import type { DonorDTO } from "../../../shared/api";
+import type { DonorDTO, DonorSignupDTO } from "../../../shared/api";
 import { Button } from "../../components/ui/Button";
 import { ErrorState } from "../../components/ui/EmptyState";
 import { Skeleton } from "../../components/ui/Skeleton";
@@ -28,6 +28,8 @@ export default function DonorView() {
   const [ownId, setOwnId] = useState(readOwnDonorId);
   const [signingUp, setSigningUp] = useState(false);
   const [justJoined, setJustJoined] = useState(false);
+  /** One-time "say hi on WhatsApp" link from a signup that ticked WhatsApp alerts. */
+  const [whatsappJoin, setWhatsappJoin] = useState<DonorSignupDTO["whatsappJoin"]>(undefined);
   const quickJoin = params.get("join") === "1";
   const requested = params.get("donor");
 
@@ -57,7 +59,8 @@ export default function DonorView() {
     }
   }, [ownId, ownExists, personas.data]);
 
-  const onJoined = (donor: DonorDTO, mode: "quick" | "full") => {
+  const onJoined = (donor: DonorSignupDTO, mode: "quick" | "full") => {
+    setWhatsappJoin(donor.whatsappJoin?.waLink ? donor.whatsappJoin : undefined);
     if (mode === "quick") {
       saveOwnDonorId(donor.id);
       setOwnId(donor.id);
@@ -110,6 +113,7 @@ export default function DonorView() {
       // A judge's phone shows only their own profile, without the demo switcher.
       showSwitcher={donorId !== ownId}
       justJoined={justJoined}
+      whatsappJoin={whatsappJoin}
       tab={TABS.find((t) => t === params.get("tab")) ?? "home"}
       onTab={(t) => {
         patchParams({ tab: t });
@@ -139,6 +143,7 @@ interface DonorAppProps {
   personas: DonorDTO[];
   showSwitcher: boolean;
   justJoined: boolean;
+  whatsappJoin: DonorSignupDTO["whatsappJoin"];
   tab: Tab;
   onTab: (tab: Tab) => void;
   onSelect: (donorId: string) => void;
@@ -146,7 +151,7 @@ interface DonorAppProps {
   onSignUp: () => void;
 }
 
-function DonorApp({ donorId, personas, showSwitcher, justJoined, tab, onTab, onSelect, onResetDonor, onSignUp }: DonorAppProps) {
+function DonorApp({ donorId, personas, showSwitcher, justJoined, whatsappJoin, tab, onTab, onSelect, onResetDonor, onSignUp }: DonorAppProps) {
   const donor = useDonor(donorId);
   const alerts = useDonorAlerts(donorId);
   const respond = useRespond(donorId);
@@ -197,7 +202,7 @@ function DonorApp({ donorId, personas, showSwitcher, justJoined, tab, onTab, onS
         footer={<TabBar tab={tab} onChange={onTab} alertCount={pending.length} />}
       >
         {tab === "home" ? (
-          <HomeTab donor={d} pending={pending[0]} justJoined={justJoined} onOpenAlert={takeover.open} />
+          <HomeTab donor={d} pending={pending[0]} justJoined={justJoined} whatsappJoin={whatsappJoin} onOpenAlert={takeover.open} />
         ) : tab === "alerts" ? (
           <AlertsTab
             donor={d}

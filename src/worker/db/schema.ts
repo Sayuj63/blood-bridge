@@ -180,8 +180,18 @@ export const donors = sqliteTable(
     /** E.164 phone number, e.g. +919820012345. */
     contactAddress: text("contact_address"),
     contactOptInAt: integer("contact_opt_in_at"),
+    /**
+     * Single-use click-to-chat code from a web signup with WhatsApp ticked. The donor sends
+     * "JOIN <code>" from WhatsApp, which opens the 24 h service window and links the sender's
+     * number to this profile. Cleared once used. Never returned by public donor reads.
+     */
+    whatsappJoinCode: text("whatsapp_join_code"),
   },
-  (t) => [index("donors_group_idx").on(t.bloodGroup), index("donors_contact_idx").on(t.contactAddress)],
+  (t) => [
+    index("donors_group_idx").on(t.bloodGroup),
+    index("donors_contact_idx").on(t.contactAddress),
+    uniqueIndex("donors_whatsapp_join_code_idx").on(t.whatsappJoinCode),
+  ],
 );
 
 export const donations = sqliteTable(
@@ -315,6 +325,14 @@ export const outbox = sqliteTable(
     /** Alerts go stale: never deliver a request for blood hours late. */
     expiresAt: integer("expires_at"),
     providerMessageId: text("provider_message_id"),
+    /**
+     * WhatsApp Cloud API only: when a business-initiated template went out because the
+     * recipient was outside the 24 h window. The row then waits (pending, far nextAttemptAt)
+     * and its own text is sent as soon as they reply.
+     */
+    templateSentAt: integer("template_sent_at"),
+    /** Latest provider delivery receipt (Cloud API webhook): sent · delivered · read · failed. */
+    deliveryStatus: text("delivery_status").$type<"sent" | "delivered" | "read" | "failed">(),
     sentAt: integer("sent_at"),
     createdAt: integer("created_at").notNull(),
     updatedAt: integer("updated_at").notNull(),
@@ -323,6 +341,7 @@ export const outbox = sqliteTable(
     index("outbox_claim_idx").on(t.status, t.channel, t.nextAttemptAt),
     index("outbox_to_idx").on(t.to, t.createdAt),
     index("outbox_alert_idx").on(t.alertId),
+    index("outbox_provider_msg_idx").on(t.providerMessageId),
   ],
 );
 

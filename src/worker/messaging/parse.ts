@@ -179,3 +179,12 @@ export function detectLanguage(text: string): Language {
 }
 
 export const hasDevanagari = (text: string): boolean => DEVANAGARI.test(text);
+
+/**
+ * "JOIN K7Q2M9": the prefilled click-to-chat message from a web signup. Codes use the
+ * unambiguous id alphabet (no I, L, O, U), so a lone "JOIN" or "join now" never matches.
+ */
+export function parseJoinCode(text: string): string | null {
+  const m = /^\s*join\s*[:#-]?\s*([0-9A-HJKMNP-TV-Z]{6})\s*[.!]?\s*$/i.exec(text);
+  return m ? m[1].toUpperCase() : null;
+}
