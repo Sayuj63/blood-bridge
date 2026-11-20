@@ -42,6 +42,8 @@ export function planTransfers(
   surge: SurgeScenario | null,
   now: number,
   siteNames: Record<string, string> = {},
+  /** Operators can act on a short list; beyond this the plan becomes noise. */
+  maxProposals = 12,
 ): TransferPlan {
   const cells = sites.flatMap((s) => forecastSite(s, surge, now));
   const location = new Map<string, GeoPoint>(sites.map((s) => [s.siteId, s.location]));
@@ -110,8 +112,8 @@ export function planTransfers(
     }
   }
 
-  proposals.sort((a, b) => a.priority - b.priority);
-  return { proposals, before: summarize(cells), after: summarize(applyProposals(sites, proposals, surge, now)) };
+  const top = proposals.sort((a, b) => a.priority - b.priority || b.quantity - a.quantity).slice(0, maxProposals);
+  return { proposals: top, before: summarize(cells), after: summarize(applyProposals(sites, top, surge, now)) };
 }
 
 /** Re-run the forecast as if the proposals were executed — powers the before/after outcome meter. */
