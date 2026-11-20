@@ -73,7 +73,7 @@ describe("ranking", () => {
 
   it("prefers the closer, fresher site among equals and flags stale data", () => {
     const units = (p: string) => [unit(`${p}1`, "O-", 50), unit(`${p}2`, "O-", 60)];
-    const out = rankSites(req, [site("far", 19.2, units("f")), site("stale", 19.045, units("s"), 120), site("near", 19.045, units("n"))]);
+    const out = rankSites(req, [site("far", 19.2, units("f")), site("stale", 19.045, units("s"), 240), site("near", 19.045, units("n"))]);
     expect(out[0].siteId).toBe("near");
     expect(out.find((o) => o.siteId === "stale")!.stale).toBe(true);
   });
@@ -201,5 +201,14 @@ describe("geo", () => {
     const d = haversineKm(SION, { lat: 19.0726, lng: 72.8845 });
     expect(d).toBeGreaterThan(4);
     expect(d).toBeLessThan(5);
+  });
+});
+
+describe("transfer planner safeguards", () => {
+  const rc = (id: string, expiresInH: number) => ({ id, bloodGroup: "O-" as const, component: "red_cells" as const, expiresAt: NOW + expiresInH * HOUR });
+  it("does not strip a donor that would itself run out within 48h", () => {
+    const thin: ForecastSite = { siteId: "THIN", name: "Thin", location: { lat: 19.0, lng: 72.84 }, units: [rc("t1", 500), rc("t2", 500)], baselinePerDay: { "O-|red_cells": 1.5 } };
+    const empty: ForecastSite = { siteId: "EMPTY", name: "Empty", location: { lat: 19.04, lng: 72.86 }, units: [], baselinePerDay: { "O-|red_cells": 2 } };
+    expect(planTransfers([thin, empty], null, NOW).proposals).toHaveLength(0);
   });
 });

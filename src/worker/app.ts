@@ -24,7 +24,7 @@ import { DEMO_ELIGIBILITY_RULES } from "../shared/eligibility";
 import { createDb } from "./db/client";
 import { hubStub, remoteHub, type Deps } from "./deps";
 import { AppError, body } from "./lib/http";
-import { AREAS, CITY } from "./seed";
+import { AREAS, CITY, SNAPSHOT_FETCHED_AT, SURGE_ZONES } from "./seed";
 import * as audit from "./services/audit";
 import { resetDemo } from "./services/demo";
 import * as donors from "./services/donors";
@@ -67,6 +67,8 @@ app.get("/meta", (c) =>
     city: CITY,
     policy: { ...POLICY },
     areas: AREAS,
+    surgeZones: SURGE_ZONES,
+    stockSnapshotAt: SNAPSHOT_FETCHED_AT,
     eligibilityRules: DEMO_ELIGIBILITY_RULES,
     simulated: true,
   }),

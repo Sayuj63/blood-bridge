@@ -189,43 +189,63 @@ export function cityOutlook(cells: CellForecast[]): GroupOutlook[] {
 }
 
 export interface OutcomeSummary {
+  /** Units projected to expire unused within the horizon. */
   expectedWaste: number;
+  /** Units of demand unmet over the whole horizon — what donor drives must close. */
   shortfall: number;
+  /** Units of demand unmet in the next 24h — what transfers can fix right now. */
+  shortfall24h: number;
+  /** (site, group, component) cells that run out within 24h. */
   cellsAtRisk: number;
+  /** Soonest stockout anywhere in the city, hours; null when nothing runs out in the horizon. */
+  earliestStockoutHours: number | null;
 }
 
+/** Whole units of demand a cell cannot meet in the next 24h. */
+const unmet24h = (c: CellForecast) =>
+  c.stockoutHours !== null && c.stockoutHours < 24 ? Math.floor(c.demandPerHour * (24 - c.stockoutHours)) : 0;
+
 export function summarize(cells: CellForecast[]): OutcomeSummary {
+  // Only cells with at least one whole unit of unmet demand count — ignores trickle-demand noise.
+  const atRisk = cells.filter((c) => unmet24h(c) >= 1);
   return {
     expectedWaste: sum(cells.map((c) => c.expectedWaste)),
     shortfall: sum(cells.map((c) => c.shortfall)),
-    cellsAtRisk: cells.filter((c) => c.stockoutHours !== null && c.stockoutHours < 24).length,
+    shortfall24h: sum(atRisk.map(unmet24h)),
+    cellsAtRisk: atRisk.length,
+    earliestStockoutHours: atRisk.length ? Math.min(...atRisk.map((c) => c.stockoutHours!)) : null,
   };
 }
 
-/** Preset scenarios. Multipliers are illustrative demo numbers. */
+/**
+ * Preset scenarios. MODEL ASSUMPTIONS — no published flood-specific blood-usage data exists.
+ * Grounded in data/mumbai/calibration.json `surgeAssumptions`: city-wide demand 2× (base) to
+ * 3× (worst) from mass-casualty literature (Israeli MCI series; Las Vegas 2017 as ceiling).
+ * O-negative carries extra weight because uncrossmatched emergency transfusion starts with it.
+ */
 export const SURGE_PRESETS: Record<SurgeKind, { label: string; radiusKm: number; multipliers: Record<string, number> }> = {
   flood: {
     label: "Flash flood",
-    radiusKm: 6,
+    radiusKm: 4,
     multipliers: {
-      [cellKey("*", "red_cells")]: 3.5,
-      [cellKey("O-", "red_cells")]: 6,
-      [cellKey("O+", "red_cells")]: 5,
-      [cellKey("*", "platelets")]: 3,
-      [cellKey("*", "plasma")]: 3,
-      [cellKey("*", "whole_blood")]: 2.5,
+      [cellKey("*", "red_cells")]: 2,
+      [cellKey("O-", "red_cells")]: 3,
+      [cellKey("O+", "red_cells")]: 2.5,
+      [cellKey("*", "platelets")]: 2,
+      [cellKey("*", "plasma")]: 1.5,
+      [cellKey("*", "whole_blood")]: 1.5,
     },
   },
   mass_casualty: {
     label: "Mass-casualty incident",
-    radiusKm: 4,
+    radiusKm: 3,
     multipliers: {
-      [cellKey("*", "red_cells")]: 5,
-      [cellKey("O-", "red_cells")]: 9,
-      [cellKey("O+", "red_cells")]: 6,
-      [cellKey("*", "platelets")]: 4,
-      [cellKey("*", "plasma")]: 4.5,
-      [cellKey("*", "whole_blood")]: 3,
+      [cellKey("*", "red_cells")]: 3,
+      [cellKey("O-", "red_cells")]: 5,
+      [cellKey("O+", "red_cells")]: 4,
+      [cellKey("*", "platelets")]: 2.5,
+      [cellKey("*", "plasma")]: 3,
+      [cellKey("*", "whole_blood")]: 2,
     },
   },
 };

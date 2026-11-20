@@ -24,8 +24,9 @@ export const COMPONENT_SHORT: Record<Component, string> = {
 };
 
 /**
- * Typical shelf life used ONLY to generate simulated stock.
- * Demo values — not clinical guidance.
+ * Maximum storage life per the Drugs Rules amendment G.S.R. 166(E), 2020
+ * (CPDA-1 whole blood 35 d, additive-solution red cells 42 d, platelets 5 d, FFP 1 yr).
+ * Used to model per-unit expiry; not clinical guidance.
  */
 export const DEMO_SHELF_LIFE_DAYS: Record<Component, number> = {
   whole_blood: 35,
@@ -82,8 +83,11 @@ export interface GeoPoint {
 
 /** Tunable thresholds. Kept in one place so judges can see them in the app. */
 export const POLICY = {
-  /** Stock older than this is "unconfirmed" and the tracker asks for a phone check. */
-  staleAfterMinutes: 60,
+  /**
+   * Stock older than this is "unconfirmed" and the tracker asks for a phone check.
+   * Real e-RaktKosh data for Mumbai banks was 4–22 hours old when we snapshotted it.
+   */
+  staleAfterMinutes: 180,
   /** A blood bank must confirm within this window, else the next-best option is offered. */
   confirmWindowSeconds: 90,
   /** A reserved unit returns to stock if not collected within this window. */

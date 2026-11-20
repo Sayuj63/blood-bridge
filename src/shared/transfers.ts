@@ -37,6 +37,13 @@ export interface TransferPlan {
 /** Units arriving with less than this shelf life left are not worth moving. */
 const MIN_SHELF_ON_ARRIVAL_HOURS = 6;
 
+/**
+ * A donor site keeps enough for its own forecast demand over this window and may lend the rest.
+ * Shorter than the forecast horizon on purpose: a site about to run out in hours outranks a
+ * donor's need on day three, and the donor can be re-supplied by drives in the meantime.
+ */
+export const DONOR_RESERVE_HOURS = 48;
+
 export function planTransfers(
   sites: ForecastSite[],
   surge: SurgeScenario | null,
@@ -46,6 +53,12 @@ export function planTransfers(
   maxProposals = 12,
 ): TransferPlan {
   const cells = sites.flatMap((s) => forecastSite(s, surge, now));
+  // What each site can spare after covering its own next DONOR_RESERVE_HOURS.
+  const donorView = new Map(
+    sites
+      .flatMap((s) => forecastSite(s, surge, now, DONOR_RESERVE_HOURS))
+      .map((c) => [`${c.siteId}|${cellKey(c.bloodGroup, c.component)}`, c]),
+  );
   const location = new Map<string, GeoPoint>(sites.map((s) => [s.siteId, s.location]));
   const unitExpiry = new Map(sites.flatMap((s) => s.units.map((u) => [u.id, u.expiresAt] as const)));
   const locked = new Set(sites.flatMap((s) => s.units.filter((u) => u.locked).map((u) => u.id)));
@@ -63,16 +76,28 @@ export function planTransfers(
       .filter((c) => c.shortfall > 0)
       .sort((a, b) => (a.stockoutHours ?? 999) - (b.stockoutHours ?? 999));
     // Spare stock per donor site: soon-to-expire units first, then idle surplus.
-    const spare = new Map(
-      group.map((c) => [c.siteId, [...c.wasteUnitIds, ...c.surplusUnitIds].filter((id) => !locked.has(id))]),
-    );
     const wasteSet = new Set(group.flatMap((c) => c.wasteUnitIds));
+    // Units that will expire unused are always lendable. Other spare stock only from sites that
+    // cover their own next DONOR_RESERVE_HOURS and run out later than the receiver (no ping-pong).
+    const canLendSurplus = (donor: CellForecast, receiver: CellForecast) =>
+      donor.stockoutHours === null ||
+      (donor.stockoutHours >= DONOR_RESERVE_HOURS && donor.stockoutHours > (receiver.stockoutHours ?? 0));
+    const spare = new Map(
+      group.map((c) => {
+        const d = donorView.get(`${c.siteId}|${cellKey(c.bloodGroup, c.component)}`) ?? c;
+        return [c.siteId, { waste: c.wasteUnitIds.filter((id) => !locked.has(id)), surplus: d.surplusUnitIds.filter((id) => !wasteSet.has(id) && !locked.has(id)) }];
+      }),
+    );
+    const poolFor = (donor: CellForecast, receiver: CellForecast) => {
+      const p = spare.get(donor.siteId)!;
+      return canLendSurplus(donor, receiver) ? [...p.waste, ...p.surplus] : p.waste;
+    };
 
     for (const receiver of receivers) {
       let need = receiver.shortfall;
       const to = location.get(receiver.siteId)!;
       const donors = group
-        .filter((c) => c.siteId !== receiver.siteId && (spare.get(c.siteId)?.length ?? 0) > 0)
+        .filter((c) => c.siteId !== receiver.siteId && poolFor(c, receiver).length > 0)
         .map((c) => ({ cell: c, eta: etaMinutes(location.get(c.siteId)!, to) }))
         // Prefer donors whose stock would otherwise be wasted, then the closest.
         .sort((a, b) => b.cell.expectedWaste - a.cell.expectedWaste || a.eta - b.eta);
@@ -80,12 +105,13 @@ export function planTransfers(
       for (const { cell: donor, eta } of donors) {
         if (need <= 0) break;
         const arrival = now + eta * 60_000;
-        const pool = spare.get(donor.siteId)!;
-        const movable = pool.filter((id) => (unitExpiry.get(id) ?? 0) - arrival > MIN_SHELF_ON_ARRIVAL_HOURS * HOUR);
+        const movable = poolFor(donor, receiver).filter((id) => (unitExpiry.get(id) ?? 0) - arrival > MIN_SHELF_ON_ARRIVAL_HOURS * HOUR);
         const unitIds = movable.slice(0, need);
         if (unitIds.length === 0) continue;
 
-        spare.set(donor.siteId, pool.filter((id) => !unitIds.includes(id)));
+        const taken = spare.get(donor.siteId)!;
+        taken.waste = taken.waste.filter((id) => !unitIds.includes(id));
+        taken.surplus = taken.surplus.filter((id) => !unitIds.includes(id));
         need -= unitIds.length;
         const rescued = unitIds.filter((id) => wasteSet.has(id)).length;
         const soonest = Math.min(...unitIds.map((id) => unitExpiry.get(id)!));

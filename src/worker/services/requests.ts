@@ -245,7 +245,8 @@ export async function confirmReservation(deps: Deps, reservationId: string, unit
   const holdExpiresAt = deps.now + POLICY.reservationHoldMinutes * MINUTE;
   const [updated] = await deps.db
     .update(schema.reservations)
-    .set({ status: "reserved", unitsCount: keep, confirmedAt: deps.now, reservedAt: deps.now, holdExpiresAt, updatedAt: deps.now })
+    // The bank confirming in-system verifies the stock, so no separate phone check is needed.
+    .set({ status: "reserved", unitsCount: keep, confirmedAt: deps.now, reservedAt: deps.now, holdExpiresAt, requiresPhoneConfirm: false, updatedAt: deps.now })
     .where(and(eq(schema.reservations.id, reservationId), eq(schema.reservations.status, "requested")))
     .returning();
   if (!updated) throw conflict("Reservation changed — refresh and try again");

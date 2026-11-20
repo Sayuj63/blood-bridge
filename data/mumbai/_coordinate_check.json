@@ -1,0 +1,346 @@
+[
+  {
+    "id": "bb-kem-parel",
+    "datagovin": [
+      19.001515,
+      72.841877
+    ],
+    "osm": [
+      19.0017556,
+      72.8422348
+    ],
+    "distance_m": 46,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-tata-memorial-parel",
+    "datagovin": [
+      19.004856,
+      72.842945
+    ],
+    "osm": [
+      19.005036,
+      72.8436148
+    ],
+    "distance_m": 73,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-wadia-parel",
+    "datagovin": [
+      19.003238,
+      72.842837
+    ],
+    "osm": [
+      19.0033837,
+      72.842727
+    ],
+    "distance_m": 20,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-ltmgh-sion",
+    "datagovin": [
+      19.036984,
+      72.859049
+    ],
+    "osm": [
+      19.0369599,
+      72.8593138
+    ],
+    "distance_m": 28,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-somaiya-sion",
+    "datagovin": [
+      19.047282,
+      72.874706
+    ],
+    "osm": [
+      19.0473349,
+      72.8746507
+    ],
+    "distance_m": 8,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-nair-mumbai-central",
+    "datagovin": [
+      18.974279,
+      72.822573
+    ],
+    "osm": [
+      18.9744186,
+      72.8220378
+    ],
+    "distance_m": 58,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-jj-byculla",
+    "datagovin": [
+      18.962909,
+      72.833639
+    ],
+    "osm": [
+      18.963434,
+      72.833814
+    ],
+    "distance_m": 61,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-saifee-charni-road",
+    "datagovin": [
+      18.952471,
+      72.818058
+    ],
+    "osm": [
+      18.9522583,
+      72.8185882
+    ],
+    "distance_m": 61,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-shushrusha-dadar",
+    "datagovin": [
+      19.023426,
+      72.837899
+    ],
+    "osm": [
+      19.0233474,
+      72.8378816
+    ],
+    "distance_m": 9,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-hinduja-mahim",
+    "datagovin": [
+      19.033615,
+      72.838105
+    ],
+    "osm": [
+      19.0333696,
+      72.8381968
+    ],
+    "distance_m": 29,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-raheja-mahim",
+    "datagovin": [
+      19.046572,
+      72.842207
+    ],
+    "osm": [
+      19.0464145,
+      72.8425392
+    ],
+    "distance_m": 39,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-lilavati-bandra",
+    "datagovin": [
+      19.051089,
+      72.828889
+    ],
+    "osm": null,
+    "distance_m": null,
+    "used": "datagovin",
+    "flag": false
+  },
+  {
+    "id": "bb-holy-family-bandra",
+    "datagovin": [
+      19.055059,
+      72.827202
+    ],
+    "osm": [
+      19.0551005,
+      72.8273311
+    ],
+    "distance_m": 14,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-nanavati-vile-parle",
+    "datagovin": [
+      19.095831,
+      72.840101
+    ],
+    "osm": [
+      19.0959939,
+      72.8402942
+    ],
+    "distance_m": 27,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-cooper-juhu",
+    "datagovin": [
+      19.107714,
+      72.835618
+    ],
+    "osm": [
+      19.1078504,
+      72.8359866
+    ],
+    "distance_m": 42,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-goenka-andheri",
+    "datagovin": [
+      19.119457,
+      72.844948
+    ],
+    "osm": [
+      19.1194121,
+      72.8450592
+    ],
+    "distance_m": 13,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-holy-spirit-andheri",
+    "datagovin": [
+      19.128442,
+      72.866496
+    ],
+    "osm": [
+      19.1287125,
+      72.8665718
+    ],
+    "distance_m": 31,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-sevenhills-marol",
+    "datagovin": [
+      19.117797,
+      72.87809
+    ],
+    "osm": [
+      19.1183451,
+      72.8781456
+    ],
+    "distance_m": 61,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-meenatai-goregaon",
+    "datagovin": [
+      19.159649,
+      72.840284
+    ],
+    "osm": [
+      19.1593521,
+      72.8403801
+    ],
+    "distance_m": 35,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-suburban-malad",
+    "datagovin": [
+      19.183781,
+      72.849166
+    ],
+    "osm": [
+      19.1836973,
+      72.8492032
+    ],
+    "distance_m": 10,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-rajawadi-ghatkopar",
+    "datagovin": [
+      19.079304,
+      72.901693
+    ],
+    "osm": [
+      19.0786258,
+      72.901344
+    ],
+    "distance_m": 84,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-anviksha-ghatkopar",
+    "datagovin": [
+      19.082389,
+      72.904481
+    ],
+    "osm": [
+      19.0823394,
+      72.9044782
+    ],
+    "distance_m": 6,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-hiranandani-powai",
+    "datagovin": [
+      19.120591,
+      72.917105
+    ],
+    "osm": null,
+    "distance_m": null,
+    "used": "datagovin",
+    "flag": false
+  },
+  {
+    "id": "bb-arpan-bhandup",
+    "datagovin": [
+      19.142653,
+      72.933304
+    ],
+    "osm": [
+      19.142609,
+      72.9333776
+    ],
+    "distance_m": 9,
+    "used": "osm",
+    "flag": false
+  },
+  {
+    "id": "bb-fortis-mulund",
+    "datagovin": [
+      19.162122,
+      72.942063
+    ],
+    "osm": [
+      19.1619605,
+      72.942005
+    ],
+    "distance_m": 19,
+    "used": "osm",
+    "flag": false
+  }
+]

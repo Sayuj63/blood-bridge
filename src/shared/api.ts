@@ -428,6 +428,10 @@ export interface MetaDTO {
   city: string;
   policy: Record<string, number>;
   areas: AreaDTO[];
+  /** Real documented flood spots where a simulated surge can be centred. */
+  surgeZones: AreaDTO[];
+  /** When the real e-RaktKosh stock snapshot behind the demo was taken. */
+  stockSnapshotAt: number;
   eligibilityRules: { minDaysBetweenDonations: number };
   simulated: true;
 }

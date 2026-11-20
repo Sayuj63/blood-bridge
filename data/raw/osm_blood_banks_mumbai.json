@@ -1,0 +1,1344 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-20T17:12:36Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 3232946142,
+  "lat": 19.1688883,
+  "lon": 72.9454075,
+  "tags": {
+    "addr:city": "Mulund (West)",
+    "addr:postcode": "400080",
+    "name": "Pooja Blood Bank"
+  }
+},
+{
+  "type": "node",
+  "id": 6880996884,
+  "lat": 19.1836973,
+  "lon": 72.8492032,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Shagun Building, 2nd Floor, 206, Rani Sati Road, Malad (E)",
+    "addr:postcode": "400097",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9004437823",
+    "contact:phone": "02228714060; 02228714070",
+    "name": "Suburban Hi-tech Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057789,
+  "lat": 19.1997714,
+  "lon": 72.8460771,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "3, 4, 5, Vithal Apartment, Near Ram Mandir, Mandpeshwar Road, Opposite, Flyover, Borivali (w)",
+    "addr:postcode": "400103",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9821052413",
+    "contact:phone": "02228936203; 02228935219",
+    "name": "Borivali Blood Bank (Doshi Memorial Charitable Trust)",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057795,
+  "lat": 19.2413697,
+  "lon": 72.8548828,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "S. V. P. Road, Borivali-W, Mumbai",
+    "addr:postcode": "400103",
+    "addr:state": "Maharashtra",
+    "contact:mobile": "9820368493",
+    "contact:phone": "02228932461; 02228932462; 02228932463",
+    "healthcare": "blood_donation",
+    "name": "Harilal Bhagwati Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057798,
+  "lat": 19.0172597,
+  "lon": 72.8482195,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Imperial Mahal, 2nd Floor Above Shabana Stores, Khodadad Circle, Dr. B. A. Ambedkar Road, Dadar TT, Mumbai",
+    "addr:postcode": "400014",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "+91-98200-00236",
+    "contact:phone": "+91-22-2415-4826;+91-22-2415-4827",
+    "healthcare": "blood_bank",
+    "level": "2",
+    "name": "Ashirwad Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057801,
+  "lat": 19.1192195,
+  "lon": 72.8673363,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Room No. 20/A, 1st Floor, ESIC Model Hospital cum ODC & PGIMSR, Central Road, M.I.D.C, Opposite to MIDC Police Station, Andheri (East), Mumbai",
+    "addr:postcode": "400093",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "8691853888",
+    "contact:phone": "2228321361",
+    "email": "esicbloodbank.andheri93@gmail.com",
+    "name": "ESIC Model Hospital cum ODC Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057802,
+  "lat": 19.1352022,
+  "lon": 72.8481451,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "CTS NO-167 / 168 / A1, 101-104, Grace Plaza, S. V. Road, Near Railway Phatak, Jogeshwari (W), Mumbai",
+    "addr:postcode": "400102",
+    "addr:state": "Maharashtra",
+    "contact:mobile": "9833832271",
+    "contact:phone": "2226784546",
+    "leisure": "park",
+    "name": "Manas Serological Institute Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057807,
+  "lat": 19.1194121,
+  "lon": 72.8450592,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Rotary D. G. Goenka Blood Bank, Near Railway Station Andheri (W), Mumbai",
+    "addr:postcode": "400058",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-12",
+    "contact:mobile": "9819456505",
+    "contact:phone": "02266487576; 02266487577; 02266487578; 02226283557",
+    "fax": "022 26714000",
+    "name": "B.S.E.S M.G. Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "https://www.globalhospitalmumbai.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057808,
+  "lat": 19.1078504,
+  "lon": 72.8359866,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "North south Road No. 1, Juhu, Vile-Parle (W), Mumbai",
+    "addr:postcode": "400056",
+    "addr:state": "Maharashtra",
+    "amenity": "hospital",
+    "contact:mobile": "9987063770",
+    "contact:phone": "02226242609; 02226247254; 02226247255; 02226247256",
+    "fax": "022 26205897",
+    "healthcare": "hospital",
+    "name": "Dr. R. N. Cooper General Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057809,
+  "lat": 19.0959939,
+  "lon": 72.8402942,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Dr Balabhai Nanavati Hospital, S V Road, Vile Parle (W), Mumbai",
+    "addr:postcode": "400056",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:phone": "02226119924; 02226182255; 02226267500",
+    "name": "Kapoorben Vasanji Lathiya Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057810,
+  "lat": 19.0789269,
+  "lon": 72.8450595,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "T. P. S. II, 11th Road, Santacruz (E) Mumbai",
+    "addr:postcode": "400055",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820618132",
+    "contact:phone": "02226182081;022357022;02226151506",
+    "fax": "022 26151506",
+    "name": "V. N. Desai Municipal General Hospital Blood Bank",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057811,
+  "lat": 19.0654794,
+  "lon": 72.8608158,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "ICICI Tower, Bandra Kurla Complex, Bandra (E), Mumbai",
+    "addr:postcode": "400051",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820434775",
+    "contact:phone": "02266986666;02226508487",
+    "fax": "022 66986506",
+    "name": "Asian Heart Institute and Research Center",
+    "opening_hours": "24/7",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057813,
+  "lat": 19.0786258,
+  "lon": 72.9013440,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Seth V. C. Gandhi and M. A. Vora M, Rajawadi, Ghatkopar-(E), Mumbai",
+    "addr:postcode": "400077",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9892784878",
+    "contact:phone": "2221025611",
+    "fax": "022 21027372",
+    "name": "Rajawadi Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057814,
+  "lat": 19.0823394,
+  "lon": 72.9044782,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Paras Darshan, M. G. Road, Ghatkopar, (E) Mumbai",
+    "addr:postcode": "400077",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820635253",
+    "contact:phone": "02221026290; 02221025927",
+    "fax": "022 21025927",
+    "name": "Anviksha Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057815,
+  "lat": 19.0896306,
+  "lon": 72.9070558,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Office Building, 2nd Floor, Sarvodaya Hospital, LBS Marg, Ghatkopar (W), Mumbai",
+    "addr:postcode": "400086",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9594032520",
+    "contact:phone": "02225102511; 02225100100",
+    "fax": "022 25111313",
+    "name": "Sarvodaya Hospital Samarpan Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057817,
+  "lat": 19.1426090,
+  "lon": 72.9333776,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Aniraj Tower, Janta Market, L.B.S Marg, Bhandup (W), Mumbai",
+    "addr:postcode": "400078",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9423696022",
+    "contact:phone": "02225951044; 02225941142",
+    "fax": "022 67417980",
+    "name": "Matoshri Valbai Mulji Shah - Arpan Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "http://www.arpanbloodbank.org"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057819,
+  "lat": 19.1619605,
+  "lon": 72.9420050,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mulund Goregaon Link Road, Nahur , Mumbai",
+    "addr:postcode": "400078",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9519298226",
+    "contact:phone": "02267994370; 02243654374",
+    "email": "bloodbank.mul@fortishealthcare.com",
+    "name": "Fortis Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "private",
+    "source": "OpenGovernmentData",
+    "website": "https://www.fortishealthcare.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057820,
+  "lat": 19.1753133,
+  "lon": 72.9512130,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Dr. R. P. Road, Mulund (W), Mumbai",
+    "addr:postcode": "400080",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "09869685857; 09930468583",
+    "contact:phone": "02225640767; 02225605730",
+    "fax": "022 25605728",
+    "name": "M. T. Agarwal Municipal General Hospital Blood Bank",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057826,
+  "lat": 19.1946901,
+  "lon": 72.9528531,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Tssia House, Road No. P 26/T, Road-16, Next to Thane Janata Sahakari Bank, Behind the Petrol Pump, Wagle Estate, Thane (W)",
+    "addr:postcode": "400604",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9225630689",
+    "email": "sunilmundhe7@gmail.com",
+    "name": "Lokmanya TSSIA Blood Bank Thane",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057837,
+  "lat": 19.1926965,
+  "lon": 72.9866758,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Thane Belapur Road, Kalwa, Thane",
+    "addr:postcode": "400605",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9757223723",
+    "contact:phone": "02225347784; 02225347785; 02225347786; 02225372777; 02225347791",
+    "name": "Chhatrapati Shivaji Maharaj Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057838,
+  "lat": 19.1984821,
+  "lon": 72.9777695,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "Thane",
+    "addr:full": "Civil Hospital, 1st Floor, Tembhi Naka, Thane (W)",
+    "addr:postcode": "400601",
+    "addr:state": "Maharashtra",
+    "alt_name": "Vitthal Sayanna General Hospital's Blood Bank",
+    "amenity": "blood_bank",
+    "contact:mobile": "09987034616; 09987896601; 09773694595",
+    "contact:phone": "02225472582; 02225471409; 02225471409",
+    "name": "Civil Hospital's Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057839,
+  "lat": 19.2007453,
+  "lon": 72.9749740,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Swargiya Dharmvir Anand Dighe Sankool, Tika No-10, Near Vikas Palm, Dr. Ambedkar Road, Thane (W)",
+    "addr:postcode": "421302",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9867997507",
+    "contact:phone": "02225374000; 02225375000; 02225376000",
+    "name": "Blood Line Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057840,
+  "lat": 19.1878392,
+  "lon": 72.9673424,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "1st Floor, Satyam Apartment, M.G. Road, Jeevan Jyot Hospital, Near Naupada Police Station, Thane (W)",
+    "addr:postcode": "400602",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9892523533",
+    "contact:phone": "02225380787; 02225411773",
+    "name": "Vaidhya Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057841,
+  "lat": 19.2099830,
+  "lon": 72.9780678,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Gokhale Road, Naupada, Near Dr.Mhaskar Hospital, Thane (W)",
+    "addr:postcode": "400602",
+    "addr:state": "Maharashtra",
+    "contact:mobile": "9820040536",
+    "contact:phone": "02225400425;02225339495",
+    "fixme": "Map marker at incorrect location.",
+    "healthcare": "blood_donation",
+    "name": "Navjeevan Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057843,
+  "lat": 19.1900392,
+  "lon": 72.9715642,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Ghantali Mandir Road, Vishnu Nagar, Naupada, Thane",
+    "addr:postcode": "400602",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9370404438",
+    "contact:phone": "02225385248; 02225392440",
+    "name": "Kai Wamanrao Oak Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057845,
+  "lat": 19.0831987,
+  "lon": 72.9963478,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "General Hospital Vashi, Near Saint Mary Church, Sector-10, Vashi, Navi Mumbai",
+    "addr:postcode": "400705",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "09324292615; 09920644868",
+    "contact:phone": "02227888750; 02227899906",
+    "name": "Navi Mumbai Municipal Corporation Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6881057850,
+  "lat": 19.0233474,
+  "lon": 72.8378816,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "698-B Ranade Road, Dadar, Mumbai",
+    "addr:postcode": "400028",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9022240366",
+    "contact:phone": "02224469579; 02225288698",
+    "name": "Shushrusha Citizens Co-operative Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803643,
+  "lat": 19.1311300,
+  "lon": 72.8252953,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "4 Bunglows, Achutrao Patwardhan Marg, Andheri (west), Mumbai",
+    "addr:postcode": "400053",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9320070111",
+    "contact:phone": "02230900900; 02230972030",
+    "name": "Kokilaben Dhirubhai Ambani Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803644,
+  "lat": 18.9552278,
+  "lon": 72.8159706,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Parekh House, Ground Floor, Mama Parmanand Marg, Mumbai",
+    "addr:postcode": "400004",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820070001",
+    "contact:phone": "2223691297",
+    "fax": "022 23610912",
+    "name": "Hematology Laboratory Blood Bank",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803646,
+  "lat": 19.1593521,
+  "lon": 72.8403801,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Siddharth Nagar, Prabhodhan Kridabhawan Marg, Goregaon(W)",
+    "addr:postcode": "400104",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9320918214",
+    "contact:phone": "02228797586; 02228797587; 02228722929",
+    "name": "Meenatai Thackeray Blood Bank - Siddharth Hospital",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803647,
+  "lat": 19.1287125,
+  "lon": 72.8665718,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mahakali Road, Andheri (E), Mumbai",
+    "addr:postcode": "400093",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9869449892",
+    "contact:phone": "02228200353; 02228248505",
+    "name": "Holy Spirit Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "https://www.holyspirithospital.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803648,
+  "lat": 19.1183451,
+  "lon": 72.8781456,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Blood Bank, 2nd Floor, Block-16, Seven Hills Hospital, Survey No.155, 156, 162-168 Part, Marol - Maroshi Road, Andheri (E), Mumbai",
+    "addr:postcode": "400059",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820339204",
+    "contact:phone": "2267676719",
+    "name": "Seven Hills Health Care Private Limited Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803649,
+  "lat": 19.0427864,
+  "lon": 72.9148060,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "BARC Hospital, Anushakti Nagar Mumbai",
+    "addr:postcode": "400094",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9619920707",
+    "contact:phone": "02225598353; 02225598361; 02225558494",
+    "fax": "022 25506944",
+    "name": "Bhabha Atomic Research Centre Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803650,
+  "lat": 19.0473349,
+  "lon": 72.8746507,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Somaiya Ayurvihar Complex, Eastern Express Highway, Sion, Mumbai",
+    "addr:postcode": "400022",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9819426169",
+    "contact:phone": "02224024671; 02224020946; 02224091855",
+    "name": "K. J. Somaiya Medical College and Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803651,
+  "lat": 19.0323769,
+  "lon": 72.8596263,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Plot No. 96, Road No.31, King Circle Sion, (E) Mumbai",
+    "addr:postcode": "400022",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9987020981",
+    "contact:phone": "02224035454; 02224094732",
+    "fax": "022 24094732",
+    "name": "S. R. Mehta and Sir. K.P. Cardiac Institute Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803652,
+  "lat": 19.0369599,
+  "lon": 72.8593138,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "O. P. D. Building, 1st Floor, Sion (W), Mumbai",
+    "addr:postcode": "400022",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-20",
+    "contact:mobile": "9892245254",
+    "contact:phone": "02224021771; 02224063494; 02224063489",
+    "fax": "022 24021771",
+    "name": "Lokmanya Tilak Municipal Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803654,
+  "lat": 19.0551005,
+  "lon": 72.8273311,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Saint Andrews Road, Bandra, Mumbai",
+    "addr:postcode": "400050",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9892845140",
+    "contact:phone": "02230610300; 02230610555; 02226518373",
+    "fax": "022 26403219",
+    "name": "Bandra Holy Family Hospital Society Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "http://www.bandraholyfamilyhospital.org"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803655,
+  "lat": 19.0575052,
+  "lon": 72.8336263,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "R. K. Patkar Marg, Bandra (W), Mumbai",
+    "addr:postcode": "400050",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820076632",
+    "contact:phone": "02226422541; 02226422775; 02226405226",
+    "fax": "022 26405226",
+    "name": "K. B. Bhabha General Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803657,
+  "lat": 19.0464145,
+  "lon": 72.8425392,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mahim, Raheja Rugnalaya Marg, Mumbai",
+    "addr:postcode": "400016",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9821241031",
+    "contact:phone": "02224445528; 02266529682; 02224449418",
+    "name": "S. L. Raheja Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803658,
+  "lat": 19.0333696,
+  "lon": 72.8381968,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Veer Savarkar Road, Mahim (W), Mumbai",
+    "addr:postcode": "400016",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820606355",
+    "contact:phone": "02224447308; 02224447309; 02224447310",
+    "fax": "022 24447310",
+    "name": "P. D. Hinduja National Hospital And Medical Research Centre Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "https://www.hindujahospital.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803659,
+  "lat": 19.0050360,
+  "lon": 72.8436148,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "5th Floor, Service Block, Dr. E. Borges Road, Parel, Mumbai",
+    "addr:postcode": "400012",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820340073",
+    "contact:phone": "02224177000; 02224127096(Extn.4682; 4684)",
+    "fax": "022 24146937",
+    "name": "Tata Memorial Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData",
+    "website": "http://www.tmc.gov.in"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803660,
+  "lat": 19.0033837,
+  "lon": 72.8427270,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Acharya Donde Marg, Parel, Mumbai",
+    "addr:postcode": "400012",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-20",
+    "contact:mobile": "9004362229",
+    "contact:phone": "02224165638; 02224146963; 02224146964; 02224146965; (Extn124)",
+    "email": "wadiabloodbank@gmail.com",
+    "name": "N. Wadia Maternity Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "http://www.nowrosjeewadiamaternityhospital.com"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803661,
+  "lat": 19.0017556,
+  "lon": 72.8422348,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Acharya Donde Marg, Parel, Mumbai",
+    "addr:postcode": "400012",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-20",
+    "contact:mobile": "9869104114",
+    "contact:phone": "02224107421; 02224107246; 02224107249; 02224107000",
+    "fax": "022 24135189",
+    "name": "K. E. M. Hospital's Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803662,
+  "lat": 18.9993387,
+  "lon": 72.8407690,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "No. 35, Dr. Ernest Borges Road, Hospital Avenue, Opposite to Shirodkar High School, Parel, Mumbai",
+    "addr:postcode": "400012",
+    "addr:state": "Maharashtra",
+    "addr:street": "Dr Ernest Borges Marg",
+    "contact:mobile": "9820168514",
+    "contact:phone": "02267670101;02267670342",
+    "fax": "022 67670121",
+    "healthcare": "blood_donation",
+    "name": "Gleneagles Hospital Blood Bank - Mumbai",
+    "opening_hours": "24/7",
+    "operator:type": "private",
+    "source": "OpenGovernmentData",
+    "website": "https://www.gleneagleshospitals.co.in"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803663,
+  "lat": 18.9410923,
+  "lon": 72.8281760,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "12, New Marine Lines Mumbai",
+    "addr:postcode": "400020",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820302628",
+    "contact:phone": "2222067676",
+    "fax": "022 22080871",
+    "name": "Bombay Hospital Trust Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803664,
+  "lat": 18.9420805,
+  "lon": 72.8324126,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mahapalika Marg, Mumbai CST",
+    "addr:postcode": "400001",
+    "addr:state": "Maharashtra",
+    "check_date": "2026-03-12",
+    "contact:mobile": "9867798441",
+    "contact:phone": "02222611667;02222611654;02222611647(Extn.319);02222611648",
+    "fax": "022 22621197",
+    "healthcare": "hospital",
+    "name": "Cama and Albles Hospital - Abdul Fazalbhoy Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803673,
+  "lat": 18.9451197,
+  "lon": 72.8320639,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:postcode": "400001",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "7738645537",
+    "contact:phone": "02222031111;02222621468(Extn.1351)",
+    "fax": "022 22630553",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803674,
+  "lat": 18.9633427,
+  "lon": 72.8325105,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Sir J.J Mahanagar Raktapedhi, F. D. Petit Building, J.J.Campus, J. J. Road, Byculla, Mumbai",
+    "addr:postcode": "400008",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "8275001905",
+    "contact:phone": "02223735585;02223733531",
+    "fax": "022 23733338",
+    "healthcare": "blood_bank",
+    "name": "Sir J.J.Mahanagar Rakthapedhi",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "http://www.mahasbtc.com"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803675,
+  "lat": 18.9634340,
+  "lon": 72.8338140,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Main Building, Ground Floor, Sir J. J. Hospital, Byculla, Mumbai",
+    "addr:postcode": "400008",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9322106373",
+    "contact:phone": "02223735555; 02223739400(Extn.2248; 2238)",
+    "fax": "022 23735599",
+    "name": "Sir J.J.Group of Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData",
+    "website": "https://gmcjjh.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803676,
+  "lat": 18.9709270,
+  "lon": 72.8366116,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Aga Hall, Nesbit Road, Mazgaon, Mumbai",
+    "addr:postcode": "400010",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9821035341",
+    "contact:phone": "02223777934; 02223777936; 02223777800; 02223777907; 02223777908",
+    "fax": "022 23743820",
+    "name": "Prince Aly Khan Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803677,
+  "lat": 18.9743259,
+  "lon": 72.8362817,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Sant Savta Marg, Byculla (E)",
+    "addr:postcode": "400027",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "8879231091",
+    "contact:phone": "2223700715",
+    "email": "bloodbankmasina@gmail.com; bloodbankmasina@rediffmail.com",
+    "name": "Masina Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "https://www.masinahospital.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803678,
+  "lat": 18.9744186,
+  "lon": 72.8220378,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "New OPD Building. 2nd Floor, Dr. A. L. Nair Road Mumbai Central, Mumbai",
+    "addr:postcode": "400008",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-20",
+    "contact:mobile": "9820887694",
+    "contact:phone": "02223027644; 02223027645; 02223098150",
+    "fax": "022 23072663",
+    "name": "B. Y. L. Nair Hospital's Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803680,
+  "lat": 18.9726392,
+  "lon": 72.8043044,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "60 A, Bhulabhai Desai Road, Mumbai",
+    "addr:postcode": "400026",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9820286291",
+    "contact:phone": "02223667811; 02223872666",
+    "fax": "022 23632520, 022 23672666",
+    "name": "Breach Candy Hospital And Research Centre Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData",
+    "website": "https://www.breachcandyhospital.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803681,
+  "lat": 18.9686752,
+  "lon": 72.8086455,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "B.Petit Road, Cumballa Hill, Mumbai",
+    "addr:postcode": "400036",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9323570506",
+    "contact:phone": "02261186190; 02261186192; 02261186333",
+    "fax": "022 61186333",
+    "name": "The B.D. Petit Parsee General Hospital Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803686,
+  "lat": 18.9408602,
+  "lon": 72.8378119,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Saint George Hospital, Behind General Post Office, P. D Mello Road, Fort, Mumbai",
+    "addr:postcode": "400001",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9867993451",
+    "contact:phone": "02222621420; 02222620242(Extn.1431)",
+    "fax": "022 22624464",
+    "name": "Saint George Hospital & Regional Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData",
+    "website": "https://www.stgeorgeshospital.in/"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803695,
+  "lat": 18.9008104,
+  "lon": 72.8162804,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Near R. C. Church, Colaba, Mumbai",
+    "addr:postcode": "400005",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9819069863",
+    "contact:phone": "02222151666(Extn.3764)",
+    "name": "INS - Ashwini Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6884803721,
+  "lat": 18.9522583,
+  "lon": 72.8185882,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "15/17, Maharishi Karve Marg, Opposite to Charni Road Station Mumbai",
+    "addr:postcode": "400004",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9869784307",
+    "contact:phone": "2267571140",
+    "fax": "022 67570777",
+    "name": "Saifee Hospital Trust Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6898546037,
+  "lat": 18.9971120,
+  "lon": 72.8429469,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mumbai",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "check_date": "2026-03-20",
+    "name": "ESI-PGIMSR, MGM Hospital Blood Bank",
+    "operator:type": "government",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6898546100,
+  "lat": 18.9635278,
+  "lon": 72.8088292,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "93-95, August Kranti Maidan, Mumbai",
+    "addr:postcode": "400036",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:mobile": "9821097083",
+    "contact:phone": "02223803674; 02223803336; 02223514740; 02223511551",
+    "name": "Cumbala Hill Hospital And Heart Institute Blood Bank",
+    "opening_hours": "24/7",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6905009808,
+  "lat": 18.9656814,
+  "lon": 72.8134373,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Tukaram Javji Road, Tardeo, Mumbai",
+    "addr:postcode": "400007",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:phone": "02266660656; 02266660032",
+    "name": "Bhatia General Hospital and Blood Bank",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6905009809,
+  "lat": 19.0127566,
+  "lon": 72.8612316,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Nadkarni Park, Wadala (E) Mumbai",
+    "addr:postcode": "400037",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:phone": "02266567722; 0224145115",
+    "name": "Mumbai Port Trust Blood Bank",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6905279293,
+  "lat": 19.0434481,
+  "lon": 72.8646031,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mumbai",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "name": "M/s Sion Blood Bank",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6905530290,
+  "lat": 18.9802476,
+  "lon": 72.8336397,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Central Railway Byculla, (E) Mumbai",
+    "addr:postcode": "400027",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "contact:phone": "02223791964; 02223717246; 02267452926; 02267452950; 02223726588",
+    "name": "Dr. Babasaheb Ambedkar Memorial Hospital - Central Railway Hospital Blood Bank",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6906212025,
+  "lat": 19.2218122,
+  "lon": 72.9772130,
+  "tags": {
+    "addr:city": "Thane",
+    "addr:district": "THANE",
+    "addr:full": "Thane",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "name": "M/s. Triumph Foundations Triumph Blood Bank",
+    "operator:type": "ngo",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 6906212035,
+  "lat": 19.0493125,
+  "lon": 72.9110965,
+  "tags": {
+    "addr:city": "Mumbai",
+    "addr:district": "MUMBAI",
+    "addr:full": "Mumbai",
+    "addr:state": "Maharashtra",
+    "amenity": "blood_bank",
+    "name": "M/s. Pallavi Blood Bank",
+    "operator:type": "private",
+    "source": "OpenGovernmentData"
+  }
+},
+{
+  "type": "node",
+  "id": 9828613569,
+  "lat": 19.0948349,
+  "lon": 73.0059461,
+  "tags": {
+    "healthcare": "blood_donation"
+  }
+}
+
+  ]
+}

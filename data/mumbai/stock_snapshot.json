@@ -1,0 +1,1311 @@
+{
+  "fetchedAt": "2026-11-20T17:16:07Z",
+  "source": "e-RaktKosh (MoHFW / NBTC) public Blood Availability endpoint https://eraktkosh.mohfw.gov.in/BLDAHIMS/bloodbank/nearbyBB.cnt?hmode=GETNEARBYSTOCKDETAILS (stateCode=27, districtCode=519/518, bloodGroup=all)",
+  "unit": "units (bags) reported available by the blood centre",
+  "componentMapping": {
+    "whole_blood": [
+      "Whole Blood"
+    ],
+    "red_cells": [
+      "Packed Red Blood Cells",
+      "Sagm Packed Red Blood Cells",
+      "Leukoreduced Rbc",
+      "Irradiated RBC"
+    ],
+    "platelets": [
+      "Random Donor Platelets",
+      "Platelet Concentrate",
+      "Single Donor Platelet"
+    ],
+    "plasma": [
+      "Fresh Frozen Plasma",
+      "Plasma",
+      "Single Donor Plasma"
+    ],
+    "excluded": [
+      "Cryoprecipitate",
+      "Cryo Poor Plasma",
+      "Platelet Rich Plasma",
+      "Oh+/Oh- (Bombay phenotype)"
+    ]
+  },
+  "bankLastUpdatedIST": {
+    "bb-kem-parel": "2026-11-20 10:04:32",
+    "bb-tata-memorial-parel": "2026-11-20 09:58:11",
+    "bb-wadia-parel": "2026-11-20 09:43:51",
+    "bb-ltmgh-sion": "2026-11-20 10:09:32",
+    "bb-somaiya-sion": "2026-11-20 08:52:29",
+    "bb-nair-mumbai-central": "2026-11-20 11:26:30",
+    "bb-jj-byculla": "2026-11-20 10:11:27",
+    "bb-saifee-charni-road": "2026-11-20 08:23:48",
+    "bb-shushrusha-dadar": "2026-11-20 10:27:12",
+    "bb-hinduja-mahim": "2026-11-20 09:21:09",
+    "bb-raheja-mahim": "2026-11-20 08:39:37",
+    "bb-lilavati-bandra": "2026-11-20 09:26:33",
+    "bb-holy-family-bandra": "2026-11-20 08:18:34",
+    "bb-nanavati-vile-parle": "2026-11-20 09:48:35",
+    "bb-cooper-juhu": "2026-11-20 18:56:10",
+    "bb-goenka-andheri": "2026-11-20 07:30:33",
+    "bb-holy-spirit-andheri": "2026-11-20 09:58:00",
+    "bb-sevenhills-marol": "2026-11-20 06:46:09",
+    "bb-meenatai-goregaon": "2026-11-20 07:25:42",
+    "bb-suburban-malad": "2026-11-20 10:08:28",
+    "bb-rajawadi-ghatkopar": "2026-11-20 00:39:15",
+    "bb-anviksha-ghatkopar": "2026-11-20 08:01:13",
+    "bb-hiranandani-powai": "2026-11-20 09:33:09",
+    "bb-arpan-bhandup": "2026-11-20 18:56:09",
+    "bb-fortis-mulund": "2026-11-20 10:34:52"
+  },
+  "banks": {
+    "bb-kem-parel": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 9,
+        "plasma": 10
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 10,
+        "platelets": 5,
+        "plasma": 7
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 5,
+        "plasma": 5
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 1,
+        "plasma": 3
+      }
+    },
+    "bb-tata-memorial-parel": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 48,
+        "platelets": 25,
+        "plasma": 0
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 43,
+        "platelets": 22,
+        "plasma": 0
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 2,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 14,
+        "platelets": 16,
+        "plasma": 0
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 2,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 4,
+        "plasma": 0
+      }
+    },
+    "bb-wadia-parel": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 12
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 8,
+        "platelets": 0,
+        "plasma": 27
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 9
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 11,
+        "platelets": 0,
+        "plasma": 38
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 9
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 6,
+        "platelets": 0,
+        "plasma": 33
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 6,
+        "platelets": 0,
+        "plasma": 21
+      }
+    },
+    "bb-ltmgh-sion": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 1,
+        "plasma": 78
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 55,
+        "platelets": 21,
+        "plasma": 230
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 59
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 35,
+        "platelets": 0,
+        "plasma": 210
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 1,
+        "plasma": 50
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 32,
+        "platelets": 4,
+        "plasma": 100
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 1,
+        "plasma": 75
+      }
+    },
+    "bb-somaiya-sion": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 9
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 15,
+        "platelets": 0,
+        "plasma": 106
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 24
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 22,
+        "platelets": 3,
+        "plasma": 124
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 0,
+        "plasma": 16
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 11,
+        "platelets": 0,
+        "plasma": 143
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 3
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 8,
+        "platelets": 0,
+        "plasma": 73
+      }
+    },
+    "bb-nair-mumbai-central": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 25,
+        "platelets": 2,
+        "plasma": 142
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 36,
+        "platelets": 4,
+        "plasma": 119
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 19,
+        "platelets": 0,
+        "plasma": 151
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 22,
+        "platelets": 4,
+        "plasma": 72
+      }
+    },
+    "bb-jj-byculla": {
+      "O-": {
+        "whole_blood": 1,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 10
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "A-": {
+        "whole_blood": 1,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 4
+      },
+      "A+": {
+        "whole_blood": 1,
+        "red_cells": 10,
+        "platelets": 0,
+        "plasma": 6
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 6
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 10,
+        "platelets": 4,
+        "plasma": 10
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 1
+      }
+    },
+    "bb-saifee-charni-road": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 6,
+        "plasma": 155
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 5,
+        "plasma": 121
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 2,
+        "plasma": 154
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 89
+      }
+    },
+    "bb-shushrusha-dadar": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 17,
+        "platelets": 6,
+        "plasma": 68
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 4
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 5,
+        "platelets": 5,
+        "plasma": 32
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 7,
+        "platelets": 10,
+        "plasma": 50
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 1,
+        "plasma": 16
+      }
+    },
+    "bb-hinduja-mahim": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 9,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 23,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      }
+    },
+    "bb-raheja-mahim": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 9,
+        "platelets": 4,
+        "plasma": 25
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 20,
+        "platelets": 15,
+        "plasma": 125
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 1,
+        "plasma": 9
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 24,
+        "platelets": 9,
+        "plasma": 110
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 6,
+        "platelets": 2,
+        "plasma": 9
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 33,
+        "platelets": 14,
+        "plasma": 129
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 13
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 19,
+        "platelets": 15,
+        "plasma": 82
+      }
+    },
+    "bb-lilavati-bandra": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 7,
+        "platelets": 8,
+        "plasma": 365
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 8,
+        "platelets": 5,
+        "plasma": 224
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 8,
+        "platelets": 7,
+        "plasma": 124
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 2,
+        "plasma": 116
+      }
+    },
+    "bb-holy-family-bandra": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 47
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 24,
+        "platelets": 5,
+        "plasma": 263
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 32
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 14,
+        "platelets": 4,
+        "plasma": 195
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 33
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 14,
+        "platelets": 3,
+        "plasma": 249
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 18
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 11,
+        "platelets": 1,
+        "plasma": 116
+      }
+    },
+    "bb-nanavati-vile-parle": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 60
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 50
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 60
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 50
+      }
+    },
+    "bb-cooper-juhu": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 11
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 27,
+        "platelets": 0,
+        "plasma": 29
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 14
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 0,
+        "plasma": 46
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 6
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 17,
+        "platelets": 0,
+        "plasma": 76
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 3
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 5,
+        "platelets": 0,
+        "plasma": 30
+      }
+    },
+    "bb-goenka-andheri": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 3
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 0,
+        "plasma": 109
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 17,
+        "platelets": 0,
+        "plasma": 101
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 65
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 3
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 0,
+        "plasma": 43
+      }
+    },
+    "bb-holy-spirit-andheri": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 0,
+        "plasma": 11
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 8,
+        "platelets": 1,
+        "plasma": 72
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 19
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 0,
+        "plasma": 68
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 18
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 12,
+        "platelets": 0,
+        "plasma": 30
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 7
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 1,
+        "plasma": 58
+      }
+    },
+    "bb-sevenhills-marol": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 8
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 10,
+        "platelets": 0,
+        "plasma": 19
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 4
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 7,
+        "platelets": 0,
+        "plasma": 18
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 18
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      }
+    },
+    "bb-meenatai-goregaon": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 22
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 6,
+        "platelets": 7,
+        "plasma": 59
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 15
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 7,
+        "platelets": 11,
+        "plasma": 77
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 24
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 4,
+        "plasma": 90
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 11
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 10,
+        "platelets": 2,
+        "plasma": 12
+      }
+    },
+    "bb-suburban-malad": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 8
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 3
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 13
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 1
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 0,
+        "plasma": 14
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 8
+      }
+    },
+    "bb-rajawadi-ghatkopar": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 11
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 7
+      },
+      "A+": {
+        "whole_blood": 1,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 45
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 9
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 10
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 5
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 15
+      }
+    },
+    "bb-anviksha-ghatkopar": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 2
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 15,
+        "platelets": 13,
+        "plasma": 32
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 15,
+        "platelets": 13,
+        "plasma": 25
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 3,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 4,
+        "plasma": 23
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 1,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 7,
+        "platelets": 2,
+        "plasma": 8
+      }
+    },
+    "bb-hiranandani-powai": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 54
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 5,
+        "platelets": 0,
+        "plasma": 176
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 20
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 5,
+        "platelets": 0,
+        "plasma": 201
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 23
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 6,
+        "platelets": 0,
+        "plasma": 216
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 8
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 5,
+        "platelets": 0,
+        "plasma": 94
+      }
+    },
+    "bb-arpan-bhandup": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 15
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 15,
+        "platelets": 6,
+        "plasma": 52
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 2
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 10,
+        "platelets": 4,
+        "plasma": 18
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 4
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 9,
+        "platelets": 3,
+        "plasma": 32
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 0
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 11
+      }
+    },
+    "bb-fortis-mulund": {
+      "O-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 32
+      },
+      "O+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 0,
+        "plasma": 268
+      },
+      "A-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 17
+      },
+      "A+": {
+        "whole_blood": 0,
+        "red_cells": 4,
+        "platelets": 1,
+        "plasma": 132
+      },
+      "B-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 11
+      },
+      "B+": {
+        "whole_blood": 0,
+        "red_cells": 2,
+        "platelets": 3,
+        "plasma": 186
+      },
+      "AB-": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 0,
+        "plasma": 4
+      },
+      "AB+": {
+        "whole_blood": 0,
+        "red_cells": 0,
+        "platelets": 1,
+        "plasma": 61
+      }
+    }
+  }
+}

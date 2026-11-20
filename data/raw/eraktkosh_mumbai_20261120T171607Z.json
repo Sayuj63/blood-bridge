@@ -1,0 +1,3837 @@
+{
+ "fetchedAt": "2026-11-20T17:16:07Z",
+ "endpoint": "https://eraktkosh.mohfw.gov.in/BLDAHIMS/bloodbank/nearbyBB.cnt",
+ "stateCode": "27",
+ "results": [
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "11",
+   "component": "Whole Blood",
+   "rows": [
+    [
+     "1",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, A-Ve:1, O-Ve:1, A+Ve:1</p>",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:09:31",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:59:23",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:48:34",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:33:08",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:26:50",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, O+Ve:1, B-Ve:1, B+Ve:4, A+Ve:6, A-Ve:1, AB+Ve:2</p>",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, O+Ve:3, A+Ve:5, AB+Ve:1, O-Ve:1, B+Ve:5</p>",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:2</p>",
+     "2026-11-20 08:19:24",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, A+Ve:11, B+Ve:17, AB+Ve:6, B-Ve:2, O+Ve:17</p>",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "43",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, A+Ve:1</p>",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 00:01:01",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "12",
+   "component": "Packed Red Blood Cells",
+   "rows": [
+    [
+     "1",
+     "Dr. R.N.Cooper Hospital Blood Centre Vile Parle (W) Mumbai, <br/> F- Wing, Room No.-13, 1st Floor, North-South Road No-1, Vil, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8208555090 ,Fax: -, Email: cooperbloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:12, O+Ve:27, B+Ve:17, AB+Ve:5, A-Ve:1</p>",
+     "2026-11-20 18:56:10",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Matoshri Valbai Mulji Shah, Arpan Blood Centre<br/>Aniraj Tower, 2nd Floor, Janta Markat, Opp Metro Mall, L.B.S, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7507771544 ,Fax: 02267417980, Email: nandkishor@arpanbloodbank.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:4, B+Ve:9, O+Ve:15, A+Ve:10</p>",
+     "2026-11-20 18:56:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-success'>Available, AB-Ve:1, A+Ve:9, O-Ve:1, B+Ve:14, AB+Ve:4, O+Ve:15, A-Ve:2</p>",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:1, B+Ve:10, O-Ve:1, O+Ve:10, A+Ve:12, AB-Ve:1, B-Ve:2, AB+Ve:4</p>",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, A-Ve:1, B+Ve:19, A+Ve:36, AB+Ve:22, O+Ve:25, AB-Ve:1, O-Ve:3, B-Ve:2</p>",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB-Ve:1, A+Ve:10, O+Ve:4, AB+Ve:1, O-Ve:1, B+Ve:13</p>",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:3, O-Ve:1, B+Ve:6, A+Ve:4, O+Ve:4</p>",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, O+Ve:4, A+Ve:4, B+Ve:2</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:5, AB-Ve:1, B+Ve:7, A-Ve:2, AB+Ve:1, O+Ve:17</p>",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, A-Ve:1, O-Ve:1, AB-Ve:1, AB+Ve:4, A+Ve:10, B+Ve:10</p>",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, O-Ve:4, AB-Ve:1, A+Ve:35, AB+Ve:12, O+Ve:55, B+Ve:32, B-Ve:2</p>",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, A+Ve:1, B+Ve:2, O+Ve:1</p>",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, AB+Ve:2, O+Ve:12, B+Ve:3, A+Ve:10</p>",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 09:59:23",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, O+Ve:48, B+Ve:14, A+Ve:43, AB+Ve:1, AB-Ve:3</p>",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:2, A-Ve:2, A+Ve:12, B-Ve:1, O-Ve:3, B+Ve:12, AB-Ve:1, O+Ve:8</p>",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:1, O+Ve:4</p>",
+     "2026-11-20 09:48:34",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:6, A+Ve:11, O+Ve:8, AB+Ve:6</p>",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:6, AB+Ve:5, O+Ve:5, A+Ve:5</p>",
+     "2026-11-20 09:33:08",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, B+Ve:1, A+Ve:1, O+Ve:1</p>",
+     "2026-11-20 09:26:50",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:8, B+Ve:8, AB+Ve:3, O+Ve:7</p>",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:9, A+Ve:23, B+Ve:2</p>",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:2, A+Ve:15, AB+Ve:8, AB-Ve:2, O-Ve:1, A-Ve:6, O+Ve:28, B+Ve:39</p>",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:22, A-Ve:2, O-Ve:1, O+Ve:15, B-Ve:3, AB-Ve:1, B+Ve:11, AB+Ve:8</p>",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:1, O+Ve:1, B+Ve:1</p>",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:33, AB+Ve:19, B-Ve:6, A-Ve:4, O-Ve:9, A+Ve:24, O+Ve:20</p>",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:2</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-success'>Available, A-Ve:1, AB+Ve:2, A+Ve:12, B+Ve:8, B-Ve:5, O+Ve:14</p>",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 08:19:24",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:11, O-Ve:4, AB-Ve:1, B+Ve:14, O+Ve:24, A+Ve:14, B-Ve:1, A-Ve:2</p>",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:1, O+Ve:15, B+Ve:4, A+Ve:15, B-Ve:3, AB+Ve:7, AB-Ve:1</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:3, O+Ve:13, A+Ve:8, B+Ve:15</p>",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:2, B-Ve:1, AB+Ve:3, A+Ve:17, O+Ve:12</p>",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:3, O+Ve:6, AB+Ve:10, A+Ve:7</p>",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O-Ve:5, O+Ve:20, A+Ve:10, A-Ve:1, B-Ve:3, B+Ve:20, AB+Ve:3</p>",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Packed Red Blood Cells</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "45",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:5, AB+Ve:3, O+Ve:10, A+Ve:9</p>",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-success'>Available, A+Ve:7, O+Ve:10</p>",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, O-Ve:1, B-Ve:1, A-Ve:1, O+Ve:4, A+Ve:4</p>",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:29, O+Ve:9, AB+Ve:4, A+Ve:10, O-Ve:5</p>",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-success'>Available, O-Ve:1, AB+Ve:2, B+Ve:3, O+Ve:6</p>",
+     "2026-11-20 00:01:01",
+     "Blood Bank"
+    ],
+    [
+     "50",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:10, AB+Ve:5, O+Ve:15, A+Ve:8</p>",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "28",
+   "component": "Sagm Packed Red Blood Cells",
+   "rows": []
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "30",
+   "component": "Leukoreduced Rbc",
+   "rows": []
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "29",
+   "component": "Irradiated RBC",
+   "rows": []
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "13",
+   "component": "Fresh Frozen Plasma",
+   "rows": [
+    [
+     "1",
+     "Samarpan Blood Centre Ghatkopar East Mumbai<br/>North East Zone Chemist Educational Welfare Trust s Samarpan, H Wing Naidu Colony Pant Nagar Ghatkopar East , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9594032520 ,Fax: 1234567890, Email: tr@samarpanbloodcentre.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:1, AB+Ve:8, AB-Ve:5, O-Ve:10, A-Ve:13, B+Ve:66, A+Ve:50, O+Ve:162</p>",
+     "2026-11-20 18:56:12",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Matoshri Valbai Mulji Shah, Arpan Blood Centre<br/>Aniraj Tower, 2nd Floor, Janta Markat, Opp Metro Mall, L.B.S, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7507771544 ,Fax: 02267417980, Email: nandkishor@arpanbloodbank.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:11, O-Ve:15, O+Ve:52, A-Ve:2, B+Ve:32, B-Ve:4, A+Ve:18</p>",
+     "2026-11-20 18:56:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Dr. R.N.Cooper Hospital Blood Centre Vile Parle (W) Mumbai, <br/> F- Wing, Room No.-13, 1st Floor, North-South Road No-1, Vil, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8208555090 ,Fax: -, Email: cooperbloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:46, O-Ve:11, AB-Ve:3, A-Ve:14, O+Ve:29, B-Ve:6, B+Ve:76, AB+Ve:30</p>",
+     "2026-11-20 18:56:10",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-success'>Available, O-Ve:2, B-Ve:3, AB-Ve:1, O+Ve:7, B+Ve:52, A+Ve:44</p>",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:130, O+Ve:180, AB+Ve:50, A+Ve:180</p>",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, A+Ve:12, AB+Ve:32, B+Ve:15, AB-Ve:1, O-Ve:1, B-Ve:1, O+Ve:3</p>",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:14, B+Ve:44, O-Ve:10, A+Ve:34, A-Ve:2, B-Ve:7, O+Ve:82</p>",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, O+Ve:268, B-Ve:11, A+Ve:132, AB-Ve:4, B+Ve:186, A-Ve:17, AB+Ve:61, O-Ve:32</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:50, A+Ve:32, A-Ve:4, AB-Ve:1, O-Ve:1, AB+Ve:16, B-Ve:2, O+Ve:68</p>",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, O+Ve:5, B-Ve:6, AB-Ve:2, O-Ve:10, A+Ve:6, B+Ve:10, AB+Ve:1, A-Ve:4</p>",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, O+Ve:230, A+Ve:210, AB+Ve:75, B+Ve:100, B-Ve:50, AB-Ve:5, O-Ve:78, A-Ve:59</p>",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:13, O+Ve:8, O-Ve:2, AB+Ve:8, A-Ve:3, B-Ve:1, B+Ve:14</p>",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, B+Ve:5, A+Ve:7, AB+Ve:3, O+Ve:10</p>",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:59:23",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:30, B-Ve:18, A-Ve:19, AB+Ve:58, O-Ve:11, O+Ve:72, AB-Ve:7, A+Ve:68</p>",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:60, A+Ve:50, AB+Ve:50, O+Ve:60</p>",
+     "2026-11-20 09:48:34",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-success'>Available, O+Ve:3</p>",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:27, A-Ve:9, A+Ve:38, B-Ve:9, AB-Ve:2, AB+Ve:21, B+Ve:33, O-Ve:12</p>",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:20, O-Ve:54, B+Ve:216, AB-Ve:8, AB+Ve:94, A+Ve:201, B-Ve:23, O+Ve:176</p>",
+     "2026-11-20 09:33:08",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:2, O-Ve:3, B-Ve:2, AB+Ve:11, O+Ve:25, A+Ve:13, B+Ve:21</p>",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:224, B+Ve:124, O+Ve:365, AB+Ve:116</p>",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O-Ve:10, B+Ve:70, A+Ve:42, AB+Ve:28, B-Ve:8, AB-Ve:7, A-Ve:3, O+Ve:73</p>",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:143, O-Ve:9, AB-Ve:3, A+Ve:124, O+Ve:106, AB+Ve:73, A-Ve:24, B-Ve:16</p>",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:9, A-Ve:9, AB+Ve:82, O-Ve:25, AB-Ve:13, B+Ve:129, A+Ve:110, O+Ve:125</p>",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:149, A+Ve:116, B+Ve:154, AB+Ve:88</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-success'>Available, A+Ve:63, B+Ve:43, A-Ve:9, O+Ve:107, B-Ve:12, AB+Ve:51, O-Ve:32, AB-Ve:1</p>",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:58, B+Ve:69, AB-Ve:1, O-Ve:1, O+Ve:33, A+Ve:41</p>",
+     "2026-11-20 08:19:24",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:33, B+Ve:249, AB+Ve:116, A-Ve:32, O+Ve:263, O-Ve:47, AB-Ve:18, A+Ve:195</p>",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:23, A+Ve:25, O-Ve:2, AB-Ve:2, AB+Ve:8, O+Ve:32</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:2, O-Ve:5, A+Ve:17</p>",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:65, O-Ve:3, AB-Ve:3, AB+Ve:43, A-Ve:5, B-Ve:5, A+Ve:101, O+Ve:109</p>",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O-Ve:22, B+Ve:90, A+Ve:77, O+Ve:59, B-Ve:24, A-Ve:15, AB-Ve:11, AB+Ve:12</p>",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB-Ve:1, AB+Ve:7, O-Ve:4, B-Ve:1, B+Ve:5</p>",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:18, O+Ve:74, B-Ve:21, B+Ve:75, A+Ve:21, O-Ve:23, AB-Ve:6, AB+Ve:30</p>",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Fresh Frozen Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "46",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB-Ve:6, B-Ve:15, A+Ve:56, A-Ve:12, B+Ve:86, AB+Ve:41, O-Ve:17, O+Ve:79</p>",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-success'>Available, B+Ve:18, O-Ve:8, O+Ve:19, A+Ve:18, A-Ve:4</p>",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, AB-Ve:5, B-Ve:9, A-Ve:7, O-Ve:5, A+Ve:45, O+Ve:11, AB+Ve:15, B+Ve:10</p>",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:4, O-Ve:9, B+Ve:79, A+Ve:81, O+Ve:104, AB-Ve:1, B-Ve:3, AB+Ve:18</p>",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "50",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-success'>Available, B-Ve:2, O+Ve:13, A+Ve:15, AB+Ve:9, B+Ve:7, O-Ve:2</p>",
+     "2026-11-20 00:01:01",
+     "Blood Bank"
+    ],
+    [
+     "51",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:23, B+Ve:22, AB-Ve:2, O+Ve:20, AB+Ve:14, B-Ve:1, A-Ve:6, O-Ve:5</p>",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "19",
+   "component": "Plasma",
+   "rows": [
+    [
+     "1",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, O+Ve:139, B+Ve:136, AB+Ve:40, A+Ve:107</p>",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:59:24",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:48:35",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:33:09",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, O+Ve:6, A+Ve:5</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "43",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:01:02",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "18",
+   "component": "Single Donor Plasma",
+   "rows": []
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "21",
+   "component": "Cryo Poor Plasma",
+   "rows": [
+    [
+     "1",
+     "Samarpan Blood Centre Ghatkopar East Mumbai<br/>North East Zone Chemist Educational Welfare Trust s Samarpan, H Wing Naidu Colony Pant Nagar Ghatkopar East , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9594032520 ,Fax: 1234567890, Email: tr@samarpanbloodcentre.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:16, B+Ve:19, AB+Ve:4, O+Ve:11</p>",
+     "2026-11-20 18:56:12",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, O-Ve:3, B+Ve:23, A-Ve:1, A+Ve:29, AB+Ve:3, B-Ve:6, O+Ve:40</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:59:24",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:48:35",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:33:09",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:43</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:3, A+Ve:2, A-Ve:1, O+Ve:1</p>",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:6, A-Ve:1, O+Ve:5, B-Ve:2, AB+Ve:2, A+Ve:5</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:1</p>",
+     "2026-11-20 07:25:42",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "44",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 06:46:22",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 06:46:09",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:32:30",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 00:01:02",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-06-04 10:55:45",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "17",
+   "component": "Cryoprecipitate",
+   "rows": [
+    [
+     "1",
+     "Samarpan Blood Centre Ghatkopar East Mumbai<br/>North East Zone Chemist Educational Welfare Trust s Samarpan, H Wing Naidu Colony Pant Nagar Ghatkopar East , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9594032520 ,Fax: 1234567890, Email: tr@samarpanbloodcentre.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:1, B+Ve:10, AB+Ve:1, B-Ve:1, O+Ve:17</p>",
+     "2026-11-20 18:56:12",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Matoshri Valbai Mulji Shah, Arpan Blood Centre<br/>Aniraj Tower, 2nd Floor, Janta Markat, Opp Metro Mall, L.B.S, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7507771544 ,Fax: 02267417980, Email: nandkishor@arpanbloodbank.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, A+Ve:10, B+Ve:3, O+Ve:4</p>",
+     "2026-11-20 18:56:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:5, O+Ve:10, B+Ve:5</p>",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, A+Ve:1, O+Ve:2, B+Ve:1</p>",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, A-Ve:3, A+Ve:46, B+Ve:73, B-Ve:8, O+Ve:66, AB+Ve:5, O-Ve:10</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, B+Ve:10, A-Ve:1, A+Ve:9, AB+Ve:5, O+Ve:18, O-Ve:1, B-Ve:1</p>",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:59:24",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, O+Ve:1</p>",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A-Ve:1, AB-Ve:1, A+Ve:11, B+Ve:13, B-Ve:1, O+Ve:22, AB+Ve:5</p>",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:3, A+Ve:2, O+Ve:3, AB+Ve:2</p>",
+     "2026-11-20 09:48:35",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:5, B-Ve:1, O-Ve:1, AB+Ve:1, AB-Ve:1, A+Ve:15, O+Ve:9</p>",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:33:09",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:34</p>",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:4</p>",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:18, B+Ve:6, O-Ve:1, B-Ve:3, A-Ve:5, A+Ve:20, O+Ve:22</p>",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:56</p>",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:75</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-success'>Available, B-Ve:1, AB+Ve:3, B+Ve:10, A-Ve:1, O+Ve:22, A+Ve:6</p>",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:2, A-Ve:1, O+Ve:1, B+Ve:1</p>",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:13</p>",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:13, O+Ve:12, B-Ve:2, A-Ve:1, AB+Ve:3, O-Ve:1, A+Ve:10</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:8, A+Ve:3</p>",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:4, A+Ve:6, A-Ve:1, O+Ve:11, B+Ve:13, O-Ve:1</p>",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, B+Ve:4, O+Ve:4, A+Ve:6, O-Ve:1</p>",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "45",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:18, A+Ve:6, O-Ve:1, B-Ve:2, A-Ve:1, AB+Ve:4, B+Ve:12</p>",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:14, O+Ve:24, B-Ve:1, B+Ve:26, O-Ve:2</p>",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Cryoprecipitate</b>Not Available Search for another Component",
+     "2026-11-20 00:01:01",
+     "Blood Bank"
+    ],
+    [
+     "50",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:34, AB+Ve:7, O+Ve:16, B+Ve:14, O-Ve:1, B-Ve:2</p>",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "23",
+   "component": "Random Donor Platelets",
+   "rows": [
+    [
+     "1",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:8, A+Ve:5, B+Ve:6</p>",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-success'>Available, A+Ve:4, AB+Ve:4, O+Ve:2</p>",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:4, O+Ve:5, B+Ve:5, A+Ve:3</p>",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, B+Ve:10, O+Ve:6, A+Ve:5</p>",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, B+Ve:4</p>",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, B-Ve:1, AB+Ve:1, O-Ve:1, O+Ve:21, A-Ve:1, B+Ve:4</p>",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-success'>Available, B+Ve:5, AB+Ve:1, O+Ve:9, A+Ve:5</p>",
+     "2026-11-20 10:04:32",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:59:24",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, B+Ve:11, O+Ve:12, AB-Ve:2, AB+Ve:4, O-Ve:1, A+Ve:22, B-Ve:2</p>",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, O+Ve:1</p>",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:48:35",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:33:09",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:8, A+Ve:5, B-Ve:1, B+Ve:6, AB+Ve:2</p>",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:2, O+Ve:1, B+Ve:5</p>",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:3</p>",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:2, AB+Ve:15, A-Ve:1, O+Ve:15, B+Ve:14, A+Ve:9, O-Ve:4</p>",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-success'>Available, B+Ve:1, O+Ve:2, A+Ve:1, O-Ve:2</p>",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:3, A+Ve:4, O+Ve:5, AB+Ve:1</p>",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:25:42",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "43",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:4, AB+Ve:1, A+Ve:3, O+Ve:7</p>",
+     "2026-11-20 06:46:22",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 06:46:09",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 00:32:30",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 00:01:02",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-06-04 10:55:45",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "20",
+   "component": "Platelet Concentrate",
+   "rows": [
+    [
+     "1",
+     "Samarpan Blood Centre Ghatkopar East Mumbai<br/>North East Zone Chemist Educational Welfare Trust s Samarpan, H Wing Naidu Colony Pant Nagar Ghatkopar East , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9594032520 ,Fax: 1234567890, Email: tr@samarpanbloodcentre.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, O-Ve:1, A+Ve:5, B+Ve:7, O+Ve:7</p>",
+     "2026-11-20 18:56:12",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Matoshri Valbai Mulji Shah, Arpan Blood Centre<br/>Aniraj Tower, 2nd Floor, Janta Markat, Opp Metro Mall, L.B.S, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7507771544 ,Fax: 02267417980, Email: nandkishor@arpanbloodbank.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:6, B+Ve:3, A+Ve:4</p>",
+     "2026-11-20 18:56:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, A+Ve:1, B+Ve:1</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:59:24",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:48:35",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:33:09",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:1, B+Ve:2, O+Ve:6, A+Ve:5</p>",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:13, B+Ve:2, AB+Ve:2, O-Ve:1, A+Ve:13</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:7, A-Ve:1, B-Ve:1, B+Ve:2, O+Ve:5</p>",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:8, O+Ve:6, AB+Ve:1, A+Ve:4, O-Ve:1, B-Ve:3</p>",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "44",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "45",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:13, AB+Ve:4, O+Ve:16, B-Ve:1, B+Ve:16, O-Ve:3</p>",
+     "2026-11-20 00:32:30",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 00:01:02",
+     "Blood Bank"
+    ],
+    [
+     "50",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "14",
+   "component": "Single Donor Platelet",
+   "rows": [
+    [
+     "1",
+     "Samarpan Blood Centre Ghatkopar East Mumbai<br/>North East Zone Chemist Educational Welfare Trust s Samarpan, H Wing Naidu Colony Pant Nagar Ghatkopar East , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9594032520 ,Fax: 1234567890, Email: tr@samarpanbloodcentre.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, A+Ve:1, B+Ve:4</p>",
+     "2026-11-20 18:56:12",
+     "Blood Bank"
+    ],
+    [
+     "2",
+     "Sir J.J.Mahanagar Rakthapedhi<br/>Ground Floor, F.D. Petit Building,J.J.Campus,J.J.Road, Bycul, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9892860703,022- 23735585 ,Fax: 23733338, Email: drhitesh@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 11:27:09",
+     "Blood Bank"
+    ],
+    [
+     "3",
+     "Breach Candy Hospital Trust Blood Centre<br/>60-A, Bhulabhai Desai Road, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2223667820 ,Fax: 2223672666, Email: drsunita.tulsiani@breachcandyhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 11:26:43",
+     "Blood Bank"
+    ],
+    [
+     "4",
+     "Byl Nair Hospital, Blood Centre<br/>New OPD Bldg. 2nd Floor, Dr. A. L.Nair Road,, , Mumbai Central, Mumbai, Maharashtra<br/>Phone: 2223027644 ,Fax: -, Email: nairbloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 11:26:30",
+     "Blood Bank"
+    ],
+    [
+     "5",
+     "Kokilaben Dhirubhai Ambani Blood Centre<br/>4 bunglows, Achutrao Patwardhan Marg, Andheri (west),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111,+91-22-3090 0900 ,Fax: +91 22 3097 2030, Email: Raees.Ahmed@relianceada.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:42:02",
+     "Blood Bank"
+    ],
+    [
+     "6",
+     "Bhabha Atomic Research Centre Hospital Blood Centre<br/>Blood Bank Pathology Dept. BARC Hospital, Anushakti Nagar,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 022-25598353 / 25598361 ,Fax: 022-25558494 , Email: aroraveena@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:40:07",
+     "Blood Bank"
+    ],
+    [
+     "7",
+     "M/S Balasaheb Thackerey Blood Centre<br/>2nd floor, Hindu Hriday Samrat Balasaheb Thackerey, Traumaca, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9922901047 ,Fax: -, Email: gawlivr@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:39:23",
+     "Blood Bank"
+    ],
+    [
+     "8",
+     "Fortis  Hospital Blood Centre<br/>Mulund Goregaon Link Road, Nahur,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 7678085566,02249254370 ,Fax: 022-67994242/4343, Email: bloodbank.mul@fortishealthcare.com",
+     "Private",
+     "<p class='text-success'>Available, AB+Ve:1, B+Ve:2</p>",
+     "2026-11-20 10:34:52",
+     "Blood Bank"
+    ],
+    [
+     "9",
+     "Shushrusha Citizens Co-Op Hospital Blood Centre<br/>Shushrusha  citizens  co-operative Hospital Ltd. Gr.Floor,698-B Ranade Road, Dadar west, , Dadar, Mumbai, Maharashtra<br/>Phone: 9022240366 ,Fax: 1234567890, Email: bloodbank.shushrusha@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:27:12",
+     "Blood Bank"
+    ],
+    [
+     "10",
+     "Bombay Red Cross Blood Centre<br/>141,Shahid Bhagat Singh Road, Town Hall Compound Near R.B.I., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819424404 ,Fax: -, Email: brcbc@gmail.com",
+     "Red Cross ",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:26:55",
+     "Blood Bank"
+    ],
+    [
+     "11",
+     "Sir, J.J. Group Hospital Blood Centre, Byculla Mumbai<br/>Blood Bank Department, Main Building, Gr.floor near Apaghath Vibhagh, Sir J.J.Hospital Byculla, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:11:27",
+     "Blood Bank"
+    ],
+    [
+     "12",
+     "L.T.M.G., Municipal Hospital Blood Centre<br/>Lokmanya Tilak Gen. Mun. Hospital premise,, Sion, Sion, Mumbai, Maharashtra<br/>Phone: 9167059179,022-2406 3494 / 95   Ext:3469 ,Fax: 022-2402 1771, Email: bloodbank2009@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:09:32",
+     "Blood Bank"
+    ],
+    [
+     "13",
+     "Suburban Hi-Tech Blood Centre<br/>206, Shagun,Rani-Sati Marg, Malad (East), , as above, Mumbai, Mumbai, Maharashtra<br/>Phone: 9823244573 ,Fax: -, Email: suburban.hitech@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:08:28",
+     "Blood Bank"
+    ],
+    [
+     "14",
+     "K.E.M. Hospital Blood Centre<br/>Acharya Donde Marg, Parel, Mumbai - 400012, , Mumbai, Mumbai, Maharashtra<br/>Phone: 02224107016 ,Fax: -, Email: bloodbankkem@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 10:04:31",
+     "Blood Bank"
+    ],
+    [
+     "15",
+     "Bharatratna Dr Babasaheb Ambedkar Mun. Gen. Hospital Blood Centre<br/>Bharatratna Dr Babasaheb Ambedkar Mun Gen Hospital , First F, , MUMBAI, Mumbai, Maharashtra<br/>Phone: 28647003/4 ,Fax: 1234567890, Email: bloodbankbdba@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:59:23",
+     "Blood Bank"
+    ],
+    [
+     "16",
+     "TATA MEMORIAL CENTRE- TATA MEMORIAL HOSPITAL<br/>Department of Transfusion Medicine, 5th and 6th Floor, Service Block, Tata Memorial Hospital, Parel, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>-",
+     "null",
+     "<p class='text-success'>Available, O+Ve:13, B+Ve:5</p>",
+     "2026-11-20 09:58:11",
+     "Blood Bank"
+    ],
+    [
+     "17",
+     "Holy Spirit Hospital Blood Centre<br/>Holy Spirit Hospital Blood Bank, , Mahakali Caves Road, Andheri , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167015747 ,Fax: -, Email: bloodbank@holyspirithospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:58:00",
+     "Blood Bank"
+    ],
+    [
+     "18",
+     "Smt. Kapoorben Vasanji Lathiya Blood Centre<br/>Swami Vivekanand Road, Opposite Juhu airport, Vile Parle wes, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320070111 ,Fax: -, Email: nidhi.mehta@nanavatimaxhospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:48:34",
+     "Blood Bank"
+    ],
+    [
+     "19",
+     "St. GeorgeS Hospital And Regional  Blood Centre<br/>St. GeorgeS Hospital And Regional  Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9967494252 ,Fax: 22624464, Email: bb004@mahasbtc.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:47:01",
+     "Blood Bank"
+    ],
+    [
+     "20",
+     "N.M Wadia Hospital Blood Centre Parel Mumbai<br/>Acharya Donde Marg, Opp. KEM Hospital,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 0224146964 ,Fax: -, Email: wadiabloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:43:51",
+     "Blood Bank"
+    ],
+    [
+     "21",
+     "Dr. L. H. Hiranandani Hospital, Blood Centre<br/>Hill Side, Hiranandani Gardens Powai, Powai,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9619597757,022-25763355 / 25763356 ,Fax: 25763344, Email: lincy.jacob@hiranandanihospital.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:33:08",
+     "Blood Bank"
+    ],
+    [
+     "22",
+     "Manas Serological Institute Blood Centre<br/>CTS NO-167 / 168 / A1 101-104  Grace Plaza  S.V.Road, near R, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9975564128 ,Fax: -, Email: manasbbmumbai@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:26:51",
+     "Blood Bank"
+    ],
+    [
+     "23",
+     "Lilavati Hospital And Research Centre Blood Centre<br/>A 791, Bandra Reclaimation, Bandra (W),, , Bandra, Mumbai, Maharashtra<br/>Phone: 8422892384 ,Fax: 2226437648, Email: bloodbank@lilavatihospital.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:1</p>",
+     "2026-11-20 09:26:33",
+     "Blood Bank"
+    ],
+    [
+     "24",
+     "P.D. Hinduja Hospital And Medical Research, Blood Centre<br/>Wing 1, Third Floor,East Block,Veer Savarkar Road, Mahim (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9152888133 ,Fax: -, Email: dr_adeshpande@yahoo.co.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:21:09",
+     "Blood Bank"
+    ],
+    [
+     "25",
+     "Navjivan Blood Centre Mged By Saraswati Vidyaprasarak Foundation<br/>Shop No.1, Abhilasha II Punjabi Lane Borivali (W),, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9324071799 ,Fax: -, Email: navjivanbb@yahoo.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:16:20",
+     "Blood Bank"
+    ],
+    [
+     "26",
+     "Superitendent Gokuldas Tejpal Hospital<br/>2nd floor, G. T. Hospital, L.T. Marg, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8669168538 ,Fax: -, Email: gthbloodbank@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 09:06:01",
+     "Blood Bank"
+    ],
+    [
+     "27",
+     "K.J.Somaiya Medical College And Hospital Blood Centre<br/>K.J. Somaiya Medical college And Hospital Blood Bank, First , , Mumbai, Mumbai, Maharashtra<br/>Phone: 0225095473 ,Fax: 24091855/24020946, Email: blood-centre@somaiya.edu",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:52:29",
+     "Blood Bank"
+    ],
+    [
+     "28",
+     "Sion Blood Centre<br/>92/5,  1st floor Geeta bldg. Opp. To Sion Bus depot, Sion (E, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9594642222 ,Fax: -, Email: sionbloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:41:57",
+     "Blood Bank"
+    ],
+    [
+     "29",
+     "S. L. Raheja Hospital. Blood Centre, Mahim<br/>Raheja Rugnalaya Marg, Mahim,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2266529683 ,Fax: -, Email: bloodbank@rahejahospital.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:39:37",
+     "Blood Bank"
+    ],
+    [
+     "30",
+     "V.N. Desai Municipal General Hospital Blood Centre<br/>Plot No.34,  opp. Santacruz Gymkhana, T.P.S II, 11th Road, S, santacruz east, mumbai, Mumbai, Maharashtra<br/>Phone: 0222618301 ,Fax: 1234567890, Email:  vndesaibloodbank@yahoo.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:34:24",
+     "Blood Bank"
+    ],
+    [
+     "31",
+     "K.B.Bhabha Muncipal General Hospital, Blood Centre<br/>1st floor, N.38, R.K.Patkar Marg, Bandra (W), , Mumbai, Mumbai, Maharashtra<br/>Phone: 9321152854 ,Fax: 022-26405227, Email: bhabha.bandra@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:26:40",
+     "Blood Bank"
+    ],
+    [
+     "32",
+     "Saifee Hospital Trust Blood Centre<br/>Post box no.3771, 15/17, Maharshi Karve Marg, Opp Charni Roa, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9167571140 ,Fax: 1234567890, Email: saifeebloodbank@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:23:48",
+     "Blood Bank"
+    ],
+    [
+     "33",
+     "M/S. Gleneagles Hospital-Super Speciality Andtransplant Centre<br/>35. Dr. E. Borges Road, Hospital Avenue, Opp. Shirodkar High, , Parel, Mumbai, Maharashtra<br/>Phone: 9820168514 ,Fax: 1234567890, Email: rajeev.nikte@gleneagleshospitals.co.in",
+     "Private",
+     "<p class='text-success'>Available, AB+Ve:1</p>",
+     "2026-11-20 08:20:12",
+     "Blood Bank"
+    ],
+    [
+     "34",
+     "Bombay Hospital Trust Blood Centre<br/>MRC, Bombay Hospital 12, New Marine Lines,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820302628 ,Fax: -, Email: bloodbankbombayhospital@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:19:25",
+     "Blood Bank"
+    ],
+    [
+     "35",
+     "Bandra Holly Family Hospital Society Blood Centre<br/>Holly Family Hospital Blood Bank,  St. Andrews Road, Bandra , , Mumbai, Mumbai, Maharashtra<br/>Phone: 9819463424 ,Fax: 1234567890, Email: hfhbloodcentre@holyfamilyhospital.in",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:18:34",
+     "Blood Bank"
+    ],
+    [
+     "36",
+     "Deepak Foundations Anviksha Blood Centre<br/>1st floor, Paras Darshan, M.G.Road, Ghatkopar (East), , Mumbai, Mumbai, Maharashtra<br/>Phone: 8591265830 ,Fax: 9820144154, Email: anvikshabb@hotmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:2</p>",
+     "2026-11-20 08:01:13",
+     "Blood Bank"
+    ],
+    [
+     "37",
+     "Cama And Albles Hosp., Abdul Fazalbhoy Blood Centre<br/>Mahapalika Marg, Mumbai CST,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2222710319 ,Fax: -, Email: bb214mahasbtc@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:48:10",
+     "Blood Bank"
+    ],
+    [
+     "38",
+     "Jaslok Hospital And Research Centre, Blood Centre<br/>15,Dr.G.Deshmukh Marg,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9320918214 ,Fax: -, Email: bloodbank.officer@jaslokhospital.net",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:35:07",
+     "Blood Bank"
+    ],
+    [
+     "39",
+     "Rotary D.G Goenka Blood Centre( Municipal Gen. Hospital)<br/> 2nd floor, Opp Bus Depot,  Near Railway Station Andheri (W), , Mumbai Suburban, Mumbai, Maharashtra<br/>Phone: 9004437823 ,Fax: 0226715000, Email: ghrcbloodcentre@gmail.com,  ",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:30:33",
+     "Blood Bank"
+    ],
+    [
+     "40",
+     "Meenatai Thackeray Blood Centre, Goregaon, Mumbai, Managed By Prabodhan Goregaon<br/>CTS No.899/C, First floor, Village Pahadi, Sitaram Patkar Marg, Off Aarey Road, Goregaon West., , Mumbai, Mumbai, Maharashtra<br/>Phone: 9820313855 ,Fax: 1234567890, Email: meenataithackeray.bloodcentre@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:2, O+Ve:2, B+Ve:2, A+Ve:4</p>",
+     "2026-11-20 07:25:41",
+     "Blood Bank"
+    ],
+    [
+     "41",
+     "Masina Hospital Blood Centre<br/>Sant Savta Marg, Byculla (E),, , Byculla, Mumbai, Maharashtra<br/>Phone: 9004362229 ,Fax: -, Email: bloodbank@masinahospital.coml.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:15:18",
+     "Blood Bank"
+    ],
+    [
+     "42",
+     "Sushilaben R. Mehta And Sir. Kikabai Cardiac Institute, Blood Centre<br/>Basements R. No.1-12,Plot No.96,Rd.No.31,Near Gandhi Market , , Mumbai, Mumbai, Maharashtra<br/>Phone: 2269105443 ,Fax: 0224094732, Email: bloodbank@srmkpcardiac.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:14:09",
+     "Blood Bank"
+    ],
+    [
+     "43",
+     "The B.D. Petit Parsee General Hospital Bsu<br/>B D Petit Marg, Cumballa Hills, Grant Road West, Mumbai, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9769762009 ,Fax: 2261186333, Email: bbincharge@bdppgh.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 07:08:49",
+     "BSU"
+    ],
+    [
+     "44",
+     "Sir H N Hospital And Research Centre Blood Centre<br/>Kapol nivas 3rd floor, Rajaram Mohan Roy Marg, Prarthana Sam, , Mumbai, Mumbai, Maharashtra<br/>Phone: 2235475225 ,Fax: -, Email: RFH.BloodCentre@rfhospital.org",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, O+Ve:1, B+Ve:1</p>",
+     "2026-11-20 06:46:21",
+     "Blood Bank"
+    ],
+    [
+     "45",
+     "Sevenhills Healthcare Private Limited Hospital Blood Centre<br/>2nd Floor, Block-16, Sevenhills Hospital,  Survey No.155, 15, , Mumabi, Mumbai, Maharashtra<br/>Phone: 2267676719 ,Fax: 1234567890, Email: bloodbank@sevenhillshospital.com",
+     "Private",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 06:46:08",
+     "Blood Bank"
+    ],
+    [
+     "46",
+     "Seth V.C.Gandhi And M.A.Vora Municipal General Hospital, Rajawadi ,Ghatkopar<br/>1st Floor, Smt. Meenatai Thackerey Building, Rajawadi Hospit, , Ghatkopar, Mumbai, Maharashtra<br/>Phone: 9167490596 ,Fax: 0221027372, Email: rajawadi.rbb04@gmail.com",
+     "Govt.",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 00:39:15",
+     "Blood Bank"
+    ],
+    [
+     "47",
+     "Nh Srcc ChildrenS Hospital Blood Centre<br/>Nh Srcc ChildrenS Hospital Blood Centre, , Mumbai, Mumbai, Maharashtra<br/>Phone: 8291287570 ,Fax: -, Email: nhsrcc.bloodbank@narayanaheath.org",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 00:32:29",
+     "Blood Bank"
+    ],
+    [
+     "48",
+     "Criticare Asia Hospital Blood Centre, Pvt. Ltd., Kurla (W), Mumbai<br/>Room No. 29 to 44, Upper Basment, Criticare Asia Multispecia, , Kurla, Mumbai, Mumbai, Maharashtra<br/>Phone: 022-675567 ,Fax: -, Email: bloodcenter.k@criticareasiahospital.com",
+     "Private",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 00:01:01",
+     "Blood Bank"
+    ],
+    [
+     "49",
+     "Prince Aly Khan Hospital Blood Centre<br/>Aga Hall, Nesbit Road, Mazgaon,, , Mumbai, Mumbai, Maharashtra<br/>Phone: 9821035341, 022-23777934  ,Fax: -, Email: sunitasrivastavpakhbb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:2</p>",
+     "2026-06-04 10:55:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "519",
+   "district": "Mumbai",
+   "componentCode": "16",
+   "component": "Platelet Rich Plasma",
+   "rows": []
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "11",
+   "component": "Whole Blood",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Whole Blood</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "12",
+   "component": "Packed Red Blood Cells",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, AB+Ve:2, B+Ve:4, A+Ve:5, O+Ve:6</p>",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "28",
+   "component": "Sagm Packed Red Blood Cells",
+   "rows": []
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "30",
+   "component": "Leukoreduced Rbc",
+   "rows": []
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "29",
+   "component": "Irradiated RBC",
+   "rows": []
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "13",
+   "component": "Fresh Frozen Plasma",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B+Ve:53, O+Ve:62, AB-Ve:1, AB+Ve:16, B-Ve:2, A+Ve:55, Oh+VE:1, A-Ve:2, O-Ve:3</p>",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "19",
+   "component": "Plasma",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "18",
+   "component": "Single Donor Plasma",
+   "rows": []
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "21",
+   "component": "Cryo Poor Plasma",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Cryo Poor Plasma</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "17",
+   "component": "Cryoprecipitate",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-success'>Available, B-Ve:1, O+Ve:3, O-Ve:1, B+Ve:5</p>",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "23",
+   "component": "Random Donor Platelets",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Random Donor Platelets</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "20",
+   "component": "Platelet Concentrate",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Platelet Concentrate</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "14",
+   "component": "Single Donor Platelet",
+   "rows": [
+    [
+     "1",
+     "Sant Nirankari Blood Centre<br/>3rd Floor Sant Nirankari Satsang Bhawan, Western Express Hig, , Vile Parle, Mumbai Suburban, Maharashtra<br/>Phone: 9650400141 ,Fax: -, Email: santnirankaribb@gmail.com",
+     "Charitable/Vol",
+     "<p class='text-danger'><b>Single Donor Platelet</b>Not Available Search for another Component",
+     "2026-11-20 08:45:44",
+     "Blood Bank"
+    ]
+   ]
+  },
+  {
+   "districtCode": "518",
+   "district": "Mumbai Suburban",
+   "componentCode": "16",
+   "component": "Platelet Rich Plasma",
+   "rows": []
+  }
+ ]
+}

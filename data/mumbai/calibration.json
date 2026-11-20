@@ -1,0 +1,125 @@
+{
+  "bloodGroupShare": {
+    "O+": 0.3418,
+    "O-": 0.0258,
+    "A+": 0.2203,
+    "A-": 0.0166,
+    "B+": 0.3045,
+    "B-": 0.0230,
+    "AB+": 0.0632,
+    "AB-": 0.0048,
+    "_cite": "agrawal2014",
+    "_method": "DERIVED: Agrawal 2014 Table 5, West region (Mumbai centre, n=2220): A 23.69%, B 32.74%, O 36.75%, AB 6.80%; Rh(D)+ 92.97%, Rh(D)- 7.02%. The paper reports ABO and Rh separately, so 8-group shares = ABO share x Rh share (assumes independence), renormalised to sum to 1."
+  },
+  "bloodGroupShareNational": {
+    "abo": { "O": 0.3712, "B": 0.3226, "A": 0.2288, "AB": 0.0774 },
+    "rh": { "positive": 0.9461, "negative": 0.0539 },
+    "sampleSize": 9686,
+    "_cite": "agrawal2014"
+  },
+  "bloodGroupShareComparison": {
+    "O+": 0.3767, "O-": 0.015, "A+": 0.2089, "A-": 0.0115,
+    "B+": 0.2971, "B-": 0.0121, "AB+": 0.077, "AB-": 0.0018,
+    "sampleSize": 7598,
+    "region": "Chengalpattu, Tamil Nadu (directly observed 8-group shares; for sanity check only)",
+    "_cite": "sigamani2022"
+  },
+  "shelfLifeDays": {
+    "whole_blood": 35,
+    "red_cells": 42,
+    "platelets": 5,
+    "plasma": 365,
+    "_cite": {
+      "whole_blood": "dcr2020 (CPDA-1, 35 days from collection; the Rules phrase this as the limit for separating PRBC from CPDA-1 whole blood)",
+      "red_cells": "dcr2020 (red cells in SAGM/ADSOL/NUTRICEL additive solution up to 42 days)",
+      "platelets": "dcr2020 (not exceeding 5 days at 20-24 C with continuous gentle agitation)",
+      "plasma": "dcr2020 (FFP frozen within 6 h, stored not warmer than -30 C, not more than one year)"
+    }
+  },
+  "storageTempC": {
+    "whole_blood": [2, 6], "red_cells": [2, 6], "platelets": [20, 24], "plasma": [null, -30],
+    "_cite": "dcr2020"
+  },
+  "donorIntervalDays": {
+    "male": 90,
+    "female": 120,
+    "_cite": "gsr166e2020"
+  },
+  "donorEligibility": {
+    "minAge": 18, "maxAge": 65, "firstTimeDonorMaxAge": 60,
+    "minWeightKg": { "350ml": 45, "450ml": 55, "apheresis": 50 },
+    "minHbGdl": 12.5,
+    "_cite": "gsr166e2020"
+  },
+  "annualCollection": {
+    "india_2024_25_units": 14601147,
+    "india_2024_25_requirement_units": 14600000,
+    "india_2018_whole_blood_donations": 12400000,
+    "maharashtra_2025_units_approx": 2300000,
+    "mumbai_jan_may_2026_units": 127000,
+    "maharashtra_jan_may_2026_units": 981000,
+    "componentSeparationShareIndia": 0.53,
+    "whoBenchmarkDonationsPer1000": 10,
+    "_cite": {
+      "india_2024_25_units": "rs2025_au2995",
+      "india_2024_25_requirement_units": "rs2025_au2995",
+      "india_2018_whole_blood_donations": "who2021",
+      "maharashtra_2025_units_approx": "fpj2026a ('total collection exceeded 23 lakh units', 410 blood centres, SBTC data)",
+      "mumbai_jan_may_2026_units": "fpj2026b ('1,651 camps and collected 1.27 lakh units')",
+      "maharashtra_jan_may_2026_units": "fpj2026b (article also quotes 9.48 lakh; treat as approximate)",
+      "componentSeparationShareIndia": "mammen2022 (51% of centres had component separation, separating 53% of annual collection)",
+      "whoBenchmarkDonationsPer1000": "who2021"
+    }
+  },
+  "surgeEvidence": {
+    "rbcUnitsPerCasualty_smallMCI": 1,
+    "rbcUnitsPerCasualty_largeMCI": 2,
+    "shareOfUnitsInFirst2h": 0.5,
+    "bloodRequestsPerCasualty": 1.3,
+    "componentsPerAdmittedPatient_lasVegas2017": 2.7,
+    "cityDemandMultiplierDuringMCI": [2, 3],
+    "leptospirosisRiseAfter2005Flood": 8,
+    "_cite": {
+      "rbcUnitsPerCasualty_smallMCI": "soffer2008",
+      "rbcUnitsPerCasualty_largeMCI": "soffer2008",
+      "shareOfUnitsInFirst2h": "soffer2008",
+      "bloodRequestsPerCasualty": "shinar2006",
+      "componentsPerAdmittedPatient_lasVegas2017": "lozada2018",
+      "cityDemandMultiplierDuringMCI": "ilmoh ('use of units of blood doubles or triples')",
+      "leptospirosisRiseAfter2005Flood": "supe2018 (8-fold rise in leptospirosis patients, Nair Hospital)"
+    }
+  },
+  "surgeAssumptions": {
+    "_status": "MODEL ASSUMPTIONS, not measured data. No published flood-specific blood-usage data was found.",
+    "traumaRbcPerCasualty": { "base": 1, "severe": 2, "ceiling": 2.7 },
+    "cityWideDemandMultiplier": { "base": 2, "worst": 3 },
+    "floodRbcMultiplier72h": 1.5,
+    "postFloodPlateletMultiplierWeeks1to3": [2, 3],
+    "reasoning": "Trauma figures from Israeli MCI series (soffer2008, shinar2006) with Las Vegas 2017 as ceiling (lozada2018); city-wide 2-3x from ilmoh. Floods kill mostly by drowning rather than haemorrhage, so a lower 1.5x RBC multiplier is used for 72 h. The platelet multiplier is a placeholder justified only indirectly by the post-flood leptospirosis surge (supe2018); no source quantifies post-flood platelet demand."
+  },
+  "notes": [
+    "Every number carries a citation key resolving to `citations` below; keys prefixed '_' are metadata.",
+    "bloodGroupShare is derived (independence of ABO and Rh assumed) - the source reports them separately.",
+    "Maharashtra/Mumbai collection figures come from newspaper reports of SBTC data, not the SBTC report itself (not reachable online).",
+    "India 2024-25 figures come from a Rajya Sabha answer as reported by Newslaundry; the sansad.in PDF timed out during retrieval.",
+    "Retrieved 2026-11-20."
+  ],
+  "citations": [
+    { "key": "agrawal2014", "text": "Agrawal A, Tiwari AK, Mehta N, Bhattacharya P, Wankhede R, Tulsiani S, Kamath S. ABO and Rh (D) group distribution and gene frequency; the first multicentric study in India. Asian J Transfus Sci. 2014;8(2):121-125. doi:10.4103/0973-6247.137452", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4140055/" },
+    { "key": "sigamani2022", "text": "Sigamani K, Gajulapalli SP. Cureus. 2022;14(4):e24207. doi:10.7759/cureus.24207", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9113048/" },
+    { "key": "dcr2020", "text": "Drugs Rules, 1945, Schedule F Part XII-B (Blood Centres), as amended by G.S.R. 166(E) dated 11.03.2020; CDSCO consolidated guideline PDF", "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadBloodBank/Guidelines_for_blood_bank-merged-with-GSR-166E-dated-11.03.2020.pdf" },
+    { "key": "gsr166e2020", "text": "G.S.R. 166(E), 11 March 2020, Section H 'Criteria for Blood Donation' (codifies NBTC Guidelines for Blood Donor Selection & Referral 2017): 'For whole blood donation, once in three months (90 days) for males and four months (120 days) for females.'", "url": "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadBloodBank/Guidelines_for_blood_bank-merged-with-GSR-166E-dated-11.03.2020.pdf" },
+    { "key": "rs2025_au2995", "text": "Rajya Sabha Unstarred Question 2995 (19 Aug 2025), MoHFW answer: 14,601,147 units collected in 2024-25; as reported by Newslaundry, 2 Mar 2026", "url": "https://www.newslaundry.com/2026/03/02/govt-claims-it-is-blood-sufficient-but-is-it" },
+    { "key": "who2021", "text": "World Health Organization. Global status report on blood safety and availability 2021. ISBN 9789240051683", "url": "https://iris.who.int/server/api/core/bitstreams/fe3a8dbf-95e4-4f75-b17e-c4c76d081a55/content" },
+    { "key": "mammen2022", "text": "Mammen JJ, et al. The clinical demand and supply of blood in India: a national level estimation study. PLoS One. 2022;17(4):e0265951. doi:10.1371/journal.pone.0265951", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8986005/" },
+    { "key": "fpj2026a", "text": "Srivastava A. Maharashtra health update: over 15,000 blood units discarded in state-run blood banks in 2025. Free Press Journal, 6 May 2026", "url": "https://www.freepressjournal.in/mumbai/maharashtra-health-update-over-15000-blood-units-discarded-in-state-run-blood-banks-in-2025" },
+    { "key": "fpj2026b", "text": "Bhagat I. Pune tops Maharashtra in blood donation with 1.58 lakh units. Free Press Journal, 16 Jun 2026", "url": "https://www.freepressjournal.in/pune/pune-tops-maharashtra-in-blood-donation-with-158-lakh-units" },
+    { "key": "soffer2008", "text": "Soffer D, et al. Use of blood products in terror-related mass-casualty incidents (18 attacks, 986 patients, 332 U PRBC). Arch Surg. 2008;143(10):983", "url": "https://jamanetwork.com/journals/jamasurgery/article-abstract/401959" },
+    { "key": "shinar2006", "text": "Shinar E, et al. Meeting blood requirements following terrorist attacks: the Israeli experience. Curr Opin Hematol. 2006;13:452", "url": "https://asprtracie.hhs.gov/technical-resources/resource/5937/meeting-blood-requirements-following-terrorist-attacks-the-israeli-experience" },
+    { "key": "glasgow2013", "text": "Glasgow SM, et al. A comprehensive review of blood product use in civilian mass casualty events. J Trauma Acute Care Surg. 2013;75:468", "url": "https://asprtracie.hhs.gov/technical-resources/resource/5935/a-comprehensive-review-of-blood-product-use-in-civilian-mass-casualty-events" },
+    { "key": "lozada2018", "text": "Vanderbilt University Medical Center news release on Lozada et al. (Las Vegas 2017: 185 admitted victims received 499 blood components, 2.7 per admission)", "url": "https://news.vumc.org/?p=280828" },
+    { "key": "ilmoh", "text": "Levi S, Freud R. Country presentation: Israel (Magen David Adom / Israeli Ministry of Health)", "url": "https://www.azus.gov.rs/wp-content/uploads/2014/07/Country-Presentaton_Israel_SLevi_RFreud.pdf" },
+    { "key": "supe2018", "text": "Supe A, et al. Leptospirosis following heavy rains in 2017 in Mumbai. Natl Med J India. 2018;31:19", "url": "https://nmji.in/leptospirosis-following-heavy-rains-in-2017-in-mumbai-report-of-large-scale-community-chemoprophylaxis/" },
+    { "key": "nasa2005", "text": "NASA Earth Observatory. Record rainfall over Bombay (942 mm in 24 h on 26 July 2005; 273 deaths in Mumbai as of 28 July)", "url": "https://science.nasa.gov/earth/earth-observatory/record-rainfall-over-bombay-5711" }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fz-hindmata-parel",
+    "name": "Hindmata (Parel / Dadar)",
+    "lat": 19.0101,
+    "lng": 72.8421,
+    "note": "Cited as one of the 'chronic waterlogging hotspots such as Parel, Hindmata cloth market and the surroundings of Milan subway'. 1-2 km from KEM, Tata Memorial and Wadia blood centres.",
+    "source": "Citizen Matters, 2 Jul 2024, https://citizenmatters.in/mumbai-flood-mitigation-bmc ; coordinates: OSM Nominatim node/9739425792 (Hindmata Cinema)"
+  },
+  {
+    "id": "fz-kings-circle-sion",
+    "name": "King's Circle / Gandhi Market (Sion)",
+    "lat": 19.0349,
+    "lng": 72.8600,
+    "note": "'flooding in low-lying areas like Hindmata and King Circle - Gandhi Market area.' Adjacent to LTMG (Sion) Hospital.",
+    "source": "Free Press Journal, 21 Aug 2025, https://www.freepressjournal.in/amp/mumbai/mumbai-flood-woes-persist-despite-bmc-mitigation-measures-rail-services-hit-near-sion-kurla ; coordinates: OSM Nominatim node/9788462273"
+  },
+  {
+    "id": "fz-kurla-mithi",
+    "name": "Kurla (Mithi river, Kurla-Sion rail stretch / LBS Road)",
+    "lat": 19.0653,
+    "lng": 72.8794,
+    "note": "Mithi rose above danger level and 'water accumulated on the tracks between Kurla and Sion railway stations' (FPJ 2025); 'Kurla LBS Road' listed among chronic waterlogging locations (FPJ 2026). Point = Kurla station.",
+    "source": "Free Press Journal 2025 (URL above) and 2026, https://www.freepressjournal.in/mumbai/mumbai-monsoon-preparedness-bmc-proposes-110-crore-dewatering-pump-plan-to-tackle-flooding-at-key-waterlogging-hotspots ; coordinates: OSM Nominatim node/2663447640"
+  },
+  {
+    "id": "fz-chunabhatti",
+    "name": "Chunabhatti",
+    "lat": 19.0521,
+    "lng": 72.8674,
+    "note": "Listed with Milan Subway, Masjid Bunder, Kurla LBS Road and Wadala Fire Station Road as locations of 'chronic waterlogging'.",
+    "source": "Free Press Journal 2026, https://www.freepressjournal.in/mumbai/mumbai-monsoon-preparedness-bmc-proposes-110-crore-dewatering-pump-plan-to-tackle-flooding-at-key-waterlogging-hotspots ; coordinates: OSM Nominatim node/9788462267"
+  },
+  {
+    "id": "fz-milan-subway-santacruz",
+    "name": "Milan Subway (Santacruz / Vile Parle)",
+    "lat": 19.0905,
+    "lng": 72.8428,
+    "note": "BMC dewatering plan 'to tackle chronic flooding at key Mumbai hotspots, including Milan Subway, Chunabhatti and Masjid Bunder'. Near V.N. Desai Hospital and Nanavati/Cooper blood centres.",
+    "source": "Free Press Journal 2026 (URL above); Newslaundry 7 Aug 2021, https://www.newslaundry.com/2021/08/07/milan-subway-why-its-a-metaphor-for-mumbais-perpetual-flooding-problem ; coordinates: OSM Nominatim way/39532540"
+  },
+  {
+    "id": "fz-andheri-subway",
+    "name": "Andheri Subway",
+    "lat": 19.1204,
+    "lng": 72.8480,
+    "note": "'Officials say the site floods 25 to 30 times each monsoon', 'with four drains converging at the site'. Coordinate is approximate (Nominatim match for the Andheri rail-subway connection).",
+    "source": "Free Press Journal 2026, https://www.freepressjournal.in/mumbai/mumbai-bmc-says-600-crore-flood-control-plan-may-only-halve-waterlogging-at-andheri-subway-permanent-fix-elusive ; coordinates: OSM Nominatim way/331815666 (approximate)"
+  },
+  {
+    "id": "fz-masjid-bunder",
+    "name": "Masjid Bunder",
+    "lat": 18.9520,
+    "lng": 72.8396,
+    "note": "Listed among chronic waterlogging hotspots in BMC's 2026 dewatering-pump plan. Near J.J. and G.T. hospital cluster.",
+    "source": "Free Press Journal 2026 (URL above); coordinates: OSM Nominatim node/1640185006"
+  }
+]

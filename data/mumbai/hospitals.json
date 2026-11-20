@@ -1,0 +1,80 @@
+[
+  {
+    "id": "hsp-sion-ltmgh",
+    "name": "Lokmanya Tilak Hospital",
+    "category": "government",
+    "address": "Laxmibai Kelkar Marg, 400022",
+    "area": "Sion",
+    "phone": null,
+    "lat": 19.036358,
+    "lng": 72.859214,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:way/49681498",
+    "note": "Lokmanya Tilak Municipal General Hospital (MCGM); Sion lies in the Mithi/King's Circle flood belt."
+  },
+  {
+    "id": "hsp-rajawadi-ghatkopar",
+    "name": "Rajawadi Hospital",
+    "category": "government",
+    "address": "3, Road Number 7, Rajawadi Colony, Ghatkopar East, Mumbai, 400077",
+    "area": "Ghatkopar (E)",
+    "phone": null,
+    "lat": 19.078773,
+    "lng": 72.901365,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:node/14173965274",
+    "note": "Seth V.C. Gandhi & M.A. Vora Municipal General (Rajawadi) Hospital."
+  },
+  {
+    "id": "hsp-vn-desai-santacruz",
+    "name": "V.N. Desai Hospital",
+    "category": "government",
+    "address": "11th Road, Golibar, Santacruz East",
+    "area": "Santacruz (E)",
+    "phone": null,
+    "lat": 19.078736,
+    "lng": 72.845098,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:way/1442093565",
+    "note": "V.N. Desai Municipal General Hospital (BMC), near the Mithi river / Kalina."
+  },
+  {
+    "id": "hsp-shatabdi-govandi",
+    "name": "Shatabdi Hospital",
+    "category": "government",
+    "address": "Waman Tukaram Patil Marg (Ghatkopar Sewri Wadala Road), Mumbai, 400088",
+    "area": "Govandi",
+    "phone": "+912225564069",
+    "lat": 19.049569,
+    "lng": 72.911128,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:way/411617420",
+    "note": "Shatabdi Hospital, operated by the Municipal Corporation of Greater Mumbai."
+  },
+  {
+    "id": "hsp-hbt-trauma-jogeshwari",
+    "name": "Hindu Hruday Samrat Balasaheb Thackerey Trauma Care Municipal Hospital",
+    "category": "government",
+    "address": "Hindu Hruday Samrat Balasaheb Thackerey Trauma Care, Opposite Jogeshwari Vikhroli Link Road, Jogeshwari East",
+    "area": "Jogeshwari (E)",
+    "phone": null,
+    "lat": 19.140934,
+    "lng": 72.85367,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:way/554967613",
+    "note": "Hindu Hruday Samrat Balasaheb Thackeray Trauma Care Municipal Hospital - a dedicated trauma centre."
+  },
+  {
+    "id": "hsp-nair-mumbai-central",
+    "name": "Nair Hospital",
+    "category": "government",
+    "address": "43-A/43B, Dr Anandrao Nair Marg, RTO Colony, Mumbai Central, Mumbai",
+    "area": "Mumbai Central",
+    "phone": null,
+    "lat": 18.973022,
+    "lng": 72.821913,
+    "source": "OpenStreetMap contributors (ODbL), via Overpass API",
+    "sourceId": "osm:node/7664032237",
+    "note": "B.Y.L. Nair Charitable Hospital (MCGM teaching hospital)."
+  }
+]
