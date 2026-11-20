@@ -13,6 +13,7 @@ import { useMeta } from "../../../lib/queries";
 import { ConsentList, type ConsentValues } from "../ConsentSwitch";
 import { PRIVACY_PROMISE } from "../copy";
 import { useSignup } from "../data";
+import { ContactOptIn, NO_CONTACT, type ContactDraft } from "./ContactOptIn";
 import { AreaSelect, BloodGroupPicker, LanguagePicker, TextField } from "./fields";
 
 /**
@@ -21,7 +22,7 @@ import { AreaSelect, BloodGroupPicker, LanguagePicker, TextField } from "./field
  */
 export type OnboardingMode = "full" | "quick";
 
-type FieldKey = "name" | "phone" | "bloodGroup" | "areaId";
+type FieldKey = "name" | "phone" | "bloodGroup" | "areaId" | "contactPhone" | "contactConsent";
 type Step = "details" | "name" | "group" | "consent";
 
 const STEPS: Record<OnboardingMode, readonly Step[]> = {
@@ -33,7 +34,7 @@ const STEP_FIELDS: Record<Step, readonly FieldKey[]> = {
   details: ["name", "phone", "bloodGroup", "areaId"],
   name: ["name"],
   group: ["bloodGroup", "areaId"],
-  consent: [],
+  consent: ["contactPhone", "contactConsent"],
 };
 
 const PHONE_PATTERN = /^[+\d][\d\s-]{6,18}$/;
@@ -51,6 +52,7 @@ interface Draft {
   language: Language;
   lastDonation: string;
   consents: ConsentValues;
+  contact: ContactDraft;
 }
 
 function fieldError(key: FieldKey, draft: Draft): string | undefined {
@@ -63,6 +65,12 @@ function fieldError(key: FieldKey, draft: Draft): string | undefined {
       return draft.bloodGroup ? undefined : "Choose your blood group.";
     case "areaId":
       return draft.areaId ? undefined : "Choose your neighbourhood.";
+    case "contactPhone":
+      return draft.contact.channel === "none" || PHONE_PATTERN.test(draft.contact.phone.trim())
+        ? undefined
+        : "Enter the number to alert, e.g. +91 98200 12345.";
+    case "contactConsent":
+      return draft.contact.channel === "none" || draft.contact.consent ? undefined : "Tick the box to get alerts on this number.";
   }
 }
 
@@ -95,6 +103,7 @@ export function Onboarding({
       language: "en",
       lastDonation: "",
       consents: { consentAlerts: on, consentLocation: on, consentEligibility: on },
+      contact: NO_CONTACT,
     };
   });
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -115,15 +124,18 @@ export function Onboarding({
 
   const submit = () => {
     if (!draft.bloodGroup) return;
+    const contact = draft.contact.channel === "none" ? null : draft.contact;
     signup.mutate(
       {
         name: draft.name.trim(),
-        phone: mode === "quick" ? DEMO_PHONE : draft.phone.trim(),
+        // A donor who gives a WhatsApp/SMS number in quick join gets it as their contact phone too.
+        phone: mode === "quick" ? (contact?.phone.trim() ?? DEMO_PHONE) : draft.phone.trim(),
         bloodGroup: draft.bloodGroup,
         areaId: draft.areaId,
         language: draft.language,
         ...draft.consents,
         lastDonationAt: mode === "quick" ? null : dateToMs(draft.lastDonation),
+        ...(contact ? { contactChannel: contact.channel, contactPhone: contact.phone.trim(), contactConsent: contact.consent } : {}),
       },
       { onSuccess: onDone },
     );
@@ -190,7 +202,16 @@ export function Onboarding({
       </div>
 
       {step === "consent" ? (
-        <ConsentStep draft={draft} mode={mode} onChange={(consents) => update("consents", consents)} />
+        <ConsentStep
+          draft={draft}
+          mode={mode}
+          errors={errors}
+          onChange={(consents) => update("consents", consents)}
+          onContactChange={(contact) => {
+            update("contact", contact);
+            setErrors((e) => ({ ...e, contactPhone: undefined, contactConsent: undefined }));
+          }}
+        />
       ) : meta.isPending && (step === "details" || step === "group") ? (
         <SkeletonRows rows={4} />
       ) : meta.isError ? (
@@ -267,7 +288,19 @@ export function Onboarding({
   );
 }
 
-function ConsentStep({ draft, mode, onChange }: { draft: Draft; mode: OnboardingMode; onChange: (c: ConsentValues) => void }) {
+function ConsentStep({
+  draft,
+  mode,
+  errors,
+  onChange,
+  onContactChange,
+}: {
+  draft: Draft;
+  mode: OnboardingMode;
+  errors: Partial<Record<FieldKey, string>>;
+  onChange: (c: ConsentValues) => void;
+  onContactChange: (c: ContactDraft) => void;
+}) {
   return (
     <div className="space-y-4">
       <p className="text-ink-muted">
@@ -278,6 +311,7 @@ function ConsentStep({ draft, mode, onChange }: { draft: Draft; mode: Onboarding
       <Card className="px-4 py-1">
         <ConsentList values={draft.consents} onChange={(key, next) => onChange({ ...draft.consents, [key]: next })} />
       </Card>
+      <ContactOptIn value={draft.contact} onChange={onContactChange} errors={errors} />
       <div className="flex gap-3 rounded-(--radius-panel) bg-ok-soft p-4 text-sm text-ink">
         <ShieldCheck className="mt-0.5 size-5 shrink-0 text-ok" aria-hidden />
         <p>{PRIVACY_PROMISE}</p>

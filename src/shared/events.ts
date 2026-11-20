@@ -14,6 +14,8 @@ export const TOPICS = [
   "alerts",
   "surge",
   "audit",
+  /** WhatsApp/SMS outbox, inbound chat and gateway status. */
+  "messaging",
 ] as const;
 export type Topic = (typeof TOPICS)[number];
 

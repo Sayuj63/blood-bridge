@@ -9,7 +9,7 @@ import type {
   TimelineStep,
 } from "../../shared/api";
 import { compatibleSources } from "../../shared/compatibility";
-import { COMPONENT_SHORT, POLICY, type ReservationStatus } from "../../shared/domain";
+import { COMPONENT_SHORT, POLICY, type GeoPoint, type ReservationStatus } from "../../shared/domain";
 import { rankSites, type CandidateSite, type RankedOption } from "../../shared/ranking";
 import { schema } from "../db/client";
 import type { Deps } from "../deps";
@@ -62,6 +62,15 @@ async function candidateSites(deps: Deps, input: SearchInput, onlyBankIds?: stri
     lastSyncAt: b.lastSyncAt,
     units: units.filter((u) => u.siteId === b.id),
   }));
+}
+
+/**
+ * Ranked search from any point (e.g. the locality named in a WhatsApp message).
+ * Read-only: it lists options; reserving still requires a hospital request.
+ */
+export async function searchNear(deps: Deps, origin: GeoPoint, input: Omit<SearchInput, "hospitalId">): Promise<RankedOption[]> {
+  const sites = await candidateSites(deps, { ...input, hospitalId: "" });
+  return rankSites({ ...input, origin, now: deps.now }, sites);
 }
 
 export async function search(deps: Deps, input: SearchInput): Promise<SearchResultDTO> {

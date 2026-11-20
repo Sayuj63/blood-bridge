@@ -17,6 +17,8 @@ import type { Deps } from "../deps";
 import { AppError, badRequest, conflict, notFound } from "../lib/http";
 import { confirmationCode, newId } from "../lib/ids";
 import { areaById } from "../seed";
+import { normalizePhone } from "../messaging/phone";
+import { enqueueAlertMessages, sendOptInWelcome } from "./messaging";
 import { getSite } from "./sites";
 
 type DonorRow = typeof schema.donors.$inferSelect;
@@ -63,6 +65,8 @@ export async function getDonor(deps: Deps, donorId: string): Promise<DonorDTO> {
     donations: history.map((h) => ({ at: h.at, siteName: h.siteName })),
     // Honest impact: one donation is one unit; "requests supported" counts only alert-driven donations.
     impact: { unitsDonated: history.length, requestsSupported: history.filter((h) => h.alertId !== null).length },
+    contactChannel: d.contactChannel,
+    contactOptedIn: d.contactChannel !== "none" && d.contactOptInAt !== null && d.optedOutAt === null,
   };
 }
 
@@ -71,9 +75,19 @@ export async function listPersonas(deps: Deps): Promise<DonorDTO[]> {
   return Promise.all(rows.map((r) => getDonor(deps, r.id)));
 }
 
-export async function signup(deps: Deps, input: DonorSignupInput): Promise<DonorDTO> {
+/** Off-app contact from a signup: E.164 number + opt-in time, or `none`. */
+function contactFields(input: DonorSignupInput, now: number) {
+  if (input.contactChannel === "none" || !input.contactConsent) return { contactChannel: "none" as const, contactAddress: null, contactOptInAt: null };
+  const address = normalizePhone(input.contactPhone ?? "");
+  if (!address) throw new AppError(422, "validation_failed", "Some fields are invalid", { contactPhone: ["Enter a valid mobile number, e.g. +91 98200 12345"] });
+  return { contactChannel: input.contactChannel, contactAddress: address, contactOptInAt: now };
+}
+
+/** `welcome: false` when the caller (the chat bot) confirms the opt-in itself. */
+export async function signup(deps: Deps, input: DonorSignupInput, opts: { welcome?: boolean } = {}): Promise<DonorDTO> {
   const area = areaById(input.areaId);
   if (!area) throw badRequest("Unknown area");
+  const contact = contactFields(input, deps.now);
   const id = newId("DNR");
   await deps.db.insert(schema.donors).values({
     id,
@@ -91,11 +105,15 @@ export async function signup(deps: Deps, input: DonorSignupInput): Promise<Donor
     lastDonationAt: input.lastDonationAt,
     persona: true,
     createdAt: deps.now,
+    ...contact,
   });
   await deps.hub.audit([
     { actor: `donor:${id}`, action: "donor.signed_up", entityType: "donor", entityId: id, summary: `New ${input.bloodGroup} donor registered in ${area.name}` },
   ]);
   await deps.hub.publish({ topics: ["donors"] });
+  if (opts.welcome !== false && contact.contactChannel !== "none") {
+    await sendOptInWelcome(deps, { id, bloodGroup: input.bloodGroup, language: input.language, ...contact, optedOutAt: null });
+  }
   return getDonor(deps, id);
 }
 
@@ -249,6 +267,8 @@ export async function sendDrive(
     };
   });
   for (let i = 0; i < rows.length; i += 5) await deps.db.insert(schema.donorAlerts).values(rows.slice(i, i + 5));
+  // WhatsApp/SMS copies for donors who explicitly opted in. Never blocks or fails the drive.
+  await enqueueAlertMessages(deps, rows, bank, input.urgency).catch((err) => console.error("messaging: alert enqueue failed", err));
 
   await deps.hub.audit([
     {

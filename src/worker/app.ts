@@ -12,6 +12,10 @@ import {
   donorDriveSchema,
   donorPreferencesSchema,
   donorSignupSchema,
+  gatewayAckSchema,
+  gatewayClaimSchema,
+  gatewayHeartbeatSchema,
+  gatewayInboundSchema,
   offerUnitsSchema,
   reserveSchema,
   searchSchema,
@@ -29,6 +33,8 @@ import * as audit from "./services/audit";
 import { resetDemo } from "./services/demo";
 import * as donors from "./services/donors";
 import * as fc from "./services/forecast";
+import * as messaging from "./services/messaging";
+import { handleInbound } from "./services/messaging-bot";
 import * as req from "./services/requests";
 import * as sites from "./services/sites";
 import * as stock from "./services/stock";
@@ -173,6 +179,35 @@ app.post("/drives/preview", async (c) => {
   return c.json(await donors.previewDrive(deps(c), bankSiteId, bloodGroup));
 });
 app.post("/drives", async (c) => c.json(await donors.sendDrive(deps(c), await body(c, donorDriveSchema), actor(c)), 201));
+
+/* ── Messaging gateway (WhatsApp / SMS) ── */
+
+/** Constant-time token check: hash both sides so lengths match, then timingSafeEqual. */
+async function tokenMatches(presented: string, expected: string): Promise<boolean> {
+  const enc = new TextEncoder();
+  const [a, b] = await Promise.all([crypto.subtle.digest("SHA-256", enc.encode(presented)), crypto.subtle.digest("SHA-256", enc.encode(expected))]);
+  return crypto.subtle.timingSafeEqual(a, b);
+}
+
+app.use("/gateway/*", async (c, next) => {
+  const expected = c.env.GATEWAY_TOKEN;
+  if (!expected || expected.length < 24) throw new AppError(503, "gateway_not_configured", "Messaging gateway is not configured");
+  const header = c.req.header("Authorization") ?? "";
+  const presented = header.startsWith("Bearer ") ? header.slice(7).trim() : "";
+  if (!presented || !(await tokenMatches(presented, expected))) throw new AppError(401, "unauthorized", "Invalid gateway token");
+  c.set("actor", "gateway");
+  await next();
+});
+
+app.post("/gateway/heartbeat", async (c) => c.json(await messaging.heartbeat(deps(c), await body(c, gatewayHeartbeatSchema))));
+app.post("/gateway/outbox/claim", async (c) => c.json(await messaging.claim(deps(c), await body(c, gatewayClaimSchema))));
+app.post("/gateway/outbox/:id/ack", async (c) => c.json(await messaging.ack(deps(c), c.req.param("id"), await body(c, gatewayAckSchema))));
+app.post("/gateway/inbound", async (c) =>
+  c.json(await handleInbound(deps(c), await body(c, gatewayInboundSchema), { publicUrl: new URL(c.req.url).origin })),
+);
+
+/** Public, read-only: gateway liveness and queue depth for the "WhatsApp online" indicator. */
+app.get("/messaging/status", async (c) => c.json(await messaging.messagingStatus(deps(c))));
 
 /* ── Audit ledger & demo controls ── */
 

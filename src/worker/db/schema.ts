@@ -3,7 +3,10 @@ import type {
   AlertStatus,
   BloodGroup,
   Component,
+  ContactChannel,
   Language,
+  MessageChannel,
+  OutboxStatus,
   RequestStatus,
   ReservationStatus,
   SiteKind,
@@ -169,8 +172,16 @@ export const donors = sqliteTable(
     /** Demo personas show up in the donor view's persona picker. */
     persona: integer("persona", { mode: "boolean" }).notNull().default(false),
     createdAt: integer("created_at").notNull(),
+    /**
+     * Off-app contact. A donor is messaged only when the channel is not `none` AND
+     * contactOptInAt is set (explicit consent). Seeded synthetic donors stay `none`.
+     */
+    contactChannel: text("contact_channel").$type<ContactChannel>().notNull().default("none"),
+    /** E.164 phone number, e.g. +919820012345. */
+    contactAddress: text("contact_address"),
+    contactOptInAt: integer("contact_opt_in_at"),
   },
-  (t) => [index("donors_group_idx").on(t.bloodGroup)],
+  (t) => [index("donors_group_idx").on(t.bloodGroup), index("donors_contact_idx").on(t.contactAddress)],
 );
 
 export const donations = sqliteTable(
@@ -268,4 +279,93 @@ export const rateLimits = sqliteTable(
     count: integer("count").notNull(),
   },
   (t) => [uniqueIndex("rate_limits_pk").on(t.key, t.windowStart)],
+);
+
+
+/* ───────────────────────────── Messaging (WhatsApp / SMS) ───────────────────────────── */
+
+/**
+ * Transactional outbox drained by the off-Worker messaging gateway.
+ * pending → claimed (30 s lease, conditional update) → sent | failed; an expired
+ * lease returns the row to the claimable pool, so a crashed gateway loses nothing.
+ */
+export const outbox = sqliteTable(
+  "outbox",
+  {
+    id: text("id").primaryKey(),
+    channel: text("channel").$type<MessageChannel>().notNull(),
+    /** E.164 phone number, or a WhatsApp group id (replies only). */
+    to: text("to_address").notNull(),
+    body: text("body").notNull(),
+    /** alert = donor alert (opt-in required) · reply = answer to an inbound message · notice = consent/welcome/stop confirmations. */
+    kind: text("kind").$type<"alert" | "reply" | "notice">().notNull(),
+    status: text("status").$type<OutboxStatus>().notNull().default("pending"),
+    attempts: integer("attempts").notNull().default(0),
+    alertId: text("alert_id"),
+    donorId: text("donor_id"),
+    /** Set on an SMS copy created after the WhatsApp original failed. */
+    fallbackOf: text("fallback_of"),
+    lastError: text("last_error"),
+    /** Random token issued with each claim; an ack must present the current one. */
+    leaseToken: text("lease_token"),
+    claimedAt: integer("claimed_at"),
+    claimedBy: text("claimed_by"),
+    /** Earliest time the row may be claimed (retry backoff). */
+    nextAttemptAt: integer("next_attempt_at").notNull(),
+    /** Alerts go stale: never deliver a request for blood hours late. */
+    expiresAt: integer("expires_at"),
+    providerMessageId: text("provider_message_id"),
+    sentAt: integer("sent_at"),
+    createdAt: integer("created_at").notNull(),
+    updatedAt: integer("updated_at").notNull(),
+  },
+  (t) => [
+    index("outbox_claim_idx").on(t.status, t.channel, t.nextAttemptAt),
+    index("outbox_to_idx").on(t.to, t.createdAt),
+    index("outbox_alert_idx").on(t.alertId),
+  ],
+);
+
+/** Multi-step chat state per channel address (JOIN signup, follow-up questions, STOP suppression). */
+export const conversations = sqliteTable(
+  "conversations",
+  {
+    channel: text("channel").$type<MessageChannel>().notNull(),
+    address: text("address").notNull(),
+    step: text("step").notNull().default("idle"),
+    context: text("context", { mode: "json" }).$type<Record<string, unknown>>().notNull().default({}),
+    language: text("language").$type<Language>().notNull().default("en"),
+    /** Set by STOP: nothing but the STOP confirmation is ever sent to this address again until START. */
+    suppressedAt: integer("suppressed_at"),
+    lastInboundAt: integer("last_inbound_at"),
+    updatedAt: integer("updated_at").notNull(),
+  },
+  (t) => [uniqueIndex("conversations_pk").on(t.channel, t.address)],
+);
+
+/** Inbound de-duplication: the gateway may retry a forward; each provider message is handled once. */
+export const inboundMessages = sqliteTable(
+  "inbound_messages",
+  {
+    channel: text("channel").$type<MessageChannel>().notNull(),
+    messageId: text("message_id").notNull(),
+    intent: text("intent").notNull(),
+    receivedAt: integer("received_at").notNull(),
+  },
+  (t) => [uniqueIndex("inbound_messages_pk").on(t.channel, t.messageId)],
+);
+
+/** Gateway heartbeats, one row per gateway × channel — powers "WhatsApp online". */
+export const gatewayChannels = sqliteTable(
+  "gateway_channels",
+  {
+    gatewayId: text("gateway_id").notNull(),
+    channel: text("channel").$type<MessageChannel>().notNull(),
+    adapter: text("adapter").notNull(),
+    state: text("state").$type<"starting" | "needs_qr" | "online" | "offline">().notNull(),
+    detail: text("detail"),
+    version: text("version"),
+    lastSeenAt: integer("last_seen_at").notNull(),
+  },
+  (t) => [uniqueIndex("gateway_channels_pk").on(t.gatewayId, t.channel)],
 );

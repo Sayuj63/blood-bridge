@@ -12,6 +12,10 @@ export async function resetDemo(deps: Deps, actor: string): Promise<{ sites: num
   await db.batch([
     db.delete(schema.auditLog),
     db.delete(schema.rateLimits),
+    // Messaging state refers to donors, so it goes too. Gateway heartbeats survive a reset.
+    db.delete(schema.outbox),
+    db.delete(schema.conversations),
+    db.delete(schema.inboundMessages),
     db.delete(schema.donations),
     db.delete(schema.donorAlerts),
     db.delete(schema.donors),
@@ -41,7 +45,7 @@ export async function resetDemo(deps: Deps, actor: string): Promise<{ sites: num
     },
   ]);
   await deps.hub.publish({
-    topics: ["sites", "stock", "requests", "reservations", "transfers", "donors", "alerts", "surge", "audit"],
+    topics: ["sites", "stock", "requests", "reservations", "transfers", "donors", "alerts", "surge", "audit", "messaging"],
     headline: "Demo reset — simulated city regenerated",
     tone: "info",
   });

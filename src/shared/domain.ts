@@ -76,6 +76,15 @@ export const LANGUAGES = ["en", "hi", "mr"] as const;
 export type Language = (typeof LANGUAGES)[number];
 export const LANGUAGE_LABEL: Record<Language, string> = { en: "English", hi: "हिन्दी", mr: "मराठी" };
 
+/** Messaging channels the gateway can deliver on. */
+export const MESSAGE_CHANNELS = ["whatsapp", "sms"] as const;
+export type MessageChannel = (typeof MESSAGE_CHANNELS)[number];
+/** How a donor asked to be reached outside the app. `none` (the default) means never message them. */
+export const CONTACT_CHANNELS = ["none", ...MESSAGE_CHANNELS] as const;
+export type ContactChannel = (typeof CONTACT_CHANNELS)[number];
+export const OUTBOX_STATUSES = ["pending", "claimed", "sent", "failed"] as const;
+export type OutboxStatus = (typeof OUTBOX_STATUSES)[number];
+
 export interface GeoPoint {
   lat: number;
   lng: number;

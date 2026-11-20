@@ -14,6 +14,7 @@ import { cn } from "../../lib/cn";
 import { useForecast, useMeta } from "../../lib/queries";
 import { useRealtime } from "../../lib/realtime";
 import { JoinQr } from "./JoinQr";
+import { MessagingStatus } from "./MessagingStatus";
 
 const VIEWS = [
   // Scripted 60-second demo (PRD §7.1): Sion's municipal hospital requests O-negative platelets;
@@ -64,6 +65,7 @@ export default function StagePage() {
           <Logo size={24} />
         </Link>
         <LiveDot status={status} />
+        <MessagingStatus />
         <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Demo controls">
           <Button size="sm" loading={reset.isPending} icon={<RotateCcw className="size-3.5" aria-hidden />} onClick={() => reset.mutate()}>
             Reset demo

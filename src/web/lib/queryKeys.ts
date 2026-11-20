@@ -40,4 +40,5 @@ export const TOPIC_INVALIDATES: Record<Topic, readonly Root[]> = {
   alerts: [["alerts"], ["incoming-donors"], ["donors"]],
   surge: [["forecast"], ["transfers"], ["surge-brief"]],
   audit: [["audit"]],
+  messaging: [["messaging"]],
 };

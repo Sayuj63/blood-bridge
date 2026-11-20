@@ -1,0 +1,26 @@
+{
+  "name": "blood-bridge-gateway",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Blood Bridge messaging gateway: relays WhatsApp (open-wa) and SMS (SMS Gateway for Android) to the Blood Bridge Worker over outbound HTTPS only.",
+  "engines": { "node": ">=20.12" },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "console": "CHANNELS=console tsx src/main.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@open-wa/wa-automate": "5.11.0",
+    "android-sms-gateway": "4.0.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["puppeteer", "@open-wa/wa-automate", "esbuild"]
+  }
+}

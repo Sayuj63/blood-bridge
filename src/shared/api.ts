@@ -8,13 +8,17 @@ import { z } from "zod";
 import {
   BLOOD_GROUPS,
   COMPONENTS,
+  CONTACT_CHANNELS,
   LANGUAGES,
+  MESSAGE_CHANNELS,
   SURGE_KINDS,
   URGENCIES,
   type AlertStatus,
   type BloodGroup,
   type Component,
+  type ContactChannel,
   type Language,
+  type MessageChannel,
   type RequestStatus,
   type ReservationStatus,
   type SiteKind,
@@ -109,6 +113,14 @@ export const donorSignupSchema = z.object({
   consentLocation: z.boolean(),
   consentEligibility: z.boolean(),
   lastDonationAt: z.number().int().positive().nullable().default(null),
+  /** Optional off-app alerts. Anything but `none` needs a phone number and an explicit consent tick. */
+  contactChannel: z.enum(CONTACT_CHANNELS).default("none"),
+  contactPhone: z.string().trim().max(24).optional(),
+  contactConsent: z.boolean().default(false),
+}).superRefine((v, ctx) => {
+  if (v.contactChannel === "none") return;
+  if (!v.contactPhone) ctx.addIssue({ code: "custom", path: ["contactPhone"], message: "Enter the number to alert" });
+  if (!v.contactConsent) ctx.addIssue({ code: "custom", path: ["contactConsent"], message: "Tick the consent box to get alerts on this number" });
 });
 export type DonorSignupInput = z.infer<typeof donorSignupSchema>;
 
@@ -137,6 +149,58 @@ export type DonorDriveInput = z.infer<typeof donorDriveSchema>;
 
 export const alertResponseSchema = z.object({ response: z.enum(["accept", "decline"]) });
 export type AlertResponseInput = z.infer<typeof alertResponseSchema>;
+
+/* ── Messaging gateway (Bearer GATEWAY_TOKEN) ── */
+
+const messageChannel = z.enum(MESSAGE_CHANNELS);
+const gatewayId = z.string().trim().min(1).max(64).regex(/^[\w.:-]+$/, "Use letters, digits, . : _ -");
+
+export const gatewayClaimSchema = z.object({
+  gatewayId,
+  /** Only channels this gateway can deliver on right now. */
+  channels: z.array(messageChannel).min(1).max(2),
+  limit: z.number().int().min(1).max(20).default(10),
+});
+export type GatewayClaimInput = z.infer<typeof gatewayClaimSchema>;
+
+export const gatewayAckSchema = z.object({
+  leaseToken: z.string().min(8).max(64),
+  status: z.enum(["sent", "failed"]),
+  error: z.string().max(500).optional(),
+  /** False for permanent failures (e.g. number not on WhatsApp): skip retries. */
+  retryable: z.boolean().default(true),
+  providerMessageId: z.string().max(200).optional(),
+});
+export type GatewayAckInput = z.infer<typeof gatewayAckSchema>;
+
+export const gatewayInboundSchema = z.object({
+  channel: messageChannel,
+  /** E.164 number (or a WhatsApp group id ending @g.us). */
+  from: z.string().trim().min(3).max(64),
+  text: z.string().max(2000),
+  messageId: z.string().trim().min(1).max(200),
+  at: z.number().int().positive(),
+});
+export type GatewayInboundInput = z.infer<typeof gatewayInboundSchema>;
+
+export const GATEWAY_CHANNEL_STATES = ["starting", "needs_qr", "online", "offline"] as const;
+export type GatewayChannelState = (typeof GATEWAY_CHANNEL_STATES)[number];
+
+export const gatewayHeartbeatSchema = z.object({
+  gatewayId,
+  version: z.string().max(32).optional(),
+  channels: z
+    .array(
+      z.object({
+        channel: messageChannel,
+        adapter: z.string().trim().min(1).max(40),
+        state: z.enum(GATEWAY_CHANNEL_STATES),
+        detail: z.string().max(200).optional(),
+      }),
+    )
+    .max(4),
+});
+export type GatewayHeartbeatInput = z.infer<typeof gatewayHeartbeatSchema>;
 
 /* ───────────────────────────── Response DTOs ───────────────────────────── */
 
@@ -349,6 +413,9 @@ export interface DonorDTO {
   eligibleFrom: number | null;
   donations: { at: number; siteName: string }[];
   impact: { unitsDonated: number; requestsSupported: number };
+  /** Off-app alerts: `none` unless the donor opted in to WhatsApp or SMS. */
+  contactChannel: ContactChannel;
+  contactOptedIn: boolean;
 }
 
 export interface DonorAlertDTO {
@@ -436,3 +503,44 @@ export interface MetaDTO {
   simulated: true;
 }
 
+
+/* ── Messaging ── */
+
+/** One outbox row handed to the gateway by a claim. */
+export interface OutboxMessageDTO {
+  id: string;
+  channel: MessageChannel;
+  to: string;
+  body: string;
+  leaseToken: string;
+  attempt: number;
+}
+
+export interface GatewayClaimDTO {
+  messages: OutboxMessageDTO[];
+  leaseMs: number;
+}
+
+export interface GatewayInboundDTO {
+  ok: true;
+  duplicate: boolean;
+  intent: string;
+  /** Replies are queued in the outbox; the gateway should claim straight away. */
+  queued: number;
+}
+
+export interface MessagingChannelStatusDTO {
+  channel: MessageChannel;
+  online: boolean;
+  state: GatewayChannelState;
+  adapter: string | null;
+  lastSeenAt: number | null;
+}
+
+/** Public: drives the "WhatsApp online" indicator. No addresses, no bodies. */
+export interface MessagingStatusDTO {
+  gatewayLastSeenAt: number | null;
+  channels: MessagingChannelStatusDTO[];
+  queue: { pending: number; claimed: number; sent24h: number; failed24h: number };
+  checkedAt: number;
+}

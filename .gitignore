@@ -7,3 +7,9 @@ dist
 .DS_Store
 test-results
 playwright-report
+
+# Messaging gateway: secrets and WhatsApp session (a logged-in session is a credential)
+gateway/.env
+gateway/.session/
+gateway/.open-wa/
+gateway/node_modules
