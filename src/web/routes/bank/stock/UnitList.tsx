@@ -1,5 +1,7 @@
-import { ScanLine } from "lucide-react";
-import { useId, useState } from "react";
+import { Camera, ScanLine } from "lucide-react";
+import { useCallback, useId, useState } from "react";
+import { Button } from "../../../components/ui/Button";
+import { CameraScanner } from "./CameraScanner";
 import type { UnitDTO } from "../../../../shared/api";
 import type { BloodGroup, Component } from "../../../../shared/domain";
 import { EmptyState } from "../../../components/ui/EmptyState";
@@ -22,6 +24,8 @@ export function UnitList({ units }: { units: UnitDTO[] }) {
   const [component, setComponent] = useState<Component | "all">("all");
   const [expiry, setExpiry] = useState<ExpiryWindow>("all");
   const scanId = useId();
+  const [camera, setCamera] = useState(false);
+  const closeCamera = useCallback(() => setCamera(false), []);
 
   const matches = filterUnits(units, { scan, group, component, window: expiry });
   const exact = scan.trim() ? matches.find((u) => u.id.toLowerCase() === scan.trim().toLowerCase()) : undefined;
@@ -33,7 +37,8 @@ export function UnitList({ units }: { units: UnitDTO[] }) {
         <label htmlFor={scanId} className="block text-sm font-medium">
           Scan unit ID
         </label>
-        <div className="relative mt-1.5">
+        <div className="mt-1.5 flex gap-2">
+        <div className="relative flex-1">
           <ScanLine className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink-muted" aria-hidden />
           <input
             id={scanId}
@@ -46,6 +51,11 @@ export function UnitList({ units }: { units: UnitDTO[] }) {
             className="focus-ring h-10 w-full rounded-(--radius-control) border border-line-strong bg-surface pr-3 pl-9 font-mono text-sm"
           />
         </div>
+        <Button icon={<Camera className="size-4" aria-hidden />} onClick={() => setCamera(true)} aria-label="Scan with camera">
+          Camera
+        </Button>
+        </div>
+        {camera ? <CameraScanner open onClose={closeCamera} onScan={setScan} /> : null}
       </div>
       <div className="grid grid-cols-3 gap-2">
         <SelectField hideLabel label="Filter by group" value={group} options={[{ value: "all", label: "All groups" }, ...GROUP_OPTIONS]} onChange={setGroup} />

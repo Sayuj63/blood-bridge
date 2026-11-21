@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { UnitDTO } from "../../../../shared/api";
 import { COMPONENT_SHORT } from "../../../../shared/domain";
 import { Badge } from "../../../components/ui/Badge";
@@ -6,6 +7,7 @@ import { Button } from "../../../components/ui/Button";
 import { ExpiryBadge } from "../../../components/ui/ExpiryBadge";
 import { api } from "../../../lib/api";
 import { cn } from "../../../lib/cn";
+import { UnitLabel } from "./UnitLabel";
 import { useAction } from "../shared/useAction";
 
 const STATUS_LABEL: Partial<Record<UnitDTO["status"], string>> = { reserved: "Reserved", in_transit: "In transit" };
@@ -17,6 +19,7 @@ export function UnitRow({ unit, highlight = false }: { unit: UnitDTO; highlight?
     success: (_, action) => `Unit ${unit.id} ${action === "use" ? "marked used" : "removed"}`,
   });
   const available = unit.status === "available";
+  const [label, setLabel] = useState(false);
   const pending = act.isPending ? act.variables : undefined;
 
   return (
@@ -36,6 +39,9 @@ export function UnitRow({ unit, highlight = false }: { unit: UnitDTO; highlight?
       ) : null}
       <ExpiryBadge expiresAt={unit.expiresAt} size="sm" />
       <div className="flex gap-1">
+        <Button size="sm" variant="ghost" onClick={() => setLabel(true)} aria-label={`Show label for unit ${unit.id}`}>
+          Label
+        </Button>
         <Button size="sm" disabled={!available || act.isPending} loading={pending === "use"} onClick={() => act.mutate("use")} aria-label={`Mark unit ${unit.id} used`}>
           Used
         </Button>
@@ -50,6 +56,7 @@ export function UnitRow({ unit, highlight = false }: { unit: UnitDTO; highlight?
           Remove
         </Button>
       </div>
+      {label ? <UnitLabel unit={unit} open onClose={() => setLabel(false)} /> : null}
     </li>
   );
 }

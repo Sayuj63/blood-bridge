@@ -583,3 +583,20 @@ export interface MessagingStatusDTO {
   queue: { pending: number; claimed: number; sent24h: number; failed24h: number };
   checkedAt: number;
 }
+
+/* ───────────────────────────── e-RaktKosh live sync ───────────────────────────── */
+
+export interface EraktkoshSyncDTO {
+  syncedAt: number;
+  banks: { siteId: string; added: number; removed: number; sourceUpdatedAt: number | null }[];
+  added: number;
+  removed: number;
+}
+
+export interface EraktkoshStatusDTO {
+  lastAttemptAt: number | null;
+  /** null = never attempted. */
+  ok: boolean | null;
+  summary: string | null;
+  nextAutoSyncAt: number;
+}

@@ -41,6 +41,7 @@ import { CLOUD_GATEWAY_ID, contactInfo, parseWebhook, readWaEnv, verifyChallenge
 import * as req from "./services/requests";
 import * as sites from "./services/sites";
 import * as stock from "./services/stock";
+import { eraktkoshStatus, syncEraktkosh } from "./services/eraktkosh";
 
 type AppEnv = { Bindings: Env; Variables: { deps: Deps; actor: string } };
 
@@ -125,6 +126,9 @@ app.post("/sites/:id/offer", async (c) =>
 app.post("/units/:id/action", async (c) =>
   c.json(await stock.unitAction(deps(c), c.req.param("id"), await body(c, unitActionSchema), actor(c))),
 );
+app.post("/sites/:id/sync-eraktkosh", async (c) => c.json(await syncEraktkosh(deps(c), actor(c), c.req.param("id"))));
+app.post("/eraktkosh/sync", async (c) => c.json(await syncEraktkosh(deps(c), actor(c))));
+app.get("/eraktkosh/status", async (c) => c.json(await eraktkoshStatus(deps(c))));
 app.get("/sites/:id/queue", async (c) => c.json(await req.bankQueue(deps(c), c.req.param("id"))));
 app.get("/sites/:id/incoming-donors", async (c) => c.json(await donors.incomingDonors(deps(c), c.req.param("id"))));
 

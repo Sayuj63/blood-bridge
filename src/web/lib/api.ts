@@ -17,6 +17,8 @@ import type {
   DeclineInput,
   DismissTransferInput,
   DonorAlertDTO,
+  EraktkoshStatusDTO,
+  EraktkoshSyncDTO,
   DonorDTO,
   DonorSignupDTO,
   MessagingContactDTO,
@@ -158,6 +160,13 @@ export const api = {
     queue: (siteId: string, signal?: AbortSignal) => get<QueueItemDTO[]>(`/api/sites/${enc(siteId)}/queue`, signal),
     incomingDonors: (siteId: string, signal?: AbortSignal) =>
       get<IncomingDonorDTO[]>(`/api/sites/${enc(siteId)}/incoming-donors`, signal),
+    /** Pull this bank's live counts from e-RaktKosh. */
+    syncEraktkosh: (siteId: string) => post<EraktkoshSyncDTO>(`/api/sites/${enc(siteId)}/sync-eraktkosh`),
+  },
+
+  eraktkosh: {
+    status: (signal?: AbortSignal) => get<EraktkoshStatusDTO>("/api/eraktkosh/status", signal),
+    syncAll: () => post<EraktkoshSyncDTO>("/api/eraktkosh/sync"),
   },
 
   units: {
