@@ -63,7 +63,9 @@ export default function CommandPage() {
               surge={surge ? { lat: surge.epicenter.lat, lng: surge.epicenter.lng, radiusKm: surge.radiusKm } : null}
               fitToMarkers
               fitPadding={50}
-              pitch={35}
+              mode3d
+              pitch={50}
+              bearing={-18}
               label="City map: blood banks and hospitals coloured by how soon they run out, with transfer routes"
               className="h-full w-full"
             />

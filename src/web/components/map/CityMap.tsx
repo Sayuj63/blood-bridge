@@ -8,6 +8,7 @@ import type { GeoPoint } from "../../../shared/domain";
 import { cn } from "../../lib/cn";
 import { MAP_STYLE_URL, toneHex, toneRgb, type ThemeName, type Tone } from "../../styles/tokens";
 import { arcPath, circleRing, pointAlong, type ArcPoint } from "./geometry";
+import { apply3dStyle } from "./style3d";
 
 // MapLibre 6 resolves its worker relative to its own module, which breaks once Vite
 // pre-bundles it. Point it at the self-contained worker file explicitly.
@@ -71,6 +72,8 @@ export interface CityMapProps {
   /** Extra padding (px) when fitting, e.g. to clear side panels. */
   fitPadding?: number | { top: number; bottom: number; left: number; right: number };
   interactive?: boolean;
+  /** 3D base map: extruded buildings, relief and sky, with drag-to-rotate and tilt. */
+  mode3d?: boolean;
   /** Accessible description of what the map shows. */
   label: string;
   className?: string;
@@ -99,6 +102,7 @@ export function CityMap({
   fitToMarkers = false,
   fitPadding = 60,
   interactive = true,
+  mode3d = false,
   label,
   className,
 }: CityMapProps) {
@@ -128,16 +132,19 @@ export function CityMap({
       bearing,
       interactive,
       attributionControl: { compact: true },
-      dragRotate: false,
-      pitchWithRotate: false,
+      dragRotate: mode3d,
+      pitchWithRotate: mode3d,
+      touchPitch: mode3d,
+      maxPitch: 65,
       cooperativeGestures: false,
     });
-    if (interactive) map.addControl(new NavigationControl({ showCompass: false }), "bottom-right");
+    if (interactive) map.addControl(new NavigationControl({ showCompass: mode3d, visualizePitch: mode3d }), "bottom-right");
     mapRef.current = map;
     fittedRef.current = false;
     const markerMap = markerRefs.current;
 
     map.on("load", () => {
+      if (mode3d) apply3dStyle(map, theme, { buildings: true, relief: true });
       map.addSource("surge", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
       map.addLayer({
         id: "surge-fill",
@@ -170,7 +177,7 @@ export function CityMap({
       map.remove();
     };
     // Camera props are initial values only; later changes are applied below without a rebuild.
-  }, [theme, interactive]);
+  }, [theme, interactive, mode3d]);
 
   /* Camera updates after mount. */
   useEffect(() => {
