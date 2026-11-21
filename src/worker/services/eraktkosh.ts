@@ -1,4 +1,5 @@
 import { and, desc, eq, gt, inArray, like } from "drizzle-orm";
+import type { BatchItem } from "drizzle-orm/batch";
 import type { EraktkoshStatusDTO, EraktkoshSyncDTO } from "../../shared/api";
 import { BLOOD_GROUPS, COMPONENTS } from "../../shared/domain";
 import { insertMany, schema } from "../db/client";
@@ -46,49 +47,62 @@ async function fetchSnapshot(): Promise<ParsedSnapshot> {
   return parseResults(results);
 }
 
-/** Make `available` units match the reported counts. Reserved / in-transit units are never touched. */
-async function reconcileBank(deps: Deps, bankId: string, snap: ParsedSnapshot): Promise<{ added: number; removed: number }> {
-  const target = snap.stock[bankId];
+/**
+ * Make `available` units match the reported counts for every bank in one pass.
+ * One read, then batched writes: a Worker invocation has a cap on database calls,
+ * so per-bank queries across 25 banks would hit it. Reserved / in-transit units are never touched.
+ */
+async function reconcileAll(deps: Deps, bankIds: string[], snap: ParsedSnapshot): Promise<EraktkoshSyncDTO["banks"]> {
   const available = await deps.db
-    .select({ id: schema.units.id, bloodGroup: schema.units.bloodGroup, component: schema.units.component, expiresAt: schema.units.expiresAt })
+    .select({ id: schema.units.id, siteId: schema.units.siteId, bloodGroup: schema.units.bloodGroup, component: schema.units.component, expiresAt: schema.units.expiresAt })
     .from(schema.units)
-    .where(and(eq(schema.units.siteId, bankId), eq(schema.units.status, "available"), gt(schema.units.expiresAt, deps.now)));
+    .where(and(inArray(schema.units.siteId, bankIds), eq(schema.units.status, "available"), gt(schema.units.expiresAt, deps.now)));
 
   const toAdd: (typeof schema.units.$inferInsert)[] = [];
   const toRemove: string[] = [];
-  for (const g of BLOOD_GROUPS) {
-    for (const c of COMPONENTS) {
-      const have = available.filter((u) => u.bloodGroup === g && u.component === c).sort((a, b) => b.expiresAt - a.expiresAt);
-      const want = target[g][c];
-      const life = SHELF_LIFE_DAYS[c] * DAY;
-      for (let i = have.length; i < want; i++) {
-        const expiresAt = Math.round(deps.now + life * (0.05 + Math.random() * 0.95));
-        toAdd.push({
-          id: newId("U"),
-          siteId: bankId,
-          bloodGroup: g,
-          component: c,
-          collectedAt: expiresAt - life,
-          expiresAt,
-          status: "available",
-          updatedAt: deps.now,
-        });
+  const changes: EraktkoshSyncDTO["banks"] = [];
+  for (const bankId of bankIds) {
+    const target = snap.stock[bankId];
+    const own = available.filter((u) => u.siteId === bankId);
+    let added = 0;
+    let removed = 0;
+    for (const g of BLOOD_GROUPS) {
+      for (const c of COMPONENTS) {
+        const have = own.filter((u) => u.bloodGroup === g && u.component === c).sort((a, b) => b.expiresAt - a.expiresAt);
+        const want = target[g][c];
+        const life = SHELF_LIFE_DAYS[c] * DAY;
+        for (let i = have.length; i < want; i++, added++) {
+          const expiresAt = Math.round(deps.now + life * (0.05 + Math.random() * 0.95));
+          toAdd.push({ id: newId("U"), siteId: bankId, bloodGroup: g, component: c, collectedAt: expiresAt - life, expiresAt, status: "available", updatedAt: deps.now });
+        }
+        // Issued elsewhere since our last view: retire the freshest surplus first, keeping older units for FIFO.
+        const surplus = have.slice(0, Math.max(0, have.length - want)).map((u) => u.id);
+        toRemove.push(...surplus);
+        removed += surplus.length;
       }
-      // Issued elsewhere since our last view: retire the freshest surplus first, keeping older units for FIFO.
-      toRemove.push(...have.slice(0, Math.max(0, have.length - want)).map((u) => u.id));
     }
+    changes.push({ siteId: bankId, added, removed, sourceUpdatedAt: snap.updatedAt[bankId] ?? null });
   }
+
   await insertMany(deps.db, schema.units, toAdd);
+  const writes: BatchItem<"sqlite">[] = [];
   for (let i = 0; i < toRemove.length; i += 90) {
-    await deps.db
-      .update(schema.units)
-      .set({ status: "used", updatedAt: deps.now })
-      .where(and(inArray(schema.units.id, toRemove.slice(i, i + 90)), eq(schema.units.status, "available")));
+    writes.push(
+      deps.db
+        .update(schema.units)
+        .set({ status: "used", updatedAt: deps.now })
+        .where(and(inArray(schema.units.id, toRemove.slice(i, i + 90)), eq(schema.units.status, "available"))),
+    );
   }
-  if (snap.updatedAt[bankId]) {
-    await deps.db.update(schema.sites).set({ lastSyncAt: snap.updatedAt[bankId] }).where(eq(schema.sites.id, bankId));
+  for (const bankId of bankIds) {
+    const at = snap.updatedAt[bankId];
+    if (at) writes.push(deps.db.update(schema.sites).set({ lastSyncAt: at }).where(eq(schema.sites.id, bankId)));
   }
-  return { added: toAdd.length, removed: toRemove.length };
+  for (let i = 0; i < writes.length; i += 50) {
+    const chunk = writes.slice(i, i + 50);
+    if (chunk.length) await deps.db.batch(chunk as [BatchItem<"sqlite">, ...BatchItem<"sqlite">[]]);
+  }
+  return changes;
 }
 
 /** Sync one bank or all banks. Failures (portal down, blocked) are audited and reported, never thrown raw. */
@@ -114,11 +128,7 @@ export async function syncEraktkosh(deps: Deps, actor: string, onlyBankId?: stri
   const banks = Object.keys(snap.stock).filter((id) => !onlyBankId || id === onlyBankId);
   if (onlyBankId && banks.length === 0) throw new AppError(404, "not_on_eraktkosh", "This bank isn't listed in today's e-RaktKosh data");
 
-  const changes: EraktkoshSyncDTO["banks"] = [];
-  for (const id of banks) {
-    const { added, removed } = await reconcileBank(deps, id, snap);
-    changes.push({ siteId: id, added, removed, sourceUpdatedAt: snap.updatedAt[id] ?? null });
-  }
+  const changes = await reconcileAll(deps, banks, snap);
   const added = changes.reduce((n, c) => n + c.added, 0);
   const removed = changes.reduce((n, c) => n + c.removed, 0);
   const summary = `e-RaktKosh sync: ${banks.length} bank${banks.length === 1 ? "" : "s"}, +${added} / −${removed} units`;
