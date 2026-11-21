@@ -2,6 +2,7 @@ import { Droplet } from "lucide-react";
 import type { DonorDTO } from "../../../../shared/api";
 import { Card, CardBody, CardHeader } from "../../../components/ui/Card";
 import { Stat } from "../../../components/ui/Stat";
+import { DonorCard } from "../keepsake/DonorCard";
 import { formatDate } from "../copy";
 
 /** Modest, honest impact: one donation is one unit; only alert-driven donations count as requests supported. */
@@ -34,6 +35,7 @@ export function ImpactCard({ donor }: { donor: DonorDTO }) {
             ))}
           </ul>
         )}
+        {donor.donations[0] ? <DonorCard donor={donor} donation={donor.donations[0]} className="mt-4" /> : null}
       </CardBody>
     </Card>
   );

@@ -40,6 +40,15 @@ export function VisitPass({ alert, className }: { alert: DonorAlertDTO; classNam
           </div>
         ) : null}
       </dl>
+      <div className="border-t border-line px-4 py-3">
+        <p className="font-label text-xs uppercase tracking-wider text-ink-muted">Before you go</p>
+        <ul className="mt-1.5 space-y-1 text-sm text-ink">
+          <li>✓ Eat a light meal and drink plenty of water</li>
+          <li>✓ Carry a photo ID</li>
+          <li>✓ Keep this code ready for the desk</li>
+          <li>✓ Tell the staff about any medicines you take</li>
+        </ul>
+      </div>
       {alert.bankAddress ? (
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${alert.bankName}, ${alert.bankAddress}`)}`}

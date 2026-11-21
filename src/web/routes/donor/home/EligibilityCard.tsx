@@ -5,6 +5,7 @@ import { Card } from "../../../components/ui/Card";
 import { cn } from "../../../lib/cn";
 import { useMeta } from "../../../lib/queries";
 import { useClock } from "../useClock";
+import { ReminderButton } from "../keepsake/ReminderButton";
 import { DAY_MS, formatDate } from "../copy";
 
 const SIZE = 120;
@@ -76,6 +77,7 @@ export function EligibilityCard({ donor }: { donor: DonorDTO }) {
               Last donated {formatDate(donor.lastDonationAt)}
             </p>
           ) : null}
+          {waiting && donor.eligibleFrom !== null ? <ReminderButton donorId={donor.id} eligibleFrom={donor.eligibleFrom} className="mt-3" /> : null}
         </div>
       </div>
       <p className="mt-4 border-t border-line pt-3 text-xs text-ink-muted">
