@@ -54,6 +54,10 @@ export const units = sqliteTable(
     index("units_site_status_idx").on(t.siteId, t.status),
     index("units_match_idx").on(t.component, t.bloodGroup, t.status),
     index("units_reservation_idx").on(t.reservationId),
+    // The minute sweep ("available and past expiry") and every "in-date stock" read filter on these.
+    index("units_status_expiry_idx").on(t.status, t.expiresAt),
+    // A bank's shelf, soonest-expiring first (stock view, reconcile) without scanning other banks.
+    index("units_site_status_expiry_idx").on(t.siteId, t.status, t.expiresAt),
   ],
 );
 
@@ -277,7 +281,7 @@ export const auditLog = sqliteTable(
     prevHash: text("prev_hash").notNull(),
     hash: text("hash").notNull(),
   },
-  (t) => [index("audit_site_idx").on(t.siteId, t.seq)],
+  (t) => [index("audit_site_idx").on(t.siteId, t.seq), index("audit_action_idx").on(t.action, t.seq)],
 );
 
 /** Rate-limit buckets for anti-abuse (critical alerts per hospital per hour). */

@@ -1,4 +1,4 @@
-import { and, desc, eq, gt, inArray, like } from "drizzle-orm";
+import { and, desc, eq, gt, inArray } from "drizzle-orm";
 import type { BatchItem } from "drizzle-orm/batch";
 import type { EraktkoshStatusDTO, EraktkoshSyncDTO } from "../../shared/api";
 import { BLOOD_GROUPS, COMPONENTS } from "../../shared/domain";
@@ -139,19 +139,20 @@ export async function syncEraktkosh(deps: Deps, actor: string, onlyBankId?: stri
   return { syncedAt: deps.now, banks: changes, added, removed };
 }
 
-async function lastEntry(deps: Deps, action: string) {
+/** Exact action names so the (action, seq) index serves this; LIKE would scan the whole log. */
+async function lastEntry(deps: Deps, actions: string[]) {
   const [row] = await deps.db
     .select({ at: schema.auditLog.at, action: schema.auditLog.action, summary: schema.auditLog.summary, actor: schema.auditLog.actor })
     .from(schema.auditLog)
-    .where(like(schema.auditLog.action, action))
+    .where(inArray(schema.auditLog.action, actions))
     .orderBy(desc(schema.auditLog.seq))
     .limit(1);
   return row ?? null;
 }
-const lastSuccess = (deps: Deps) => lastEntry(deps, "eraktkosh.sync");
+const lastSuccess = (deps: Deps) => lastEntry(deps, ["eraktkosh.sync"]);
 
 export async function eraktkoshStatus(deps: Deps): Promise<EraktkoshStatusDTO> {
-  const [last, ok] = await Promise.all([lastEntry(deps, "eraktkosh.%"), lastSuccess(deps)]);
+  const [last, ok] = await Promise.all([lastEntry(deps, ["eraktkosh.sync", "eraktkosh.sync_failed"]), lastSuccess(deps)]);
   // A recent success (direct or via the India relay) outranks a later blocked direct attempt.
   const fresh = ok && deps.now - ok.at < 3 * AUTO_SYNC_EVERY_MS ? ok : null;
   const shown = fresh ?? last;

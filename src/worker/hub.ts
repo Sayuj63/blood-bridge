@@ -1,9 +1,16 @@
 import { DurableObject } from "cloudflare:workers";
 import { desc } from "drizzle-orm";
-import type { RealtimeEvent, ServerMessage } from "../shared/events";
+import type { ForecastDTO, SiteDTO, SiteStockDTO, TransferBoardDTO } from "../shared/api";
+import type { RealtimeEvent, ServerMessage, Topic } from "../shared/events";
 import { createDb, schema } from "./db/client";
 import { sha256Hex } from "./lib/ids";
+import type { Deps } from "./deps";
+import { forecast, transferBoard } from "./services/forecast";
+import { listSites, siteStock } from "./services/sites";
 import { runSweep } from "./services/sweep";
+
+/** Events on these topics change stock-derived read models, so cached results are dropped. */
+const DATA_TOPICS = new Set<Topic>(["stock", "sites", "transfers", "surge", "reservations"]);
 
 export type PublishInput = Omit<RealtimeEvent, "seq" | "at">;
 
@@ -45,6 +52,13 @@ export function auditDigestInput(row: {
  */
 export class CityHub extends DurableObject<Env> {
   private ledgerQueue: Promise<unknown> = Promise.resolve();
+  /**
+   * Read-model cache. Heavy reads (forecast, transfer plan, site list, a bank's stock) scan
+   * thousands of units, so they are computed once per data version and shared by every open
+   * screen, instead of once per screen per realtime event. `version` moves on every data event.
+   */
+  private version = 0;
+  private readonly cache = new Map<string, { version: number; at: number; value: Promise<unknown> }>();
 
   async fetch(request: Request): Promise<Response> {
     if (request.headers.get("Upgrade") !== "websocket") {
@@ -73,6 +87,7 @@ export class CityHub extends DurableObject<Env> {
   async publish(input: PublishInput): Promise<void> {
     const seq = (await this.currentSeq()) + 1;
     await this.ctx.storage.put("seq", seq);
+    if (input.topics.some((t) => DATA_TOPICS.has(t))) this.version++;
     const event: RealtimeEvent = { ...input, seq, at: Date.now() };
     for (const ws of this.ctx.getWebSockets()) this.send(ws, { type: "event", event });
   }
@@ -91,13 +106,47 @@ export class CityHub extends DurableObject<Env> {
     if (current === null || at < current) await this.ctx.storage.setAlarm(at);
   }
 
-  async alarm(): Promise<void> {
-    const next = await runSweep({
+  /* ── Cached read models (RPC) ── */
+
+  /** Site list: freshness is shown in minutes, so a 60 s ceiling keeps it honest. */
+  cachedSites(): Promise<SiteDTO[]> {
+    return this.memo("sites", 60_000, () => listSites(this.localDeps()));
+  }
+
+  /** Forecast drifts with the clock (expiry), so it is recomputed at least every 5 min. */
+  cachedForecast(): Promise<ForecastDTO> {
+    return this.memo("forecast", 5 * 60_000, () => forecast(this.localDeps()));
+  }
+
+  cachedTransferBoard(siteId?: string): Promise<TransferBoardDTO> {
+    return this.memo(`transfers:${siteId ?? "city"}`, 5 * 60_000, () => transferBoard(this.localDeps(), siteId));
+  }
+
+  cachedSiteStock(siteId: string): Promise<SiteStockDTO> {
+    return this.memo(`stock:${siteId}`, 60_000, () => siteStock(this.localDeps(), siteId));
+  }
+
+  /** One computation per (key, data version), shared by concurrent callers; failures are not cached. */
+  private memo<T>(key: string, ttlMs: number, compute: () => Promise<T>): Promise<T> {
+    const hit = this.cache.get(key);
+    if (hit && hit.version === this.version && Date.now() - hit.at < ttlMs) return hit.value as Promise<T>;
+    const value = compute();
+    this.cache.set(key, { version: this.version, at: Date.now(), value });
+    value.catch(() => this.cache.delete(key));
+    return value;
+  }
+
+  private localDeps(): Deps {
+    return {
       db: createDb(this.env.DB),
       env: this.env,
       hub: { publish: (e) => this.publish(e), audit: (e) => this.audit(e), scheduleSweep: (at) => this.scheduleSweep(at) },
       now: Date.now(),
-    });
+    };
+  }
+
+  async alarm(): Promise<void> {
+    const next = await runSweep(this.localDeps());
     if (next !== null) await this.ctx.storage.setAlarm(Math.max(next, Date.now() + 1000));
   }
 

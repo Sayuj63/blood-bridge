@@ -113,8 +113,9 @@ app.get("/realtime", (c) => {
 
 /* ── Sites & stock ── */
 
-app.get("/sites", async (c) => c.json(await sites.listSites(deps(c))));
-app.get("/sites/:id/stock", async (c) => c.json(await sites.siteStock(deps(c), c.req.param("id"))));
+// Heavy read models are served from the CityHub cache (recomputed only when data changes).
+app.get("/sites", async (c) => c.json(await hubStub(c.env).cachedSites()));
+app.get("/sites/:id/stock", async (c) => c.json(await hubStub(c.env).cachedSiteStock(c.req.param("id"))));
 app.post("/sites/:id/sync", async (c) => {
   await sites.syncSite(deps(c), c.req.param("id"), actor(c));
   return c.json({ ok: true });
@@ -171,8 +172,8 @@ app.post("/reservations/:id/phone-confirm", async (c) => c.json(await req.phoneC
 
 /* ── Forecast, transfers, surge ── */
 
-app.get("/forecast", async (c) => c.json(await fc.forecast(deps(c))));
-app.get("/transfers", async (c) => c.json(await fc.transferBoard(deps(c), c.req.query("siteId"))));
+app.get("/forecast", async (c) => c.json(await hubStub(c.env).cachedForecast()));
+app.get("/transfers", async (c) => c.json(await hubStub(c.env).cachedTransferBoard(c.req.query("siteId"))));
 app.post("/transfers", async (c) => c.json(await fc.approveTransfer(deps(c), await body(c, approveTransferSchema), actor(c)), 201));
 app.post("/transfers/dismiss", async (c) => {
   await fc.dismissTransfer(deps(c), await body(c, dismissTransferSchema), actor(c));
