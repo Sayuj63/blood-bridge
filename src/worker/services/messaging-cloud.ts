@@ -36,7 +36,7 @@ type OutboxRow = typeof schema.outbox.$inferSelect;
 /** Drain in the background (ctx.waitUntil) with fresh deps; no-op unless the Cloud API is the provider. */
 export function kickWhatsAppCloud(env: Env, waitUntil: (p: Promise<unknown>) => void): void {
   if (!cloudConfig(env)) return;
-  const deps: Deps = { db: createDb(env.DB), env, hub: remoteHub(env), now: Date.now() };
+  const deps: Deps = { db: createDb(env), env, hub: remoteHub(env), now: Date.now() };
   waitUntil(drainWhatsAppCloud(deps).catch((err) => console.error("whatsapp cloud drain failed", err)));
 }
 
@@ -249,7 +249,7 @@ export async function applyStatuses(deps: Deps, statuses: WebhookStatus[]): Prom
  * held behind a template for those numbers, apply delivery receipts, then drain.
  */
 export async function processWebhook(env: Env, parsed: ParsedWebhook, opts: { publicUrl: string; fetch?: FetchLike }): Promise<void> {
-  const fresh = (): Deps => ({ db: createDb(env.DB), env, hub: remoteHub(env), now: Date.now() });
+  const fresh = (): Deps => ({ db: createDb(env), env, hub: remoteHub(env), now: Date.now() });
   for (const m of parsed.messages) {
     try {
       const deps = fresh();

@@ -60,7 +60,7 @@ app.use("*", cors({ origin: "*", allowHeaders: ["Content-Type", "X-Actor", "Auth
 app.use("*", async (c, next) => {
   let whatsappQueued = false;
   c.set("deps", {
-    db: createDb(c.env.DB),
+    db: createDb(c.env),
     env: c.env,
     hub: remoteHub(c.env),
     now: Date.now(),

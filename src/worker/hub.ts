@@ -138,7 +138,7 @@ export class CityHub extends DurableObject<Env> {
 
   private localDeps(): Deps {
     return {
-      db: createDb(this.env.DB),
+      db: createDb(this.env),
       env: this.env,
       hub: { publish: (e) => this.publish(e), audit: (e) => this.audit(e), scheduleSweep: (at) => this.scheduleSweep(at) },
       now: Date.now(),
@@ -152,7 +152,7 @@ export class CityHub extends DurableObject<Env> {
 
   private async appendAudit(entries: AuditInput[]): Promise<void> {
     if (entries.length === 0) return;
-    const db = createDb(this.env.DB);
+    const db = createDb(this.env);
     const [last] = await db
       .select({ seq: schema.auditLog.seq, hash: schema.auditLog.hash })
       .from(schema.auditLog)

@@ -19,4 +19,7 @@ interface Env {
   RAKT_BASE_URL?: string;
   /** SMS channel is off unless "true" (no WhatsApp → SMS fallback). */
   SMS_ENABLED?: string;
+  /** Turso (libSQL) database. When set, it replaces D1: libsql://<db>-<org>.turso.io + a token secret. */
+  TURSO_DATABASE_URL?: string;
+  TURSO_AUTH_TOKEN?: string;
 }

@@ -63,7 +63,7 @@ mcpApp.post("/mcp", async (c) => {
     let whatsappQueued = false;
     const ctx: McpContext = {
       deps: {
-        db: createDb(c.env.DB),
+        db: createDb(c.env),
         env: c.env,
         hub: remoteHub(c.env),
         now: Date.now(),

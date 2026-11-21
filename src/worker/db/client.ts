@@ -1,10 +1,22 @@
 import { drizzle, type DrizzleD1Database } from "drizzle-orm/d1";
+import { drizzle as drizzleLibsql } from "drizzle-orm/libsql/web";
 import type { BatchItem } from "drizzle-orm/batch";
 import * as schema from "./schema";
 
 export type Db = DrizzleD1Database<typeof schema>;
 
-export const createDb = (d1: D1Database): Db => drizzle(d1, { schema });
+/**
+ * Database for this request. Turso (libSQL, hosted SQLite — same dialect, schema and migrations
+ * as D1) when TURSO_DATABASE_URL is set; Cloudflare D1 otherwise. Both expose the same Drizzle
+ * SQLite query builder (select/insert/update/delete/returning/batch), so services are unchanged;
+ * the libSQL instance is typed as the D1 one because only that shared surface is used.
+ */
+export function createDb(env: Pick<Env, "DB" | "TURSO_DATABASE_URL" | "TURSO_AUTH_TOKEN">): Db {
+  if (env.TURSO_DATABASE_URL) {
+    return drizzleLibsql({ connection: { url: env.TURSO_DATABASE_URL, authToken: env.TURSO_AUTH_TOKEN }, schema }) as unknown as Db;
+  }
+  return drizzle(env.DB, { schema });
+}
 
 /** D1 allows at most 100 bound parameters per statement. */
 const MAX_PARAMS = 100;

@@ -20,7 +20,7 @@ export default {
    */
   async scheduled(_controller, env, ctx) {
     kickWhatsAppCloud(env, (p) => ctx.waitUntil(p));
-    ctx.waitUntil(autoSyncEraktkosh({ db: createDb(env.DB), env, hub: remoteHub(env), now: Date.now() }));
+    ctx.waitUntil(autoSyncEraktkosh({ db: createDb(env), env, hub: remoteHub(env), now: Date.now() }));
     await hubStub(env).scheduleSweep(Date.now());
   },
 } satisfies ExportedHandler<Env>;
