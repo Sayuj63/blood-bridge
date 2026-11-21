@@ -57,7 +57,7 @@ function GapBar() {
         <span>Yearly need</span>
         <span className="font-semibold text-accent">~1M short</span>
       </div>
-      <div className="relative mt-2 h-9 overflow-hidden rounded-full bg-[repeating-linear-gradient(135deg,var(--color-line)_0_6px,transparent_6px_12px)] ring-1 ring-line">
+      <div className="relative mt-2 h-9 overflow-hidden rounded-full bg-[repeating-linear-gradient(135deg,var(--bb-line)_0_6px,transparent_6px_12px)] ring-1 ring-line">
         <motion.div
           className="h-full origin-left rounded-full bg-accent"
           style={{ width: "93%" }}
@@ -113,13 +113,13 @@ function ExpiryRing() {
   const c = 2 * Math.PI * r;
   return (
     <svg viewBox="0 0 120 120" className="size-32 -rotate-90" role="img" aria-label="97 percent of discarded units had expired">
-      <circle cx="60" cy="60" r={r} fill="none" stroke="var(--color-line)" strokeWidth="14" />
+      <circle cx="60" cy="60" r={r} fill="none" stroke="var(--bb-line)" strokeWidth="14" />
       <motion.circle
         cx="60"
         cy="60"
         r={r}
         fill="none"
-        stroke="var(--color-accent)"
+        stroke="var(--bb-accent)"
         strokeWidth="14"
         strokeDasharray={c}
         initial={reduced ? { strokeDashoffset: c * 0.03 } : { strokeDashoffset: c }}
@@ -156,7 +156,7 @@ function IslandDots() {
           cx={d.x}
           cy={d.y}
           r={i % 9 === 0 ? 4.2 : 3.2}
-          fill={i % 9 === 0 ? "var(--color-accent)" : "var(--color-accent-hover)"}
+          fill={i % 9 === 0 ? "var(--bb-accent)" : "var(--bb-accent-hover)"}
           opacity={i % 9 === 0 ? 1 : 0.55}
           initial={reduced ? false : { scale: 0 }}
           whileInView={{ scale: 1 }}
