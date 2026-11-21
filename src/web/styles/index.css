@@ -48,6 +48,37 @@
   --bb-shadow: 0 1px 2px rgb(13 27 42 / 0.06), 0 8px 24px -12px rgb(13 27 42 / 0.18);
 }
 
+/* Landing page palette (brand red on warm off-white). */
+[data-theme="landing"] {
+  color-scheme: light;
+  --bb-canvas: #faf9f6;
+  --bb-surface: #ffffff;
+  --bb-surface-2: #fff5f5;
+  --bb-surface-3: #fcebed;
+  --bb-line: #eae6e3;
+  --bb-line-strong: #eae6e3;
+  --bb-ink: #171717;
+  --bb-ink-muted: #737373;
+  --bb-ink-faint: #737373;
+  --bb-accent: #a61b2b;
+  --bb-accent-hover: #7f1422;
+  --bb-accent-ink: #ffffff;
+  --bb-bridge: #0a7383;
+  --bb-bridge-soft: #e0f3f4;
+  --bb-critical: #a61b2b;
+  --bb-critical-soft: #fcebed;
+  --bb-warn: #a14a05;
+  --bb-warn-soft: #fef1de;
+  --bb-ok: #13703f;
+  --bb-ok-soft: #e3f3e9;
+  --bb-info: #1d5fb8;
+  --bb-info-soft: #e7effb;
+  --bb-plasma: #a8760c;
+  --bb-focus: #a61b2b;
+  --bb-scrim: rgb(23 23 23 / 0.45);
+  --bb-shadow: 0 1px 2px rgb(23 23 23 / 0.05), 0 10px 28px -14px rgb(127 20 34 / 0.25);
+}
+
 [data-theme="command"] {
   color-scheme: dark;
   --bb-canvas: #06111c;
@@ -121,6 +152,8 @@
   /* Archivo carries the whole system; its width axis does the work a second family would. */
   --font-sans: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Playfair Display Variable", "Playfair Display", Georgia, serif;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
   /* Type scale: 1.25 ratio from 16px, with two projector sizes on top. */
   --text-2xs: 0.6875rem;

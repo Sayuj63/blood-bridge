@@ -136,7 +136,7 @@ export function CityStory() {
     <section aria-label="What goes wrong, and what changes" className="relative">
       <div className="sticky top-0 h-dvh">
         <CityMap
-          theme="command"
+          theme="clinical"
           interactive={false}
           markers={markers}
           arcs={arcs}
