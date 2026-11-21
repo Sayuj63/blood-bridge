@@ -6,11 +6,14 @@ import type {
   ReservationDTO,
   SearchInput,
   SearchResultDTO,
+  SplitLegResultDTO,
+  SplitReservationDTO,
   TimelineStep,
 } from "../../shared/api";
 import { compatibleSources } from "../../shared/compatibility";
 import { COMPONENT_SHORT, POLICY, type GeoPoint, type ReservationStatus } from "../../shared/domain";
 import { rankSites, type CandidateSite, type RankedOption } from "../../shared/ranking";
+import { planSplit, type SplitPlan } from "../../shared/split";
 import { schema } from "../db/client";
 import type { Deps } from "../deps";
 import { AppError, conflict, notFound } from "../lib/http";
@@ -343,6 +346,99 @@ export async function rerouteRequest(deps: Deps, requestId: string, cause: strin
     return getRequest(deps, requestId);
   }
   return reserve(deps, requestId, next.siteId, "system", `auto-rerouted: ${cause}`);
+}
+
+/* ─────────────────────────────── Split reservation ─────────────────────────────── */
+
+/** Ranked banks for the units still uncovered, minus banks already tried for this request. */
+async function remainingOptions(deps: Deps, request: RequestRow) {
+  const tried = await deps.db
+    .select({ bankSiteId: schema.reservations.bankSiteId, status: schema.reservations.status, unitsCount: schema.reservations.unitsCount })
+    .from(schema.reservations)
+    .where(eq(schema.reservations.requestId, request.id));
+  const held = tried.filter((r) => LIVE.includes(r.status)).reduce((n, r) => n + r.unitsCount, 0);
+  const remaining = Math.max(0, request.unitsNeeded - held);
+  if (remaining === 0) return { held, remaining, options: [] as RankedOption[] };
+  const hospital = await getSite(deps, request.hospitalId);
+  const excluded = new Set(tried.map((t) => t.bankSiteId));
+  const options = rankSites(
+    { ...request, unitsNeeded: remaining, origin: { lat: hospital.lat, lng: hospital.lng }, now: deps.now },
+    await candidateSites(deps, { ...request, unitsNeeded: remaining }),
+  ).filter((o) => !excluded.has(o.siteId));
+  return { held, remaining, options };
+}
+
+/** Read-only: how the uncovered units of a request would be split across banks right now. */
+export async function planRequestSplit(deps: Deps, requestId: string): Promise<{ remaining: number; plan: SplitPlan }> {
+  const request = await loadRequest(deps, requestId);
+  const { remaining, options } = await remainingOptions(deps, request);
+  return { remaining, plan: planSplit(options, remaining, request.bloodGroup) };
+}
+
+/**
+ * Cover every uncovered unit in one action: plan the split, then hold each leg with the
+ * normal `reserve` (which guards against double-booking). A leg that conflicts is skipped
+ * and the next-ranked bank is tried instead. One "split reservation" audit entry sums it up.
+ */
+export async function reserveSplit(deps: Deps, requestId: string, actor: string): Promise<SplitReservationDTO> {
+  const request = await loadRequest(deps, requestId);
+  if (request.status !== "open") throw conflict(`Request is already ${request.status}`);
+  const { remaining, options } = await remainingOptions(deps, request);
+  if (remaining <= 0) throw conflict("Request is already fully covered");
+  const plan = planSplit(options, remaining, request.bloodGroup);
+  if (plan.legs.length === 0) throw conflict(`No bank has compatible in-date ${COMPONENT_SHORT[request.component]} for ${request.bloodGroup} right now`);
+
+  // Planned legs first (in plan order), then every other ranked bank as a fallback.
+  const planned = new Set(plan.legs.map((l) => l.siteId));
+  const queue = [...plan.legs.map((l) => ({ siteId: l.siteId, name: l.name })), ...options.filter((o) => !planned.has(o.siteId))];
+
+  const legs: SplitLegResultDTO[] = [];
+  let latest = await getRequest(deps, requestId);
+  let left = remaining;
+  for (const bank of queue) {
+    if (left <= 0) break;
+    const before = new Set(latest.reservations.map((r) => r.id));
+    try {
+      latest = await reserve(deps, requestId, bank.siteId, actor, `split ${legs.filter((l) => l.outcome === "reserved").length + 1}`);
+      const made = latest.reservations.find((r) => !before.has(r.id) && r.bankSiteId === bank.siteId);
+      legs.push({ siteId: bank.siteId, name: bank.name, units: made?.unitsCount ?? 0, outcome: "reserved", reservationId: made?.id ?? null, error: null });
+      left = request.unitsNeeded - latest.reservations.filter((r) => LIVE.includes(r.status)).reduce((n, r) => n + r.unitsCount, 0);
+    } catch (err) {
+      if (!(err instanceof AppError) || err.status !== 409) throw err;
+      legs.push({ siteId: bank.siteId, name: bank.name, units: 0, outcome: "failed", reservationId: null, error: err.message });
+      // A 409 can also mean the request itself closed meanwhile: stop rather than spin.
+      if ((await loadRequest(deps, requestId)).status !== "open") break;
+    }
+  }
+
+  const reserved = legs.filter((l) => l.outcome === "reserved");
+  const newlyHeld = reserved.reduce((n, l) => n + l.units, 0);
+  const unitsHeld = request.unitsNeeded - Math.max(0, left);
+  const shortBy = Math.max(0, left);
+  const hospital = await getSite(deps, request.hospitalId);
+  const label = `${request.bloodGroup} ${COMPONENT_SHORT[request.component]}`;
+  await deps.hub.audit([
+    {
+      actor,
+      action: "request.split_reserved",
+      entityType: "request",
+      entityId: requestId,
+      siteId: hospital.id,
+      summary: `${hospital.shortName}: split reservation of ${newlyHeld} × ${label} across ${reserved.length} bank${reserved.length === 1 ? "" : "s"}${
+        reserved.length ? ` (${reserved.map((l) => `${l.name} ${l.units}`).join(", ")})` : ""
+      }${shortBy > 0 ? ` · short by ${shortBy}` : ""}`,
+      payload: { plan, legs },
+    },
+  ]);
+  if (shortBy > 0) {
+    await deps.hub.publish({
+      topics: ["requests"],
+      siteIds: [hospital.id],
+      headline: `${request.id}: ${unitsHeld} of ${request.unitsNeeded} units covered — raise a critical alert for the rest`,
+      tone: "critical",
+    });
+  }
+  return { request: latest, plan, legs, unitsNeeded: request.unitsNeeded, unitsHeld, shortBy };
 }
 
 export async function phoneConfirm(deps: Deps, reservationId: string, actor: string): Promise<ReservationDTO> {

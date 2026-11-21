@@ -142,6 +142,9 @@ app.post("/requests/:id/reserve", async (c) => {
   const { bankSiteId } = await body(c, reserveSchema);
   return c.json(await req.reserve(deps(c), c.req.param("id"), bankSiteId, actor(c)));
 });
+/** Cover every uncovered unit across as few banks as possible, in one action. */
+app.post("/requests/:id/reserve-split", async (c) => c.json(await req.reserveSplit(deps(c), c.req.param("id"), actor(c))));
+app.get("/requests/:id/split-plan", async (c) => c.json(await req.planRequestSplit(deps(c), c.req.param("id"))));
 app.post("/requests/:id/critical", async (c) => c.json(await donors.criticalBroadcast(deps(c), c.req.param("id"), actor(c))));
 
 app.post("/reservations/:id/confirm", async (c) => {

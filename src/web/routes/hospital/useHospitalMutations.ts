@@ -74,6 +74,35 @@ export function useHospitalMutations(hospitalId: string, { openRequest }: Handle
     onError: onWriteError,
   });
 
+  /** Cover every uncovered unit across as few banks as possible. Creates the request first when there is none yet. */
+  const reserveSplit = useMutation({
+    mutationFn: async (target: { requestId: string } | { input: CreateRequestInput }) => {
+      actAs(hospitalId);
+      let requestId: string;
+      if ("requestId" in target) {
+        requestId = target.requestId;
+      } else {
+        const created = await api.requests.create(target.input);
+        prime(created);
+        requestId = created.id;
+      }
+      return api.requests.reserveSplit(requestId);
+    },
+    onSuccess: (result) => {
+      prime(result.request);
+      openRequest(result.request.id);
+      const banks = result.legs.filter((l) => l.outcome === "reserved").length;
+      if (result.shortBy > 0) {
+        toast.warning(`Held ${plural(result.unitsHeld, "unit")} across ${plural(banks, "bank")}`, {
+          description: `${plural(result.shortBy, "unit")} still uncovered — raise a critical alert for the rest.`,
+        });
+      } else {
+        toast.success(`All ${plural(result.unitsNeeded, "unit")} held across ${plural(banks, "bank")}`);
+      }
+    },
+    onError: onWriteError,
+  });
+
   /** Alert every bank and eligible nearby donors. Creates the request first when there is none yet. */
   const critical = useMutation({
     mutationFn: async (target: { requestId: string } | { input: CreateRequestInput }) => {
@@ -107,7 +136,7 @@ export function useHospitalMutations(hospitalId: string, { openRequest }: Handle
     },
   });
 
-  return { createAndReserve, reserve, critical };
+  return { createAndReserve, reserve, reserveSplit, critical };
 }
 
 /** Phone check, pickup and delivery for one reservation. */

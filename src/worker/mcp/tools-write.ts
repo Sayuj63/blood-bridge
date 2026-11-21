@@ -97,6 +97,43 @@ export function registerWriteTools(server: McpServer, ctx: McpContext) {
   );
 
   server.registerTool(
+    "reserve_split",
+    {
+      title: "Cover a request across several blood banks",
+      description:
+        "When no single bank holds enough units (rare groups are often spread 1-4 units per bank), hold every uncovered unit of an open request across as few banks as possible, in one action. Each leg is a normal reservation the bank must confirm within 90 s; a leg that conflicts falls through to the next-ranked bank. HUMAN-IN-THE-LOOP: call without confirm to preview the legs, then with confirm: true only after the user approves. Create the request first with create_and_reserve or from the hospital view.",
+      inputSchema: {
+        requestId: z.string().min(1).max(64).describe("Open request id, e.g. \"REQ-ABC123\""),
+        confirm,
+      },
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
+    },
+    ({ requestId, confirm }) =>
+      guarded(async () => {
+        const r = await req.getRequest(deps, requestId);
+        if (r.status !== "open") return toolError(`Request ${r.id} is already ${r.status}.`, { code: "not_open" });
+        const { remaining, plan } = await req.planRequestSplit(deps, requestId);
+        const label = `${r.bloodGroup} ${COMPONENT_SHORT[r.component]}`;
+        if (remaining === 0) return ok(`Request ${r.id} is already fully covered; nothing to split.`, { requestId: r.id, remaining });
+        if (plan.legs.length === 0) {
+          return toolError(`No bank has compatible in-date ${label} for the ${remaining} uncovered units. Consider send_donor_drive or list_transfer_suggestions.`, { code: "no_stock" });
+        }
+        const legsText = plan.legs.map((l) => `${l.units} at ${l.name} [${l.siteId}] (ETA ${l.etaMinutes} min, ${l.matchType}${l.stale ? ", stale: phone check needed" : ""})`).join("; ");
+        const summary = `Would hold ${plan.covered} of ${remaining} uncovered × ${label} for ${r.id} across ${plan.legs.length} bank${plan.legs.length === 1 ? "" : "s"}: ${legsText}. Last bag ETA ~${plan.maxEtaMinutes} min.${plan.shortBy > 0 ? ` Still short by ${plan.shortBy}: raise a critical alert for the rest.` : ""}`;
+        if (!confirm) return dryRun(summary + authNote, { preview: { requestId: r.id, remaining, plan } });
+
+        const denied = await writeGate(ctx);
+        if (denied) return denied;
+        const result = await req.reserveSplit(deps, requestId, actor);
+        const held = result.legs.filter((l) => l.outcome === "reserved");
+        return ok(
+          `Split reservation for ${r.id}: ${result.unitsHeld} of ${result.unitsNeeded} units now held across ${held.length} bank${held.length === 1 ? "" : "s"} (${held.map((l) => `${l.name} ${l.units}`).join(", ") || "none"}). Each bank must confirm within 90 s or it auto-reroutes.${result.shortBy > 0 ? ` Short by ${result.shortBy}: consider send_donor_drive.` : ""} Track it with get_request.`,
+          { requestId: r.id, unitsNeeded: result.unitsNeeded, unitsHeld: result.unitsHeld, shortBy: result.shortBy, legs: result.legs },
+        );
+      }),
+  );
+
+  server.registerTool(
     "approve_transfer",
     {
       title: "Approve a bank-to-bank transfer",

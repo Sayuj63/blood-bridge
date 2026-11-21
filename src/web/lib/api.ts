@@ -35,6 +35,7 @@ import type {
   SearchResultDTO,
   SiteDTO,
   SiteStockDTO,
+  SplitReservationDTO,
   StartSurgeInput,
   SurgeBriefDTO,
   SurgeDTO,
@@ -170,6 +171,8 @@ export const api = {
     list: (hospitalId: string, signal?: AbortSignal) => get<RequestDTO[]>(`/api/requests${qs({ hospitalId })}`, signal),
     get: (requestId: string, signal?: AbortSignal) => get<RequestDTO>(`/api/requests/${enc(requestId)}`, signal),
     reserve: (requestId: string, input: ReserveInput) => post<RequestDTO>(`/api/requests/${enc(requestId)}/reserve`, input),
+    /** Hold every uncovered unit across as few banks as possible (one call, many reservations). */
+    reserveSplit: (requestId: string) => post<SplitReservationDTO>(`/api/requests/${enc(requestId)}/reserve-split`),
     critical: (requestId: string) => post<DonorDriveResultDTO>(`/api/requests/${enc(requestId)}/critical`),
   },
 

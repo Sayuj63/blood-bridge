@@ -21,11 +21,13 @@ interface RequestDetailProps {
   reservingSiteId: string | null;
   onCritical: (requestId: string) => void;
   criticalPending: boolean;
+  onReserveSplit: (requestId: string) => void;
+  splitPending: boolean;
   donorsAlerted?: number;
 }
 
 /** One request: live tracker(s), reroute history, and — while units are still uncovered — the ranked options. */
-export function RequestDetail({ requestId, hospital, onReserve, reservingSiteId, onCritical, criticalPending, donorsAlerted }: RequestDetailProps) {
+export function RequestDetail({ requestId, hospital, onReserve, reservingSiteId, onCritical, criticalPending, onReserveSplit, splitPending, donorsAlerted }: RequestDetailProps) {
   const headingRef = useRef<HTMLDivElement>(null);
   const query = useQuery({
     queryKey: queryKeys.request(requestId),
@@ -99,6 +101,8 @@ export function RequestDetail({ requestId, hospital, onReserve, reservingSiteId,
           onReserve={(option) => onReserve(r, option)}
           onCritical={canAlert ? () => onCritical(r.id) : undefined}
           criticalPending={criticalPending}
+          onReserveSplit={() => onReserveSplit(r.id)}
+          splitPending={splitPending}
         />
       ) : null}
       <RerouteHistory request={r} />

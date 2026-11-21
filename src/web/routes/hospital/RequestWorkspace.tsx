@@ -27,7 +27,7 @@ interface RequestWorkspaceProps {
 export function RequestWorkspace({ hospital, requestId, openRequest, formValues, onFormChange }: RequestWorkspaceProps) {
   const [submitted, setSubmitted] = useState<CreateRequestInput | null>(null);
   const [donorsAlerted, setDonorsAlerted] = useState<Record<string, number>>({});
-  const { createAndReserve, reserve, critical } = useHospitalMutations(hospital.id, { openRequest });
+  const { createAndReserve, reserve, reserveSplit, critical } = useHospitalMutations(hospital.id, { openRequest });
 
   const search = useMemo(() => (submitted ? toSearchInput(submitted) : null), [submitted]);
   const reservingSiteId = createAndReserve.isPending
@@ -57,6 +57,8 @@ export function RequestWorkspace({ hospital, requestId, openRequest, formValues,
         onReserve={(request, option) => reserve.mutate({ requestId: request.id, bankSiteId: option.siteId })}
         onCritical={(id) => raiseCritical({ requestId: id })}
         criticalPending={critical.isPending}
+        onReserveSplit={(id) => reserveSplit.mutate({ requestId: id })}
+        splitPending={reserveSplit.isPending}
         donorsAlerted={donorsAlerted[requestId]}
       />
     );
@@ -71,6 +73,8 @@ export function RequestWorkspace({ hospital, requestId, openRequest, formValues,
         onReserve={(option) => createAndReserve.mutate({ input: submitted, bankSiteId: option.siteId }, { onSuccess: () => setSubmitted(null) })}
         onCritical={() => raiseCritical({ input: { ...submitted, urgency: "critical" } })}
         criticalPending={critical.isPending}
+        onReserveSplit={() => reserveSplit.mutate({ input: submitted }, { onSuccess: () => setSubmitted(null) })}
+        splitPending={reserveSplit.isPending}
       />
     );
   } else {

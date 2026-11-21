@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { SearchInput, SiteDTO } from "../../../shared/api";
 import type { RankedOption } from "../../../shared/ranking";
 import { COMPONENT_LABEL } from "../../../shared/domain";
+import { planSplit } from "../../../shared/split";
 import { ErrorState } from "../../components/ui/EmptyState";
 import { Skeleton } from "../../components/ui/Skeleton";
 import { api } from "../../lib/api";
@@ -11,6 +12,7 @@ import { queryKeys } from "../../lib/queryKeys";
 import { HospitalMap } from "./HospitalMap";
 import { NoMatchState } from "./NoMatchState";
 import { ResultCard } from "./ResultCard";
+import { SplitPlanCard } from "./SplitPlanCard";
 
 interface ResultsPanelProps {
   hospital: SiteDTO;
@@ -23,13 +25,16 @@ interface ResultsPanelProps {
   criticalPending?: boolean;
   /** Focus the heading whenever a new search is shown (after "Find blood"). */
   autoFocus?: boolean;
+  /** Reserve every leg of the split plan in one call; the split card is hidden when omitted. */
+  onReserveSplit?: () => void;
+  splitPending?: boolean;
 }
 
 /**
  * Ranked results, split view: the map (hospital as origin, numbered banks) beside
  * the ranked cards. Stays live: stock events invalidate the search query.
  */
-export function ResultsPanel({ hospital, search, title, onReserve, reservingSiteId, onCritical, criticalPending, autoFocus = false }: ResultsPanelProps) {
+export function ResultsPanel({ hospital, search, title, onReserve, reservingSiteId, onCritical, criticalPending, autoFocus = false, onReserveSplit, splitPending = false }: ResultsPanelProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const query = useQuery({
@@ -44,7 +49,12 @@ export function ResultsPanel({ hospital, search, title, onReserve, reservingSite
     if (autoFocus) headingRef.current?.focus();
   }, [autoFocus, searchKey]);
 
-  const options = query.data?.options ?? [];
+  const options = useMemo(() => query.data?.options ?? [], [query.data]);
+  // Only when the best option can't cover the request on its own.
+  const split = useMemo(
+    () => (onReserveSplit && options.length > 0 && !options[0].coversRequest ? planSplit(options, search.unitsNeeded, search.bloodGroup) : null),
+    [onReserveSplit, options, search.unitsNeeded, search.bloodGroup],
+  );
   const focusCard = (siteId: string) => {
     const el = document.getElementById(`result-${siteId}`);
     el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -80,6 +90,19 @@ export function ResultsPanel({ hospital, search, title, onReserve, reservingSite
               className="size-full"
             />
           </div>
+          <div className="space-y-3">
+          {split && onReserveSplit ? (
+            <SplitPlanCard
+              plan={split}
+              unitsNeeded={search.unitsNeeded}
+              onReserveAll={onReserveSplit}
+              pending={splitPending}
+              disabled={reservingSiteId !== null}
+              onCritical={onCritical}
+              criticalPending={criticalPending}
+            />
+          ) : null}
+          {split ? <p className="font-label text-xs uppercase tracking-wider text-ink-muted">Or reserve one bank at a time</p> : null}
           <ol className="space-y-3">
             {query.isPending
               ? Array.from({ length: 3 }, (_, i) => (
@@ -101,6 +124,7 @@ export function ResultsPanel({ hospital, search, title, onReserve, reservingSite
                   </li>
                 ))}
           </ol>
+          </div>
         </div>
       )}
     </section>

@@ -29,6 +29,7 @@ import {
 } from "./domain";
 import type { GroupOutlook, OutcomeSummary } from "./forecast";
 import type { RankedOption } from "./ranking";
+import type { SplitPlan } from "./split";
 import type { SkipReason } from "./eligibility";
 import type { TransferProposal } from "./transfers";
 
@@ -313,6 +314,31 @@ export interface RequestDTO {
   reservations: ReservationDTO[];
   /** The live reservation, if any (most recent not declined/expired/released). */
   active: ReservationDTO | null;
+}
+
+/** One leg of a split reservation as it was actually attempted. */
+export interface SplitLegResultDTO {
+  siteId: string;
+  name: string;
+  /** Units held at this bank (0 when the leg failed). */
+  units: number;
+  outcome: "reserved" | "failed";
+  reservationId: string | null;
+  /** Why the leg failed (e.g. a conflicting reservation took the units). */
+  error: string | null;
+}
+
+/** Response of POST /api/requests/:id/reserve-split. */
+export interface SplitReservationDTO {
+  request: RequestDTO;
+  /** The plan computed from live stock before reserving. */
+  plan: SplitPlan;
+  legs: SplitLegResultDTO[];
+  unitsNeeded: number;
+  /** Units held or delivered for the request after the split (all banks). */
+  unitsHeld: number;
+  /** Units still uncovered; raise a critical alert for these. */
+  shortBy: number;
 }
 
 export interface QueueItemDTO {
