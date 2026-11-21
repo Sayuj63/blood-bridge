@@ -104,6 +104,26 @@ All domain logic (`src/shared`) is pure TypeScript shared by the Worker and the 
 
 **Stack:** Cloudflare Workers · D1 · Durable Objects · Workers AI · React 19 · Vite · Tailwind v4 · TanStack Query · Zod · MapLibre GL + OpenFreeMap + deck.gl · Model Context Protocol SDK · open-wa · ZXing · Vitest.
 
+## For frontend developers — start here
+
+Two ways to work, pick one:
+
+**A. Use the live API (zero setup).** Point your app at `https://blood-bridge.blood-bridge.workers.dev/api` — CORS is open, realtime is at `wss://blood-bridge.blood-bridge.workers.dev/api/realtime`. Please **don't call `POST /api/demo/reset` on the live API** while a demo is running: the data is shared.
+
+**B. Run the whole backend on your machine (recommended for building).** Your own private database, no Cloudflare account needed:
+
+```bash
+git clone https://github.com/Sayuj63/blood-bridge.git && cd blood-bridge
+pnpm install
+pnpm db:migrate:local                         # creates the local SQLite database
+pnpm dev                                      # API + current UI on http://localhost:5173
+curl -X POST http://localhost:5173/api/demo/reset   # loads the Mumbai demo city (25 real banks)
+```
+
+Everything you need is in **[docs/API.md](docs/API.md)** (every endpoint, request/response types, realtime events, flows in call order). Types to copy: [`src/shared/api.ts`](src/shared/api.ts) + [`src/shared/domain.ts`](src/shared/domain.ts). A working typed client: [`src/web/lib/api.ts`](src/web/lib/api.ts). The existing UI in `src/web/` is a full reference implementation you can reuse or replace.
+
+Locally, the AI brief and translations use templates (Workers AI needs a Cloudflare login: run `CF_REMOTE=1 pnpm dev` if you have one).
+
 ## Run it locally
 
 ```bash

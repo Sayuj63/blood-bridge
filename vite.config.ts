@@ -12,7 +12,9 @@ const VENDOR_CHUNKS: Record<string, string> = {
 };
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), cloudflare()],
+  // Remote bindings (Workers AI) need a Cloudflare login. Off by default so anyone can run
+  // `pnpm dev` locally (the AI brief and translations fall back to templates); CF_REMOTE=1 to enable.
+  plugins: [react(), tailwindcss(), cloudflare({ remoteBindings: process.env.CF_REMOTE === "1" })],
   build: {
     rollupOptions: {
       output: {

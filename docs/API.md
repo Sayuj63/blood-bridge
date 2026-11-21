@@ -14,7 +14,7 @@ or import that file and the compiler will keep you honest. A ready-made typed cl
 
 | | |
 |---|---|
-| **Base URL** | `https://blood-bridge.blood-bridge.workers.dev/api` (local: `http://localhost:5173/api` via `pnpm dev`) |
+| **Base URL** | `https://blood-bridge.blood-bridge.workers.dev/api`, or your own local backend at `http://localhost:5173/api` (`pnpm install && pnpm db:migrate:local && pnpm dev`, then `POST /api/demo/reset`; no Cloudflare account needed) |
 | **Format** | JSON in, JSON out. `Content-Type: application/json` on bodies. |
 | **Time** | All timestamps are **epoch milliseconds (UTC)**. Display in IST (`Asia/Kolkata`). |
 | **Who is acting** | Send `X-Actor` on every write, e.g. `hospital:hsp-sion-ltmgh`, `bank:bb-raheja-mahim`, `donor:DNR-AARAV`. It is written to the audit ledger. (Demo identity — there are no logins yet.) |
