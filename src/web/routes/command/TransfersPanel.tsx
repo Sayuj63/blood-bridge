@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Minus, PackageCheck, Pencil, Plus, Truck, X } from "lucide-react";
+import { ArrowLeftRight, ArrowRight, Check, Droplet, Leaf, Minus, Package, PackageCheck, Pencil, Plus, Truck, X } from "lucide-react";
 import { useState } from "react";
 import type { TransferBoardDTO, TransferDTO, TransferSuggestionDTO } from "../../../shared/api";
 import { COMPONENT_SHORT } from "../../../shared/domain";
@@ -31,7 +31,7 @@ export function TransfersPanel({ board, isLoading, error, onRetry, actions, focu
   const active = (board?.active ?? []).filter((t) => t.status === "approved");
 
   return (
-    <Panel id="transfers" title="Transfer plan" meta={board ? `${suggestions.length} suggested · ${active.length} moving` : undefined}>
+    <Panel id="transfers" icon={<ArrowLeftRight aria-hidden />} title="Transfer plan" meta={board ? `${suggestions.length} suggested · ${active.length} moving` : undefined}>
       {error ? (
         <ErrorState compact what="transfer suggestions" error={error} onRetry={onRetry} />
       ) : isLoading ? (
@@ -105,15 +105,24 @@ function SuggestionRow({
         <BloodGroupChip group={s.bloodGroup} />
         <div className="min-w-0 flex-1">
           <Route from={s.fromName} to={s.toName} />
-          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 font-numeric text-2xs text-ink-muted">
-            <span>
-              {plural(s.quantity, "unit")} {COMPONENT_SHORT[s.component]}
+          <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 font-numeric text-2xs text-ink-muted [&_svg]:size-3.5">
+            <span className="inline-flex items-center gap-1" title="Units moved">
+              <Package aria-hidden /> {s.quantity} {COMPONENT_SHORT[s.component]}
             </span>
-            <span>ETA {s.etaMinutes} min</span>
-            {s.receiverStockoutHours !== null ? <span className="text-critical">dry in {formatHours(s.receiverStockoutHours)}</span> : null}
-            {s.rescuedFromExpiry > 0 ? <span className="text-ok">{s.rescuedFromExpiry} saved from expiry</span> : null}
+            <span className="inline-flex items-center gap-1" title="Travel time">
+              <Truck aria-hidden /> {s.etaMinutes}m
+            </span>
+            {s.receiverStockoutHours !== null ? (
+              <span className="inline-flex items-center gap-1 text-critical" title="Receiver runs dry in">
+                <Droplet aria-hidden /> {formatHours(s.receiverStockoutHours)}
+              </span>
+            ) : null}
+            {s.rescuedFromExpiry > 0 ? (
+              <span className="inline-flex items-center gap-1 text-accent-hover" title="Units saved from expiry">
+                <Leaf aria-hidden /> {s.rescuedFromExpiry}
+              </span>
+            ) : null}
           </div>
-          <p className="mt-1 line-clamp-2 text-xs text-ink-faint">{s.reason}</p>
         </div>
       </div>
       <div className="mt-2 flex flex-wrap items-center gap-1.5 pl-12">

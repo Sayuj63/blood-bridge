@@ -1,3 +1,4 @@
+import { Activity } from "lucide-react";
 import { useState } from "react";
 import type { ForecastDTO } from "../../../shared/api";
 import { COMPONENTS, COMPONENT_SHORT, COMPONENT_LABEL, type Component } from "../../../shared/domain";
@@ -32,7 +33,7 @@ export function OutlookPanel({
     .sort((a, b) => (a.stockoutHours ?? Infinity) - (b.stockoutHours ?? Infinity) || b.shortfall - a.shortfall);
 
   return (
-    <Panel id="outlook" title="City outlook" meta={`${horizon}h horizon`} className="border-r">
+    <Panel id="outlook" icon={<Activity aria-hidden />} title="City outlook" meta={`${horizon}h horizon`} className="border-r">
       <div className="border-b border-line p-2">
         <SegmentedControl
           label="Component"

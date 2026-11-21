@@ -1,3 +1,4 @@
+import { Gauge } from "lucide-react";
 import { useMemo, useState } from "react";
 import { CityMap } from "../../components/map/CityMap";
 import { ErrorState } from "../../components/ui/EmptyState";
@@ -57,7 +58,8 @@ export default function CommandPage() {
         <div className="order-1 flex min-h-0 flex-col lg:order-2">
           <div className="relative h-[52vh] min-h-72 lg:h-auto lg:flex-1">
             <CityMap
-              theme="command"
+              theme="analytics"
+              look="paper"
               markers={markers}
               arcs={arcs}
               surge={surge ? { lat: surge.epicenter.lat, lng: surge.epicenter.lng, radiusKm: surge.radiusKm } : null}
@@ -76,7 +78,7 @@ export default function CommandPage() {
               </div>
             ) : null}
           </div>
-          <Panel id="outcome" title="Outcome" meta="next 72h · now vs with plan" className="border-t lg:max-h-[17rem] lg:flex-none">
+          <Panel id="outcome" icon={<Gauge aria-hidden />} title="Outcome" meta="next 72h · now vs with plan" className="border-t lg:max-h-[17rem] lg:flex-none">
             {forecast.data ? (
               <OutcomeMeter
                 baseline={forecast.data.baseline}

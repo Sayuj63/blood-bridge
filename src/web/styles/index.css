@@ -96,6 +96,54 @@
   --bb-shadow: 0 1px 2px rgb(23 23 23 / 0.05), 0 10px 28px -14px rgb(127 20 34 / 0.25);
 }
 
+/* Analytical dashboards on the brand paper: calm, low-chroma, one red severity ramp. */
+[data-theme="analytics"] {
+  color-scheme: light;
+  --bb-canvas: #faf9f6;
+  --bb-surface: #ffffff;
+  --bb-surface-2: #faf7f5;
+  --bb-surface-3: #fcebed;
+  --bb-line: #eae6e3;
+  --bb-line-strong: #d9d3cf;
+  --bb-ink: #171717;
+  --bb-ink-muted: #737373;
+  --bb-ink-faint: #8a817c;
+  --bb-accent: #a61b2b;
+  --bb-accent-hover: #7f1422;
+  --bb-accent-ink: #ffffff;
+  --bb-bridge: #7f1422;
+  --bb-bridge-soft: #fcebed;
+  --bb-critical: #a61b2b;
+  --bb-critical-soft: #fcebed;
+  --bb-warn: #b85563;
+  --bb-warn-soft: #fff5f5;
+  --bb-ok: #8a817c;
+  --bb-ok-soft: #f3f0ee;
+  --bb-info: #8a817c;
+  --bb-info-soft: #f3f0ee;
+  --bb-plasma: #8a817c;
+  --bb-focus: #a61b2b;
+  --bb-scrim: rgb(23 23 23 / 0.4);
+  --bb-shadow: 0 1px 2px rgb(23 23 23 / 0.04), 0 8px 24px -16px rgb(127 20 34 / 0.18);
+  /* Groups in two calm reds (Rh− darker) instead of the multicolour operational palette. */
+  --color-group-o-neg: #7f1422;
+  --color-group-o-neg-on: #ffffff;
+  --color-group-o-pos: #a61b2b;
+  --color-group-o-pos-on: #ffffff;
+  --color-group-a-neg: #7f1422;
+  --color-group-a-neg-on: #ffffff;
+  --color-group-a-pos: #a61b2b;
+  --color-group-a-pos-on: #ffffff;
+  --color-group-b-neg: #7f1422;
+  --color-group-b-neg-on: #ffffff;
+  --color-group-b-pos: #a61b2b;
+  --color-group-b-pos-on: #ffffff;
+  --color-group-ab-neg: #7f1422;
+  --color-group-ab-neg-on: #ffffff;
+  --color-group-ab-pos: #a61b2b;
+  --color-group-ab-pos-on: #ffffff;
+}
+
 [data-theme="command"] {
   color-scheme: dark;
   --bb-canvas: #06111c;

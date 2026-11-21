@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { RefreshCw, Sparkles } from "lucide-react";
+import { FileText, RefreshCw, Sparkles } from "lucide-react";
 import type { SurgeDTO } from "../../../shared/api";
 import { Badge } from "../../components/ui/Badge";
 import { Button } from "../../components/ui/Button";
@@ -22,6 +22,7 @@ export function BriefPanel({ surge }: { surge: SurgeDTO | null }) {
   return (
     <Panel
       id="brief"
+      icon={<FileText aria-hidden />}
       title="Situation brief"
       className="border-b"
       meta={brief.data ? formatIST(brief.data.generatedAt) : undefined}

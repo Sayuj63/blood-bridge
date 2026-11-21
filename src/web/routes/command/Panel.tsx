@@ -4,6 +4,7 @@ import { cn } from "../../lib/cn";
 /** Dense ops-console panel: hairline frame, compact header, scrolling body. */
 export function Panel({
   title,
+  icon,
   meta,
   actions,
   children,
@@ -12,6 +13,8 @@ export function Panel({
   id,
 }: {
   title: string;
+  /** Line icon shown before the title. */
+  icon?: ReactNode;
   /** Small right-aligned context, e.g. "72h horizon". */
   meta?: ReactNode;
   actions?: ReactNode;
@@ -24,6 +27,7 @@ export function Panel({
   return (
     <section aria-labelledby={headingId} className={cn("flex min-h-0 flex-col border-line bg-surface", className)}>
       <header className="flex h-10 shrink-0 items-center gap-2 border-b border-line px-3">
+        {icon ? <span className="text-accent [&_svg]:size-4">{icon}</span> : null}
         <h2 id={headingId} className="font-label text-sm text-ink">
           {title}
         </h2>

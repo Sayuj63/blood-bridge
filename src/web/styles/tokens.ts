@@ -6,7 +6,7 @@
 import type { BloodGroup } from "../../shared/domain";
 
 export type Rgb = readonly [number, number, number];
-export type ThemeName = "clinical" | "command";
+export type ThemeName = "clinical" | "command" | "analytics";
 
 export function hexToRgb(hex: string): Rgb {
   const n = Number.parseInt(hex.slice(1), 16);
@@ -52,6 +52,16 @@ const TONE_HEX: Record<ThemeName, Record<Tone, string>> = {
     ok: "#13703f",
     info: "#1d5fb8",
   },
+  /** Calm analytical palette: severity is a single red ramp, everything else warm greys. */
+  analytics: {
+    neutral: "#737373",
+    accent: "#a61b2b",
+    bridge: "#7f1422",
+    critical: "#a61b2b",
+    warn: "#d08a93",
+    ok: "#c9c2bd",
+    info: "#8a817c",
+  },
   command: {
     neutral: "#a3b5c7",
     accent: "#ff4058",
@@ -70,4 +80,5 @@ export const toneRgb = (theme: ThemeName, tone: Tone): Rgb => hexToRgb(TONE_HEX[
 export const MAP_STYLE_URL: Record<ThemeName, string> = {
   clinical: "https://tiles.openfreemap.org/styles/positron",
   command: "https://tiles.openfreemap.org/styles/dark",
+  analytics: "https://tiles.openfreemap.org/styles/positron",
 };

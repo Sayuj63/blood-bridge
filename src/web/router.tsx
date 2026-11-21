@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
           {
             path: "command",
             lazy: page(() => import("./routes/command")),
-            handle: handle({ theme: "command", actor: "command", title: "Command", layout: "fill" }),
+            handle: handle({ theme: "analytics", actor: "command", title: "Command", layout: "fill" }),
           },
           {
             path: "ledger",
