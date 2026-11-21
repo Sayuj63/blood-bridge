@@ -226,7 +226,8 @@ export function summarize(cells: CellForecast[]): OutcomeSummary {
 export const SURGE_PRESETS: Record<SurgeKind, { label: string; radiusKm: number; multipliers: Record<string, number> }> = {
   flood: {
     label: "Flash flood",
-    radiusKm: 4,
+    // The Mithi basin floods well beyond Kurla itself (2005: Kurla, Sion, Ghatkopar, Santacruz).
+    radiusKm: 6,
     multipliers: {
       [cellKey("*", "red_cells")]: 2,
       [cellKey("O-", "red_cells")]: 3,

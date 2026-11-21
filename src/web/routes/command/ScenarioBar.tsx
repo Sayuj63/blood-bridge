@@ -3,14 +3,15 @@ import type { SurgeDTO } from "../../../shared/api";
 import type { SurgeKind } from "../../../shared/domain";
 import { Badge } from "../../components/ui/Badge";
 import { Button } from "../../components/ui/Button";
+import { ConfirmButton } from "../../components/ui/ConfirmButton";
 import { useMeta } from "../../lib/queries";
 import { formatClock } from "../../lib/format";
 import { useNow } from "../../lib/useNow";
 import type { useCommandActions } from "./useCommandActions";
 
 const SCENARIOS: { kind: SurgeKind; area: string; label: string; icon: typeof Waves }[] = [
-  { kind: "flood", area: "Kurla", label: "Flood · Kurla", icon: Waves },
   { kind: "mass_casualty", area: "Dadar", label: "Mass casualty · Dadar", icon: Ambulance },
+  { kind: "flood", area: "Kurla", label: "Flood · Kurla", icon: Waves },
 ];
 
 /** Top strip: scenario launcher, surge status, and the two operator shortcuts. */
@@ -54,6 +55,7 @@ export function ScenarioBar({
               variant={running ? "danger" : "secondary"}
               aria-pressed={running}
               disabled={surge !== null || actions.startSurge.isPending}
+              title={surge !== null && !running ? "End the current surge to start another" : undefined}
               loading={actions.startSurge.isPending && actions.startSurge.variables?.kind === kind}
               icon={<Icon className="size-3.5" aria-hidden />}
               onClick={() => actions.startSurge.mutate({ kind, areaId: areaId(area) })}
@@ -69,15 +71,18 @@ export function ScenarioBar({
           Request donors
         </Button>
         {surge ? (
-          <Button
+          <ConfirmButton
             size="sm"
             variant="ghost"
             loading={actions.endSurge.isPending}
             icon={<Power className="size-3.5" aria-hidden />}
-            onClick={() => actions.endSurge.mutate()}
+            confirmTitle="End the surge?"
+            confirmDescription="Demand returns to normal and the surge plan is closed. Approved transfers stay in motion."
+            confirmLabel="End surge"
+            onConfirm={() => actions.endSurge.mutate()}
           >
             End surge
-          </Button>
+          </ConfirmButton>
         ) : null}
       </div>
     </div>

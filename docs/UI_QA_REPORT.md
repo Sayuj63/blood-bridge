@@ -80,6 +80,30 @@ called through the API.
 
 ---
 
+## Fix status (21 Nov 2026, verified in the browser after the fixes)
+
+| # | Status |
+|---|---|
+| 1 Surge drama | **Fixed.** Impact strip under the scenario bar (normal day → now: first stock-out, lines out <24h, unmet 24h, unmet 72h). Mass casualty now leads on Command and Stage; flood radius 4 → 6 km (Mithi basin). Flood multipliers left at the literature-grounded 2–3×. |
+| 2 Transfer count | **Fixed.** Header reads "N moving · M suggested", so approvals visibly move the first number. |
+| 3 Stage bank panel | **Fixed.** Follows the bank of the stage hospital's latest reservation; resets to the default on Reset demo. |
+| 4 Alerts after donation | **Fixed (backend).** Recording a donation expires the donor's other open alerts. |
+| 5 Duplicate toasts | **Fixed.** The acting tab suppresses the realtime echo of its own write for 4 s. |
+| 6 Toasts not site-scoped | **Fixed.** Bank/hospital screens toast only their site's events; donors only their own; Command sees all. |
+| 7 Confirmations | **Fixed.** End surge (Command, Stage) and Reset demo ask first (`ConfirmButton`). |
+| 8 Reset feedback | Toast was there but expired before the check; now shows for 8 s. |
+| 9 Refresh brief | **Fixed.** Regenerates from the current forecast (`?refresh=1`); time updates, spinner while working. |
+| 10 Map site click | Open: new feature for the frontend developer. |
+| 11 Disabled scenario | **Fixed.** Tooltip "End the current surge to start another". |
+| 12 Two critical buttons | **Fixed.** Form button hidden while a request is open; the tracker owns it. |
+| 13 Two countdowns | Not a bug: the second is the screen-reader label. |
+| 14 Consent saves silently | **Fixed.** Single "Saved" toast. |
+| 15 Our stock empty | Not a bug: explained empty state already shown. |
+| 16 "dry in 0m" | **Fixed** → "dry now". |
+| 17 Pluralisation | **Fixed.** |
+| 18 Internal IDs in toasts | **Fixed.** Pickup/delivery/no-stock headlines use hospital, group, component and ward. |
+| 19 Post-reset sync failure | **Fixed.** Auto-sync waits a full interval after a reset. |
+
 ## Suggested UI work for the frontend developer
 
 - **Notification system:** one toast per action, scoped to the acting site, with a small notification centre (bell) listing recent events.

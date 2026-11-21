@@ -6,6 +6,7 @@ import { Skeleton } from "../../components/ui/Skeleton";
 import { useForecast, useSites, useTransferBoard } from "../../lib/queries";
 import { BriefPanel } from "./BriefPanel";
 import { DonorDriveDialog } from "./DonorDriveDialog";
+import { ImpactStrip } from "./ImpactStrip";
 import { OutcomeMeter } from "./OutcomeMeter";
 import { OutlookPanel } from "./OutlookPanel";
 import { Panel } from "./Panel";
@@ -44,6 +45,7 @@ export default function CommandPage() {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <ScenarioBar surge={surge} actions={actions} onRequestDonors={() => setDonorsOpen(true)} />
+      {surge && forecast.data ? <ImpactStrip key={surge.id} baseline={forecast.data.baseline} current={forecast.data.current} /> : null}
 
       <div className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[18.5rem_minmax(0,1fr)_23rem] lg:grid-rows-1">
         <div className="order-2 min-h-0 lg:order-1">

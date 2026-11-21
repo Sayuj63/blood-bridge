@@ -191,7 +191,7 @@ app.delete("/surge", async (c) => {
   await fc.endSurge(deps(c), actor(c));
   return c.json({ ok: true });
 });
-app.get("/surge/brief", async (c) => c.json(await fc.surgeBrief(deps(c))));
+app.get("/surge/brief", async (c) => c.json(await fc.surgeBrief(deps(c), c.req.query("refresh") === "1")));
 
 /* ── Donors & alerts ── */
 

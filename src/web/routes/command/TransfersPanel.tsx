@@ -31,7 +31,7 @@ export function TransfersPanel({ board, isLoading, error, onRetry, actions, focu
   const active = (board?.active ?? []).filter((t) => t.status === "approved");
 
   return (
-    <Panel id="transfers" icon={<ArrowLeftRight aria-hidden />} title="Transfer plan" meta={board ? `${suggestions.length} suggested · ${active.length} moving` : undefined}>
+    <Panel id="transfers" icon={<ArrowLeftRight aria-hidden />} title="Transfer plan" meta={board ? `${active.length} moving · ${suggestions.length} suggested` : undefined}>
       {error ? (
         <ErrorState compact what="transfer suggestions" error={error} onRetry={onRetry} />
       ) : isLoading ? (
@@ -114,7 +114,7 @@ function SuggestionRow({
             </span>
             {s.receiverStockoutHours !== null ? (
               <span className="inline-flex items-center gap-1 text-critical" title="Receiver runs dry in">
-                <Droplet aria-hidden /> {formatHours(s.receiverStockoutHours)}
+                <Droplet aria-hidden /> {s.receiverStockoutHours < 1 / 60 ? "dry now" : formatHours(s.receiverStockoutHours)}
               </span>
             ) : null}
             {s.rescuedFromExpiry > 0 ? (

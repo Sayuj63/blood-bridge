@@ -375,12 +375,12 @@ const BRIEF_MODEL = "@cf/meta/llama-3.1-8b-instruct-fast";
  * Workers AI from the forecast numbers only (no personal data), cached per surge,
  * with a deterministic template fallback so the demo never depends on the model.
  */
-export async function surgeBrief(deps: Deps): Promise<SurgeBriefDTO> {
+export async function surgeBrief(deps: Deps, refresh = false): Promise<SurgeBriefDTO> {
   const row = await activeSurgeRow(deps);
   const f = await forecast(deps);
   const template = templateBrief(f);
   if (!row) return { text: template, source: "template", generatedAt: deps.now };
-  if (row.brief) return JSON.parse(row.brief) as SurgeBriefDTO;
+  if (row.brief && !refresh) return JSON.parse(row.brief) as SurgeBriefDTO;
 
   let brief: SurgeBriefDTO = { text: template, source: "template", generatedAt: deps.now };
   try {

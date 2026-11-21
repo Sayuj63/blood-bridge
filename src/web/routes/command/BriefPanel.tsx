@@ -1,4 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 import { FileText, RefreshCw, Sparkles } from "lucide-react";
 import type { SurgeDTO } from "../../../shared/api";
 import { Badge } from "../../components/ui/Badge";
@@ -12,6 +13,16 @@ import { Panel } from "./Panel";
 
 /** AI situation brief for the active surge, with its source shown plainly. */
 export function BriefPanel({ surge }: { surge: SurgeDTO | null }) {
+  const qc = useQueryClient();
+  const [regenerating, setRegenerating] = useState(false);
+  const regenerate = async () => {
+    setRegenerating(true);
+    try {
+      qc.setQueryData(queryKeys.surgeBrief(surge?.id ?? "none"), await api.surge.brief(undefined, true));
+    } finally {
+      setRegenerating(false);
+    }
+  };
   const brief = useQuery({
     queryKey: queryKeys.surgeBrief(surge?.id ?? "none"),
     queryFn: ({ signal }) => api.surge.brief(signal),
@@ -32,9 +43,10 @@ export function BriefPanel({ surge }: { surge: SurgeDTO | null }) {
             size="sm"
             variant="ghost"
             aria-label="Regenerate brief"
-            onClick={() => void brief.refetch()}
-            disabled={brief.isFetching}
-            icon={<RefreshCw className={brief.isFetching ? "size-3.5 animate-spin" : "size-3.5"} aria-hidden />}
+            title="Regenerate from the current forecast"
+            onClick={() => void regenerate()}
+            disabled={brief.isFetching || regenerating}
+            icon={<RefreshCw className={brief.isFetching || regenerating ? "size-3.5 animate-spin" : "size-3.5"} aria-hidden />}
           />
         ) : null
       }

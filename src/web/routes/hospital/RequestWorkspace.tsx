@@ -88,7 +88,7 @@ export function RequestWorkspace({ hospital, requestId, openRequest, formValues,
           values={formValues}
           onChange={onFormChange}
           onSearch={findBlood}
-          onCritical={(values) => raiseCritical({ input: toCreateInput(values, hospital.id, Date.now()) })}
+          onCritical={requestId ? undefined : (values) => raiseCritical({ input: toCreateInput(values, hospital.id, Date.now()) })}
           criticalPending={critical.isPending}
         />
       </Card>

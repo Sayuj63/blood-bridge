@@ -20,7 +20,8 @@ interface RequestFormProps {
   values: RequestFormValues;
   onChange: (values: RequestFormValues) => void;
   onSearch: (values: RequestFormValues) => void;
-  onCritical: (values: RequestFormValues) => void;
+  /** Omitted while a request is open: its tracker owns the critical alert. */
+  onCritical?: (values: RequestFormValues) => void;
   criticalPending: boolean;
 }
 
@@ -135,7 +136,7 @@ export function RequestForm({ values, onChange, onSearch, onCritical, criticalPe
         <Button type="submit" variant="primary" size="xl" className="w-full" icon={<Search className="size-5" aria-hidden />}>
           Find blood
         </Button>
-        {values.urgency === "critical" ? (
+        {values.urgency === "critical" && onCritical ? (
           <Button
             variant="danger"
             size="lg"

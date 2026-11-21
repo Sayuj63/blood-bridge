@@ -1,3 +1,4 @@
+import { getActor, msSinceLastWrite } from "./api";
 /**
  * Realtime bridge: one WebSocket per document to /api/realtime.
  * Events say *what changed* (topics); we invalidate the matching React Query
@@ -129,8 +130,24 @@ class RealtimeConnection {
 
 const RealtimeContext = createContext<RealtimeConnection | null>(null);
 
-/** Default: toast warnings, criticals and successes; stay quiet for routine info. */
-const defaultToastFilter: ToastFilter = (e) => e.tone === "critical" || e.tone === "warning" || e.tone === "success";
+/** The echo of this tab's own action arrives within this window; its toast was already shown. */
+const OWN_ACTION_ECHO_MS = 4000;
+
+/**
+ * Default: toast warnings, criticals and successes, but only
+ *  - when they concern this screen (a bank or hospital sees its own site's events, a donor its own alerts;
+ *    Command sees everything), and
+ *  - when they are not the echo of an action this tab just took (that tab already confirmed it).
+ */
+const defaultToastFilter: ToastFilter = (e) => {
+  if (!(e.tone === "critical" || e.tone === "warning" || e.tone === "success")) return false;
+  if (msSinceLastWrite() < OWN_ACTION_ECHO_MS) return false;
+  const [role, id] = getActor().split(":");
+  if ((role === "bank" || role === "hospital") && e.siteIds?.length) return e.siteIds.includes(id);
+  if (role === "donor" && e.donorIds?.length) return e.donorIds.includes(id);
+  if (role === "donor") return false;
+  return true;
+};
 
 /**
  * Mount once near the root. `toastFilter` decides which events toast in this

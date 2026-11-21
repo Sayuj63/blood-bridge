@@ -77,6 +77,13 @@ export const setActor = (next: string): void => {
 };
 export const getActor = (): string => actor;
 
+/**
+ * When this tab last performed a write. The tab that acted already shows its own confirmation
+ * toast, so the matching realtime echo is suppressed for a short window (see realtime.tsx).
+ */
+let lastWriteAt = 0;
+export const msSinceLastWrite = (): number => Date.now() - lastWriteAt;
+
 /* ─────────────────────────────── Core ─────────────────────────────── */
 
 type Method = "GET" | "POST" | "PATCH" | "DELETE";
@@ -86,6 +93,7 @@ function isErrorBody(x: unknown): x is ApiErrorBody {
 }
 
 async function request<T>(method: Method, path: string, body?: unknown, signal?: AbortSignal): Promise<T> {
+  if (method !== "GET") lastWriteAt = Date.now();
   let res: Response;
   try {
     res = await fetch(path, {
@@ -212,7 +220,8 @@ export const api = {
   surge: {
     start: (input: StartSurgeInput) => post<SurgeDTO>("/api/surge", input),
     end: () => del<unknown>("/api/surge"),
-    brief: (signal?: AbortSignal) => get<SurgeBriefDTO>("/api/surge/brief", signal),
+    /** `refresh` regenerates the brief from the current forecast instead of returning the cached one. */
+    brief: (signal?: AbortSignal, refresh = false) => get<SurgeBriefDTO>(`/api/surge/brief${refresh ? "?refresh=1" : ""}`, signal),
   },
 
   donors: {

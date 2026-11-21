@@ -53,7 +53,11 @@ export function useUpdatePreferences(donorId: string) {
       if (context?.previous) qc.setQueryData(key, context.previous);
       toast.error(`Couldn't save that change. ${errorMessage(error)}`);
     },
-    onSuccess: (donor) => qc.setQueryData(key, donor),
+    onSuccess: (donor) => {
+      qc.setQueryData(key, donor);
+      // One reusable id, so quick successive changes show a single "Saved" rather than a stack.
+      toast.success("Saved", { id: "donor-preferences-saved", duration: 1500 });
+    },
     onSettled: () => qc.invalidateQueries({ queryKey: queryKeys.personas() }),
   });
 }

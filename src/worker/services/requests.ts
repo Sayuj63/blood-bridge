@@ -340,7 +340,7 @@ export async function rerouteRequest(deps: Deps, requestId: string, cause: strin
     await deps.hub.publish({
       topics: ["requests"],
       siteIds: [hospital.id],
-      headline: `No further compatible stock for ${request.id} — consider a critical donor alert`,
+      headline: `${hospital.shortName}: no further compatible ${request.bloodGroup} ${COMPONENT_SHORT[request.component]} — consider a critical donor alert`,
       tone: "critical",
     });
     return getRequest(deps, requestId);
@@ -434,7 +434,7 @@ export async function reserveSplit(deps: Deps, requestId: string, actor: string)
     await deps.hub.publish({
       topics: ["requests"],
       siteIds: [hospital.id],
-      headline: `${request.id}: ${unitsHeld} of ${request.unitsNeeded} units covered — raise a critical alert for the rest`,
+      headline: `${hospital.shortName}: ${unitsHeld} of ${request.unitsNeeded} ${request.bloodGroup} ${COMPONENT_SHORT[request.component]} covered — raise a critical alert for the rest`,
       tone: "critical",
     });
   }
@@ -493,7 +493,7 @@ export async function advanceReservation(deps: Deps, reservationId: string, to: 
   await deps.hub.publish({
     topics: ["reservations", "requests", "stock", "sites"],
     siteIds: [res.bankSiteId, request.hospitalId],
-    headline: `${request.id}: ${verb} ${where}`,
+    headline: `${res.unitsCount} × ${request.bloodGroup} ${COMPONENT_SHORT[request.component]} ${verb} ${where}${to === "delivered" ? ` (${request.ward})` : ""}`,
     tone: "success",
   });
   return getRequest(deps, request.id);

@@ -485,6 +485,11 @@ export async function completeDonation(deps: Deps, alertId: string, actor: strin
   await deps.db.update(schema.donorAlerts).set({ status: "arrived" }).where(eq(schema.donorAlerts.id, alertId));
   await deps.db.update(schema.donors).set({ lastDonationAt: deps.now }).where(eq(schema.donors.id, alert.donorId));
   await deps.db.insert(schema.donations).values({ id: newId("DON"), donorId: alert.donorId, siteId: alert.bankSiteId, alertId, at: deps.now });
+  // The donor is now ineligible: withdraw every other alert still asking them to come.
+  await deps.db
+    .update(schema.donorAlerts)
+    .set({ status: "expired" })
+    .where(and(eq(schema.donorAlerts.donorId, alert.donorId), inArray(schema.donorAlerts.status, ["sent", "accepted"])));
 
   const bank = await getSite(deps, alert.bankSiteId);
   await deps.hub.audit([

@@ -1,11 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Ambulance, ExternalLink, Power, QrCode, RotateCcw, Waves } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { toast } from "sonner";
 import type { SurgeKind } from "../../../shared/domain";
 import { Logo } from "../../brand/Logo";
 import { Button, LinkButton } from "../../components/ui/Button";
+import { ConfirmButton } from "../../components/ui/ConfirmButton";
 import { LiveDot } from "../../components/ui/LiveDot";
 import { SimulatedBadge } from "../../components/ui/SimulatedBadge";
 import { SurgeBanner } from "../../layouts/SurgeBanner";
@@ -16,13 +17,11 @@ import { useRealtime } from "../../lib/realtime";
 import { JoinQr } from "./JoinQr";
 import { MessagingStatus } from "./MessagingStatus";
 
-const VIEWS = [
-  // Scripted 60-second demo (PRD §7.1): Sion's municipal hospital requests O-negative platelets;
-  // in the real e-RaktKosh snapshot, S. L. Raheja (Mahim) is the only bank holding 2+ such units.
-  // Both are real sites from data/mumbai; the views fall back to their own defaults if an ID is unknown.
-  { src: "/hospital?embed=1&site=hsp-sion-ltmgh", title: "Hospital view" },
-  { src: "/bank?embed=1&site=bb-raheja-mahim", title: "Blood bank view" },
-] as const;
+// Scripted 60-second demo (PRD §7.1): Sion's municipal hospital requests O-negative platelets.
+// In the e-RaktKosh snapshot S. L. Raheja (Mahim) holds them, but live syncs can change the top bank,
+// so the bank panel follows whichever bank the stage hospital's latest reservation went to.
+const STAGE_HOSPITAL = "hsp-sion-ltmgh";
+const DEFAULT_BANK = "bb-raheja-mahim";
 
 /** Scenario epicentres, matched by name against /api/meta areas (never hardcoded IDs). */
 const SCENARIO_AREA: Record<SurgeKind, string> = { flood: "kurla", mass_casualty: "dadar" };
@@ -34,11 +33,23 @@ export default function StagePage() {
   const surge = useForecast().data?.surge ?? null;
   const areas = useMeta().data?.areas ?? [];
   const [showQr, setShowQr] = useState(true);
+  const { lastEvent } = useRealtime();
+  const [bankId, setBankId] = useState(DEFAULT_BANK);
+  useEffect(() => {
+    if (!lastEvent?.topics.includes("reservations") || !lastEvent.siteIds?.includes(STAGE_HOSPITAL)) return;
+    const bank = lastEvent.siteIds.find((id) => id.startsWith("bb-"));
+    if (bank) setBankId(bank);
+  }, [lastEvent]);
+  const views = [
+    { src: `/hospital?embed=1&site=${STAGE_HOSPITAL}`, title: "Hospital view" },
+    { src: `/bank?embed=1&site=${bankId}`, title: "Blood bank view" },
+  ];
 
   const reset = useMutation({
     mutationFn: () => api.demo.reset(),
     onSuccess: (r) => {
-      toast.success(`Demo reset: ${r.sites} sites, ${r.units} units, ${r.donors} donors`);
+      toast.success(`Demo reset: ${r.sites} sites, ${r.units} units, ${r.donors} donors`, { duration: 8000 });
+      setBankId(DEFAULT_BANK);
       void qc.invalidateQueries();
     },
     onError: (e) => toast.error("Reset failed", { description: errorMessage(e) }),
@@ -67,33 +78,50 @@ export default function StagePage() {
         <LiveDot status={status} />
         <MessagingStatus />
         <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Demo controls">
-          <Button size="sm" loading={reset.isPending} icon={<RotateCcw className="size-3.5" aria-hidden />} onClick={() => reset.mutate()}>
+          <ConfirmButton
+            size="sm"
+            loading={reset.isPending}
+            icon={<RotateCcw className="size-3.5" aria-hidden />}
+            confirmTitle="Reset the demo?"
+            confirmDescription="Clears every request, transfer, alert and simulated donor change, and reloads the real bank snapshot."
+            confirmLabel="Reset demo"
+            onConfirm={() => reset.mutate()}
+          >
             Reset demo
-          </Button>
+          </ConfirmButton>
           {surge ? (
-            <Button size="sm" variant="ghost" loading={end.isPending} icon={<Power className="size-3.5" aria-hidden />} onClick={() => end.mutate()}>
+            <ConfirmButton
+              size="sm"
+              variant="ghost"
+              loading={end.isPending}
+              icon={<Power className="size-3.5" aria-hidden />}
+              confirmTitle="End the surge?"
+              confirmDescription="Demand returns to normal and the surge plan is closed. Approved transfers stay in motion."
+              confirmLabel="End surge"
+              onConfirm={() => end.mutate()}
+            >
               End surge
-            </Button>
+            </ConfirmButton>
           ) : (
             <>
               <Button
                 size="sm"
                 variant="danger"
-                loading={start.isPending && start.variables === "flood"}
-                disabled={start.isPending}
-                icon={<Waves className="size-3.5" aria-hidden />}
-                onClick={() => start.mutate("flood")}
-              >
-                Start surge · Kurla flood
-              </Button>
-              <Button
-                size="sm"
                 loading={start.isPending && start.variables === "mass_casualty"}
                 disabled={start.isPending}
                 icon={<Ambulance className="size-3.5" aria-hidden />}
                 onClick={() => start.mutate("mass_casualty")}
               >
-                Mass casualty · Dadar
+                Start surge · Mass casualty, Dadar
+              </Button>
+              <Button
+                size="sm"
+                loading={start.isPending && start.variables === "flood"}
+                disabled={start.isPending}
+                icon={<Waves className="size-3.5" aria-hidden />}
+                onClick={() => start.mutate("flood")}
+              >
+                Kurla flood
               </Button>
             </>
           )}
@@ -122,7 +150,7 @@ export default function StagePage() {
           showQr ? "lg:grid-cols-[1fr_1fr_auto_18rem] 2xl:grid-cols-[1fr_1fr_auto_22rem]" : "lg:grid-cols-[1fr_1fr_auto]",
         )}
       >
-        {VIEWS.map((v) => (
+        {views.map((v) => (
           <iframe
             key={v.src}
             src={v.src}

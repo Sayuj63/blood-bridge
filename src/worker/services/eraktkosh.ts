@@ -170,6 +170,9 @@ export async function autoSyncEraktkosh(deps: Deps): Promise<void> {
   if (status.lastAttemptAt !== null && deps.now - status.lastAttemptAt < AUTO_SYNC_EVERY_MS) return;
   const ok = await lastSuccess(deps);
   if (ok && deps.now - ok.at < AUTO_SYNC_EVERY_MS) return;
+  // A demo reset reloads the snapshot and clears the ledger; wait a full interval before syncing over it.
+  const reset = await lastEntry(deps, ["demo.reset"]);
+  if (reset && deps.now - reset.at < AUTO_SYNC_EVERY_MS) return;
   try {
     await syncEraktkosh(deps, "system:eraktkosh-cron");
   } catch {

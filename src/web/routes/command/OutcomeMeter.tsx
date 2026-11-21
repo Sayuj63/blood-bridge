@@ -1,5 +1,6 @@
 import type { OutcomeSummary } from "../../../shared/forecast";
 import { cn } from "../../lib/cn";
+import { plural } from "../../lib/format";
 
 type CountKey = Exclude<keyof OutcomeSummary, "earliestStockoutHours">;
 
@@ -55,7 +56,7 @@ export function OutcomeMeter({ baseline, current, withPlan, surgeStart }: Outcom
         </div>
         <p className="text-xs text-ink-muted">
           {planShortfall > 0 || planWaste > 0
-            ? `Approving the remaining plan would avert ${planShortfall} more units of shortfall and save ${planWaste} more from expiry.`
+            ? `Approving the remaining plan would avert ${plural(planShortfall, "more unit")} of shortfall and save ${planWaste} more from expiry.`
             : "No further gains from the current plan."}
         </p>
       </div>
