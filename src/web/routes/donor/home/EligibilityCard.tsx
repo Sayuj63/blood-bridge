@@ -16,8 +16,8 @@ const CIRCUMFERENCE = 2 * Math.PI * R;
 function ProgressRing({ progress, done, children }: { progress: number; done: boolean; children: ReactNode }) {
   const clamped = Math.min(1, Math.max(0, progress));
   return (
-    <div className="relative grid size-[120px] shrink-0 place-items-center">
-      <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 -rotate-90" aria-hidden>
+    <div className="relative grid size-[96px] shrink-0 place-items-center sm:size-[120px]">
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 size-full -rotate-90" aria-hidden>
         <circle cx={SIZE / 2} cy={SIZE / 2} r={R} fill="none" strokeWidth={STROKE} className="stroke-surface-3" />
         <circle
           cx={SIZE / 2}
@@ -63,7 +63,7 @@ export function EligibilityCard({ donor }: { donor: DonorDTO }) {
           )}
         </ProgressRing>
         <div className="min-w-0">
-          <h2 id="eligibility-title" className="text-xl font-semibold leading-tight text-ink">
+          <h2 id="eligibility-title" className="text-lg font-semibold leading-tight text-balance text-ink sm:text-xl">
             {wait ? `Eligible again on ${formatDate(wait.until)}` : "Eligible now"}
           </h2>
           <p className="mt-1 text-sm text-ink-muted">
@@ -77,9 +77,9 @@ export function EligibilityCard({ donor }: { donor: DonorDTO }) {
               Last donated {formatDate(donor.lastDonationAt)}
             </p>
           ) : null}
-          {waiting && donor.eligibleFrom !== null ? <ReminderButton donorId={donor.id} eligibleFrom={donor.eligibleFrom} className="mt-3" /> : null}
         </div>
       </div>
+      {waiting && donor.eligibleFrom !== null ? <ReminderButton donorId={donor.id} eligibleFrom={donor.eligibleFrom} className="mt-4 w-full" /> : null}
       <p className="mt-4 border-t border-line pt-3 text-xs text-ink-muted">
         Donation intervals follow local guidelines.
         {intervalDays ? ` The ${intervalDays}-day gap here is demo configuration set by the blood bank.` : " The gap shown here is demo configuration."}

@@ -55,6 +55,7 @@ export const formatDate = (ms: number): string => istDate.format(ms);
 /** 22 → "22:00" */
 export const hourLabel = (hour: number): string => `${String(hour).padStart(2, "0")}:00`;
 
-export const firstName = (name: string): string => name.trim().split(/\s+/)[0] ?? name;
+/** Donors who joined by chat get a placeholder name ("WhatsApp donor ··0261"); greet them as "friend". */
+export const firstName = (name: string): string => (name.includes("··") ? "friend" : (name.trim().split(/\s+/)[0] ?? name));
 
 export const DAY_MS = 86_400_000;

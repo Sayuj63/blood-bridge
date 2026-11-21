@@ -56,8 +56,12 @@ export function AppShell() {
         ) : (
           <div className="flex h-14 items-center gap-3 px-3 sm:px-5">
             <Link to="/" className="focus-ring shrink-0 rounded-md" aria-label="Blood Bridge home">
-              <Logo size={26} className="hidden sm:inline-flex" />
-              <Logo size={26} compact className="sm:hidden" />
+              <span className="hidden sm:inline-flex">
+                <Logo size={26} />
+              </span>
+              <span className="inline-flex sm:hidden">
+                <Logo size={26} compact />
+              </span>
             </Link>
             <nav aria-label="Views" className="-mx-1 min-w-0 flex-1 overflow-x-auto px-1 [scrollbar-width:none]">
               <ul className="flex items-center gap-0.5">
@@ -65,6 +69,7 @@ export function AppShell() {
                   <li key={r.to}>
                     <NavLink
                       to={r.to}
+                      aria-label={r.label}
                       className={({ isActive }) =>
                         cn(
                           "focus-ring flex h-9 items-center gap-1.5 whitespace-nowrap rounded-(--radius-control) px-2.5 text-sm font-medium transition-colors",
@@ -73,15 +78,20 @@ export function AppShell() {
                       }
                     >
                       {r.icon}
-                      <span>{r.label}</span>
+                      {/* Icons only on phones, so the bar never scrolls sideways. */}
+                      <span className="hidden sm:inline">{r.label}</span>
                     </NavLink>
                   </li>
                 ))}
               </ul>
             </nav>
             <div className="flex shrink-0 items-center gap-3">
-              <LiveDot status={status} className="hidden md:inline-flex" />
-              <LiveDot status={status} showLabel={false} className="md:hidden" />
+              <span className="hidden md:inline-flex">
+                <LiveDot status={status} />
+              </span>
+              <span className="inline-flex md:hidden">
+                <LiveDot status={status} showLabel={false} />
+              </span>
               <span className="hidden lg:inline-flex">
                 <SimulatedBadge />
               </span>
