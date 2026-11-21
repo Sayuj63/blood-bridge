@@ -41,7 +41,7 @@
 <div class="meta">
   <div><b>Live</b><small>blood-bridge.blood-bridge.workers.dev</small></div>
   <div><b>25 + 6</b><small>real Mumbai blood banks + hospitals</small></div>
-  <div><b>130 / 130</b><small>automated tests passing</small></div>
+  <div><b>135 / 135</b><small>automated tests passing</small></div>
   <div><b>15 tools</b><small>MCP server for ChatGPT / Claude</small></div>
 </div>
 
@@ -73,7 +73,7 @@
   <li>Stock grid by group × component: on hand, reserved, expiring 48 h / 7 d, shortage/surplus colours</li>
   <li>Live request queue: Confirm / Partially confirm / Decline with reason; critical on top; auto-reroute countdown</li>
   <li>Add / use / remove units; <b>camera barcode &amp; QR scan</b> (open-source ZXing); printable unit QR labels</li>
-  <li><b>e-RaktKosh sync</b> button + hourly auto-sync (see pending: blocked from cloud servers)</li>
+  <li><b>Connected systems card:</b> e-RaktKosh (public portal, hourly auto-sync), <b>RAKT</b> blood-bank software connector, eBloodConnect (partner access)</li>
   <li>Transfer suggestions: approve / modify qty / dismiss / mark received</li>
   <li>Donor drive with eligibility funnel <i>before</i> sending; incoming donors with confirmation codes</li>
 </ul>
@@ -105,6 +105,7 @@
   <li><b>WhatsApp bot</b> (open-wa gateway on a laptop): Hinglish blood requests ("Sion mein 2 O negative platelets chahiye") → top 3 real banks; JOIN signup; YES → confirmation code; STOP opt-out; privacy filter ignores personal chats.</li>
   <li><b>Official WhatsApp Business Cloud API</b> channel built into the Worker (webhook, templates, click-to-chat onboarding) — awaiting Meta credentials.</li>
   <li><b>SMS channel</b> via the open-source SMS Gateway for Android app.</li>
+  <li><b>RAKT connector</b> (blood bank management software): built to RAKT's published OpenAPI schema — pulls per-bag stock with collection dates, so a RAKT bank's units get <i>real</i> expiry dates (e-RaktKosh only gives counts). Idempotent sync; 5 tests on schema-shaped fixtures; RAKT's live server confirms our auth header format ("Invalid API key" with a test key).</li>
 </ul>
 
 <h3>Data: real vs simulated</h3>
@@ -120,6 +121,8 @@
 <table>
   <tr><th>Item</th><th>Status</th><th>What's needed</th></tr>
   <tr><td>e-RaktKosh live sync in production</td><td>Works from an Indian connection (tested: +1,758 / −521 units in 7 s); <b>blocked from Cloudflare servers (HTTP 522)</b></td><td>Let the laptop gateway fetch e-RaktKosh and push to the Worker, or use an India-based relay</td></tr>
+  <tr><td>RAKT connector</td><td>Built + tested on schema fixtures; live server reachable</td><td>An organisation API key from a blood bank that uses RAKT → set <code>RAKT_API_KEY</code> + <code>RAKT_SITE_ID</code></td></tr>
+  <tr><td>eBloodConnect</td><td>Not integrated — API is private, no public docs or schema</td><td>Vendor partnership / API access from EHR Logic</td></tr>
   <tr><td>Official WhatsApp sender</td><td>Code deployed, dormant</td><td>Create Meta developer app → WhatsApp test number, Phone Number ID, token, App Secret; add up to 5 recipient numbers</td></tr>
   <tr><td>WhatsApp via laptop gateway</td><td>Was online; stops when the laptop process stops</td><td>Restart gateway; full loop (2nd phone → reply → JOIN → YES) never tested end-to-end</td></tr>
   <tr><td>MCP inside ChatGPT</td><td>Verified with Claude only</td><td>ChatGPT Plus/Pro account → Developer mode → add connector</td></tr>
@@ -158,7 +161,7 @@
 <ul>
   <li><b>One Cloudflare Worker:</b> React 19 + Vite + Tailwind v4 SPA, Hono API, D1 (SQLite) via Drizzle, Durable Object "CityHub" (WebSockets, ledger, auto-reroute alarm), Workers AI (Llama 3.1, M2M100 translation), cron triggers</li>
   <li><b>Maps:</b> MapLibre GL + OpenFreeMap tiles + deck.gl (no API keys)</li>
-  <li><b>Integrations:</b> MCP (official TypeScript SDK), open-wa WhatsApp, Android SMS Gateway, WhatsApp Cloud API, e-RaktKosh public API, ZXing barcode scanning</li>
+  <li><b>Integrations:</b> MCP (official TypeScript SDK), open-wa WhatsApp, Android SMS Gateway, WhatsApp Cloud API, e-RaktKosh public API, RAKT REST API, ZXing barcode scanning</li>
   <li><b>Quality:</b> TypeScript strict, Zod-validated API shared by server and client, 130 unit tests, end-to-end smoke test (<code>scripts/smoke.mjs</code>)</li>
   <li><b>Docs in repo:</b> <code>README.md</code>, <code>docs/DATA_SOURCES.md</code>, <code>docs/PROBLEM_RESEARCH.md</code>, <code>docs/JUDGE_PLAYBOOK.md</code>, <code>docs/MCP.md</code>, <code>docs/MESSAGING.md</code></li>
 </ul>
