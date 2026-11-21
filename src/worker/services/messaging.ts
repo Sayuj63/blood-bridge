@@ -336,6 +336,8 @@ export async function ack(deps: Deps, id: string, input: GatewayAckInput): Promi
 
 /** Prefer WhatsApp; if it failed, re-queue an alert as SMS when the donor's number can take one. */
 export async function maybeFallbackToSms(deps: Deps, row: OutboxRow): Promise<string | undefined> {
+  // SMS is switched off for now: set SMS_ENABLED=true (wrangler var) to turn the fallback back on.
+  if (deps.env.SMS_ENABLED !== "true") return undefined;
   if (row.channel !== "whatsapp" || row.kind !== "alert" || !smsCapable(row.to)) return undefined;
   const [existing] = await deps.db.select({ id: schema.outbox.id }).from(schema.outbox).where(eq(schema.outbox.fallbackOf, row.id));
   if (existing) return undefined;

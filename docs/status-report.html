@@ -104,7 +104,6 @@
   <li><b>MCP server (15 tools):</b> ChatGPT / Claude can query the live city and — only after the user confirms — reserve blood, start a surge, approve transfers, send drives. Every AI action is logged as <code>ai:&lt;client&gt;</code>. Verified end-to-end with a real Claude client.</li>
   <li><b>WhatsApp bot</b> (open-wa gateway on a laptop): Hinglish blood requests ("Sion mein 2 O negative platelets chahiye") → top 3 real banks; JOIN signup; YES → confirmation code; STOP opt-out; privacy filter ignores personal chats.</li>
   <li><b>Official WhatsApp Business Cloud API</b> channel built into the Worker (webhook, templates, click-to-chat onboarding) — awaiting Meta credentials.</li>
-  <li><b>SMS channel</b> via the open-source SMS Gateway for Android app.</li>
   <li><b>RAKT connector</b> (blood bank management software): built to RAKT's published OpenAPI schema — pulls per-bag stock with collection dates, so a RAKT bank's units get <i>real</i> expiry dates (e-RaktKosh only gives counts). Idempotent sync; 5 tests on schema-shaped fixtures; RAKT's live server confirms our auth header format ("Invalid API key" with a test key).</li>
 </ul>
 
@@ -120,13 +119,12 @@
 <h2>2 · Built but not yet activated / verified <span class="tag partial">NEEDS ACTION</span></h2>
 <table>
   <tr><th>Item</th><th>Status</th><th>What's needed</th></tr>
-  <tr><td>e-RaktKosh live sync in production</td><td>Works from an Indian connection (tested: +1,758 / −521 units in 7 s); <b>blocked from Cloudflare servers (HTTP 522)</b></td><td>Let the laptop gateway fetch e-RaktKosh and push to the Worker, or use an India-based relay</td></tr>
+  <tr><td>e-RaktKosh live sync in production</td><td><b>Working via India relay:</b> the portal blocks cloud servers (HTTP 522), so the laptop gateway pulls it every 30 min and pushes to the live site (tested: 24 banks, +1,758 / −521 units)</td><td>Keep the gateway running on a laptop during the event (<code>pnpm --dir gateway start</code>)</td></tr>
   <tr><td>RAKT connector</td><td>Built + tested on schema fixtures; live server reachable</td><td>An organisation API key from a blood bank that uses RAKT → set <code>RAKT_API_KEY</code> + <code>RAKT_SITE_ID</code></td></tr>
   <tr><td>eBloodConnect</td><td>Not integrated — API is private, no public docs or schema</td><td>Vendor partnership / API access from EHR Logic</td></tr>
   <tr><td>Official WhatsApp sender</td><td>Code deployed, dormant</td><td>Create Meta developer app → WhatsApp test number, Phone Number ID, token, App Secret; add up to 5 recipient numbers</td></tr>
   <tr><td>WhatsApp via laptop gateway</td><td>Was online; stops when the laptop process stops</td><td>Restart gateway; full loop (2nd phone → reply → JOIN → YES) never tested end-to-end</td></tr>
-  <tr><td>MCP inside ChatGPT</td><td>Verified with Claude only</td><td>ChatGPT Plus/Pro account → Developer mode → add connector</td></tr>
-  <tr><td>SMS channel</td><td>Built, untested with a phone</td><td>Android phone + SIM running SMS Gateway app</td></tr>
+  <tr><td>MCP inside ChatGPT</td><td>Connector added in ChatGPT; verified end-to-end with Claude</td><td>Run one confirmed action from ChatGPT and check <code>/ledger</code> shows <code>ai:chatgpt</code></td></tr>
   <tr><td>Camera scan on a real phone</td><td>UI + label verified; camera not tested headless</td><td>Test once on a laptop/phone camera</td></tr>
 </table>
 </section>
@@ -152,6 +150,7 @@
   <li>DPDP Act 2023 compliance: consent records, retention policy, grievance officer</li>
   <li>WhatsApp business number beyond the 5-recipient test limit, with approved message templates</li>
   <li>Monitoring, alerting and database backups; load testing</li>
+  <li>SMS channel (built, switched off for now; enable with <code>SMS_ENABLED=true</code>)</li>
   <li>Rare-donor registry (e.g. Bombay blood group — discovered in Mumbai, 1952)</li>
 </ul>
 </section>
@@ -161,7 +160,7 @@
 <ul>
   <li><b>One Cloudflare Worker:</b> React 19 + Vite + Tailwind v4 SPA, Hono API, D1 (SQLite) via Drizzle, Durable Object "CityHub" (WebSockets, ledger, auto-reroute alarm), Workers AI (Llama 3.1, M2M100 translation), cron triggers</li>
   <li><b>Maps:</b> MapLibre GL + OpenFreeMap tiles + deck.gl (no API keys)</li>
-  <li><b>Integrations:</b> MCP (official TypeScript SDK), open-wa WhatsApp, Android SMS Gateway, WhatsApp Cloud API, e-RaktKosh public API, RAKT REST API, ZXing barcode scanning</li>
+  <li><b>Integrations:</b> MCP (official TypeScript SDK), open-wa WhatsApp, WhatsApp Cloud API, e-RaktKosh public API, RAKT REST API, ZXing barcode scanning</li>
   <li><b>Quality:</b> TypeScript strict, Zod-validated API shared by server and client, 130 unit tests, end-to-end smoke test (<code>scripts/smoke.mjs</code>)</li>
   <li><b>Docs in repo:</b> <code>README.md</code>, <code>docs/DATA_SOURCES.md</code>, <code>docs/PROBLEM_RESEARCH.md</code>, <code>docs/JUDGE_PLAYBOOK.md</code>, <code>docs/MCP.md</code>, <code>docs/MESSAGING.md</code></li>
 </ul>

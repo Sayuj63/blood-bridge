@@ -15,7 +15,7 @@ export const NO_CONTACT: ContactDraft = { channel: "none", phone: "", consent: f
 const OPTIONS = [
   { value: "none", label: "App only" },
   { value: "whatsapp", label: "WhatsApp" },
-  { value: "sms", label: "SMS" },
+  // SMS is switched off for now (the code path stays; see docs/MESSAGING.md).
 ] as const satisfies readonly { value: ContactChannel; label: string }[];
 
 const CHANNEL_NAME: Record<Exclude<ContactChannel, "none">, string> = { whatsapp: "WhatsApp", sms: "SMS" };
@@ -41,7 +41,7 @@ export function ContactOptIn({
       <div className="flex items-start gap-3">
         <MessageCircle className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
         <div>
-          <p className="font-semibold text-ink">Also alert me on WhatsApp / SMS</p>
+          <p className="font-semibold text-ink">Also alert me on WhatsApp</p>
           <p className="text-sm text-ink-muted">Optional. Answer alerts by replying YES or NO, no app needed.</p>
         </div>
       </div>

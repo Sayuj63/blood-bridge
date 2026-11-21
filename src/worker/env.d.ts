@@ -17,4 +17,6 @@ interface Env {
   RAKT_API_KEY?: string;
   RAKT_SITE_ID?: string;
   RAKT_BASE_URL?: string;
+  /** SMS channel is off unless "true" (no WhatsApp → SMS fallback). */
+  SMS_ENABLED?: string;
 }

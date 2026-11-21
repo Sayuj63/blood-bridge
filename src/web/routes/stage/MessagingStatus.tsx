@@ -25,7 +25,8 @@ export function MessagingStatus() {
     refetchInterval: 15_000,
   });
   if (!data?.gatewayLastSeenAt) return null;
-  const shown = data.channels.filter((c) => c.channel === "whatsapp" || c.adapter !== null);
+  // SMS is switched off for now, so only WhatsApp is shown.
+  const shown = data.channels.filter((c) => c.channel === "whatsapp");
   return (
     <div className="flex items-center gap-1.5" role="status" aria-label="Messaging channels">
       {shown.map((c) => (
