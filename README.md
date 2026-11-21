@@ -132,6 +132,6 @@ Simulated demo data only; every screen says so. Compatibility rules and eligibil
 
 ## Docs
 
-[Problem research](docs/PROBLEM_RESEARCH.md) · [Judge playbook & pitch](docs/JUDGE_PLAYBOOK.md) · [Data sources](docs/DATA_SOURCES.md) · [MCP](docs/MCP.md) · [Messaging](docs/MESSAGING.md) · [Build status (PDF)](docs/Blood-Bridge-Status.pdf)
+[**API reference (for frontend)**](docs/API.md) · [Problem research](docs/PROBLEM_RESEARCH.md) · [Judge playbook & pitch](docs/JUDGE_PLAYBOOK.md) · [Data sources](docs/DATA_SOURCES.md) · [MCP](docs/MCP.md) · [Messaging](docs/MESSAGING.md) · [Build status (PDF)](docs/Blood-Bridge-Status.pdf)
 
 <div align="center"><sub>Built by Team Straw Hats for MindSprint 2026.</sub></div>

@@ -1,4 +1,5 @@
 import { Hono, type Context } from "hono";
+import { cors } from "hono/cors";
 import { z } from "zod";
 import {
   addUnitsSchema,
@@ -51,6 +52,10 @@ const deps = (c: Context<AppEnv>) => c.get("deps");
 const actor = (c: Context<AppEnv>) => c.get("actor");
 
 export const app = new Hono<AppEnv>().basePath("/api");
+
+// Any origin may call the API (a separately hosted frontend, local dev). No cookies are used,
+// so there are no credentials to protect; gateway routes stay protected by their bearer token.
+app.use("*", cors({ origin: "*", allowHeaders: ["Content-Type", "X-Actor", "Authorization"], allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"], maxAge: 86_400 }));
 
 app.use("*", async (c, next) => {
   let whatsappQueued = false;
