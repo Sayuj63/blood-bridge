@@ -92,14 +92,23 @@ async function reconcileBank(deps: Deps, bankId: string, snap: ParsedSnapshot): 
 }
 
 /** Sync one bank or all banks. Failures (portal down, blocked) are audited and reported, never thrown raw. */
-export async function syncEraktkosh(deps: Deps, actor: string, onlyBankId?: string): Promise<EraktkoshSyncDTO> {
+export async function syncEraktkosh(deps: Deps, actor: string, onlyBankId?: string, provided?: ParsedSnapshot): Promise<EraktkoshSyncDTO> {
   let snap: ParsedSnapshot;
-  try {
-    snap = await fetchSnapshot();
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    await deps.hub.audit([{ actor, action: "eraktkosh.sync_failed", entityType: "system", entityId: "eraktkosh", summary: `e-RaktKosh sync failed: ${message}` }]);
-    throw new AppError(502, "eraktkosh_unavailable", `Couldn't reach e-RaktKosh: ${message}`);
+  if (provided) {
+    snap = provided;
+  } else {
+    try {
+      snap = await fetchSnapshot();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      // e-RaktKosh refuses cloud servers; an India-based relay (the laptop gateway) pushes instead.
+      const last = await lastSuccess(deps);
+      if (last && deps.now - last.at < 3 * AUTO_SYNC_EVERY_MS) {
+        throw new AppError(409, "eraktkosh_via_relay", `e-RaktKosh blocks cloud servers. The India relay refreshed it ${Math.round((deps.now - last.at) / 60_000)} min ago.`);
+      }
+      await deps.hub.audit([{ actor, action: "eraktkosh.sync_failed", entityType: "system", entityId: "eraktkosh", summary: `e-RaktKosh sync failed: ${message}` }]);
+      throw new AppError(502, "eraktkosh_unavailable", `Couldn't reach e-RaktKosh: ${message}. Start the laptop relay (gateway) to refresh it from India.`);
+    }
   }
 
   const banks = Object.keys(snap.stock).filter((id) => !onlyBankId || id === onlyBankId);
@@ -120,17 +129,26 @@ export async function syncEraktkosh(deps: Deps, actor: string, onlyBankId?: stri
   return { syncedAt: deps.now, banks: changes, added, removed };
 }
 
-export async function eraktkoshStatus(deps: Deps): Promise<EraktkoshStatusDTO> {
-  const [last] = await deps.db
-    .select({ at: schema.auditLog.at, action: schema.auditLog.action, summary: schema.auditLog.summary })
+async function lastEntry(deps: Deps, action: string) {
+  const [row] = await deps.db
+    .select({ at: schema.auditLog.at, action: schema.auditLog.action, summary: schema.auditLog.summary, actor: schema.auditLog.actor })
     .from(schema.auditLog)
-    .where(like(schema.auditLog.action, "eraktkosh.%"))
+    .where(like(schema.auditLog.action, action))
     .orderBy(desc(schema.auditLog.seq))
     .limit(1);
+  return row ?? null;
+}
+const lastSuccess = (deps: Deps) => lastEntry(deps, "eraktkosh.sync");
+
+export async function eraktkoshStatus(deps: Deps): Promise<EraktkoshStatusDTO> {
+  const [last, ok] = await Promise.all([lastEntry(deps, "eraktkosh.%"), lastSuccess(deps)]);
+  // A recent success (direct or via the India relay) outranks a later blocked direct attempt.
+  const fresh = ok && deps.now - ok.at < 3 * AUTO_SYNC_EVERY_MS ? ok : null;
+  const shown = fresh ?? last;
   return {
     lastAttemptAt: last?.at ?? null,
-    ok: last ? last.action === "eraktkosh.sync" : null,
-    summary: last?.summary ?? null,
+    ok: shown ? shown.action === "eraktkosh.sync" : null,
+    summary: shown ? `${shown.summary}${shown.actor.includes("relay") ? " (via India relay)" : ""}` : null,
     nextAutoSyncAt: (last?.at ?? deps.now) + AUTO_SYNC_EVERY_MS,
   };
 }
@@ -139,6 +157,8 @@ export async function eraktkoshStatus(deps: Deps): Promise<EraktkoshStatusDTO> {
 export async function autoSyncEraktkosh(deps: Deps): Promise<void> {
   const status = await eraktkoshStatus(deps);
   if (status.lastAttemptAt !== null && deps.now - status.lastAttemptAt < AUTO_SYNC_EVERY_MS) return;
+  const ok = await lastSuccess(deps);
+  if (ok && deps.now - ok.at < AUTO_SYNC_EVERY_MS) return;
   try {
     await syncEraktkosh(deps, "system:eraktkosh-cron");
   } catch {

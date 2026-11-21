@@ -49,7 +49,12 @@ export class BloodBridgeApi {
     return this.post<{ ok: true; duplicate: boolean; intent: string; queued: number }>("/api/gateway/inbound", body);
   }
 
-  private async post<T>(path: string, body: unknown): Promise<T> {
+  /** Push raw e-RaktKosh rows fetched from India; reconciling 25 banks takes a few seconds. */
+  eraktkosh(results: { componentCode: string; rows: string[][] }[]) {
+    return this.post<{ banks: unknown[]; added: number; removed: number }>("/api/gateway/eraktkosh", { results }, 90_000);
+  }
+
+  private async post<T>(path: string, body: unknown, timeoutMs = this.timeoutMs): Promise<T> {
     let res: Response;
     try {
       res = await fetch(`${this.baseUrl}${path}`, {
@@ -61,7 +66,7 @@ export class BloodBridgeApi {
           "User-Agent": `blood-bridge-gateway/${this.version}`,
         },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(this.timeoutMs),
+        signal: AbortSignal.timeout(timeoutMs),
       });
     } catch (err) {
       throw new ApiError(0, "network", `Can't reach Blood Bridge: ${(err as Error).message}`);

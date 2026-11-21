@@ -42,6 +42,7 @@ import * as req from "./services/requests";
 import * as sites from "./services/sites";
 import * as stock from "./services/stock";
 import { eraktkoshStatus, syncEraktkosh } from "./services/eraktkosh";
+import { parseResults, type EraktkoshResult } from "./eraktkosh/parse";
 import { listIntegrations, syncRakt } from "./services/integrations";
 
 type AppEnv = { Bindings: Env; Variables: { deps: Deps; actor: string } };
@@ -232,6 +233,14 @@ app.use("/gateway/*", async (c, next) => {
   await next();
 });
 
+/** India-based relay: the gateway fetches e-RaktKosh (which blocks cloud servers) and pushes the raw rows here. */
+app.post("/gateway/eraktkosh", async (c) => {
+  const { results } = await body(
+    c,
+    z.object({ results: z.array(z.object({ componentCode: z.string().max(4), rows: z.array(z.array(z.string()).max(8)).max(500) })).max(40) }),
+  );
+  return c.json(await syncEraktkosh(deps(c), "gateway:eraktkosh-relay", undefined, parseResults(results as EraktkoshResult[])));
+});
 app.post("/gateway/heartbeat", async (c) => c.json(await messaging.heartbeat(deps(c), await body(c, gatewayHeartbeatSchema))));
 app.post("/gateway/outbox/claim", async (c) => {
   const input = await body(c, gatewayClaimSchema);

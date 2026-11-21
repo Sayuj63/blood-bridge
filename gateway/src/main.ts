@@ -13,6 +13,7 @@
 import { BloodBridgeApi } from "./api.ts";
 import { loadConfig, loadEnvFile, type Config } from "./config.ts";
 import { createLogger, type Logger } from "./log.ts";
+import { relayEraktkosh, RELAY_EVERY_MS } from "./eraktkosh.ts";
 import { Relay } from "./relay.ts";
 import { ConsoleAdapter } from "./adapters/console.ts";
 import type { ChannelAdapter } from "./adapters/types.ts";
@@ -102,6 +103,10 @@ async function main(): Promise<void> {
     log,
   );
 
+  // e-RaktKosh blocks cloud servers; relay it from this (Indian) connection now and every 30 min.
+  void relayEraktkosh(api, log);
+  const eraktkoshTimer = setInterval(() => void relayEraktkosh(api, log), RELAY_EVERY_MS);
+
   let shuttingDown = false;
   const shutdown = async (signal: string) => {
     if (shuttingDown) {
@@ -115,6 +120,7 @@ async function main(): Promise<void> {
       process.exit(1);
     }, 15_000);
     force.unref();
+    clearInterval(eraktkoshTimer);
     try {
       await relay.stop();
     } finally {
