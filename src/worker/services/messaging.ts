@@ -206,6 +206,27 @@ export async function sendOptInWelcome(deps: Deps, donor: Pick<DonorRow, "id" | 
   await deps.hub.publish({ topics: ["messaging"], donorIds: [donor.id] });
 }
 
+/**
+ * After a recorded donation: thank an opted-in donor on their channel, say when they can give again,
+ * and link their donor card (certificate). Seeded donors have no channel, so nothing is sent for them.
+ */
+export async function sendDonationThanks(
+  deps: Deps,
+  donor: Pick<DonorRow, "id" | "name" | "contactChannel" | "contactAddress" | "contactOptInAt" | "optedOutAt">,
+  info: { bankName: string; bloodGroup: string; eligibleFrom: number | null; publicUrl?: string },
+): Promise<void> {
+  if (!canAlert(donor) || donor.contactChannel === "none" || !donor.contactAddress) return;
+  const date = (ms: number) => new Date(ms).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata" });
+  const lines = [
+    `Thank you! ${info.bankName} has recorded your ${info.bloodGroup} donation today (${date(deps.now)}).`,
+    "Rest, drink plenty of water, and skip heavy exercise for the rest of the day.",
+    info.eligibleFrom ? `You can donate again from ${date(info.eligibleFrom)}. We won't send you alerts before then.` : "",
+    info.publicUrl ? `Your donor certificate: ${info.publicUrl}/donor?donor=${donor.id}&tab=home` : "",
+  ].filter(Boolean);
+  const result = await enqueue(deps, { channel: donor.contactChannel, to: donor.contactAddress, body: lines.join("\n"), kind: "notice", donorId: donor.id });
+  if (result.queued) await deps.hub.publish({ topics: ["messaging"], donorIds: [donor.id] });
+}
+
 /* ───────────────────────────── Claim ───────────────────────────── */
 
 /**

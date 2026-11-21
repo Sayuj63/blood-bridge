@@ -20,7 +20,7 @@ import { confirmationCode, joinCode, newId } from "../lib/ids";
 import { areaById } from "../seed";
 import { normalizePhone } from "../messaging/phone";
 import { contactInfo, whatsappProvider } from "../messaging/whatsapp-cloud";
-import { enqueueAlertMessages, sendOptInWelcome } from "./messaging";
+import { enqueueAlertMessages, sendDonationThanks, sendOptInWelcome } from "./messaging";
 import { getSite } from "./sites";
 
 type DonorRow = typeof schema.donors.$inferSelect;
@@ -478,7 +478,7 @@ export async function incomingDonors(deps: Deps, bankSiteId: string): Promise<In
 }
 
 /** Bank marks the donation complete: donation recorded, donor's eligibility clock restarts. */
-export async function completeDonation(deps: Deps, alertId: string, actor: string): Promise<void> {
+export async function completeDonation(deps: Deps, alertId: string, actor: string, publicUrl?: string): Promise<void> {
   const [alert] = await deps.db.select().from(schema.donorAlerts).where(eq(schema.donorAlerts.id, alertId));
   if (!alert) throw notFound("Alert");
   if (alert.status !== "accepted") throw conflict("Donor has not confirmed they are coming");
@@ -496,4 +496,12 @@ export async function completeDonation(deps: Deps, alertId: string, actor: strin
     { actor, action: "donation.completed", entityType: "alert", entityId: alertId, siteId: bank.id, summary: `${bank.shortName} recorded a ${alert.bloodGroup} donation` },
   ]);
   await deps.hub.publish({ topics: ["alerts", "donors", "stock"], siteIds: [bank.id], donorIds: [alert.donorId], headline: `${bank.shortName}: donation complete — thank you`, tone: "success" });
+
+  const [donor] = await deps.db.select().from(schema.donors).where(eq(schema.donors.id, alert.donorId));
+  if (donor) {
+    const { eligibleFrom } = eligibility(deps.now, deps.now, DEMO_ELIGIBILITY_RULES);
+    await sendDonationThanks(deps, donor, { bankName: bank.name, bloodGroup: alert.bloodGroup, eligibleFrom, publicUrl }).catch((err) =>
+      console.error("messaging: donation thanks failed", err),
+    );
+  }
 }

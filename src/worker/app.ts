@@ -211,7 +211,7 @@ app.post("/alerts/:id/respond", async (c) => {
   return c.json(await donors.respond(deps(c), c.req.param("id"), response));
 });
 app.post("/alerts/:id/complete", async (c) => {
-  await donors.completeDonation(deps(c), c.req.param("id"), actor(c));
+  await donors.completeDonation(deps(c), c.req.param("id"), actor(c), new URL(c.req.url).origin);
   return c.json({ ok: true });
 });
 app.post("/drives/preview", async (c) => {
