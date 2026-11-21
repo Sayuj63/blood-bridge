@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from "motion/react";
-import { CountUp } from "./CountUp";
 import { SNAPSHOT_FACTS, updateAgesHours } from "./data";
 import { SourceNote } from "./SourceNote";
-import { HERO_STATS, SION, SNAPSHOT_SOURCE } from "./stats";
+import { StatCards } from "./StatCards";
+import { SION, SNAPSHOT_SOURCE } from "./stats";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const fmt = new Intl.NumberFormat("en-IN");
@@ -20,26 +20,7 @@ export function ScaleSection() {
         Blood is collected, tested and stored bank by bank. Supply and need rarely meet in the same place at the same hour.
       </p>
 
-      <dl className="mt-14 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
-        {HERO_STATS.map((s, i) => (
-          <motion.div
-            key={s.key}
-            initial={reduced ? false : { opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, delay: (i % 4) * 0.09, ease }}
-            className="flex flex-col border-t border-line py-7"
-          >
-            <dt className="order-2 mt-3 max-w-xs text-base text-ink">{s.label}</dt>
-            <dd className="order-1 font-display text-[clamp(2.6rem,1.8rem+2.4vw,4.4rem)] leading-none tabular-nums text-ink">
-              <CountUp value={s.value} />
-            </dd>
-            <dd className="order-3 mt-3">
-              <SourceNote source={s.source} url={s.url} />
-            </dd>
-          </motion.div>
-        ))}
-      </dl>
+      <StatCards />
 
       <div className="mt-20 grid gap-12 lg:grid-cols-2">
         <SionBars />
