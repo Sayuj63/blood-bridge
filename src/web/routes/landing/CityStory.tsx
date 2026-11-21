@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { haversineKm } from "../../../shared/geo";
 import { SURGE_PRESETS } from "../../../shared/forecast";
+import { Cloud, Leaves } from "./hero/art";
 import { CityMap, type MapArc, type MapMarker } from "../../components/map/CityMap";
 import { formatISTDateTime } from "../../lib/format";
 import type { GeoPoint } from "../../../shared/domain";
@@ -137,6 +138,7 @@ export function CityStory() {
       <div className="sticky top-0 h-dvh">
         <CityMap
           theme="clinical"
+          look="paper"
           interactive={false}
           markers={markers}
           arcs={arcs}
@@ -148,6 +150,7 @@ export function CityStory() {
           className="h-full w-full"
         />
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-r from-canvas/85 via-canvas/20 to-transparent max-lg:bg-gradient-to-t max-lg:from-canvas/90 max-lg:via-canvas/10" />
+        <PaperOverlay reduced={reduced ?? false} />
         <ChapterRail active={step.chapter} />
       </div>
 
@@ -246,5 +249,36 @@ function rescueArcs(zoneKm: number): MapArc[] {
       .sort((a, b) => haversineKm(a, to) - haversineKm(b, to))
       .slice(0, 1)
       .map((from) => ({ id: `${from.key}>${to.key}`, from, to, state: "active" as const, color: STORY_COLOR.blood })),
+  );
+}
+
+/** Paper grain (SVG noise), drifting clouds and leaves: ties the map to the hero illustration. */
+const GRAIN =
+  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.42 0 0 0 0 0.40 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")";
+
+function PaperOverlay({ reduced }: { reduced: boolean }) {
+  const clouds = [
+    { top: "14%", width: "11rem", duration: 70, delay: 0 },
+    { top: "34%", width: "8rem", duration: 90, delay: -35 },
+    { top: "62%", width: "13rem", duration: 110, delay: -70 },
+  ];
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 opacity-40 mix-blend-multiply" style={{ backgroundImage: GRAIN }} />
+      {clouds.map((c, i) => (
+        <motion.div
+          key={i}
+          className="absolute left-0 opacity-90 drop-shadow-[0_6px_10px_rgb(127_20_34/0.08)]"
+          style={{ top: c.top, width: c.width }}
+          initial={{ x: "-20vw" }}
+          animate={reduced ? { x: `${20 + i * 30}vw` } : { x: ["-20vw", "110vw"] }}
+          transition={reduced ? { duration: 0 } : { duration: c.duration, delay: c.delay, repeat: Infinity, ease: "linear" }}
+        >
+          <Cloud className="w-full" />
+        </motion.div>
+      ))}
+      <Leaves className="absolute bottom-0 left-[4%] w-40 opacity-90 sm:w-56" />
+      <Leaves className="absolute right-[22%] bottom-0 w-36 opacity-90 sm:w-48" />
+    </div>
   );
 }

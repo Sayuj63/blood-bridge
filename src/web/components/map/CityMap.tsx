@@ -8,6 +8,7 @@ import type { GeoPoint } from "../../../shared/domain";
 import { cn } from "../../lib/cn";
 import { hexToRgb, MAP_STYLE_URL, toneHex, toneRgb, type ThemeName, type Tone } from "../../styles/tokens";
 import { arcPath, circleRing, pointAlong, type ArcPoint } from "./geometry";
+import { applyPaperLook } from "./paper";
 import { apply3dStyle } from "./style3d";
 
 // MapLibre 6 resolves its worker relative to its own module, which breaks once Vite
@@ -76,6 +77,8 @@ export interface CityMapProps {
   interactive?: boolean;
   /** 3D base map: extruded buildings, relief and sky, with drag-to-rotate and tilt. */
   mode3d?: boolean;
+  /** "paper": repaint the base map in the landing palette (hero-style illustrated look). */
+  look?: "paper";
   /** Accessible description of what the map shows. */
   label: string;
   className?: string;
@@ -105,6 +108,7 @@ export function CityMap({
   fitPadding = 60,
   interactive = true,
   mode3d = false,
+  look,
   label,
   className,
 }: CityMapProps) {
@@ -146,19 +150,20 @@ export function CityMap({
     const markerMap = markerRefs.current;
 
     map.on("load", () => {
+      if (look === "paper") applyPaperLook(map);
       if (mode3d) apply3dStyle(map, theme, { buildings: true, relief: true });
       map.addSource("surge", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
       map.addLayer({
         id: "surge-fill",
         type: "fill",
         source: "surge",
-        paint: { "fill-color": toneHex(theme, "critical"), "fill-opacity": 0.14 },
+        paint: { "fill-color": look === "paper" ? "#A61B2B" : toneHex(theme, "critical"), "fill-opacity": 0.14 },
       });
       map.addLayer({
         id: "surge-line",
         type: "line",
         source: "surge",
-        paint: { "line-color": toneHex(theme, "critical"), "line-width": 2, "line-dasharray": [2, 2], "line-opacity": 0.9 },
+        paint: { "line-color": look === "paper" ? "#A61B2B" : toneHex(theme, "critical"), "line-width": 2, "line-dasharray": [2, 2], "line-opacity": 0.9 },
       });
       const overlay = new MapboxOverlay({ interleaved: false, layers: [] });
       map.addControl(overlay);
@@ -179,7 +184,7 @@ export function CityMap({
       map.remove();
     };
     // Camera props are initial values only; later changes are applied below without a rebuild.
-  }, [theme, interactive, mode3d]);
+  }, [theme, interactive, mode3d, look]);
 
   /* Camera updates after mount. */
   useEffect(() => {
