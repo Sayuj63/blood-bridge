@@ -13,4 +13,8 @@ interface Env {
   WA_DISPLAY_NUMBER?: string;
   WA_TEMPLATE_ALERT?: string;
   WA_PROVIDER?: string;
+  /** RAKT connector (optional): secret API key, the bank it belongs to, and an optional base URL. */
+  RAKT_API_KEY?: string;
+  RAKT_SITE_ID?: string;
+  RAKT_BASE_URL?: string;
 }

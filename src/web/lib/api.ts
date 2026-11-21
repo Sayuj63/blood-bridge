@@ -18,6 +18,8 @@ import type {
   DismissTransferInput,
   DonorAlertDTO,
   EraktkoshStatusDTO,
+  IntegrationDTO,
+  RaktSyncDTO,
   EraktkoshSyncDTO,
   DonorDTO,
   DonorSignupDTO,
@@ -162,6 +164,8 @@ export const api = {
       get<IncomingDonorDTO[]>(`/api/sites/${enc(siteId)}/incoming-donors`, signal),
     /** Pull this bank's live counts from e-RaktKosh. */
     syncEraktkosh: (siteId: string) => post<EraktkoshSyncDTO>(`/api/sites/${enc(siteId)}/sync-eraktkosh`),
+    integrations: (siteId: string, signal?: AbortSignal) => get<IntegrationDTO[]>(`/api/sites/${enc(siteId)}/integrations`, signal),
+    syncRakt: (siteId: string) => post<RaktSyncDTO>(`/api/sites/${enc(siteId)}/sync-rakt`),
   },
 
   eraktkosh: {

@@ -600,3 +600,21 @@ export interface EraktkoshStatusDTO {
   summary: string | null;
   nextAutoSyncAt: number;
 }
+
+/* ───────────────────────────── Connected systems ───────────────────────────── */
+
+export interface IntegrationDTO {
+  id: "eraktkosh" | "rakt" | "ebloodconnect";
+  name: string;
+  description: string;
+  state: "available" | "connected" | "not_configured" | "other_site" | "partner_required" | "error";
+  detail: string | null;
+  canSync: boolean;
+}
+
+export interface RaktSyncDTO {
+  syncedAt: number;
+  inStock: number;
+  added: number;
+  removed: number;
+}
