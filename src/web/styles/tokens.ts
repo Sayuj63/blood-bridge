@@ -8,7 +8,7 @@ import type { BloodGroup } from "../../shared/domain";
 export type Rgb = readonly [number, number, number];
 export type ThemeName = "clinical" | "command";
 
-function hexToRgb(hex: string): Rgb {
+export function hexToRgb(hex: string): Rgb {
   const n = Number.parseInt(hex.slice(1), 16);
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
 }

@@ -55,14 +55,21 @@ export function ScrambleReplay() {
     <section ref={ref} aria-labelledby="replay-title" className={reduced ? "relative" : "relative h-[240vh]"}>
       <div className={reduced ? "py-24" : "sticky top-0 flex h-dvh flex-col justify-center overflow-hidden py-16"}>
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-8">
-          <h2 id="replay-title" className="max-w-3xl font-display text-[clamp(1.7rem,1rem+2.4vw,3.2rem)] leading-[1.02] text-balance">
-            Replay the same night.
-          </h2>
+          <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
+            <h2 id="replay-title" className="max-w-3xl font-display text-[clamp(1.7rem,1rem+2.4vw,3.2rem)] leading-[1.02] text-balance">
+              Replay the same night.
+            </h2>
+            <p className="flex items-baseline gap-3 font-display text-[clamp(1.6rem,1rem+1.6vw,2.6rem)] font-bold">
+              <span className="text-ink-muted">3h+</span>
+              <span className="text-base font-normal text-ink-faint">vs</span>
+              <span className="text-accent">41s</span>
+            </p>
+          </div>
           <div className="mt-6 grid items-start gap-4 md:grid-cols-2 md:gap-6">
-            <div className="flex min-h-0 flex-col rounded-(--radius-panel) border border-line bg-[#0b141a] p-3 sm:p-4">
-              <div className="flex items-baseline justify-between border-b border-white/10 pb-2">
-                <span className="font-label text-sm text-[#d1d7db]">Family group chat</span>
-                <motion.span className="font-display text-3xl tabular-nums text-[#d1d7db] sm:text-4xl" aria-hidden>
+            <div className="flex min-h-0 flex-col rounded-[22px] border border-line bg-surface p-3 sm:p-4">
+              <div className="flex items-baseline justify-between border-b border-line pb-2">
+                <span className="text-sm font-medium text-ink-muted">Family group chat</span>
+                <motion.span className="font-display text-3xl font-bold tabular-nums text-ink-muted sm:text-4xl" aria-hidden>
                   {reduced ? chatClock(CHAT_END) : chatText}
                 </motion.span>
               </div>
@@ -71,13 +78,13 @@ export function ScrambleReplay() {
                   <Bubble key={m.at} msg={m} reduced={reduced} />
                 ))}
               </ol>
-              <p className="mt-auto pt-3 text-2xs text-[#8696a0]">Illustrative reconstruction, not a real chat.</p>
+              <p className="mt-auto pt-3 text-2xs text-ink-faint">Illustrative reconstruction, not a real chat.</p>
             </div>
 
-            <div className="flex flex-col rounded-(--radius-panel) border border-bridge/40 bg-surface p-3 sm:p-4">
-              <div className="flex items-baseline justify-between border-b border-line pb-2">
-                <span className="font-label text-sm text-ink-muted">Blood Bridge, hospital view</span>
-                <motion.span className="font-display text-3xl tabular-nums text-bridge sm:text-4xl" aria-hidden>
+            <div className="flex flex-col rounded-[22px] border border-accent/25 bg-surface-3 p-3 sm:p-4">
+              <div className="flex items-baseline justify-between border-b border-accent/15 pb-2">
+                <span className="text-sm font-medium text-accent-hover">Blood Bridge, hospital view</span>
+                <motion.span className="font-display text-3xl font-bold tabular-nums text-accent sm:text-4xl" aria-hidden>
                   {reduced ? flowClock(FLOW_END) : flowText}
                 </motion.span>
               </div>
@@ -101,16 +108,16 @@ function Bubble({ msg, reduced }: { msg: (typeof CHAT)[number]; reduced: boolean
       initial={reduced ? false : { opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className="max-w-[88%] shrink-0 rounded-lg rounded-tl-none bg-[#202c33] px-3 py-1.5"
+      className="max-w-[88%] shrink-0 rounded-2xl rounded-tl-sm border border-line bg-canvas px-3 py-1.5"
     >
-      <span className="block text-xs font-semibold text-[#53bdeb]">{msg.from}</span>
+      <span className="block text-xs font-semibold text-accent-hover">{msg.from}</span>
       {msg.forwarded ? (
-        <span className="flex items-center gap-1 text-2xs text-[#8696a0] italic">
+        <span className="flex items-center gap-1 text-2xs text-ink-faint italic">
           <CornerUpRight className="size-3" aria-hidden /> Forwarded
         </span>
       ) : null}
-      <span className="block text-sm text-[#e9edef]">{msg.text}</span>
-      <span className="block text-right font-numeric text-2xs text-[#8696a0]">{chatClock(msg.at)}</span>
+      <span className="block text-sm text-ink">{msg.text}</span>
+      <span className="block text-right font-numeric text-2xs text-ink-faint">{chatClock(msg.at)}</span>
     </motion.li>
   );
 }
@@ -120,10 +127,10 @@ function FlowStep({ step, second, reduced }: { step: (typeof FLOW)[number]; seco
   const scale = useTransform(second, [step.at - 3, step.at], [0.6, 1]);
   const last = step.at === FLOW_END;
   return (
-    <motion.li style={reduced ? undefined : { opacity }} className="flex items-center gap-3 rounded-(--radius-control) bg-surface-2/70 px-3 py-2.5">
+    <motion.li style={reduced ? undefined : { opacity }} className="flex items-center gap-3 rounded-xl bg-surface px-3 py-2.5">
       <motion.span
         style={reduced ? undefined : { scale }}
-        className={`grid size-6 shrink-0 place-items-center rounded-full ${last ? "bg-bridge text-[#03201d]" : "bg-surface-3 text-bridge"}`}
+        className={`grid size-6 shrink-0 place-items-center rounded-full ${last ? "bg-accent text-accent-ink" : "bg-surface-3 text-accent"}`}
       >
         <Check className="size-3.5" aria-hidden />
       </motion.span>

@@ -6,7 +6,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
 import type { GeoPoint } from "../../../shared/domain";
 import { cn } from "../../lib/cn";
-import { MAP_STYLE_URL, toneHex, toneRgb, type ThemeName, type Tone } from "../../styles/tokens";
+import { hexToRgb, MAP_STYLE_URL, toneHex, toneRgb, type ThemeName, type Tone } from "../../styles/tokens";
 import { arcPath, circleRing, pointAlong, type ArcPoint } from "./geometry";
 import { apply3dStyle } from "./style3d";
 
@@ -47,6 +47,8 @@ export interface MapArc {
   tone?: Tone;
   /** Brightened and widened, e.g. while its list row is hovered. */
   emphasis?: boolean;
+  /** Explicit hex colour, overriding `tone`. */
+  color?: string;
 }
 
 export interface SurgeCircle {
@@ -265,7 +267,7 @@ export function CityMap({
         return { arc, path: path.slice(0, cut), full: path, done: progress >= 1 };
       });
       type Row = (typeof visible)[number];
-      const rgb = (r: Row) => toneRgb(theme, r.arc.tone ?? "bridge");
+      const rgb = (r: Row) => (r.arc.color ? hexToRgb(r.arc.color) : toneRgb(theme, r.arc.tone ?? "bridge"));
       const alpha = (r: Row, active: number, suggested: number) =>
         r.arc.emphasis ? 255 : r.arc.state === "active" ? active : suggested;
 
@@ -388,3 +390,4 @@ function paintMarker(el: HTMLElement, m: MapMarker, theme: ThemeName, clickable:
   if (m.rank !== undefined) dot.textContent = String(m.rank);
   el.append(dot);
 }
+

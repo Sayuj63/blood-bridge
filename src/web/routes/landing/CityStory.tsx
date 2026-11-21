@@ -186,7 +186,7 @@ const CHAPTER_LABEL: Record<Chapter, string> = {
 };
 
 const chapterTone = (c: Chapter) =>
-  `font-label text-sm ${c === "doomsday" ? "text-critical" : c === "answer" ? "text-bridge" : "text-warn"}`;
+  `font-label text-sm ${c === "doomsday" ? "text-accent" : c === "answer" ? "text-ink" : "text-accent-hover"}`;
 
 function ChapterRail({ active }: { active: Chapter }) {
   const chapters: Chapter[] = ["paradox", "doomsday", "answer"];
@@ -196,7 +196,7 @@ function ChapterRail({ active }: { active: Chapter }) {
         <li key={c} className="flex items-center justify-end gap-2 font-label text-xs">
           <span className={c === active ? "text-ink" : "text-ink-faint"}>{CHAPTER_LABEL[c]}</span>
           <span
-            className={`h-6 w-1 rounded-full transition-colors duration-500 ${c === active ? (c === "doomsday" ? "bg-critical" : c === "answer" ? "bg-bridge" : "bg-warn") : "bg-line-strong"}`}
+            className={`h-6 w-1 rounded-full transition-colors duration-500 ${c === active ? (c === "doomsday" ? "bg-accent" : c === "answer" ? "bg-ink" : "bg-accent-hover") : "bg-line-strong"}`}
           />
         </li>
       ))}
@@ -210,24 +210,27 @@ function midpoint(a: GeoPoint, b: GeoPoint): GeoPoint {
 
 const inZone = (b: StoryBank, km: number) => km > 0 && haversineKm(KURLA, b) <= km;
 
+/** Brand palette for the story map: red = blood on the shelf / danger, ink = empty, dark red = flood zone. */
+const STORY_COLOR = { blood: "#A61B2B", empty: "#171717", zone: "#7F1422", other: "#737373" } as const;
+
 function markersFor(step: Step): MapMarker[] {
   const zeroONeg = new Set(SNAPSHOT_FACTS.zeroONegPlatelets);
   return STORY_BANKS.map((b) => {
-    const base: MapMarker = { id: b.key, lat: b.lat, lng: b.lng, label: `${b.name}, ${b.area}`, tone: "neutral", size: "md" };
+    const base: MapMarker = { id: b.key, lat: b.lat, lng: b.lng, label: `${b.name}, ${b.area}`, color: STORY_COLOR.other, size: "md" };
     switch (step.id) {
       case "full":
       case "dry":
-        if (PARADOX && b.key === PARADOX.full.key) return { ...base, tone: "warn", pulse: true, highlighted: true, size: "lg" };
+        if (PARADOX && b.key === PARADOX.full.key) return { ...base, color: STORY_COLOR.blood, pulse: true, highlighted: true, size: "lg" };
         if (PARADOX && b.key === PARADOX.dry.key && step.id === "dry")
-          return { ...base, tone: "critical", pulse: true, highlighted: true, size: "lg" };
+          return { ...base, color: STORY_COLOR.empty, pulse: true, highlighted: true, size: "lg" };
         return { ...base, size: "sm" };
       case "oneg":
-        return zeroONeg.has(b.key) ? { ...base, tone: "critical" } : { ...base, tone: "ok", size: "lg", pulse: true };
+        return zeroONeg.has(b.key) ? { ...base, color: STORY_COLOR.empty } : { ...base, color: STORY_COLOR.blood, size: "lg", pulse: true };
       case "answer":
-        return inZone(b, step.surgeKm) ? { ...base, tone: "warn", size: "lg" } : { ...base, tone: "bridge" };
+        return inZone(b, step.surgeKm) ? { ...base, color: STORY_COLOR.zone, size: "lg" } : { ...base, color: STORY_COLOR.blood };
       default:
         if (step.chapter === "doomsday") {
-          return inZone(b, step.surgeKm) ? { ...base, tone: "critical", pulse: true, size: "lg" } : { ...base, size: "sm" };
+          return inZone(b, step.surgeKm) ? { ...base, color: STORY_COLOR.blood, pulse: true, size: "lg" } : { ...base, size: "sm" };
         }
         return base;
     }
@@ -242,6 +245,6 @@ function rescueArcs(zoneKm: number): MapArc[] {
     [...outside]
       .sort((a, b) => haversineKm(a, to) - haversineKm(b, to))
       .slice(0, 1)
-      .map((from) => ({ id: `${from.key}>${to.key}`, from, to, state: "active" as const })),
+      .map((from) => ({ id: `${from.key}>${to.key}`, from, to, state: "active" as const, color: STORY_COLOR.blood })),
   );
 }

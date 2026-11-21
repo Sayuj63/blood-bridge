@@ -25,7 +25,10 @@ const LABEL_SIZE = {
 export function BloodGroupChip({ group, variant = "solid", size = "md", className }: BloodGroupChipProps) {
   const abo = group.slice(0, -1);
   const neg = group.endsWith("-");
-  const color = BLOOD_GROUP_HEX[group];
+  // Theme variables first (a page theme may restyle groups), falling back to the standard group colours.
+  const slug = `${abo.toLowerCase()}-${neg ? "neg" : "pos"}`;
+  const color = `var(--color-group-${slug}, ${BLOOD_GROUP_HEX[group]})`;
+  const onColor = `var(--color-group-${slug}-on, ${BLOOD_GROUP_ON[group]})`;
 
   if (variant === "dot") {
     return (
@@ -46,7 +49,7 @@ export function BloodGroupChip({ group, variant = "solid", size = "md", classNam
           size === "sm" ? "h-5 min-w-8 px-1 text-xs" : size === "md" ? "h-6 min-w-10 px-1.5 text-sm" : "h-8 min-w-12 px-2 text-base",
           className,
         )}
-        style={{ background: color, color: BLOOD_GROUP_ON[group] }}
+        style={{ background: color, color: onColor }}
       >
         {group.replace("-", "−")}
       </span>
@@ -64,7 +67,7 @@ export function BloodGroupChip({ group, variant = "solid", size = "md", classNam
       <span className={cn("font-display tracking-tight text-ink", s.abo)}>{abo}</span>
       <span
         className={cn("mt-0.5 w-full rounded-[2px] px-0.5 text-center font-label uppercase tracking-wide", s.rh)}
-        style={{ background: color, color: BLOOD_GROUP_ON[group] }}
+        style={{ background: color, color: onColor }}
       >
         Rh {neg ? "neg" : "pos"}
       </span>
