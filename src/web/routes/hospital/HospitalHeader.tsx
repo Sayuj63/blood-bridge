@@ -45,8 +45,8 @@ export function HospitalHeader({ hospital, hospitals, onSelectHospital, tab, onT
           value={tab}
           onChange={onTab}
           options={[
-            { value: "request", label: "Request blood" },
-            { value: "stock", label: "Our stock" },
+            { value: "overview", label: "Request blood" },
+            { value: "inventory", label: "Our stock" },
           ]}
         />
         <Button size="md" variant="ghost" onClick={onOpenCompatibility} icon={<Grid3x3 className="size-4" aria-hidden />}>

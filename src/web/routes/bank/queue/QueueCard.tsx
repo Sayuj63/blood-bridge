@@ -2,7 +2,6 @@ import { Clock, MapPin } from "lucide-react";
 import type { QueueItemDTO } from "../../../../shared/api";
 import { COMPONENT_LABEL } from "../../../../shared/domain";
 import { Badge } from "../../../components/ui/Badge";
-import { BloodGroupChip } from "../../../components/ui/BloodGroupChip";
 import { UrgencyTag } from "../../../components/ui/UrgencyTag";
 import { cn } from "../../../lib/cn";
 import { formatIST, relativeTime } from "../../../lib/format";
@@ -31,17 +30,15 @@ export function QueueCard({ item, fresh }: QueueCardProps) {
     <article
       aria-labelledby={titleId}
       className={cn(
-        "rounded-(--radius-panel) border bg-surface p-3.5 transition-[box-shadow,opacity] duration-(--duration-slow)",
-        critical ? "border-critical border-l-[6px] bg-critical-soft/40" : "border-line",
-        fresh && "shadow-[0_0_0_3px_var(--bb-accent)]",
-        !open && "opacity-60",
+        "rounded-2xl border bg-white p-4 transition-[box-shadow,opacity] duration-300",
+        critical ? "border-[#F2D7DB] border-l-4 border-l-[#C93245] bg-[#FFF5F5]/60" : "border-[#EAE6E3]",
+        fresh && "ring-2 ring-[#C93245]",
+        !open && "opacity-65",
       )}
     >
-      <header className="flex flex-wrap items-center gap-2">
+      <header className="flex flex-wrap items-center gap-1.5">
         {fresh ? (
-          <Badge size="sm" className="bg-accent text-accent-ink">
-            New
-          </Badge>
+          <span className="rounded-full bg-[#C93245] px-2 py-0.5 text-[10px] font-bold text-white">New</span>
         ) : null}
         <UrgencyTag urgency={request.urgency} size="sm" />
         <Badge tone={status.tone} size="sm">
@@ -50,25 +47,27 @@ export function QueueCard({ item, fresh }: QueueCardProps) {
         <QueueTimer reservation={res} className="ml-auto" />
       </header>
 
-      <div className="mt-2.5 flex items-start gap-3">
-        <BloodGroupChip group={request.bloodGroup} variant="label" size="md" />
+      <div className="mt-3 flex items-start gap-3">
+        <span className="b-num grid size-11 shrink-0 place-items-center rounded-xl bg-[#FCEBED] text-sm font-extrabold text-[#A82436]">
+          {request.bloodGroup.replace("-", "−")}
+        </span>
         <div className="min-w-0 flex-1">
-          <h3 id={titleId} className="truncate font-semibold leading-tight">
+          <h3 id={titleId} className="b-display truncate text-sm font-bold leading-snug text-[#171717]">
             {hospital.name}
           </h3>
-          <p className="mt-0.5 text-sm text-ink-muted">
-            <span className="font-numeric font-bold text-ink">{res.unitsCount}</span>
-            {res.unitsCount < request.unitsNeeded ? <span className="font-numeric"> of {request.unitsNeeded}</span> : null} ×{" "}
+          <p className="mt-0.5 text-xs text-[#737373]">
+            <span className="b-num font-bold text-[#171717]">{res.unitsCount}</span>
+            {res.unitsCount < request.unitsNeeded ? <span className="b-num"> of {request.unitsNeeded}</span> : null} ×{" "}
             {COMPONENT_LABEL[request.component]} · {request.ward}
           </p>
-          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-ink-muted">
-            <span className="inline-flex items-center gap-1">
-              <Clock className="size-3" aria-hidden />
-              Needed by {formatIST(request.neededBy)}
+          <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-[#737373]">
+            <span className="b-num inline-flex items-center gap-1">
+              <Clock className="size-3 text-[#C93245]" aria-hidden />
+              By {formatIST(request.neededBy)}
             </span>
-            <span className="inline-flex items-center gap-1">
+            <span className="b-num inline-flex items-center gap-1">
               <MapPin className="size-3" aria-hidden />
-              Pickup ETA {res.etaMinutes} min
+              ETA {res.etaMinutes}m
             </span>
             <span>{relativeTime(res.createdAt, now)}</span>
           </p>
@@ -76,13 +75,13 @@ export function QueueCard({ item, fresh }: QueueCardProps) {
       </div>
 
       {res.needsClinicianConfirmation ? (
-        <p className="mt-2.5 rounded-(--radius-chip) border border-warn/40 bg-warn-soft px-2 py-1 text-xs font-semibold text-warn">
+        <p className="mt-3 rounded-xl border border-[#F5D0A9] bg-[#FFF8F1] px-2.5 py-1.5 text-[11px] font-semibold text-[#B45309]">
           {res.matchType === "mixed" ? "Mixed exact + compatible groups" : "Compatible group, not exact"} · clinician confirmation required
         </p>
       ) : null}
 
       <SuggestedUnits units={res.units} />
-      {res.declineReason && !open ? <p className="mt-2 text-xs text-ink-muted">Reason: {res.declineReason}</p> : null}
+      {res.declineReason && !open ? <p className="mt-2 text-xs text-[#737373]">Reason: {res.declineReason}</p> : null}
       {open ? <QueueCardActions item={item} /> : null}
     </article>
   );

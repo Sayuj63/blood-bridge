@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import type { DonorDTO, DonorSignupDTO } from "../../../shared/api";
@@ -10,6 +11,7 @@ import { AlertsTab } from "./alerts/AlertsTab";
 import { useTakeover } from "./alerts/useTakeover";
 import { defaultPersona, useDonor, useDonorAlerts, usePersonas, useRespond } from "./data";
 import { DonorFrame, TABS, TabBar, type Tab } from "./DonorFrame";
+import "./donor.css";
 import { HomeTab } from "./home/HomeTab";
 import { Onboarding } from "./onboarding/Onboarding";
 import { OptedOut } from "./OptedOut";
@@ -18,9 +20,10 @@ import { PersonaSwitcher } from "./PersonaSwitcher";
 import { SettingsTab } from "./settings/SettingsTab";
 
 /**
- * Donor phone view. `?donor=<id>` picks the profile; `?join=1` is the stage QR
- * quick join; with neither, a profile created on this device resumes, else the
- * first eligible O− demo persona.
+ * Donor portal (mobile-first + adaptive desktop). `?donor=<id>` picks the profile;
+ * `?join=1` is the stage QR quick join; `?embed=1` locks to single-column mobile mode
+ * for the stage phone frame. With neither `donor` nor `join`, a profile created on this
+ * device resumes, else the first eligible O− demo persona.
  */
 export default function DonorView() {
   const [params, setParams] = useSearchParams();
@@ -31,6 +34,7 @@ export default function DonorView() {
   /** One-time "say hi on WhatsApp" link from a signup that ticked WhatsApp alerts. */
   const [whatsappJoin, setWhatsappJoin] = useState<DonorSignupDTO["whatsappJoin"]>(undefined);
   const quickJoin = params.get("join") === "1";
+  const embed = params.get("embed") === "1";
   const requested = params.get("donor");
 
   /** Update search params in place, keeping the rest (e.g. `embed`). */
@@ -74,7 +78,7 @@ export default function DonorView() {
   if (quickJoin || signingUp) {
     const mode = quickJoin ? "quick" : "full";
     return (
-      <DonorFrame top={null}>
+      <DonorFrame top={null} embed={embed}>
         <Onboarding mode={mode} onDone={(d) => onJoined(d, mode)} onCancel={quickJoin ? undefined : () => setSigningUp(false)} />
       </DonorFrame>
     );
@@ -82,7 +86,7 @@ export default function DonorView() {
 
   if (personas.isError) {
     return (
-      <DonorFrame top={null}>
+      <DonorFrame top={null} embed={embed}>
         <ErrorState what="donor profiles" error={personas.error} onRetry={() => void personas.refetch()} />
       </DonorFrame>
     );
@@ -92,12 +96,13 @@ export default function DonorView() {
 
   if (personas.isPending || donorId === undefined) {
     return personas.isPending ? (
-      <LoadingFrame />
+      <LoadingFrame embed={embed} />
     ) : (
-      <DonorFrame top={null}>
-        <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
-          <p className="font-semibold text-ink">No donor profiles yet</p>
-          <Button variant="primary" size="lg" onClick={() => setSigningUp(true)}>
+      <DonorFrame top={null} embed={embed}>
+        <div className="d-card-blush mx-auto my-auto flex max-w-sm flex-col items-center justify-center gap-4 p-8 text-center">
+          <p className="d-display text-lg font-bold text-[#171717]">No donor profiles yet</p>
+          <p className="text-sm text-[#737373]">Join Mumbai&apos;s voluntary donor network in under a minute.</p>
+          <Button variant="primary" size="lg" className="w-full rounded-xl bg-[#C93245] hover:bg-[#A82436]" onClick={() => setSigningUp(true)}>
             Become a donor
           </Button>
         </div>
@@ -110,6 +115,7 @@ export default function DonorView() {
       key={donorId}
       donorId={donorId}
       personas={personas.data}
+      embed={embed}
       // A judge's phone shows only their own profile, without the demo switcher.
       showSwitcher={donorId !== ownId}
       justJoined={justJoined}
@@ -126,13 +132,15 @@ export default function DonorView() {
   );
 }
 
-function LoadingFrame() {
+function LoadingFrame({ embed }: { embed: boolean }) {
   return (
-    <DonorFrame top={<Skeleton className="ml-auto h-9 w-40 rounded-full" />}>
+    <DonorFrame top={<Skeleton className="ml-auto h-9 w-44 rounded-full" />} embed={embed}>
       <div className="space-y-4" aria-busy="true" aria-label="Loading your donor profile">
-        <Skeleton className="h-14 w-2/3" />
-        <Skeleton className="h-44" />
-        <Skeleton className="h-40" />
+        <Skeleton className="h-44 rounded-2xl" />
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Skeleton className="h-48 rounded-2xl" />
+          <Skeleton className="h-48 rounded-2xl" />
+        </div>
       </div>
     </DonorFrame>
   );
@@ -141,6 +149,7 @@ function LoadingFrame() {
 interface DonorAppProps {
   donorId: string;
   personas: DonorDTO[];
+  embed: boolean;
   showSwitcher: boolean;
   justJoined: boolean;
   whatsappJoin: DonorSignupDTO["whatsappJoin"];
@@ -151,7 +160,19 @@ interface DonorAppProps {
   onSignUp: () => void;
 }
 
-function DonorApp({ donorId, personas, showSwitcher, justJoined, whatsappJoin, tab, onTab, onSelect, onResetDonor, onSignUp }: DonorAppProps) {
+function DonorApp({
+  donorId,
+  personas,
+  embed,
+  showSwitcher,
+  justJoined,
+  whatsappJoin,
+  tab,
+  onTab,
+  onSelect,
+  onResetDonor,
+  onSignUp,
+}: DonorAppProps) {
   const donor = useDonor(donorId);
   const alerts = useDonorAlerts(donorId);
   const respond = useRespond(donorId);
@@ -165,15 +186,15 @@ function DonorApp({ donorId, personas, showSwitcher, justJoined, whatsappJoin, t
     <PersonaSwitcher personas={personas} current={donor.data} onSelect={onSelect} onJoin={onSignUp} />
   ) : null;
 
-  if (donor.isPending) return <LoadingFrame />;
+  if (donor.isPending) return <LoadingFrame embed={embed} />;
 
   if (donor.isError) {
     const missing = donor.error instanceof ApiError && donor.error.status === 404;
     return (
-      <DonorFrame top={switcher}>
+      <DonorFrame top={switcher} embed={embed}>
         <ErrorState what="this donor profile" error={donor.error} onRetry={() => void donor.refetch()} />
         {missing ? (
-          <Button variant="secondary" size="lg" className="mx-auto" onClick={onResetDonor}>
+          <Button variant="secondary" size="lg" className="mx-auto mt-3" onClick={onResetDonor}>
             Use a demo persona
           </Button>
         ) : null}
@@ -185,7 +206,7 @@ function DonorApp({ donorId, personas, showSwitcher, justJoined, whatsappJoin, t
 
   if (d.optedOutAt !== null) {
     return (
-      <DonorFrame top={switcher}>
+      <DonorFrame top={switcher} embed={embed}>
         <OptedOut donor={d} onOptedIn={() => onTab("settings")} />
       </DonorFrame>
     );
@@ -198,23 +219,39 @@ function DonorApp({ donorId, personas, showSwitcher, justJoined, whatsappJoin, t
     <>
       <DonorFrame
         top={switcher}
+        embed={embed}
         inert={takeover.current !== null}
+        sidebar={{
+          donor: d,
+          tab,
+          onTab,
+          alertCount: pending.length,
+          onSignUp,
+        }}
         footer={<TabBar tab={tab} onChange={onTab} alertCount={pending.length} />}
       >
-        {tab === "home" ? (
-          <HomeTab donor={d} pending={pending[0]} justJoined={justJoined} whatsappJoin={whatsappJoin} onOpenAlert={takeover.open} />
-        ) : tab === "alerts" ? (
-          <AlertsTab
-            donor={d}
-            alerts={alerts.data}
-            isError={alerts.isError}
-            error={alerts.error}
-            onRetry={() => void alerts.refetch()}
-            onOpen={takeover.open}
-          />
-        ) : (
-          <SettingsTab donor={d} />
-        )}
+        <motion.div
+          key={tab}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full"
+        >
+          {tab === "home" ? (
+            <HomeTab donor={d} pending={pending[0]} justJoined={justJoined} whatsappJoin={whatsappJoin} onOpenAlert={takeover.open} />
+          ) : tab === "alerts" ? (
+            <AlertsTab
+              donor={d}
+              alerts={alerts.data}
+              isError={alerts.isError}
+              error={alerts.error}
+              onRetry={() => void alerts.refetch()}
+              onOpen={takeover.open}
+            />
+          ) : (
+            <SettingsTab donor={d} />
+          )}
+        </motion.div>
       </DonorFrame>
 
       <div aria-live="assertive" aria-atomic="true" className="sr-only">

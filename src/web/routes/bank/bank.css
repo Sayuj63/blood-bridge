@@ -1,0 +1,97 @@
+/*
+ * Blood Bank Operations — Unified Luminous Crimson, Blush & Warm Ivory Theme
+ * Matches Hospital Command and Donor Portal (#C93245, #A82436, #FCEBED,
+ * #FFF5F5, #FAF9F6, #FFFFFF, #171717, #737373, #EAE6E3, Proxima Nova).
+ */
+
+.bank-theme {
+  --b-red: #c93245;
+  --b-red-deep: #a82436;
+  --b-red-soft: #fcebed;
+  --b-red-bg: #fff5f5;
+  --b-canvas: #faf9f6;
+  --b-surface: #ffffff;
+  --b-ink: #171717;
+  --b-ink-secondary: #737373;
+  --b-border: #eae6e3;
+
+  /* Harmonize shared primitives inside Blood Bank View only. */
+  --bb-canvas: #faf9f6;
+  --bb-surface: #ffffff;
+  --bb-surface-2: #faf6f4;
+  --bb-surface-3: #f2e5e3;
+  --bb-line: #eae6e3;
+  --bb-line-strong: #d8ceca;
+  --bb-ink: #171717;
+  --bb-ink-muted: #525252;
+  --bb-ink-faint: #737373;
+  --bb-accent: #c93245;
+  --bb-accent-hover: #a82436;
+  --bb-accent-ink: #ffffff;
+  --bb-bridge: #c93245;
+  --bb-bridge-soft: #fcebed;
+  --bb-critical: #c93245;
+  --bb-critical-soft: #fcebed;
+  --bb-warn: #b45309;
+  --bb-warn-soft: #fff7ed;
+  --bb-ok: #1f7a4d;
+  --bb-ok-soft: #ecfdf3;
+  --bb-info: #1d5fb8;
+  --bb-info-soft: #eef4ff;
+  --bb-shadow: 0 1px 2px rgb(23 23 23 / 0.025), 0 8px 24px -18px rgb(23 23 23 / 0.08);
+
+  font-family: var(--font-sans);
+  background-color: var(--b-canvas);
+  color: var(--b-ink);
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--b-red);
+}
+
+.bank-theme ::selection {
+  background: #c93245;
+  color: #ffffff;
+}
+
+.bank-theme .b-display {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.bank-theme .b-num {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.bank-theme .b-card {
+  min-width: 0;
+  background: var(--b-surface);
+  border: 1px solid var(--b-border);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgb(23 23 23 / 0.025), 0 8px 24px -18px rgb(23 23 23 / 0.08);
+}
+
+.bank-theme .b-card-blush {
+  min-width: 0;
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
+  border: 1px solid #f2d7db;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgb(201 50 69 / 0.04);
+}
+
+.bank-theme .b-sidebar {
+  background: linear-gradient(180deg, #bc2c3e 0%, #a42133 100%);
+  color: #ffffff;
+}
+
+.bank-theme ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.bank-theme ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bank-theme ::-webkit-scrollbar-thumb {
+  background: #dfd7d3;
+  border-radius: 999px;
+}

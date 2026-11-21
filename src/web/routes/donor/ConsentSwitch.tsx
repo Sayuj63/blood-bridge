@@ -10,7 +10,7 @@ interface ConsentSwitchProps {
   disabled?: boolean;
 }
 
-/** A full-row switch: the whole row is the touch target, named by its title and described by its one-liner. */
+/** A full-row switch: the whole row is a 56px+ mobile touch target. */
 export function ConsentSwitch({ title, description, checked, onChange, disabled }: ConsentSwitchProps) {
   const titleId = useId();
   const descId = useId();
@@ -23,26 +23,26 @@ export function ConsentSwitch({ title, description, checked, onChange, disabled 
       aria-describedby={descId}
       disabled={disabled}
       onClick={() => onChange(!checked)}
-      className="focus-ring flex min-h-14 w-full items-start gap-3 rounded-(--radius-control) px-1 py-3 text-left disabled:opacity-60"
+      className="focus-ring flex min-h-14 w-full items-start gap-3 rounded-xl px-1 py-3 text-left transition-colors hover:bg-[#FFF5F5]/60 disabled:opacity-60"
     >
       <span className="min-w-0 flex-1">
-        <span id={titleId} className="block font-semibold leading-snug text-ink">
+        <span id={titleId} className="block text-sm font-bold leading-snug text-[#171717]">
           {title}
         </span>
-        <span id={descId} className="mt-0.5 block text-sm leading-snug text-ink-muted">
+        <span id={descId} className="mt-0.5 block text-xs leading-snug text-[#737373]">
           {description}
         </span>
       </span>
       <span
         aria-hidden
         className={cn(
-          "relative mt-0.5 inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors duration-(--duration-base)",
-          checked ? "border-ok bg-ok" : "border-line-strong bg-surface-3",
+          "relative mt-0.5 inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors duration-200",
+          checked ? "border-[#C93245] bg-[#C93245]" : "border-[#D8CECA] bg-[#EAE6E3]",
         )}
       >
         <span
           className={cn(
-            "absolute size-5 rounded-full bg-surface shadow-sm transition-transform duration-(--duration-base) ease-(--ease-out-expo)",
+            "absolute size-5 rounded-full bg-white shadow-sm transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]",
             checked ? "translate-x-6" : "translate-x-1",
           )}
         />
@@ -53,7 +53,7 @@ export function ConsentSwitch({ title, description, checked, onChange, disabled 
 
 export type ConsentValues = Record<ConsentKey, boolean>;
 
-/** The three separate consents, each with its own switch and plain-language explanation. */
+/** Three independent consent switches with plain-language explanations. */
 export function ConsentList({
   values,
   onChange,
@@ -64,7 +64,7 @@ export function ConsentList({
   disabled?: boolean;
 }) {
   return (
-    <ul className="divide-y divide-line">
+    <ul className="divide-y divide-[#EAE6E3]">
       {CONSENTS.map((c) => (
         <li key={c.key}>
           <ConsentSwitch
@@ -77,7 +77,7 @@ export function ConsentList({
         </li>
       ))}
       {values.consentAlerts && !values.consentLocation ? (
-        <li className="py-3 text-sm text-warn">
+        <li className="py-3 text-xs font-medium text-[#B45309]">
           Alerts need your approximate area to find banks near you, so none will arrive until location is on.
         </li>
       ) : null}

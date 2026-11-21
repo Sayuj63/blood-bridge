@@ -13,8 +13,8 @@ const STEP_LABEL: Record<TimelineStep["step"], string> = {
 };
 
 /**
- * Requested → Bank confirmed → Reserved → Picked up → Delivered, with the IST time
- * each step happened. Horizontal when there is room, vertical in narrow panels.
+ * 5-stage visual stepper: Requested → Bank confirmed → Reserved → Picked up → Delivered,
+ * with IST timestamps. Horizontal when there is room, vertical in narrow containers.
  */
 export function TrackerTimeline({ steps }: { steps: TimelineStep[] }) {
   const current = steps.findIndex((s) => s.at === null);
@@ -30,42 +30,41 @@ export function TrackerTimeline({ steps }: { steps: TimelineStep[] }) {
             aria-current={isCurrent ? "step" : undefined}
             className="relative flex gap-3 pb-4 last:pb-0 @lg:flex-col @lg:items-center @lg:gap-2 @lg:pb-0 @lg:text-center"
           >
-            {/* Connector to the next step: vertical in narrow layouts, horizontal when wide. */}
             {i < steps.length - 1 ? (
-              <span aria-hidden className="absolute top-8 bottom-0 left-[0.9375rem] w-0.5 bg-line @lg:top-[0.9375rem] @lg:right-[-50%] @lg:bottom-auto @lg:left-1/2 @lg:h-0.5 @lg:w-auto">
+              <span
+                aria-hidden
+                className="absolute top-7 bottom-0 left-[0.875rem] w-0.5 bg-[#EAE6E3] @lg:top-[0.875rem] @lg:right-[-50%] @lg:bottom-auto @lg:left-1/2 @lg:h-0.5 @lg:w-auto"
+              >
                 <motion.span
-                  className="block size-full origin-top bg-ok @lg:origin-left"
+                  className="block size-full origin-top bg-[#15803D] @lg:origin-left"
                   initial={false}
                   animate={{ scale: steps[i + 1].at !== null ? 1 : 0 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 />
               </span>
             ) : null}
             <span
               aria-hidden
               className={cn(
-                "relative z-10 grid size-8 shrink-0 place-items-center rounded-full border-2 transition-colors duration-(--duration-base)",
-                done && "border-ok bg-ok text-white",
-                isCurrent && "border-accent bg-surface text-accent",
-                !done && !isCurrent && "border-line bg-surface text-ink-faint",
+                "relative z-10 grid size-7 shrink-0 place-items-center rounded-full border-2 transition-colors",
+                done && "border-[#15803D] bg-[#15803D] text-white",
+                isCurrent && "border-[#C93245] bg-white text-[#C93245]",
+                !done && !isCurrent && "border-[#D6CFC9] bg-white text-[#8A8580]",
               )}
             >
               {done ? (
-                <motion.span initial={{ scale: 0.4 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 500, damping: 22 }}>
-                  <Check className="size-4" strokeWidth={3} />
-                </motion.span>
+                <Check className="size-3.5" strokeWidth={3} />
               ) : isCurrent ? (
-                <>
-                  <span className="absolute inset-0 animate-pulse-ring rounded-full bg-accent/40" />
-                  <span className="size-2.5 rounded-full bg-accent" />
-                </>
+                <span className="size-2 rounded-full bg-[#C93245]" />
               ) : (
-                <span className="font-numeric text-xs font-bold">{i + 1}</span>
+                <span className="h-num text-[11px] font-semibold">{i + 1}</span>
               )}
             </span>
-            <span className="min-w-0 pt-1 @lg:pt-0">
-              <span className={cn("block text-sm font-semibold", !done && !isCurrent && "text-ink-muted")}>{STEP_LABEL[s.step]}</span>
-              <span className="block font-numeric text-xs text-ink-muted">
+            <span className="min-w-0 pt-0.5 @lg:pt-0">
+              <span className={cn("block text-xs font-semibold", done || isCurrent ? "text-[#171717]" : "text-[#737373]")}>
+                {STEP_LABEL[s.step]}
+              </span>
+              <span className="h-num block text-[11px] text-[#737373]">
                 {s.at !== null ? formatIST(s.at, true) : isCurrent ? "In progress" : "Pending"}
               </span>
             </span>

@@ -1,14 +1,13 @@
 import { MapPin, Phone } from "lucide-react";
 import type { DonorDTO } from "../../../../shared/api";
-import { haversineKm } from "../../../../shared/geo";
-import { Card, CardBody, CardHeader } from "../../../components/ui/Card";
+import { etaMinutes, haversineKm } from "../../../../shared/geo";
 import { ErrorState } from "../../../components/ui/EmptyState";
 import { SkeletonRows } from "../../../components/ui/Skeleton";
 import { useMeta, useSites } from "../../../lib/queries";
 
-const SHOWN = 3;
+const SHOWN = 4;
 
-/** The closest blood banks to the centre of the donor's neighbourhood (never an exact location). */
+/** Closest blood banks to the donor's approximate neighbourhood with clean hairline rows & one-tap call. */
 export function NearbyBanks({ donor }: { donor: DonorDTO }) {
   const meta = useMeta();
   const sites = useSites();
@@ -17,46 +16,70 @@ export function NearbyBanks({ donor }: { donor: DonorDTO }) {
   const banks = area
     ? (sites.data ?? [])
         .filter((s) => s.kind === "blood_bank")
-        .map((s) => ({ site: s, km: haversineKm(area, s) }))
+        .map((s) => ({ site: s, km: haversineKm(area, s), eta: etaMinutes(area, s) }))
         .sort((a, b) => a.km - b.km)
         .slice(0, SHOWN)
     : [];
 
+  const maxKm = Math.max(...banks.map((b) => b.km), 1);
+
   return (
-    <Card as="section" aria-labelledby="nearby-title">
-      <CardHeader id="nearby-title" title="Blood banks near you" description={`Distances from the centre of ${donor.areaName}.`} />
-      <CardBody aria-busy={sites.isPending || meta.isPending}>
+    <section aria-labelledby="nearby-title" className="d-card p-5 sm:p-6">
+      <div className="mb-4 flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2.5">
+          <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-[#FCEBED] text-[#C93245]">
+            <MapPin className="size-4" aria-hidden />
+          </span>
+          <div>
+            <h2 id="nearby-title" className="d-display text-sm font-bold text-[#171717]">
+              Blood banks near {donor.areaName}
+            </h2>
+            <p className="text-[11px] text-[#737373]">Approximate distance &amp; available stock</p>
+          </div>
+        </div>
+        <span className="d-num text-xs font-semibold text-[#737373]">{banks.length} closest</span>
+      </div>
+
+      <div aria-busy={sites.isPending || meta.isPending}>
         {sites.isError || meta.isError ? (
           <ErrorState what="nearby blood banks" error={sites.error ?? meta.error} onRetry={() => void sites.refetch()} compact />
         ) : sites.isPending || meta.isPending ? (
           <SkeletonRows rows={3} />
         ) : banks.length === 0 ? (
-          <p className="text-sm text-ink-muted">No blood banks found near {donor.areaName}.</p>
+          <p className="text-xs text-[#737373]">No blood banks found near {donor.areaName}.</p>
         ) : (
-          <ul className="divide-y divide-line">
-            {banks.map(({ site, km }) => (
-              <li key={site.id} className="flex items-center gap-3 py-3 first:pt-0 last:pb-0">
-                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-surface-2 text-ink-muted">
-                  <MapPin className="size-4" aria-hidden />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-medium text-ink">{site.name}</span>
-                  <span className="block text-xs text-ink-muted">
-                    {site.areaName} · <span className="font-numeric">~{km.toFixed(1)} km</span>
-                  </span>
-                </span>
-                <a
-                  href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                  className="focus-ring grid size-11 shrink-0 place-items-center rounded-full border border-line text-ink-muted hover:bg-surface-2 hover:text-ink"
-                  aria-label={`Call ${site.name}`}
-                >
-                  <Phone className="size-4" aria-hidden />
-                </a>
-              </li>
-            ))}
+          <ul className="divide-y divide-[#EAE6E3]">
+            {banks.map(({ site, km, eta }) => {
+              const barPct = Math.max(14, Math.round((km / maxKm) * 100));
+              return (
+                <li key={site.id} className="flex items-center gap-4 py-3 first:pt-0 last:pb-0">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="truncate text-[13px] font-semibold text-[#171717]">{site.shortName}</span>
+                      <span className="d-num shrink-0 text-xs font-bold text-[#A82436]">{site.totalAvailable}u</span>
+                    </div>
+                    <div className="mt-2 flex items-center gap-2.5">
+                      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#F5ECEA]">
+                        <div className="h-full rounded-full bg-[#C93245]/85" style={{ width: `${barPct}%` }} />
+                      </div>
+                      <span className="d-num shrink-0 text-[11px] text-[#737373]">
+                        ~{km.toFixed(1)} km · {eta} min
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                    className="focus-ring grid size-12 shrink-0 touch-manipulation place-items-center rounded-xl border border-[#EAE6E3] bg-[#FAF9F6] text-[#C93245] transition-all hover:border-[#C93245] hover:bg-[#FCEBED] active:scale-95"
+                    aria-label={`Call ${site.name}`}
+                  >
+                    <Phone className="size-4" aria-hidden />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         )}
-      </CardBody>
-    </Card>
+      </div>
+    </section>
   );
 }

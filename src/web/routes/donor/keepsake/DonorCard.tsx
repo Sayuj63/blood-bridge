@@ -18,8 +18,8 @@ const shareText = (d: CertificateData, donorId: string) =>
   `I gave blood at ${d.bankName} on ${formatDate(d.at)}. ${IMPACT_LINE} Blood Bridge alerts nearby donors when their group is needed (simulated demo): ${inviteUrl(donorId)}`;
 
 /**
- * The shareable donor card for one donation: a PNG preview drawn in the browser,
- * with Share (system share sheet with the image, else download) and WhatsApp.
+ * The shareable donor card for one donation: crisp edge-to-edge PNG preview
+ * with Share, WhatsApp, and Save actions in one clean row.
  */
 export function DonorCard({ donor, donation, className }: { donor: DonorDTO; donation: Donation; className?: string }) {
   const data: CertificateData = { firstName: firstName(donor.name), bloodGroup: donor.bloodGroup, at: donation.at, bankName: donation.siteName };
@@ -70,43 +70,55 @@ export function DonorCard({ donor, donation, className }: { donor: DonorDTO; don
   const alt = `Donor card: thank you, ${data.firstName}. Blood group ${donor.bloodGroup}, donated on ${formatDate(data.at)} at ${data.bankName}. ${IMPACT_LINE} Simulated demo.`;
 
   return (
-    <div className={cn("space-y-3", className)}>
-      <div className="overflow-hidden rounded-(--radius-panel) border border-line bg-surface-2 shadow-panel">
+    <div className={cn("space-y-4", className)}>
+      <div className="overflow-hidden rounded-2xl border border-[#EAE6E3] bg-white shadow-xs">
         {png ? (
           <img src={png.url} alt={alt} width={1080} height={1350} className="block h-auto w-full" />
         ) : failed ? (
-          <p className="grid aspect-[4/5] place-items-center px-6 text-center text-sm text-ink-muted">
-            Couldn't draw your donor card in this browser.
+          <p className="grid aspect-[4/5] place-items-center px-6 text-center text-xs text-[#737373]">
+            Couldn&apos;t draw your donor card in this browser.
           </p>
         ) : (
           <Skeleton className="aspect-[4/5] w-full rounded-none" aria-label="Drawing your donor card" />
         )}
       </div>
-      <div className="grid grid-cols-2 gap-2">
-        <Button variant="primary" size="lg" className="w-full" disabled={!png} loading={sharing} icon={<Share2 className="size-4" aria-hidden />} onClick={() => void share()}>
+
+      <div className="flex items-center gap-2">
+        <Button
+          variant="primary"
+          size="md"
+          className="h-12 flex-1 touch-manipulation rounded-xl bg-[#C93245] font-bold hover:bg-[#A82436]"
+          disabled={!png}
+          loading={sharing}
+          icon={<Share2 className="size-4" aria-hidden />}
+          onClick={() => void share()}
+        >
           Share
         </Button>
         <a
           href={whatsappShare(shareText(data, donor.id))}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "w-full px-3")}
+          className={cn(
+            buttonVariants({ variant: "secondary", size: "md" }),
+            "h-12 flex-1 touch-manipulation rounded-xl border-[#EAE6E3] bg-white px-3 font-semibold text-[#171717] hover:border-[#F2D7DB] hover:bg-[#FFF5F5]",
+          )}
         >
-          <MessageCircle className="size-4" aria-hidden />
+          <MessageCircle className="size-4 text-[#C93245]" aria-hidden />
           WhatsApp
           <span className="sr-only">: share on WhatsApp (opens in a new tab)</span>
         </a>
+        <button
+          type="button"
+          disabled={!png}
+          onClick={() => png && downloadBlob(png.blob, filename)}
+          aria-label="Save PNG image"
+          title="Save PNG image"
+          className="focus-ring grid size-12 shrink-0 touch-manipulation place-items-center rounded-xl border border-[#EAE6E3] bg-white text-[#737373] transition-colors hover:border-[#F2D7DB] hover:bg-[#FFF5F5] hover:text-[#A82436] disabled:opacity-40"
+        >
+          <Download className="size-4" aria-hidden />
+        </button>
       </div>
-      <Button
-        variant="ghost"
-        size="md"
-        className="mx-auto flex h-11"
-        disabled={!png}
-        icon={<Download className="size-4" aria-hidden />}
-        onClick={() => png && downloadBlob(png.blob, filename)}
-      >
-        Save image
-      </Button>
     </div>
   );
 }

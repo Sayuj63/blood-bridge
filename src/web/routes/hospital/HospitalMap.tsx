@@ -3,6 +3,7 @@ import type { SiteDTO } from "../../../shared/api";
 import { CityMap, type MapArc, type MapMarker } from "../../components/map";
 import { cn } from "../../lib/cn";
 import { useSites } from "../../lib/queries";
+import { MapErrorBoundary } from "./MapErrorBoundary";
 
 export interface BankPin {
   siteId: string;
@@ -69,19 +70,21 @@ export function HospitalMap({ hospital, banks, focusId, arcState = "suggested", 
   const fitKey = banks.map((b) => b.siteId).sort().join(",");
 
   return (
-    <CityMap
-      key={`${hospital.id}:${fitKey}`}
-      theme="clinical"
-      markers={markers}
-      arcs={arcs}
-      onMarkerClick={onBankClick}
-      center={hospital}
-      zoom={12}
-      fitToMarkers
-      fitPadding={48}
-      label={label}
-      // maplibre-gl.css forces the map container to position:relative, so give it an explicit height.
-      className={cn("[&_.maplibregl-map]:h-full", className)}
-    />
+    <MapErrorBoundary fallbackTitle={`Map view (${banks.length} facilities)`}>
+      <CityMap
+        key={`${hospital.id}:${fitKey}`}
+        theme="clinical"
+        markers={markers}
+        arcs={arcs}
+        onMarkerClick={onBankClick}
+        center={hospital}
+        zoom={12}
+        fitToMarkers
+        fitPadding={48}
+        label={label}
+        // maplibre-gl.css forces the map container to position:relative, so give it an explicit height.
+        className={cn("[&_.maplibregl-map]:h-full", className)}
+      />
+    </MapErrorBoundary>
   );
 }

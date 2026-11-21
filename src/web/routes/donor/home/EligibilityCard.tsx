@@ -1,13 +1,11 @@
-import { CalendarClock, HeartHandshake } from "lucide-react";
-import type { ReactNode } from "react";
+import { CalendarClock, CheckCircle2, HeartHandshake } from "lucide-react";
 import type { DonorDTO } from "../../../../shared/api";
-import { Card } from "../../../components/ui/Card";
-import { cn } from "../../../lib/cn";
 import { useMeta } from "../../../lib/queries";
-import { useClock } from "../useClock";
-import { ReminderButton } from "../keepsake/ReminderButton";
 import { DAY_MS, formatDate } from "../copy";
+import { ReminderButton } from "../keepsake/ReminderButton";
+import { useClock } from "../useClock";
 
+<<<<<<< Updated upstream
 const SIZE = 120;
 const STROKE = 10;
 const R = (SIZE - STROKE) / 2;
@@ -37,19 +35,22 @@ function ProgressRing({ progress, done, children }: { progress: number; done: bo
 }
 
 /** "Eligible now", or "Eligible again on <date>" with a ring filling up towards it. */
+=======
+/** Visual eligibility status card with horizontal progress bar & interval gauge. */
+>>>>>>> Stashed changes
 export function EligibilityCard({ donor }: { donor: DonorDTO }) {
   const now = useClock(60_000);
-  const intervalDays = useMeta().data?.eligibilityRules.minDaysBetweenDonations;
-  // The waiting window runs from the last donation to the date the bank's interval allows the next one.
+  const intervalDays = useMeta().data?.eligibilityRules.minDaysBetweenDonations ?? 90;
   const wait =
     !donor.eligible && donor.eligibleFrom !== null && donor.lastDonationAt !== null
       ? { from: donor.lastDonationAt, until: donor.eligibleFrom }
       : null;
   const waiting = wait !== null;
   const daysLeft = wait ? Math.max(1, Math.ceil((wait.until - now) / DAY_MS)) : 0;
-  const progress = wait ? (now - wait.from) / (wait.until - wait.from) : 1;
+  const progressPct = wait ? Math.min(98, Math.max(4, Math.round(((now - wait.from) / (wait.until - wait.from)) * 100))) : 100;
 
   return (
+<<<<<<< Updated upstream
     <Card as="section" aria-labelledby="eligibility-title" className="p-4">
       <div className="flex items-center gap-4">
         <ProgressRing progress={progress} done={!waiting}>
@@ -85,5 +86,68 @@ export function EligibilityCard({ donor }: { donor: DonorDTO }) {
         {intervalDays ? ` The ${intervalDays}-day gap here is demo configuration set by the blood bank.` : " The gap shown here is demo configuration."}
       </p>
     </Card>
+=======
+    <section aria-labelledby="eligibility-title" className="d-card p-4 sm:p-5">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-2.5">
+          <span
+            className={
+              waiting
+                ? "grid size-8 shrink-0 place-items-center rounded-xl bg-[#FCEBED] text-[#C93245]"
+                : "grid size-8 shrink-0 place-items-center rounded-xl bg-[#ECFDF3] text-[#1F7A4D]"
+            }
+          >
+            {waiting ? <CalendarClock className="size-4" aria-hidden /> : <HeartHandshake className="size-4" aria-hidden />}
+          </span>
+          <div>
+            <h2 id="eligibility-title" className="d-display text-sm font-bold text-[#171717]">
+              {wait ? `Eligible again ${formatDate(wait.until)}` : "Eligible to donate now"}
+            </h2>
+            <p className="mt-0.5 text-xs text-[#737373]">
+              {waiting ? `${daysLeft} ${daysLeft === 1 ? "day" : "days"} remaining · alerts paused` : "Ready when nearby banks need your group"}
+            </p>
+          </div>
+        </div>
+        <span
+          className={
+            waiting
+              ? "d-num shrink-0 rounded-full bg-[#FCEBED] px-2.5 py-0.5 text-[11px] font-bold text-[#A82436]"
+              : "inline-flex shrink-0 items-center gap-1 rounded-full bg-[#ECFDF3] px-2.5 py-0.5 text-[11px] font-bold text-[#1F7A4D]"
+          }
+        >
+          {waiting ? (
+            `${progressPct}%`
+          ) : (
+            <>
+              <CheckCircle2 className="size-3" aria-hidden /> Ready
+            </>
+          )}
+        </span>
+      </div>
+
+      {/* Recovery Progress Bar */}
+      <div className="mt-3.5">
+        <div className="h-2 overflow-hidden rounded-full bg-[#F4ECEA]">
+          <div
+            className="h-full rounded-full transition-all duration-300"
+            style={{
+              width: `${progressPct}%`,
+              background: waiting ? "linear-gradient(90deg, #D1384B, #C93245)" : "linear-gradient(90deg, #2E9E66, #1F7A4D)",
+            }}
+          />
+        </div>
+        <div className="d-num mt-1.5 flex items-center justify-between text-[11px] text-[#737373]">
+          <span>{donor.lastDonationAt ? `Last: ${formatDate(donor.lastDonationAt)}` : "First donation"}</span>
+          <span>{intervalDays}-day demo interval</span>
+        </div>
+      </div>
+
+      {waiting && donor.eligibleFrom !== null ? (
+        <div className="mt-3 pt-1">
+          <ReminderButton donorId={donor.id} eligibleFrom={donor.eligibleFrom} className="w-full rounded-xl sm:w-auto" />
+        </div>
+      ) : null}
+    </section>
+>>>>>>> Stashed changes
   );
 }

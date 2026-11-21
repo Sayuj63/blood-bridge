@@ -36,14 +36,14 @@ export function AppShell() {
   }, [handle.actor]);
 
   return (
-    <div data-theme={handle.theme} className={cn("flex min-h-dvh flex-col bg-canvas text-ink", handle.layout === "fill" && "lg:h-dvh lg:overflow-hidden")}>
+    <div data-theme={handle.theme} className={cn("flex min-h-dvh w-full max-w-full flex-col overflow-x-clip bg-canvas text-ink", handle.layout === "fill" && "lg:h-dvh lg:overflow-hidden")}>
       <a
         href="#main"
         className="focus-ring sr-only z-50 rounded-md bg-surface px-3 py-2 focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-40 border-b border-line bg-surface/92 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
+      <header className="sticky top-0 z-40 w-full max-w-full overflow-x-clip border-b border-line bg-surface/92 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
         {embed ? (
           <div className="flex h-11 items-center gap-2 px-3">
             <Logo size={20} compact />
@@ -85,7 +85,11 @@ export function AppShell() {
                 ))}
               </ul>
             </nav>
+<<<<<<< Updated upstream
             <div className="flex shrink-0 items-center gap-3">
+=======
+            <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
+>>>>>>> Stashed changes
               <span className="hidden md:inline-flex">
                 <LiveDot status={status} />
               </span>
@@ -103,7 +107,7 @@ export function AppShell() {
         )}
         {surge ? <SurgeBanner surge={surge} compact={embed} /> : null}
       </header>
-      <main id="main" className="flex min-h-0 flex-1 flex-col">
+      <main id="main" className="flex min-h-0 w-full max-w-full flex-1 flex-col">
         <Outlet />
       </main>
     </div>

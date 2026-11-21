@@ -36,9 +36,15 @@ function subscribe(intervalMs: number, listener: () => void): () => void {
 
 /** Current epoch ms, refreshed every `intervalMs` (default 1s). */
 export function useNow(intervalMs = 1000): number {
+<<<<<<< Updated upstream
   // A stable subscribe function: a new one each render makes React resubscribe every render,
   // and resubscribing restarts the clock, which re-renders again — an infinite loop.
   const subscribeToClock = useCallback((l: () => void) => subscribe(intervalMs, l), [intervalMs]);
   const snapshot = useCallback(() => clock(intervalMs).now, [intervalMs]);
   return useSyncExternalStore(subscribeToClock, snapshot, () => Date.now());
+=======
+  const sub = useCallback((l: () => void) => subscribe(intervalMs, l), [intervalMs]);
+  const snap = useCallback(() => clock(intervalMs).now, [intervalMs]);
+  return useSyncExternalStore(sub, snap, () => Date.now());
+>>>>>>> Stashed changes
 }

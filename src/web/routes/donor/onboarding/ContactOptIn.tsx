@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { useId } from "react";
 import type { ContactChannel } from "../../../../shared/domain";
-import { SegmentedControl } from "../../../components/ui/SegmentedControl";
+import { cn } from "../../../lib/cn";
 import { TextField } from "./fields";
 
 export interface ContactDraft {
@@ -35,23 +35,47 @@ export function ContactOptIn({
 }) {
   const consentId = useId();
   const errorId = useId();
+  const groupId = useId();
   const on = value.channel !== "none";
   return (
-    <div className="space-y-3 rounded-(--radius-panel) border border-line bg-surface p-4">
+    <div className="d-card space-y-3.5 p-4">
       <div className="flex items-start gap-3">
-        <MessageCircle className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
+        <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-[#FCEBED] text-[#C93245]">
+          <MessageCircle className="size-4" aria-hidden />
+        </span>
         <div>
-          <p className="font-semibold text-ink">Also alert me on WhatsApp</p>
-          <p className="text-sm text-ink-muted">Optional. Answer alerts by replying YES or NO, no app needed.</p>
+          <p id={groupId} className="text-sm font-bold text-[#171717]">
+            Also alert me on WhatsApp
+          </p>
+          <p className="text-xs text-[#737373]">Optional. Reply YES or NO directly from WhatsApp, no app needed.</p>
         </div>
       </div>
-      <SegmentedControl
-        label="Alert channel"
-        value={value.channel}
-        onChange={(channel) => onChange({ ...value, channel, consent: channel === value.channel ? value.consent : false })}
-        options={OPTIONS}
-        className="flex w-full [&_button]:h-11 [&_button]:flex-1 [&_button]:text-base"
-      />
+
+      <div role="radiogroup" aria-labelledby={groupId} className="grid grid-cols-2 gap-2">
+        {OPTIONS.map((opt) => {
+          const active = value.channel === opt.value;
+          return (
+            <button
+              key={opt.value}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() =>
+                onChange({ ...value, channel: opt.value, consent: opt.value === value.channel ? value.consent : false })
+              }
+              className={cn(
+                "focus-ring flex h-12 touch-manipulation items-center justify-center rounded-xl border text-sm font-bold transition-all active:scale-[0.98]",
+                active
+                  ? "border-[#C93245] bg-[#C93245] text-white shadow-xs"
+                  : "border-[#EAE6E3] bg-[#FAF9F6] text-[#171717] hover:border-[#F2D7DB] hover:bg-[#FFF5F5]",
+              )}
+            >
+              {opt.label}
+            </button>
+          );
+        })}
+      </div>
+
       {on ? (
         <>
           <div data-field="contactPhone">
@@ -67,7 +91,7 @@ export function ContactOptIn({
             />
           </div>
           <div data-field="contactConsent" className="space-y-1">
-            <label htmlFor={consentId} className="flex cursor-pointer items-start gap-3 text-sm text-ink">
+            <label htmlFor={consentId} className="flex cursor-pointer items-start gap-3 rounded-xl bg-[#FFF5F5] p-3 text-xs leading-relaxed text-[#171717]">
               <input
                 id={consentId}
                 type="checkbox"
@@ -75,7 +99,7 @@ export function ContactOptIn({
                 onChange={(e) => onChange({ ...value, consent: e.target.checked })}
                 aria-invalid={Boolean(errors.contactConsent)}
                 aria-describedby={errors.contactConsent ? errorId : undefined}
-                className="focus-ring mt-0.5 size-5 shrink-0 accent-accent"
+                className="focus-ring mt-0.5 size-4 shrink-0 accent-[#C93245]"
               />
               <span>
                 I agree to receive blood-donation alerts from Blood Bridge on {CHANNEL_NAME[value.channel as "whatsapp" | "sms"]} at this
@@ -83,7 +107,7 @@ export function ContactOptIn({
               </span>
             </label>
             {errors.contactConsent ? (
-              <p id={errorId} className="text-sm font-medium text-critical">
+              <p id={errorId} className="text-xs font-semibold text-[#C93245]">
                 {errors.contactConsent}
               </p>
             ) : null}

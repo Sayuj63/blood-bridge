@@ -1,0 +1,121 @@
+/*
+ * Donor View — Unified Luminous Crimson, Blush & Warm Ivory Theme
+ * Mirrors Hospital Command (#C93245, #A82436, #FCEBED, #FFF5F5, #FAF9F6,
+ * #FFFFFF, #171717, #737373, #EAE6E3) with generous whitespace and zero
+ * redundant nested chrome on both mobile (390px / ?embed=1) and desktop.
+ */
+
+.donor-theme {
+  --d-red: #c93245;
+  --d-red-deep: #a82436;
+  --d-red-soft: #fcebed;
+  --d-red-bg: #fff5f5;
+  --d-canvas: #faf9f6;
+  --d-surface: #ffffff;
+  --d-ink: #171717;
+  --d-ink-secondary: #737373;
+  --d-border: #eae6e3;
+
+  /* Harmonize shared primitives inside Donor View only. */
+  --bb-canvas: #faf9f6;
+  --bb-surface: #ffffff;
+  --bb-surface-2: #fcebed;
+  --bb-surface-3: #f4d3d8;
+  --bb-line: #eae6e3;
+  --bb-line-strong: #d8ceca;
+  --bb-ink: #171717;
+  --bb-ink-muted: #525252;
+  --bb-ink-faint: #737373;
+  --bb-accent: #c93245;
+  --bb-accent-hover: #a82436;
+  --bb-accent-ink: #ffffff;
+  --bb-critical: #c93245;
+  --bb-critical-soft: #fcebed;
+  --bb-warn: #b45309;
+  --bb-warn-soft: #fff7ed;
+  --bb-ok: #1f7a4d;
+  --bb-ok-soft: #ecfdf3;
+  --bb-shadow: 0 1px 2px rgb(23 23 23 / 0.03), 0 10px 26px -18px rgb(201 50 69 / 0.14);
+
+  font-family: var(--font-sans);
+  background-color: var(--d-canvas);
+  color: var(--d-ink);
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--d-red);
+}
+
+.donor-theme ::selection {
+  background: #c93245;
+  color: #ffffff;
+}
+
+.donor-theme .d-display {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.donor-theme .d-num {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.donor-theme .d-card {
+  min-width: 0;
+  background: var(--d-surface);
+  border: 1px solid var(--d-border);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgb(23 23 23 / 0.025), 0 8px 24px -18px rgb(23 23 23 / 0.08);
+}
+
+.donor-theme .d-card-blush {
+  min-width: 0;
+  background: linear-gradient(180deg, #fff5f5 0%, #ffffff 100%);
+  border: 1px solid #f2d7db;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgb(201 50 69 / 0.04);
+}
+
+.donor-theme .d-hero-crimson {
+  min-width: 0;
+  background: linear-gradient(135deg, #b8293b 0%, #d1384b 58%, #be2c3e 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px -18px rgb(201 50 69 / 0.38);
+}
+
+.donor-theme .d-sidebar {
+  background: linear-gradient(180deg, #bc2c3e 0%, #a42133 100%);
+  color: #ffffff;
+}
+
+.donor-theme ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.donor-theme ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.donor-theme ::-webkit-scrollbar-thumb {
+  background: #dfd7d3;
+  border-radius: 999px;
+}
+
+/* Mobile-first touch & pointer polish across Donor Portal */
+.donor-theme button:not(:disabled),
+.donor-theme [role="button"]:not([aria-disabled="true"]),
+.donor-theme [role="switch"]:not(:disabled),
+.donor-theme [role="radio"]:not([aria-disabled="true"]),
+.donor-theme a[href],
+.donor-theme select:not(:disabled),
+.donor-theme label[for] {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgb(201 50 69 / 0.12);
+}
+
+.donor-theme button:disabled,
+.donor-theme select:disabled,
+.donor-theme input:disabled {
+  cursor: not-allowed;
+}

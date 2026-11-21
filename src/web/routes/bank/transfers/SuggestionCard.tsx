@@ -1,8 +1,6 @@
-import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, Clock } from "lucide-react";
 import type { TransferSuggestionDTO, UnitDTO } from "../../../../shared/api";
 import { COMPONENT_LABEL } from "../../../../shared/domain";
-import { Badge } from "../../../components/ui/Badge";
-import { BloodGroupChip } from "../../../components/ui/BloodGroupChip";
 import { ExpiryBadge } from "../../../components/ui/ExpiryBadge";
 import { plural } from "../../../lib/format";
 import { SuggestionActions } from "./SuggestionActions";
@@ -20,38 +18,46 @@ export function SuggestionCard({ suggestion: s, siteId, units }: SuggestionCardP
   const leaving = outbound ? units.filter((u) => s.unitIds.includes(u.id)) : [];
 
   return (
-    <article className="rounded-(--radius-panel) border border-line bg-surface p-3.5">
+    <article className="rounded-2xl border border-[#EAE6E3] bg-[#FAF9F6] p-4 transition-colors hover:border-[#F2D7DB]">
       <header className="flex flex-wrap items-center gap-2">
-        <Badge tone="bridge" size="sm">
+        <span className="inline-flex items-center gap-1 rounded-full bg-[#FCEBED] px-2.5 py-0.5 text-[11px] font-bold text-[#A82436]">
           {outbound ? <ArrowUpRight className="size-3" aria-hidden /> : <ArrowDownLeft className="size-3" aria-hidden />}
           {outbound ? `Send to ${s.toName}` : `Receive from ${s.fromName}`}
-        </Badge>
+        </span>
         {s.rescuedFromExpiry > 0 ? (
-          <Badge tone="warn" size="sm">
+          <span className="rounded-full bg-[#FFF7ED] px-2.5 py-0.5 text-[11px] font-bold text-[#B45309]">
             Saves {plural(s.rescuedFromExpiry, "unit")} from expiry
-          </Badge>
+          </span>
         ) : null}
-        <span className="ml-auto text-xs text-ink-muted">ETA {s.etaMinutes} min</span>
+        <span className="b-num ml-auto inline-flex items-center gap-1 text-xs font-medium text-[#737373]">
+          <Clock className="size-3" aria-hidden />
+          {s.etaMinutes} min
+        </span>
       </header>
-      <div className="mt-2.5 flex items-start gap-3">
-        <BloodGroupChip group={s.bloodGroup} variant="label" size="sm" />
+
+      <div className="mt-3 flex items-start gap-3">
+        <span className="b-num grid size-10 shrink-0 place-items-center rounded-xl bg-white text-sm font-extrabold text-[#A82436] ring-1 ring-[#F2D7DB]">
+          {s.bloodGroup.replace("-", "−")}
+        </span>
         <div className="min-w-0">
-          <p className="text-sm leading-snug">{s.reason}</p>
-          <p className="mt-1 font-semibold">
-            Suggested transfer: {plural(s.quantity, "unit")} of {s.bloodGroup} {COMPONENT_LABEL[s.component].toLowerCase()}
+          <p className="text-xs leading-relaxed text-[#525252]">{s.reason}</p>
+          <p className="b-display mt-1 text-sm font-bold text-[#171717]">
+            {plural(s.quantity, "unit")} of {s.bloodGroup.replace("-", "−")} {COMPONENT_LABEL[s.component].toLowerCase()}
           </p>
         </div>
       </div>
+
       {leaving.length > 0 ? (
-        <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Units that would leave">
+        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Units that would leave">
           {leaving.map((u) => (
-            <li key={u.id} className="inline-flex items-center gap-1.5 rounded-(--radius-chip) bg-surface-2 px-1.5 py-0.5">
-              <code className="font-mono text-2xs">{u.id}</code>
+            <li key={u.id} className="inline-flex items-center gap-1.5 rounded-lg border border-[#EAE6E3] bg-white px-2 py-1">
+              <code className="font-mono text-[10px] font-semibold text-[#171717]">{u.id}</code>
               <ExpiryBadge expiresAt={u.expiresAt} size="sm" />
             </li>
           ))}
         </ul>
       ) : null}
+
       <SuggestionActions suggestion={s} />
     </article>
   );

@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import { useRef, type KeyboardEvent, type ReactNode } from "react";
 import { cn } from "../../lib/cn";
 
@@ -23,18 +24,23 @@ interface ChoiceGridProps<T extends string> {
 const COLS = { 2: "grid-cols-2", 4: "grid-cols-4" } as const;
 
 /**
- * Single-choice grid (radiogroup) with big hit targets. Arrow keys move
- * left/right and up/down by a row; only the checked option is in the tab order.
+ * Single-choice grid (radiogroup) with large hit targets, pointer affordance,
+ * visible checked indicator (non-color cue), and full Arrow / Home / End navigation.
  */
 export function ChoiceGrid<T extends string>({ label, labelledBy, choices, value, onChange, columns }: ChoiceGridProps<T>) {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    const step = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: columns, ArrowUp: -columns }[e.key];
-    if (step === undefined) return;
-    e.preventDefault();
+    let next: number | null = null;
     const i = choices.findIndex((c) => c.value === value);
-    const next = (i + step + choices.length) % choices.length;
+    if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = choices.length - 1;
+    else {
+      const step = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: columns, ArrowUp: -columns }[e.key];
+      if (step !== undefined) next = (i + step + choices.length) % choices.length;
+    }
+    if (next === null) return;
+    e.preventDefault();
     onChange(choices[next].value);
     refs.current[next]?.focus();
   };
@@ -62,13 +68,14 @@ export function ChoiceGrid<T extends string>({ label, labelledBy, choices, value
             tabIndex={checked ? 0 : -1}
             onClick={() => onChange(c.value)}
             className={cn(
-              "focus-ring relative h-11 overflow-hidden rounded-(--radius-control) border px-2 text-sm font-semibold transition-colors duration-(--duration-fast)",
+              "focus-ring relative inline-flex h-11 cursor-pointer items-center justify-center gap-1.5 overflow-hidden rounded-xl border px-2 text-sm font-semibold transition-all duration-(--duration-fast)",
               checked
-                ? "border-ink bg-ink text-canvas"
-                : "border-line bg-surface text-ink hover:border-line-strong hover:bg-surface-2",
+                ? "border-[#C93245] bg-[#C93245] text-white shadow-xs"
+                : "border-[#EAE6E3] bg-white text-[#171717] hover:border-[#C93245]/45 hover:bg-[#FFF5F5]",
             )}
           >
-            {c.label}
+            {checked ? <Check className="size-3.5 shrink-0" aria-hidden /> : null}
+            <span>{c.label}</span>
             {c.stripe ? (
               <span aria-hidden className="absolute inset-x-0 bottom-0 h-1" style={{ background: c.stripe }} />
             ) : null}

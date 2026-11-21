@@ -1,12 +1,11 @@
 import { useId, type InputHTMLAttributes, type ReactNode } from "react";
 import type { AreaDTO } from "../../../../shared/api";
 import { BLOOD_GROUPS, LANGUAGES, LANGUAGE_LABEL, type BloodGroup, type Language } from "../../../../shared/domain";
-import { SegmentedControl } from "../../../components/ui/SegmentedControl";
 import { cn } from "../../../lib/cn";
 import { spokenGroup } from "../../../lib/format";
 
 const controlClass =
-  "focus-ring h-12 w-full rounded-(--radius-control) border border-line-strong bg-surface px-3 text-base text-ink placeholder:text-ink-faint aria-[invalid=true]:border-critical";
+  "focus-ring h-12 w-full rounded-xl border border-[#EAE6E3] bg-[#FAF9F6] px-3.5 text-base text-[#171717] placeholder:text-[#737373]/70 transition-colors focus:border-[#C93245] focus:bg-white aria-[invalid=true]:border-[#C93245]";
 
 /** Label, control, hint and error, wired together for assistive tech. */
 export function Field({
@@ -26,17 +25,17 @@ export function Field({
   const describedBy = [hint ? hintId : null, error ? errorId : null].filter(Boolean).join(" ") || undefined;
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-sm font-semibold text-ink">
+      <label htmlFor={id} className="block text-sm font-bold text-[#171717]">
         {label}
       </label>
       {children({ id, describedBy, invalid: Boolean(error) })}
       {hint ? (
-        <p id={hintId} className="text-sm text-ink-muted">
+        <p id={hintId} className="text-xs text-[#737373]">
           {hint}
         </p>
       ) : null}
       {error ? (
-        <p id={errorId} className="text-sm font-medium text-critical">
+        <p id={errorId} className="text-xs font-semibold text-[#C93245]">
           {error}
         </p>
       ) : null}
@@ -95,7 +94,7 @@ export function AreaSelect({
   );
 }
 
-/** Eight large tiles in a radiogroup: big enough to tap without zooming. */
+/** Eight large tiles in a radiogroup: big enough to tap cleanly on mobile without zooming. */
 export function BloodGroupPicker({
   value,
   onChange,
@@ -110,7 +109,7 @@ export function BloodGroupPicker({
   const errorId = useId();
   return (
     <div className="space-y-1.5">
-      <p id={labelId} className="text-sm font-semibold text-ink">
+      <p id={labelId} className="text-sm font-bold text-[#171717]">
         Blood group
       </p>
       <div
@@ -130,8 +129,10 @@ export function BloodGroupPicker({
               aria-label={spokenGroup(g)}
               onClick={() => onChange(g)}
               className={cn(
-                "focus-ring h-14 rounded-(--radius-control) border font-numeric text-lg font-bold transition-colors duration-(--duration-fast)",
-                checked ? "border-accent bg-accent text-accent-ink" : "border-line-strong bg-surface text-ink hover:bg-surface-2",
+                "d-num focus-ring h-14 rounded-xl border text-lg font-extrabold transition-all",
+                checked
+                  ? "border-[#C93245] bg-[#C93245] text-white shadow-sm"
+                  : "border-[#EAE6E3] bg-[#FAF9F6] text-[#171717] hover:border-[#F2D7DB] hover:bg-[#FFF5F5]",
               )}
             >
               {g.replace("-", "−")}
@@ -139,11 +140,11 @@ export function BloodGroupPicker({
           );
         })}
       </div>
-      <p id={hintId} className="text-sm text-ink-muted">
-        Self-declared. It's verified at your first donation.
+      <p id={hintId} className="text-xs text-[#737373]">
+        Self-declared. Verified at your first donation.
       </p>
       {error ? (
-        <p id={errorId} className="text-sm font-medium text-critical">
+        <p id={errorId} className="text-xs font-semibold text-[#C93245]">
           {error}
         </p>
       ) : null}
@@ -152,18 +153,34 @@ export function BloodGroupPicker({
 }
 
 export function LanguagePicker({ value, onChange }: { value: Language; onChange: (language: Language) => void }) {
+  const labelId = useId();
   return (
     <div className="space-y-1.5">
-      <p className="text-sm font-semibold text-ink" aria-hidden>
+      <p id={labelId} className="text-sm font-bold text-[#171717]">
         Alert language
       </p>
-      <SegmentedControl
-        label="Alert language"
-        value={value}
-        onChange={onChange}
-        options={LANGUAGES.map((l) => ({ value: l, label: LANGUAGE_LABEL[l] }))}
-        className="flex w-full [&_button]:h-11 [&_button]:text-base"
-      />
+      <div role="radiogroup" aria-labelledby={labelId} className="grid grid-cols-3 gap-2">
+        {LANGUAGES.map((l) => {
+          const active = value === l;
+          return (
+            <button
+              key={l}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => onChange(l)}
+              className={cn(
+                "focus-ring flex h-12 touch-manipulation items-center justify-center rounded-xl border text-sm font-bold transition-all active:scale-[0.98]",
+                active
+                  ? "border-[#C93245] bg-[#C93245] text-white shadow-xs"
+                  : "border-[#EAE6E3] bg-[#FAF9F6] text-[#171717] hover:border-[#F2D7DB] hover:bg-[#FFF5F5]",
+              )}
+            >
+              {LANGUAGE_LABEL[l]}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

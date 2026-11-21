@@ -6,19 +6,19 @@ import { cn } from "../../lib/cn";
 
 /** Shared class recipe, exported so links and other elements can look like buttons. */
 export const buttonVariants = cva(
-  "focus-ring inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap font-semibold transition-[background-color,border-color,color,transform] duration-(--duration-fast) ease-out active:translate-y-px disabled:pointer-events-none disabled:opacity-50",
+  "focus-ring inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-semibold transition-[background-color,border-color,color,box-shadow,transform] duration-(--duration-fast) ease-out active:translate-y-px disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
         /** The one action that matters on this surface. */
-        primary: "bg-accent text-accent-ink hover:bg-accent-hover",
+        primary: "bg-accent text-accent-ink shadow-xs hover:bg-accent-hover hover:shadow-sm",
         /** Default for everything else. */
         secondary: "border border-line-strong bg-surface text-ink hover:bg-surface-2",
         ghost: "text-ink-muted hover:bg-surface-2 hover:text-ink",
         /** Destructive or surge-related actions. */
-        danger: "bg-critical text-white hover:brightness-110 command:text-[#1a0207]",
+        danger: "bg-critical text-white shadow-xs hover:brightness-110 hover:shadow-sm command:text-[#1a0207]",
         /** Actions that move blood between sites. */
-        bridge: "bg-bridge text-white hover:brightness-110 command:text-[#03201d]",
+        bridge: "bg-bridge text-white shadow-xs hover:brightness-110 hover:shadow-sm command:text-[#03201d]",
       },
       size: {
         sm: "h-8 rounded-(--radius-control) px-3 text-sm",

@@ -1,8 +1,8 @@
 import { ClipboardCheck, TriangleAlert } from "lucide-react";
+import { Button } from "../../../components/ui/Button";
 import { api } from "../../../lib/api";
 import { formatHours } from "../../../lib/format";
 import { useNow } from "../../../lib/useNow";
-import { Button } from "../../../components/ui/Button";
 import { useAction } from "../shared/useAction";
 
 /**
@@ -14,21 +14,29 @@ export function StaleStockPrompt({ siteId, lastSyncAt }: { siteId: string; lastS
   const sync = useAction({ run: () => api.sites.sync(siteId), success: () => "Stock count confirmed" });
 
   return (
-    <div role="alert" className="flex flex-col gap-3 rounded-(--radius-panel) border-2 border-warn bg-warn-soft px-4 py-3 sm:flex-row sm:items-center">
-      <TriangleAlert className="size-6 shrink-0 text-warn" aria-hidden />
+    <div
+      role="alert"
+      className="flex flex-col gap-3 rounded-2xl border border-[#F5D0A9] bg-[#FFF8F1] px-4 py-3.5 shadow-2xs sm:flex-row sm:items-center sm:px-5"
+    >
+      <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-[#FEF0DC] text-[#B45309]">
+        <TriangleAlert className="size-4" aria-hidden />
+      </span>
       <div className="min-w-0 flex-1">
-        <p className="font-semibold text-ink">Stock not confirmed for {formatHours((now - lastSyncAt) / 3_600_000)}</p>
-        <p className="text-sm text-ink-muted">
+        <p className="b-display text-sm font-bold text-[#171717]">
+          Stock not confirmed for {formatHours((now - lastSyncAt) / 3_600_000)}
+        </p>
+        <p className="mt-0.5 text-xs text-[#737373]">
           Hospitals see your counts as unconfirmed and must phone before collecting. Recount the fridge, then confirm.
         </p>
       </div>
       <Button
         variant="primary"
+        className="shrink-0 rounded-xl bg-[#C93245] font-bold hover:bg-[#A82436]"
         icon={<ClipboardCheck className="size-4" aria-hidden />}
         loading={sync.isPending}
         onClick={() => sync.mutate(undefined)}
       >
-        Update stock / confirm count
+        Confirm count
       </Button>
     </div>
   );
