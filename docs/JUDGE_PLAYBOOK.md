@@ -28,57 +28,110 @@ Sources: intercom.help/builderbase (Hackathon Playbook ch.15), unstop.com/blog/h
 
 ---
 
-## 2. Three-minute pitch script
+## 2. The live demo flow (about 5 minutes)
 
-**0:00–0:25 — Problem (one story, one number)** *(the story is an illustrative composite; say "imagine", not "last night")*
-> "Imagine 2 a.m. in Mumbai: a mother is haemorrhaging after delivery. Haemorrhage causes 47% of maternal deaths in India [22]. Her husband is forwarding a WhatsApp message to 40 groups: 'B-negative needed urgently, KEM.' Four kilometres away, two B-negative units are sitting in another blood bank, and one of them expires on Friday."
+**Screens:** `/stage` on the big screen (hospital, bank and donor phone side by side, plus a join QR); `/command` and `/ledger` in tabs behind it.
+**People:** one person clicks, one talks. Rehearse it twice end to end.
 
-**0:25–0:50 — Stakes (paradox + scale)**
-> "India runs about a million units short every year [2], yet it threw away 28 lakh units in five years, mostly to expiry [7][10]. Mumbai has 58 blood banks [5] and no shared way to hold a unit. And the national policy says families shouldn't be doing this hunt at all. Hospitals are supposed to arrange the blood [12][13]."
+### Before the judges arrive (10 minutes)
+1. Open https://blood-bridge.blood-bridge.workers.dev/stage and click **Reset demo** (it asks to confirm). Never reset mid-pitch: the data is shared.
+2. Open `/command` and `/ledger` in two more tabs.
+3. If you'll show WhatsApp, start the laptop gateway (`cd gateway && npm start`) and check the stage header shows it connected. It also relays e-RaktKosh syncs, which Cloudflare's network can't reach directly.
+4. Have a screen recording of this whole flow ready as a backup if the venue Wi-Fi drops.
 
-**0:50–2:10 — Live demo (five beats, about 15 seconds each)**
-1. **Request → reserve in 60 seconds.** A clinician picks the patient's group and component. One screen shows compatible, in-date units across nearby banks, ranked by distance and expiry. One tap holds the unit and a timer starts. *Say:* "That was 41 seconds. Compare that to the WhatsApp scramble you just saw." (Do not quote a specific 'hours' figure; none is verified.)
-2. **Doomsday surge mode.** Flip the "26 July flood" switch. Roads close, two banks go offline, and casualties are injected. The forecast shows which groups run out first (O-negative in N hours) and a "lives at risk" meter climbs.
-3. **Expiry-aware transfer changes the outcome.** The system proposes moving 12 near-expiry platelet units from Bank A, where they'd expire unused, to Bank C, which is in the surge zone. Approve it, and the outcome meter drops and "units saved from expiry" ticks up.
-4. **Donor alert on a real phone.** The system sends a targeted alert to consented O-negative donors within 5 km. A phone on stage buzzes. Ideally it's a judge's phone (see Wow #1).
-5. **Tamper-evident ledger.** Open the audit view: every reserve, transfer and release is hash-chained, so editing one row breaks the chain visibly. *Say:* "Nobody can quietly hoard or sell a unit."
+### Beat 1: The problem (30 s), landing page `/`
+Scroll the hero, then the scramble replay and the city map animation.
+> "Imagine 2 a.m. in Mumbai: a mother is haemorrhaging after delivery. Haemorrhage causes 47% of maternal deaths in India [22]. Her husband is forwarding 'B-negative needed urgently, KEM' to 40 WhatsApp groups. Four kilometres away, two units sit in another bank, and one expires on Friday. India runs about a million units short a year [2], yet discarded 28 lakh units in five years, mostly to expiry [7][10]."
 
-**2:10–2:35 — Impact**
-> "Every unit we move before it expires is a unit nobody has to beg for. Platelets last five days [11]. At one Chennai hospital, 97% of discards were simply expired [10]. Blood Bridge turns expiry dates into transfer orders."
+Click **Start the live demo**.
 
-**2:35–2:50 — Adoption path and who pays**
-> "We don't replace e-RaktKosh. We read its stock and add what it doesn't have: holds, transfers and surge forecasting. Hospital networks pay per bed per month, because one prevented discard covers the subscription. State Blood Transfusion Councils license the surge dashboard for disaster preparedness. Donors always use it for free."
+### Beat 2: One patient, end to end (90 s), stage
+1. **Hospital panel:** pick O+, Red cells, Critical → **Find blood**. Every compatible, in-date unit in the city appears, ranked by distance and expiry. Click **Reserve**.
+2. **Bank panel:** the request lands live with a 90-second countdown. *Say:* "If the bank doesn't answer, it reroutes itself." Click **Confirm**. (The bank panel follows whichever bank the request went to.)
+3. **Hospital panel:** the tracker updates by itself. Click **Mark picked up**, then **Mark delivered** → "Fulfilled".
+4. *Optional, if time:* reserve again and press **Decline** with a quick reason. The hospital is rerouted to the next-best bank and told why.
 
-**2:50–3:00 — Ask**
-> "We're asking for a pilot introduction to SBTC Mumbai and one hospital network, with 10 blood banks for 90 days, to measure discards avoided and minutes to reserve."
+### Beat 3: The donor, the wow moment (60 s), stage
+1. Ask a judge to **scan the QR** on the stage. They join in 20 seconds on their own phone (three steps, consent switches explained).
+2. Bank panel → **Donor drive** → **Preview** (shows who's excluded and why: ineligible, out of range, quiet hours, weekly cap) → **Send**.
+3. The alert pops up full-screen on the phone frame, and on the judge's phone if their group matches.
+4. Tap **I can come** → a code and arrival window. In the bank, under **Incoming donors**, click **Mark donation complete** → the phone shows "Thank you, eligible again on …", and any other open alerts for that donor are withdrawn.
+> "The bank sees the donor's name and number only after they say yes."
+
+### Beat 4: Doomsday (90 s), `/command`
+1. Click **Mass casualty · Dadar**. Use this one: it's the dramatic scenario.
+2. **Impact strip** (top): normal day → now. Unmet demand over 72 hours jumps from about 32 to about 1,800 units, and 13 stock lines run out inside 24 hours.
+3. **Map:** the red surge zone and transfer routes. **Outlook** (left): which groups run dry first.
+4. **Situation brief** (right): the AI summary. If it shows "Template (AI unavailable)", own it: "we label it honestly."
+5. **Approve** two transfers: "N moving" goes up, and "Averted since the surge began" and the outcome meter move.
+6. **End surge** (it asks to confirm).
+> "Every unit we move before it expires is a unit nobody has to beg for. Platelets last five days [11]."
+
+### Beat 5: Trust (30 s), `/ledger`
+**Verify** (chain intact) → **Tamper** → **Verify** again: it names the exact broken entry.
+> "Nobody can quietly hoard or sell a unit."
+
+### Beat 6: Close (30 s)
+> "Real banks and real stock from e-RaktKosh and data.gov.in; simulated patients and donors. Alerts reach WhatsApp. There's an MCP server, so a coordinator can run this drill from ChatGPT or Claude. We don't replace e-RaktKosh, we add holds, transfers and surge planning on top. It's open source and runs on free tiers: zero cost. We're asking for a 90-day pilot with SBTC Mumbai and one hospital network, 10 banks, measuring discards avoided and minutes to reserve."
+
+If time allows, type "run a doomsday drill in Dadar" into Claude with the MCP connected, and show it preview the surge before confirming.
+
+### If something goes wrong
+| Problem | Do this |
+|---|---|
+| The request went to a different bank | Nothing: the stage bank panel follows it automatically. |
+| The judge's phone gets no alert | Their group or area may not match. Show the phone frame instead; it always receives the drive. |
+| AI brief says "Template" | Keep going; the numbers are the same forecast. |
+| WhatsApp gateway offline | Skip it; web alerts carry the demo. |
+| Wi-Fi drops | Switch to the recording. |
+| A surge is already running | Click End surge, then start Mass casualty. |
 
 ---
 
-## 3. "Crazy but buildable" demo ideas (ranked)
-
-| # | Idea | What the judge sees | Why it lands | Effort |
-|---|---|---|---|---|
-| **1 ★** | **Judge becomes the donor** | A QR code on screen. The judge scans it, consents in two taps, and picks a blood group. During surge mode their own phone buzzes with "O-neg needed at KEM, 3.2 km, can you come?" | It's physical and personal, and it proves the alert pipeline works for real. Judges remember their own phone. | M (web push or SMS via Twilio/WhatsApp sandbox) |
-| **2 ★** | **Scramble replay split-screen** | Left side: a fake WhatsApp chat replaying a real-style night, with forwards, wrong numbers and "already arranged" messages, and a clock racing to hours. Right side: Blood Bridge reserving the same unit in 41 s. | It makes the problem visceral before any feature is shown, and it's the strongest problem-first opening. | S (scripted animation, two timers) |
-| **3 ★** | **Surge mode "lives at risk" meter + transfer counterfactual** | Flip on "26/7 flood". The map dims banks, depletion curves fall by group, and a red counter climbs. Approve the transfers and the counter falls. A banner reads "Without Blood Bridge tonight: 18 units expire, 7 requests unmet." | It ties straight to the theme, and one click visibly changes the outcome, which is measurable impact. | M |
-| 4 | **Bombay blood needle-in-a-haystack** | Request "Bombay phenotype (hh)". The city map lights up thousands of O donors, then they all fade except two consented donors. Callout: "discovered in Mumbai, 1952, 1 in 10,000" [20]. | It's a local pride hook and shows why matching beyond ABO matters. | S |
-| 5 | **Expiry heatmap "money burning" view** | A grid of every unit in the city coloured by hours to expiry, with a running counter of the ₹ and units about to be wasted. Clicking "rebalance" turns the reds green. | It makes the waste paradox visible at a glance. | S |
-| 6 | **Multilingual alert** | The same donor alert renders in Marathi, Hindi and English. The judge toggles the language on their phone. | It shows we know the city, and it's inclusive. | S (static templates; no live MT needed) |
-| 7 | **Voice/SMS fallback when the network is down** | In surge mode, "mobile data down" is toggled. The alert falls back to a plain SMS, or a pre-recorded IVR call plays on speaker. | Doomsday realism: the system degrades gracefully. | M (Twilio voice/SMS) |
-| 8 | **Stale data detector** | Each bank shows a "last updated 14 h ago" badge. Stale banks are down-ranked and auto-pinged for a one-tap stock confirm. | It answers the data-freshness question visually, before a judge asks it. | S |
-| 9 | **Tamper-break ledger** | The presenter edits a reservation row in the DB live. The ledger view turns red at that block and everything after it. | It makes hoarding and fraud prevention concrete in ten seconds. | S (SHA-256 chain) |
-| 10 | **Thalassemia calendar** | A recurring-patient view shows "Aarav, 9, transfusion due every 21 days". The system pre-reserves compatible units three days ahead, so there's no monthly scramble. | It's a human face for chronic demand. Sion's thalassemia need alone exceeded its camp collection [6]. | S |
-| 11 | **Ambulance ETA vs unit ETA race** | Two progress bars: the patient arriving at the hospital, and the reserved unit being couriered from a bank. Blood Bridge picks the bank that wins the race, not the nearest one. | It makes "golden hour" logistics tangible. | M |
-| 12 | **Balasore "generosity overflow" mode** | Simulated donor walk-ins flood one bank. The system redirects donors to banks that actually need their group, and shows surplus units that should be redistributed. | It shows that disasters bring too much blood in the wrong place, not only too little (use the verified 500-units-overnight figure only [17]). | M |
-
-**Recommended top 3: #1 (judge becomes donor), #2 (scramble replay), #3 (surge meter + counterfactual).** Open with #2, run #3 mid-demo, and close the demo with #1.
+## 3. Three-minute version (if the slot is short)
+Beat 1 (20 s) → Beat 2 steps 1–3 (50 s) → Beat 3 with the judge's phone (40 s) → Beat 4 steps 1, 2, 5 (50 s) → Beat 6 (20 s). Skip the ledger and mention it in Q&A.
 
 ---
 
-## 4. Likely judge questions (crisp answers)
+## 4. Tech stack
+
+Everything is open source and runs on free tiers.
+
+| Layer | What we use | Why |
+|---|---|---|
+| Hosting | **Cloudflare Workers**: one Worker serves the web app, the API (`/api`) and the MCP server (`/mcp`); a cron trigger runs syncs and sweeps | Free, global, one deploy |
+| Realtime and coordination | **Cloudflare Durable Object** (`CityHub`): WebSocket fan-out to every screen, a serialised hash-chained audit ledger, the auto-reroute and hold-release timer, and a read cache | Live updates across hospital, bank and donor screens, and a tamper-evident log |
+| Database | **Turso** (libSQL/SQLite, AWS Mumbai) with Cloudflare D1 as fallback, via **Drizzle ORM**; SQL migrations | Free tier without D1's daily read cap |
+| API | **Hono** (TypeScript), **Zod** validation shared by client and server | Small, fast, typed end to end |
+| AI | **Cloudflare Workers AI**: Llama 3.1 8B for the surge brief and WhatsApp message understanding, M2M100 for Hindi and Marathi alerts; template fallback when unavailable | Open models, free allocation |
+| AI assistants | **Model Context Protocol** server (`@modelcontextprotocol/sdk`, `@hono/mcp`): read and write tools, works in ChatGPT and Claude | A coordinator can run the system by chat |
+| Frontend | **React 19**, **Vite 8**, **React Router 7**, **TanStack Query**, **Tailwind CSS v4**, **Motion** (animations), **Sonner** (notifications), **Lucide** icons, **Recharts** | Modern, fast, accessible |
+| Maps | **MapLibre GL** with **OpenFreeMap** vector tiles (OpenStreetMap data), **deck.gl** transfer arcs, **Natural Earth** + d3-geo for the landing world map | Fully open, no API keys |
+| Scanning and labels | **ZXing** (camera barcode scan), **qrcode** (unit labels and the join QR) | Works in the browser |
+| Messaging | **open-wa** (WhatsApp Web automation) on a small Node gateway, with a privacy filter; WhatsApp Cloud API supported | Free alerts on a real number |
+| Data | **data.gov.in** blood bank directory (GODL-India), **OpenStreetMap** coordinates (ODbL), **e-RaktKosh** public stock (synced every 30 minutes through the gateway relay), **RAKT** API connector | Real banks, real stock |
+| Quality | **TypeScript** strict, **Vitest** (135 tests on compatibility, ranking, forecast, transfers, splits, eligibility), Playwright UI walk-through | |
+
+Full details: `README.md`, `docs/API.md`, `docs/MCP.md`, `docs/MESSAGING.md`, `docs/DATA_SOURCES.md`.
+
+---
+
+## 5. What judges score, and where we hit it
+| Criterion | Where it shows |
+|---|---|
+| Problem understanding | Beat 1: one story, two verified numbers |
+| Technical execution | Beats 2–5 run live across three screens in real time |
+| Impact you can see | Impact strip, averted counter, "saved from expiry" |
+| Feasibility and adoption | Sits on top of e-RaktKosh; RAKT connector; zero running cost |
+| Theme ("Doomsday") | Beat 4: surge mode is the centre of the pitch |
+| Wow factor | Beat 3: the judge's own phone gets the alert |
+
+---
+
+## 6. Likely judge questions (crisp answers)
 
 **Q: Privacy — you're holding donor health data. What about the DPDP Act 2023?**
-A: Donors opt in explicitly and for a stated purpose, alerts only. We store blood group, an approximate location (a geohash, not an address) and contact details, nothing else. Donors can withdraw consent in one tap, and we delete their data. Patients are referenced by hospital request ID, not name. Data stays in India. The audit log records who accessed what.
+A: Donors opt in explicitly and for a stated purpose, alerts only. We store blood group, an area-level location (not an address) and contact details, nothing else. Location, eligibility sharing and alerts are separate switches, and "Opt out of everything" withdraws all of them and any pending alert in one tap. Patients are referenced by hospital request ID, not name. The database runs in AWS Mumbai (ap-south-1), and the hash-chained ledger records every action and who took it.
 
 **Q: Clinical liability — what if you show a unit that turns out to be wrong?**
 A: We're a coordination layer, not a clinical decision-maker. A hold is a reservation request. Cross-match and issue still happen at the blood bank under its licence and SOPs. We never override the blood centre's final check.
@@ -90,7 +143,7 @@ A: Three things. Every listing carries a freshness badge and stale banks are ran
 A: Updating is how they get value. They get transfer offers that prevent their own expiry losses, and every discarded unit is a sunk processing cost. Also, the 2007 National Blood Policy already makes hospitals responsible for arranging blood [12], so we make it easier to meet a duty they already have.
 
 **Q: How is this different from e-RaktKosh?**
-A: e-RaktKosh is a directory and stock register: it shows availability. We add the actions: one-tap holds with timers, bank-to-bank transfers driven by expiry, surge forecasting, and consented donor alerts. We plan to read e-RaktKosh data rather than compete with it.
+A: e-RaktKosh is a directory and stock register: it shows availability. We add the actions: one-tap holds with timers, bank-to-bank transfers driven by expiry, surge forecasting, and consented donor alerts. We already read e-RaktKosh's public stock and reconcile it into our inventory; we also ship a RAKT connector, and eBloodConnect is waiting on partner access.
 
 **Q: Business model?**
 A: Hospital networks pay a per-bed SaaS fee, justified by discards avoided and staff hours saved. State Blood Transfusion Councils license the surge and disaster-readiness dashboard. Donors and patients always use it for free. We never charge for blood.
@@ -99,10 +152,16 @@ A: Hospital networks pay a per-bed SaaS fee, justified by discards avoided and s
 A: The data model is city-agnostic: banks, units, components, expiry and geohash. Onboarding a city means importing its blood-bank list and connecting to e-RaktKosh. We'd start with the 58 Mumbai banks [5], then the 410 across Maharashtra.
 
 **Q: Isn't the surge forecast just made up?**
-A: It's a transparent model: current stock, minus a demand curve per casualty type, plus incoming donations. Every parameter is shown and editable. It's for planning, not prophecy. Its value is spotting which group runs out first, hours ahead.
+A: It's a transparent model: current stock, minus a demand curve per casualty type, plus incoming donations. The multipliers (2× to 3× demand, 5× for O-negative red cells in a mass-casualty event) come from the mass-casualty literature and are in the open in the code. It's for planning, not prophecy. Its value is spotting which group runs out first, hours ahead.
 
 **Q: What stops hoarding or misuse of holds?**
-A: Holds expire automatically, every action is in the hash-chained ledger, and we report per-hospital hold-to-use ratios.
+A: Holds expire automatically after 45 minutes and the units go back to stock, unconfirmed requests reroute after 90 seconds, and every action is in the hash-chained ledger.
 
 **Q: What did you actually build in the hackathon versus mock?**
-A: Be honest. Name what's live (reserve flow, surge sim, transfer engine, alerts, ledger) and what's seeded (bank inventory is synthetic, modelled on real Mumbai bank locations).
+A: Be honest. **Real:** the 31 Mumbai sites (data.gov.in + OpenStreetMap) and their stock, synced from e-RaktKosh. **Live and working:** reserve → confirm → pickup → delivery, auto-reroute, split reservations, surge forecast, transfer engine, donor alerts (web + WhatsApp), ledger, MCP server. **Simulated:** patients, donors and the surge itself, and every screen says so.
+
+**Q: What does it cost to run?**
+A: ₹0 today. Cloudflare Workers free tier, Turso free tier, Workers AI free allocation, OpenFreeMap tiles, and a self-hosted WhatsApp link. Everything is open source.
+
+**Q: Why does the flood look milder than mass casualty?**
+A: Because Mumbai's banks hold about three days of stock and flood demand is 2× to 3×, so the city bends before it breaks. A mass-casualty event is 3× to 5× in a tight radius, which is where coordination saves lives within hours. We didn't inflate the numbers to make the demo louder.
