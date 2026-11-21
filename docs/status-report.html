@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Blood Bridge — Build Status</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  :root { --ink:#141a22; --muted:#5b6675; --line:#dde3ea; --red:#c8102e; --ok:#127a4a; --warn:#a15c00; --soft:#f5f7fa; }
+  * { box-sizing: border-box; }
+  body { font: 10.2pt/1.45 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); margin: 0; }
+  h1 { font-size: 22pt; margin: 0 0 2pt; letter-spacing: -0.3pt; }
+  h1 span { color: var(--red); }
+  .sub { color: var(--muted); margin-bottom: 10pt; }
+  .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6pt; margin: 8pt 0 12pt; }
+  .meta div { background: var(--soft); border: 1px solid var(--line); border-radius: 6pt; padding: 6pt 8pt; }
+  .meta b { display: block; font-size: 13pt; }
+  .meta small { color: var(--muted); }
+  h2 { font-size: 13pt; margin: 14pt 0 5pt; padding-bottom: 3pt; border-bottom: 2px solid var(--ink); break-after: avoid; }
+  h2 .tag { font-size: 8.5pt; font-weight: 600; padding: 1pt 6pt; border-radius: 99pt; margin-left: 6pt; vertical-align: 2pt; }
+  .done { background: #e3f4ea; color: var(--ok); } .partial { background: #fff1db; color: var(--warn); } .todo { background: #fde7ea; color: var(--red); }
+  h3 { font-size: 10.5pt; margin: 9pt 0 3pt; break-after: avoid; }
+  ul { margin: 0 0 4pt; padding-left: 14pt; } li { margin: 1.5pt 0; }
+  table { width: 100%; border-collapse: collapse; margin: 4pt 0 6pt; font-size: 9.4pt; }
+  th, td { text-align: left; vertical-align: top; padding: 4pt 6pt; border-bottom: 1px solid var(--line); }
+  th { background: var(--soft); font-weight: 600; }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  code { font: 8.8pt ui-monospace, Menlo, monospace; background: var(--soft); padding: 0 3pt; border-radius: 3pt; }
+  .box { border: 1px solid var(--line); border-left: 4px solid var(--red); background: var(--soft); padding: 6pt 9pt; border-radius: 4pt; margin: 6pt 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+  .foot { margin-top: 14pt; color: var(--muted); font-size: 8.5pt; border-top: 1px solid var(--line); padding-top: 5pt; }
+  table, .box { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>Blood <span>Bridge</span> · Build status</h1>
+<div class="sub">MindSprint 2026 · Open Innovation (Doomsday) · Team Straw Hats · status as of 21 Nov 2026</div>
+
+<div class="box"><b>One line:</b> When a patient needs blood now, one screen shows compatible, in-date stock across Mumbai's blood banks, reserves it in one tap, and — when the city is under stress — forecasts shortages and moves blood and donors before they run out.</div>
+
+<div class="meta">
+  <div><b>Live</b><small>blood-bridge.blood-bridge.workers.dev</small></div>
+  <div><b>25 + 6</b><small>real Mumbai blood banks + hospitals</small></div>
+  <div><b>130 / 130</b><small>automated tests passing</small></div>
+  <div><b>15 tools</b><small>MCP server for ChatGPT / Claude</small></div>
+</div>
+
+<table>
+  <tr><th>Demo route</th><th>What it shows</th></tr>
+  <tr><td><code>/</code></td><td>Problem-first scroll story with sourced statistics, flood map, WhatsApp-scramble replay</td></tr>
+  <tr><td><code>/stage</code></td><td>Hospital · Blood bank · Donor phone side by side + "Judges: scan to become a donor" QR</td></tr>
+  <tr><td><code>/command</code></td><td>Doomsday surge dashboard: 3D map, stock-out countdowns, transfer arcs, before/after outcome meter, AI brief</td></tr>
+  <tr><td><code>/hospital</code> <code>/bank</code> <code>/donor</code></td><td>The three role views (separate routes so they can be opened side by side)</td></tr>
+  <tr><td><code>/ledger</code></td><td>Tamper-evident activity log — "tamper" an entry, then "verify" catches it</td></tr>
+  <tr><td><code>/mcp</code></td><td>Remote MCP server (add as a custom connector in ChatGPT / Claude)</td></tr>
+</table>
+
+<section>
+<h2>1 · Built &amp; live (MVP) <span class="tag done">DONE</span></h2>
+<div class="two">
+<div>
+<h3>Hospital</h3>
+<ul>
+  <li>10-second request form (group, component, units, urgency, needed-by, ward)</li>
+  <li>Ranked results + map: ETA, stock, expiry badge, data freshness, exact vs compatible (clinician flag), "why this rank"</li>
+  <li>One-tap reserve; live tracker Requested → Confirmed → Reserved → Picked up → Delivered</li>
+  <li><b>Split reservation:</b> "Cover all N units across K banks" — one tap reserves across several banks</li>
+  <li>Auto-reroute to next-best bank if no confirmation in 90 s; holds return to stock after 45 min</li>
+  <li>Own-stock tab with "Offer for transfer"; critical "alert everyone" (rate-limited); duplicate-request detection</li>
+</ul>
+<h3>Blood bank</h3>
+<ul>
+  <li>Stock grid by group × component: on hand, reserved, expiring 48 h / 7 d, shortage/surplus colours</li>
+  <li>Live request queue: Confirm / Partially confirm / Decline with reason; critical on top; auto-reroute countdown</li>
+  <li>Add / use / remove units; <b>camera barcode &amp; QR scan</b> (open-source ZXing); printable unit QR labels</li>
+  <li><b>e-RaktKosh sync</b> button + hourly auto-sync (see pending: blocked from cloud servers)</li>
+  <li>Transfer suggestions: approve / modify qty / dismiss / mark received</li>
+  <li>Donor drive with eligibility funnel <i>before</i> sending; incoming donors with confirmation codes</li>
+</ul>
+</div>
+<div>
+<h3>Donor (phone view)</h3>
+<ul>
+  <li>QR quick-join, three separate consent toggles, eligibility countdown, honest impact count</li>
+  <li>Full-screen alert (no patient identity) → "I can come" reveals address, time window, 6-digit code</li>
+  <li>Hindi / Marathi alerts translated by an open model (Workers AI)</li>
+  <li>Quiet hours, weekly alert cap, opt-out / opt back in</li>
+  <li><b>Shareable donation certificate</b> (Share / WhatsApp / Save), <b>"eligible again" calendar reminder</b>, pre-visit checklist</li>
+</ul>
+<h3>Doomsday command &amp; trust layer</h3>
+<ul>
+  <li>Surge mode (flood at Kurla, mass-casualty at Dadar — real flood-prone sites); per-group stock-out countdowns</li>
+  <li>Expiry-aware transfer planner; before/after outcome meter (24 h shortfall, expiring units, sites at risk)</li>
+  <li>3D base map (extruded buildings, relief, tilt/rotate) with risk-coloured site dots and animated transfer arcs</li>
+  <li>AI situation brief (open model on Workers AI, template fallback)</li>
+  <li>Hash-chained, tamper-evident audit ledger of every action</li>
+  <li>Real-time sync of every screen (Durable Object WebSockets)</li>
+</ul>
+</div>
+</div>
+
+<h3>Beyond the PRD</h3>
+<ul>
+  <li><b>MCP server (15 tools):</b> ChatGPT / Claude can query the live city and — only after the user confirms — reserve blood, start a surge, approve transfers, send drives. Every AI action is logged as <code>ai:&lt;client&gt;</code>. Verified end-to-end with a real Claude client.</li>
+  <li><b>WhatsApp bot</b> (open-wa gateway on a laptop): Hinglish blood requests ("Sion mein 2 O negative platelets chahiye") → top 3 real banks; JOIN signup; YES → confirmation code; STOP opt-out; privacy filter ignores personal chats.</li>
+  <li><b>Official WhatsApp Business Cloud API</b> channel built into the Worker (webhook, templates, click-to-chat onboarding) — awaiting Meta credentials.</li>
+  <li><b>SMS channel</b> via the open-source SMS Gateway for Android app.</li>
+</ul>
+
+<h3>Data: real vs simulated</h3>
+<table>
+  <tr><th>Real (open data)</th><td>25 Mumbai blood banks + 6 municipal hospitals (data.gov.in + OpenStreetMap); stock counts by group × component and each bank's last-update time (e-RaktKosh snapshot, 9,761 units); shelf lives (Drugs Rules G.S.R. 166(E) 2020); blood-group shares and collection volumes (cited)</td></tr>
+  <tr><th>Modelled</th><td>Per-bag expiry dates (e-RaktKosh publishes counts only), daily demand, surge multipliers (cited assumptions)</td></tr>
+  <tr><th>Synthetic</th><td>Every donor, patient and request (privacy)</td></tr>
+</table>
+</section>
+
+<section>
+<h2>2 · Built but not yet activated / verified <span class="tag partial">NEEDS ACTION</span></h2>
+<table>
+  <tr><th>Item</th><th>Status</th><th>What's needed</th></tr>
+  <tr><td>e-RaktKosh live sync in production</td><td>Works from an Indian connection (tested: +1,758 / −521 units in 7 s); <b>blocked from Cloudflare servers (HTTP 522)</b></td><td>Let the laptop gateway fetch e-RaktKosh and push to the Worker, or use an India-based relay</td></tr>
+  <tr><td>Official WhatsApp sender</td><td>Code deployed, dormant</td><td>Create Meta developer app → WhatsApp test number, Phone Number ID, token, App Secret; add up to 5 recipient numbers</td></tr>
+  <tr><td>WhatsApp via laptop gateway</td><td>Was online; stops when the laptop process stops</td><td>Restart gateway; full loop (2nd phone → reply → JOIN → YES) never tested end-to-end</td></tr>
+  <tr><td>MCP inside ChatGPT</td><td>Verified with Claude only</td><td>ChatGPT Plus/Pro account → Developer mode → add connector</td></tr>
+  <tr><td>SMS channel</td><td>Built, untested with a phone</td><td>Android phone + SIM running SMS Gateway app</td></tr>
+  <tr><td>Camera scan on a real phone</td><td>UI + label verified; camera not tested headless</td><td>Test once on a laptop/phone camera</td></tr>
+</table>
+</section>
+
+<section>
+<h2>3 · Pending — before the hackathon <span class="tag todo">TO DO</span></h2>
+<ul>
+  <li>Finish Meta setup and switch WhatsApp to the official "Blood Bridge" sender (~15 min)</li>
+  <li>End-to-end WhatsApp rehearsal from a second phone</li>
+  <li>Full dress rehearsal on <code>/stage</code>, including judges scanning the QR on their own phones</li>
+  <li>6–8 slide pitch deck from <code>docs/JUDGE_PLAYBOOK.md</code> (script + judge Q&amp;A already written)</li>
+  <li>Backup screen recording of the demo in case venue Wi-Fi fails</li>
+  <li>Rotate the MCP token after the event (it may appear in connector URLs)</li>
+  <li>Click <b>Reset demo</b> on <code>/stage</code> right before presenting</li>
+</ul>
+
+<h2>4 · Pending — for real-world production (roadmap) <span class="tag todo">ROADMAP</span></h2>
+<ul>
+  <li>Real logins and verified accounts for hospitals / banks (demo uses a role switcher)</li>
+  <li>Clinician-reviewed compatibility table and eligibility rules (current logic is simplified and labelled as demo)</li>
+  <li>Continuous e-RaktKosh / blood-bank software integration for real per-bag expiry dates</li>
+  <li>Real routing engine (e.g. OSRM) for travel times instead of straight-line estimates</li>
+  <li>DPDP Act 2023 compliance: consent records, retention policy, grievance officer</li>
+  <li>WhatsApp business number beyond the 5-recipient test limit, with approved message templates</li>
+  <li>Monitoring, alerting and database backups; load testing</li>
+  <li>Rare-donor registry (e.g. Bombay blood group — discovered in Mumbai, 1952)</li>
+</ul>
+</section>
+
+<section>
+<h2>5 · Tech stack (all open source / Cloudflare)</h2>
+<ul>
+  <li><b>One Cloudflare Worker:</b> React 19 + Vite + Tailwind v4 SPA, Hono API, D1 (SQLite) via Drizzle, Durable Object "CityHub" (WebSockets, ledger, auto-reroute alarm), Workers AI (Llama 3.1, M2M100 translation), cron triggers</li>
+  <li><b>Maps:</b> MapLibre GL + OpenFreeMap tiles + deck.gl (no API keys)</li>
+  <li><b>Integrations:</b> MCP (official TypeScript SDK), open-wa WhatsApp, Android SMS Gateway, WhatsApp Cloud API, e-RaktKosh public API, ZXing barcode scanning</li>
+  <li><b>Quality:</b> TypeScript strict, Zod-validated API shared by server and client, 130 unit tests, end-to-end smoke test (<code>scripts/smoke.mjs</code>)</li>
+  <li><b>Docs in repo:</b> <code>README.md</code>, <code>docs/DATA_SOURCES.md</code>, <code>docs/PROBLEM_RESEARCH.md</code>, <code>docs/JUDGE_PLAYBOOK.md</code>, <code>docs/MCP.md</code>, <code>docs/MESSAGING.md</code></li>
+</ul>
+</section>
+
+<div class="foot">Blood Bridge · Team Straw Hats · All patient and donor data in the demo is simulated. Facility names, locations and stock counts come from public open data and are cited in docs/DATA_SOURCES.md.</div>
+</body>
+</html>
